@@ -203,4 +203,175 @@ d'un tableau à l'aide de la fonction <b>PHP</b> <code>count()</code>.
 
     <?php echo $slidey->highlight('files/01/array2.php'); ?>
 </p>
+
+<p class="textOnly">
+    Ce type peut donc être utilisé à de nombreuses fins et permet de mettre rapidement en place
+des données structurées, indexées et facile d'accès.
+</p>
 </div>
+
+<div class="slide">
+<h3>Les structures de contrôles</h3>
+<p>
+    <b>PHP</b> comporte les structures classiques :
+
+    <?php echo $slidey->highlight('files/01/control.php'); ?>
+</p>
+</div>
+
+<div class="slide">
+<h3>Le switch/case</h3>
+<p>
+    <b>PHP</b> comporte également le <code>switch()/case</code> :
+
+    <?php echo $slidey->highlight('files/01/switch.php'); ?>
+</p>
+<p class="textOnly">
+    Notons que sans le mot clé <code>break</code> le code continue de s'éxécuter entre deux
+cases (comme dans les cas <code>1</code> et <code>2</code> ci-dessus).
+</p>
+</div>
+
+<div class="slide">
+<h3>Break et continue</h3>
+<p>
+    Il est possible d'utiliser <code>break</code> et <code>continue</code> (qui servent
+respectivement à sortir d'une boucle ou à passer à l'élément suivant) :
+
+    <?php echo $slidey->highlight('files/01/break.php'); ?>
+</p>
+<p class="textOnly">
+    Il est aussi possible d'utiliser ces mots clés suivi d'un entier numérique
+qui permet de définir de combien de structure imbriqué l'on souhaite sortir ou
+passer à l'itération suivante.
+</p>
+</div>
+
+<div class="slide">
+<h3>Itérations avec foreach</h3>
+<p>
+    Pour faciliter l'itération des tableaux, <b>PHP</b> propose la structure de contrôle
+<code>foreach()</code> :
+
+    <?php echo $slidey->highlight('files/01/foreach.php'); ?>
+</p>
+<p class="textOnly">
+    Cette méthode permet de faciliter le parcours dans les tableaux, qui est fastidieux
+lorsqu'il emploi une boucle <code>for</code> par exemple. Nous verrons plus tard qu'il est
+également possible de créer ses propres objets itérables à l'aide de <code>foreach</code>.
+</p>
+</div>
+
+<div class="slide">
+<h3 class="slideOnly">Itérations avec modification</h3>
+<p>
+    A l'aide de la notation de référence <code>&amp;</code>, <b>PHP</b> vous permet d'itérer
+sur un tableau tout en modifiant la valeur de son contenu :
+
+    <?php echo $slidey->highlight('files/01/foreach2.php'); ?>
+</p>
+</div>
+
+<div class="slide">
+<h3 class="slideOnly">Itérations clé/valeur</h3>
+<p>
+    En utilisant <code>$key =&gt; $value</code>, nous pouvons itérer sur la clé <b>et</b>
+la valeur en même temps :
+
+    <?php echo $slidey->highlight('files/01/foreach3.php'); ?>
+</p>
+</div>
+
+<div class="slide">
+<h3>Fonctions</h3>
+<p>
+    <b>PHP</b> vous permet de définir des fonctions :
+
+    <?php echo $slidey->highlight('files/01/function.php'); ?>
+</p>
+<p class="textOnly">
+    La fonction suivante prend en paramètre <code>$x</code> et retourne vrai si il est 
+pair. Le mot clé <code>return</code> peut être utilisé pour retourner une valeur ou sortir
+d'une fonction qui ne retourne pas de valeur. Notons encore l'absence totale de typage,
+la fonction <code>isEven()</code> ne fournit aucune indication sur son type de retour
+ou de paramètres.
+</p>
+</div>
+
+<div class="slide">
+<h3 class="slideOnly">Fonctions (exemple plus avancé)</h3>
+<p>
+    Voici un exemple plus avancé qui utilise deux concepts introduits dans <b>PHP 5.3</b> :
+
+    <?php echo $slidey->highlight('files/01/function2.php'); ?>
+</p>
+<div class="textOnly">
+<p>
+    Ici, une fonction <b>anonyme</b> est utilisée, elle est passée en paramètre à la fonction
+<code>ifIsEven</code> qui peut l'apeller comme une fonction normale via <code>$callback()</code>.
+Ce système est extrèmement utile dans le cas de programmation événementielle par exemple, on pourra
+manipuler des références de fonctions comme des variables "normales", et les placer dans des tableaux
+ou des attributs de classe.
+</p>
+<p>
+    De plus, le type du paramètre <code>$callback</code> est précisé à <b>PHP</b>, c'est ce que l'on
+apelle le <b>type hinting</b>, ou indication de type. Ainsi, l'intérpréteur provoquera une erreur dans
+le cas ou le paramètre serait du mauvais type, ce qui peut permettre d'éviter les erreurs. Le type utilisé
+est <code>Closure</code> et correspond au type des fonctions anonymes.
+</p>
+</div>
+</div>
+
+<div class="slide">
+<?php echo $slidey->part('Inclusion de fichiers'); ?>
+    <h3>Les fonctions include et require</h3>
+<p>
+    Il est possible d'inclure un autre fichier dans un script <b>PHP</b>, à l'aide des fonctions <code>include()</code>
+et <code>require()</code>, ou leur version assurant l'inclusion unique <code>include_once()</code> et <code>require_once()</code> :
+
+    <?php echo $slidey->highlight('files/01/include.php'); ?>
+</p>
+<div class="textOnly">
+<p>
+    Dans le cas de <code>include</code>, si le fichier inclus n'existe pas, seul un warning sera levé par l'interpreteur,
+tandis que dans le cas de <code>require</code>, une erreur fatale arrêtera l'exécution du script.
+</p>
+<p>
+    <b>PHP</b> étant interprété, il est possible d'inclure des fichiers dont le nom est connu de manière dynamique,
+en faisant attention à la provenance du dit fichier. En effet, le fichier inclus sera évalué par l'interpréteur et 
+peut exécuter du code sur la machine qui l'éxécute.
+</p>
+</div>
+</div>
+
+<div class="slide">
+    <h3>Quelques constantes utiles</h3>
+<p>
+    <b>PHP</b> met à notre disposition des <a href="http://fr.php.net/manual/en/language.constants.predefined.php">"constantes
+magiques"</a> qui peuvent s'avérer très utile pour l'inclusion :
+</p>
+<table>
+    <tr>
+	<th>Nom</th>
+	<th>Utilité</th>
+    </tr>
+    <tr>
+	<td class="bold">__DIR__</td>
+	<td>Le répértoire du script actuel</td>
+    </tr>
+    <tr>
+	<td class="bold">__FILE__</td>
+	<td>Le nom du script actuel</td>
+    </tr>
+    <tr>
+	<td class="bold">__LINE__</td>
+	<td>La ligne actuelle dans le script</td>
+    </tr>
+    <tr>
+	<td class="bold">__FUNCTION__</td>
+	<td>La fonction actuelle</td>
+    </tr>
+</table>
+</div>
+
+
