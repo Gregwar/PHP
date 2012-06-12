@@ -148,7 +148,7 @@ le protocole <b>HTTP</b>.
 
 <div class="slide">
 <?php echo $slidey->part('Présentation du langage'); ?>
-<h3>Les bases</h3>
+<h3>Exemple basique</h3>
 <p>
     <b>PHP</b> est faiblement typé :
     <?php echo $slidey->highlight('files/01/bases.php'); ?>
@@ -175,3 +175,32 @@ exclusivement pour les opérations mathématiques.
 </div>
 </div>
 
+<div class="slide">
+<h3>Les tableaux</h3>
+<p>
+    Les <code>array()</code> en <b>PHP</b> permettent de faire de nombreuses choses :
+
+    <?php echo $slidey->highlight('files/01/array.php'); ?>
+</p>
+
+<div class="textOnly">
+<p>
+    On peut en effet les utiliser afin de stocker une suite de valeurs ordonnées et
+accessibles grâce à la notation <code>[]</code>. Il est possible de connaître la taille
+d'un tableau à l'aide de la fonction <b>PHP</b> <code>count()</code>.
+</p>
+<p>
+    Avec cette même structure de donnée, il est également possible de créer des tableau
+<b>associatifs</b>, qui font correspondre des clés avec des valeurs.
+</p>
+</div>
+</div>
+
+<div class="slide">
+<h3 class="slideOnly">Les tableaux</h3>
+<p>
+    Un tableau peut bien entendu contenir des sous-tableaux :
+
+    <?php echo $slidey->highlight('files/01/array2.php'); ?>
+</p>
+</div>
