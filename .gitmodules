@@ -1,0 +1,6 @@
+[submodule "slidey"]
+	path = slidey
+	url = git@github.com:Gregwar/Slidey.git
+[submodule "image"]
+	path = image
+	url = git@github.com:Gregwar/Image.git

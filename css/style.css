@@ -3,3 +3,11 @@
     background:black;
     color:white;
 }
+
+.footer {
+    width:900px;
+    float:left;
+    font-size:12px;
+    text-align:center;
+    margin:5px;
+}

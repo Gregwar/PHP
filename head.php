@@ -1,3 +1,3 @@
 <?php
 
-include('Image/Image.php');
+include('image/Image.php');
