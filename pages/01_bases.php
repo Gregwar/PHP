@@ -8,7 +8,7 @@
     <img class="right" src="<?php echo \Gregwar\Image\Image::open('img/php.png')
 	->resize(150)
 	->guess(); ?>" title="Logo PHP" />
-</center>
+	</center>
 
 <p class="textOnly">
     <b>PHP</b> est l'acronyme récursif de <b>PHP: Hypertext Preprocessor</b>, datant
@@ -35,13 +35,50 @@ de 1994. Il a été largement conçu et pensé pour réaliser des sites webs.<br
 </div>
 </div>
 
-<div class="slide middleSlide slideOnly blackSlide">
-    <h1>PHP</h1>
+<div class="slide">
+    <h3>Prérequis</h3>
+    <p>
+	Avant d'aller plus loin, nous considérerons que vous avez des connaissances
+en web, notamment en <b>HTML</b>, <b>CSS</b> et <b>JavaScript</b>. Il est également
+nécéssaire d'avoir des connaissances en programmation impératives (variables, 
+structures de contrôle, fonctions etc.). Il est préférable d'avoir déjà fait de la 
+programmation orientée objet.
+    </p>
+    <p>
+	En ce qui concerne le <b>PHP</b>, aucun prérequis n'est nécéssaire.
+    </p>
 </div>
 
 <div class="slide">
-<?php echo $slidey->part('Présentation du langage'); ?>
+<?php echo $slidey->part('Installation et utilisation'); ?>
+<h3>Introduction</h3>
+<p>
+    Le langage <b>PHP</b> est très largement utilisé pour réaliser des sites webs,
+il a même été conçu pour cela.
+</p>
+<p>
+    Dans un premier temps, nous allons nous intérésser au langage en lui même ainsi
+qu'à ses particularités.
+</p>
+</div>
 
+<div class="slide">
+<h3>Installation de l'intérpreteur</h3>
+<p>
+    L'ensemble de la documentation et des fichiers binaires de <b>PHP</b> peuvent 
+etre trouvés sur le site officiel <a href="http://php.net">http://php.net</a>.
+</p>
+<p>
+    Sous linux, vous trouverez l'interpreteur <b>PHP</b> dans les dépôts <b>apt</b> :
+    <?php echo $slidey->highlight('files/01/apt.sh', 'html'); ?>
+</p>
+<p>
+    Sous windows, vous trouverez les binaires à l'adresse suivante :<br />
+    <a href="http://windows.php.net/download/">http://windows.php.net/download/</a>
+</p>
+</div>
+
+<div class="slide">
 <h3>Hello world</h3>
 <p>
 <div class="discover">
@@ -71,4 +108,70 @@ de textes à trou dans lesquels le code vient s'insérer
 
 </div>
 
+<div class="slide">
+<h3>Utilisation</h3>
+<p>
+    Pour utiliser l'interpreteur <b>PHP</b>, utilisez simplement la commande "php"
+dans votre terminal :
+
+    <?php echo $slidey->highlight('files/01/use.sh', 'html'); ?>
+</p>
+</div>
+
+<div class="textOnly">
+<p>
+    Utiliser l'intérpréteur peut être très utile, il peut vous servir à faire des
+tests simplement en écrivant des scripts directement. A terme, vous pourrez également
+utiliser <b>PHP</b> comme langage de script, ce qui peut vous faire gagner du
+temps pour manipuler des fichiers, automatiser des tâches etc.
+</p>
+<p>
+    Dans ce chapitre, nous allons étudier le fonctionnement du langage. Nous parlerons
+alors dans le chapitre suivant de comment se fait la liaison avec le web et notamment 
+le protocole <b>HTTP</b>.
+</p>
+</div>
+
+<div class="slide slideOnly">
+<h3>Utilisation</h3>
+<p>
+    Utiliser l'intérpréteur peut servir à :
+    <ul>
+	<li>Faire des tests (pratique pour découvrir le langage)</li>
+	<li>Utiliser PHP comme langage de script</li>
+    </ul>
+</p>
+<p>
+    Dans cette partie, nous utiliserons uniquement l'interpréteur en ligne de commande.
+</p>
+</div>
+
+<div class="slide">
+<?php echo $slidey->part('Présentation du langage'); ?>
+<h3>Les bases</h3>
+<p>
+    <b>PHP</b> est faiblement typé :
+    <?php echo $slidey->highlight('files/01/bases.php'); ?>
+</p>
+
+<div class="textOnly">
+<p>
+    Les variables se préfixent par le symbole <code>$</code> et ne sont pas typées, comme
+ci-dessus, <code>$a</code> peut contenir aussi bien un entier qu'une chaîne. Son type
+change en pleine exécution.
+</p>
+<p>
+    Du fait que <b>PHP</b> soit intérprété, les variables, fonctions ou classes ne sont
+connues qu'au moment de l'éxécution (pas de phase de compilation).
+</p>
+<p>
+    Il est de ce fait possible de tester l'éxistence d'une variable au moment de l'éxécution
+à l'aide de la fonction <code>isset();</code>
+</p>
+<p>
+    L'opérateur de concaténation est le <code>.</code>, le <code>+</code> étant réservé
+exclusivement pour les opérations mathématiques.
+</p>
+</div>
+</div>
 
