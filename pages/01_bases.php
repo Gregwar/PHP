@@ -1,4 +1,4 @@
-<?php $slidey->chapter('Les bases du PHP', 'bases-du-php'); ?>
+<?php $slidey->chapter('Les bases du PHP', 'bases-du-php', 1); ?>
 
 <div class="slide">
 <?php echo $slidey->part('Introduction : qu\'est-ce que PHP ?'); ?>

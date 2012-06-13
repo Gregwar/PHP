@@ -8,5 +8,5 @@ $sigles = array(
 
 // Itère à travers les clés et valeurs
 foreach ($sigles as $sigle => $signification) {
-    echo $sigle . "veut dire $signification\n"
+    echo $sigle . " veut dire $signification\n";
 }
