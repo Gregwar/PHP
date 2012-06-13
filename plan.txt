@@ -1,0 +1,88 @@
+Cours de PHP
+============
+
+Les basiques de PHP
+    * Qu'est-ce que PHP ?
+    * Installation et configuration (php.ini)
+    * Variables
+    * Les tableaux
+    * Structures de contrôle
+        - Les basiques
+        - Foreach/Itération
+        - Modification de valeurs
+    * Fonctions
+        - Ecriture de fonction
+        - Portée des variables
+    * Include et require
+
+HTTP et binding CGI
+    * Présentation du protocole HTTP
+    * Comment PHP est t-il utilisé pour faire du web ?
+    * Variables superglobales
+        - Query String, get et post
+    * En-têtes HTTP
+        - Cookies
+        - Sessions
+
+Programmation orientée objet
+    * Les classes en PHP
+        - Instanciation
+        - Appel de méthodes
+        - Héritage
+        - Visibilité
+        - self/parent/static
+        - Classes abstraites
+    * Clonage
+    * Type hinting
+    * Serialisation
+    * Passage par référence
+    * Les interfaces
+    * Méthodes magiques
+
+Notions avancées
+    * Espaces de nom
+        - Fonctionnement et principe
+        - L'autoloader
+    * Fonctions anonymes
+    * Exceptions
+    * Reflexion et méta-programmation
+    * Notions de Traits
+
+Les bases de données
+    * PHP et PDO
+        - Etablir une connexion
+        - Ecriture et exécution de requêtes
+    * Présentation de MySQL
+        - Mise en place
+        - Les bases & tables
+        - Colonnes, clé primaires & étrangères
+        - Requêtage
+    * Introduction aux ORM (aperçu de Doctrine2)
+
+Bonnes pratiques
+    * Convention de codage
+    * Tests unitaires, serveur d'intégration
+    * Utiliser la mise en cache
+    * Gérer les URLs
+        - Réécriture d'URL
+        - Routage
+    * Encodage des caractères
+        - UTF8
+        - Echappement HTML
+    * De la sécurité
+        - Attention à l'inclusion
+        - Failles XSS
+        - Failles CSRF
+        - Injections SQL
+
+Présentation du framework Symfony2
+    * Le modèle MVC
+    * Avantages de l'utilisation d'un framework
+        - ORM
+        - Moteur de template
+        - Routage
+        - Réutilisabilité
+        - Communauté
+        - Maintenance
+    * Cas pratique : mise en place d'application Symfony2
+
