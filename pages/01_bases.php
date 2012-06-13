@@ -374,4 +374,17 @@ magiques"</a> qui peuvent s'avérer très utile pour l'inclusion :
 </table>
 </div>
 
+<div class="slide">
+    <h3 class="slideOnly">Problèmes liés à l'inclusion</h3>
+<p>
+    Lors de l'inclusion d'un fichier, la fonction <code>include</code> (ou <code>require</code>) va chercher à plusieurs endroits
+<span class="textOnly">(dans le <code>include_path</code>, dans le dossier du script qui include, dans le dossier de travail, etc.)</span>
+</p>
+<p>
+    Pour clarifier son comportement, il est généralement recommandé d'utiliser <code>__DIR__</code> pour désigner un répértoire relatif au
+répértoire actuel :
+</p>
+<?php echo $slidey->highlight('files/01/include_dir.php'); ?>
+</div>
+
 <?php echo $slidey->annex('annex/td1.php'); ?>
