@@ -1,8 +1,8 @@
 <?php
 
 /**
- * Inclus le fichier math.php qui se situe dans le 
- * même répértoire que celui ou on se trouve
+ * Inclus le fichier math.php qui se situe dans
+ * le même répértoire que celui du script
  *
  * Permet d'éviter les ambiguités
  */
