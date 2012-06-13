@@ -374,4 +374,4 @@ magiques"</a> qui peuvent s'avérer très utile pour l'inclusion :
 </table>
 </div>
 
-
+<?php echo $slidey->annex('annex/td1.php'); ?>
