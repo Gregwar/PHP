@@ -5,10 +5,10 @@
 <h3>Présentation</h3>
 
 <center>
-    <img class="right" src="<?php echo \Gregwar\Image\Image::open('img/php.png')
+    <img class="right" src="<?php echo $slidey->image('img/php.png')
 	->resize(150)
 	->guess(); ?>" title="Logo PHP" />
-	</center>
+</center>
 
 <p class="textOnly">
     <b>PHP</b> est l'acronyme récursif de <b>PHP: Hypertext Preprocessor</b>, datant

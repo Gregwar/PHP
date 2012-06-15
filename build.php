@@ -1,10 +1,8 @@
 <?php
 
-include('image/Image.php');
-
 include('slidey/slidey.php');
 
-$slidey = new Gregwar\SlideyBuilder;
+$slidey = new Gregwar\Slidey\SlideyStandard;
 
 /**
  * Customizing template
@@ -17,6 +15,6 @@ $slidey->template->footer = file_get_contents('license.htm');
  * Adding custom directories
  */
 $slidey->copyDirectory('css');
-$slidey->copyDirectory('cache');
+$slidey->copyDirectory('files');
 
 $slidey->build('../php');
