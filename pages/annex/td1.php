@@ -89,6 +89,20 @@ de l'ensemble à cette adresse&nbsp;:<br />
     <a href="http://fr.wikipedia.org/wiki/Ensemble_de_Mandelbrot">http://fr.wikipedia.org/wiki/Ensemble_de_Mandelbrot</a>
 </p>
 <p>
+    Nul besoin de connaissances mathématiques approfondies, vous pourrez utiliser la définition suivante :
+</p>
+<center>
+<?php echo $slidey->tex('\begin{cases}
+x_0 = y_0 = 0\\\\
+x_{n+1} = x_n^2-y_n^2+a\\\\
+y_{n+1} = 2x_ny_n+b
+\end{cases}')->html(); ?>
+</center>
+<p>
+    Et tester que la suite diverge, c'est à dire que <?php echo $slidey->tex('x_n')->html(); ?> ou <?php echo $slidey->tex('y_n')->html(); ?>
+tend vers l'infini quand n tend vers l'infini (on utilisera de très grande bornes).
+</p>
+<p>
     Une fois que votre implémentation fonctionne, il vous est possible d'implémenter le zoom sur la courbe fractale afin
 de l'observer de plus en plus pres.
 </p>
