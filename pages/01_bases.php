@@ -6,7 +6,7 @@
 
 <center>
     <img class="right" src="<?php echo $slidey->image('img/php.png')
-	->resize(150)
+	->resize(300)
 	->guess(); ?>" title="Logo PHP" />
 </center>
 
