@@ -11,3 +11,8 @@
     text-align:center;
     margin:5px;
 }
+
+.spoiler {
+    color:#29c916;
+    font-style:italic;
+}
