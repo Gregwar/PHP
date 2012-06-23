@@ -1,3 +1,9 @@
 # Dummy makefile to trigger the build script
-all:
-	@php build.php
+all: zips
+	@php build.php 
+
+redo: zips
+	@php build clean
+
+zips:
+	@make -C files/
