@@ -85,7 +85,8 @@ et éventuellement de données contenant :
 <div class="slide">
 <h3 class="slideOnly">Réponse HTTP</h3>
 <p class="textOnly">
-    Le serveur répond alors au client en lui transférant sous une forme très ressemblante
+    Le serveur utilise alors les éléments fournis par le client pour tenter de localiser
+la resource demandée et lui répond en lui transférant sous une forme très ressemblante
 des en-têtes et éventuellement des données :
 </p>
 <p class="slideOnly">
@@ -166,7 +167,7 @@ ainsi que sur le contenu de la réponse.
 <?php echo $slidey->part('PHP et HTTP'); ?>
 <h3>Fonctionnement</h3>
 <p>
-    Typiquement, les scripts php sont identifiés par leur extension <code>.php</code>. Lorsque
+    En général, les scripts php sont identifiés par leur extension <code>.php</code>. Lorsque
 le serveur web se voit demander un fichier de ce type, il exécute l'interpréteur au lieu de
 transmettre son contenu vers le client.
 </p>
@@ -235,8 +236,8 @@ on ne peut donc pas compter sur leur présence, leur format ou leur valeur d'un 
 <h3>Données GET</h3>
 
 <p class="textOnly">
-    Les données "GET" sont les paramètres passées à la page. Il s'agit d'une manière facile de 
-transmettre des informations directement dans une <b>URL</b> :
+    Les données "GET" sont des paramètres passées à la page. Il s'agit d'une manière de 
+transmettre une petite quantité d'informations directement dans une <b>URL</b> :
 </p>
 
 <p class="important">
