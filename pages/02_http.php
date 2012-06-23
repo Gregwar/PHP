@@ -252,7 +252,7 @@ tableau <code>$_GET</code> :
 <?php echo $slidey->highlight('files/02/get.php'); ?>
 
 <p>
-    <code>?x=42&amp;y=1337</code> est ce que l'on apelle une <em>Query String</em></code>
+    <code>x=42&amp;y=1337</code> est ce que l'on apelle une <em>Query String</em></code>
 </p>
 
 </div>
