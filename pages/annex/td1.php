@@ -9,11 +9,36 @@
 <p>
     Lorsque vous ignorez la signification d'une fonction <b>PHP</b>, comme par exemple <code>strlen</code>,
 rendez vous simplement à l'adresse <a href="http://php.net/strlen">http://php.net/strlen</a> (ajoutez votre
-fonction ou mot clé à la suite de <code>http://</code>). Vous arriverez alors soit directement sur la page de la fonction
-soit sur une liste de fonction et la recherche.
+fonction ou mot clé à la suite de <code>http://php.net</code>). Vous arriverez alors soit directement sur la page de la fonction
+soit sur une liste de fonction et éventuellement dans la recherche du site.
 </p>
 
-<?php echo $slidey->part('Exercice 1 : '); ?>
+<?php echo $slidey->part('Exercice 1 : Les bases'); ?>
+
+<h3>Environement</h3>
+
+<?php $n = 1; ?>
+
+<p>
+    <b><?php echo $n++; ?>. La ligne de commande</b><br />
+
+    L'intérpréteur <b>PHP</b> peut être utilisé en ligne de commande, ce qui vous permettra de prendre le langage
+en main et de faire des tests. Créez un fichier <code>hello.php</code> et placez-y le contenu suivant :<br />
+
+    <?php echo $slidey->highlight('files/01/hello_world_2.php'); ?>
+
+    Pour éxécutez votre code, lancez dans un terminal :<br />
+
+    <?php echo $slidey->highlightString('php hello.php', 'html'); ?>
+
+    Le message <code>Hello world!</code> devrait apparaître sur votre écran.
+</p>
+
+<p>
+    <b><?php echo $n++; ?>. Quelques exemples</b><br />
+    
+    Parcourez les exemples du dossier <code>exercice1/</code> et exécutez les.
+</p>
 
 <?php echo $slidey->part('Exercice 2 : Gestion d\'un magasin'); ?>
 
@@ -29,8 +54,10 @@ ligne de commande qui permet de naviguer parmis les produits.
 fonctionnement.
 </p>
 
+<?php $n = 1; ?>
+
 <p>
-    <b>Quel est l'interêt du tableau <code>$actions</code> ? Quelle(s) autre(s) méthode aurait pu être employée ?</b>
+    <b><?php echo $n++; ?>. Quel est l'interêt du tableau <code>$actions</code> ? Quelle(s) autre(s) méthode aurait pu être employée ?</b>
 
 <div class="spoiler">
     Ce tableau permet de faire la correspondance entre les actions données au script et les fonction à apeller.
@@ -41,7 +68,18 @@ maniabilité n'aurait pas été la même, en effet, l'usage est ainsi capable d'
 </p>
 
 <p>
-    <b>Lisez la documentation de <code>implode()</code>, à quoi sert cette fonction ? Comment effectuer l'opération inverse ?</b>
+    <b><?php echo $n++; ?>. Dans <code>store.php</code>, on observe des comparaisons utilisant trois signes = "<code>===</code>", à quoi cela
+sert t-il ?</b>
+
+<div class="spoiler">
+    Cette notation vous permet de comparer le contenu d'une variable ET de son type, par exemple :
+
+    <?php echo $slidey->highlight('files/01/compare.php'); ?>
+</div>
+</p>
+
+<p>
+    <b><?php echo $n++; ?>. Lisez la documentation de <code>implode()</code>, à quoi sert cette fonction ? Comment effectuer l'opération inverse ?</b>
 
 <div class="spoiler">
     <code>implode()</code> sert à concaténer les éléments d'un tableau à l'aide d'un séparateur. Cette fonction est très
@@ -51,7 +89,7 @@ obtenir un tableau depuis une telle chaîne.
 </p>
 
 <p>
-    <b>Observez de plus près l'appel à <code>call_user_func_array</code>,
+    <b><?php echo $n++; ?>. Observez de plus près l'appel à <code>call_user_func_array</code>,
     Est t-il possible de faire ce genre de chose dans un langage fortement typé tel que le C ou Java ? Pourquoi ?</b>
 
 <div class="spoiler">
@@ -61,7 +99,7 @@ interprété tel que le <b>PHP</B>.
 </p>
 
 <p>
-    <b>Essayez d'ajouter un produit à l'aide de la commande <code>php store add nom_du_produit quantité</code>. Comment la liste
+    <b><?php echo $n++; ?>. Essayez d'ajouter un produit à l'aide de la commande <code>php store.php add nom_du_produit quantité</code>. Comment la liste
 des produits est t-elle sauvegardée ?</b>
 
 <div class="spoiler">
@@ -72,9 +110,43 @@ et de <code>var_export()</code> qui permettent d'écrire la variable dans le fic
 
 <h3>Implémentation</h3>
 
+<?php $n = 1; ?>
+
+<p>
+    <b><?php echo $n++; ?>. Pouvoir enlever des produits</b><br />
+
+    Implémentez une commande "<code>php store.php remove [product] [quantity]</code>" qui enlève <code>quantity</code> produit de
+nom <code>product</code> du magasin.
+</p>
+
+<p>
+    <b><?php echo $n++; ?>. Import et export CSV</b><br />
+
+    Un fichier CSV est un tableau délimité du type :
+
+    <?php echo $slidey->highlight('files/01/example.csv', 'html'); ?>
+
+    A l'aide des fonctions <a href="http://php.net/fgetcsv">fgetcsv()</a> et <a href="php.net/fputcsv">fputcsv()</a>, ajoutez une commande "<code>php store.php import [fichier.csv]</code>"
+et "<code>php store.php export [fichier.csv]</code>" pour importer et exporter la liste des produits au format CSV.
+</p>
+
+<p>
+    <b><?php echo $n++; ?>. Ajout de description</b><br />
+
+    Modifiez le code de manière à ajouter une entrée "description" dans le tableau de chaque produit et ajoutez une commande 
+"<code>php store.php set-description product "description du produit"</code>" qui permet de définir la description d'un produit.
+</p>
+
+<p>
+    <b><?php echo $n++; ?>. Recherche de produits</b><br />
+
+    Créez une commande "<code>php store.php search [keyword]</code>" qui permet d'effectuer une recherche parmi les produits
+du magasin par nom ou description et qui affiche la liste des résultats.
+</p>
+
 <?php echo $slidey->part('Exercice 3 : Mandelbrot'); ?>
 
-<img class="right" src="<?php echo \Gregwar\Image\Image::open('img/mandelbrot.png')
+<img class="right" src="<?php echo $slidey->image('img/mandelbrot.png')
     ->resize(200)
     ->guess();
 ?>" title="L'ensemble de mandelbrot">

@@ -4,11 +4,9 @@
 <?php echo $slidey->part('Introduction : qu\'est-ce que PHP ?'); ?>
 <h3>Présentation</h3>
 
-<center>
-    <img class="right" src="<?php echo $slidey->image('img/php.png')
-	->resize(300)
-	->guess(); ?>" title="Logo PHP" />
-</center>
+<img class="right" src="<?php echo $slidey->image('img/php.png')
+    ->resize(300)
+    ->guess(); ?>" title="Logo PHP" />
 
 <p class="textOnly">
     <b>PHP</b> est l'acronyme récursif de <b>PHP: Hypertext Preprocessor</b>, datant
@@ -387,4 +385,5 @@ répértoire actuel :
 <?php echo $slidey->highlight('files/01/include_dir.php'); ?>
 </div>
 
+<?php echo $slidey->part('TD'); ?>
 <?php echo $slidey->annex('annex/td1.php'); ?>
