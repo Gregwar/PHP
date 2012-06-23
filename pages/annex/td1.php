@@ -37,7 +37,8 @@ en main et de faire des tests. Créez un fichier <code>hello.php</code> et place
 <p>
     <b><?php echo $n++; ?>. Quelques exemples</b><br />
     
-    Parcourez les exemples du dossier <code>exercice1/</code> et exécutez les.
+    Parcourez les exemples du dossier <code>exercice1/</code>, lisez bien les commentaires et explications
+et exécutez les pour en comprendre le comportement.
 </p>
 
 <?php echo $slidey->part('Exercice 2 : Gestion d\'un magasin'); ?>
