@@ -148,7 +148,7 @@ du magasin par nom ou description et qui affiche la liste des résultats.
 <?php echo $slidey->part('Exercice 3 : Mandelbrot'); ?>
 
 <img class="right" src="<?php echo $slidey->image('img/mandelbrot.png')
-    ->resize(400)
+    ->resize(450)
     ->guess();
 ?>" title="L'ensemble de mandelbrot">
 
