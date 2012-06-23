@@ -67,10 +67,10 @@ le protocole <b>HTTP</b> basé sur la couche <b>TCP/IP</b> de la machine.
 </p>
 <p class="textOnly">
     Il envoie ensuite une <b>requête HTTP</b>, qui est constituée d'un ensemble d'en-têtes
-et éventuellement de données contenant :
+et éventuellement de données pouvant contenir :
 </p>
 <p class="slideOnly">
-    Une <b>requête HTTP</b> formée par un navigateur ou client contient :
+    Une <b>requête HTTP</b> formée par un navigateur ou client peut contenir :
 </p>
 <ul>
     <li>Le nom de la resource demandée</li>
@@ -94,7 +94,7 @@ des en-têtes et éventuellement des données :
 </p>
 <ul>
     <li>Un code de réponse (200, 404, 403, 302...)</li>
-    <li>Des définitions de cookies<li>
+    <li>Des définitions de cookies</li>
     <li>Un type de contenu (html, jpeg, css ...)</li>
     <li>Eventuellement des données</li>
     <li>Des informations supplémentaires sur le serveur, le mode de connexion, etc.</li>
