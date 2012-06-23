@@ -90,7 +90,7 @@ la resource demandée et lui répond en lui transférant sous une forme très re
 des en-têtes et éventuellement des données :
 </p>
 <p class="slideOnly">
-    Une <b>réponse HTTP</b> formée par un serveur contient :
+    Une <b>réponse HTTP</b> formée par un serveur peut contenir :
 </p>
 <ul>
     <li>Un code de réponse (200, 404, 403, 302...)</li>
