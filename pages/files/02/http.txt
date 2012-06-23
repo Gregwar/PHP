@@ -1,0 +1,8 @@
+> GET /hello.txt HTTP/1.0
+> Host: gregwar.com
+> 
+< HTTP/1.1 200 OK
+< Content-Length: 13
+< Content-Type: text/plain
+< 
+< Hello world!

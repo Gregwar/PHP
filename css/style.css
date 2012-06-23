@@ -16,3 +16,17 @@
     color:#29c916;
     font-style:italic;
 }
+
+.important {
+    text-align:center;
+    font-size:130%;
+}
+
+.center {
+    text-align:center;
+}
+
+.warning {
+    color:#c13131;
+    font-style:italic;
+}
