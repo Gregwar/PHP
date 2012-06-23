@@ -127,7 +127,7 @@ nom <code>product</code> du magasin.
 
     <?php echo $slidey->highlight('files/01/example.csv', 'html'); ?>
 
-    A l'aide des fonctions <a href="http://php.net/fgetcsv">fgetcsv()</a> et <a href="php.net/fputcsv">fputcsv()</a>, ajoutez une commande "<code>php store.php import [fichier.csv]</code>"
+    A l'aide des fonctions <a href="http://php.net/fgetcsv">fgetcsv()</a> et <a href="http://php.net/fputcsv">fputcsv()</a>, ajoutez une commande "<code>php store.php import [fichier.csv]</code>"
 et "<code>php store.php export [fichier.csv]</code>" pour importer et exporter la liste des produits au format CSV.
 </p>
 
