@@ -1,7 +1,7 @@
 Cours de PHP
 ============
 
-Les basiques de PHP
+Les basiques de PHP 
     * Qu'est-ce que PHP ?
     * Installation et configuration (php.ini)
     * Variables
@@ -19,7 +19,7 @@ HTTP et binding CGI
     * Présentation du protocole HTTP
     * Comment PHP est t-il utilisé pour faire du web ?
     * Variables superglobales
-        - Query String, get et post
+        - Path_Info, Query String, get et post
     * En-têtes HTTP
         - Cookies
         - Sessions
@@ -39,15 +39,6 @@ Programmation orientée objet
     * Les interfaces
     * Méthodes magiques
 
-Notions avancées
-    * Espaces de nom
-        - Fonctionnement et principe
-        - L'autoloader
-    * Fonctions anonymes
-    * Exceptions
-    * Reflexion et méta-programmation
-    * Notions de Traits
-
 Les bases de données
     * PHP et PDO
         - Etablir une connexion
@@ -58,6 +49,17 @@ Les bases de données
         - Colonnes, clé primaires & étrangères
         - Requêtage
     * Introduction aux ORM (aperçu de Doctrine2)
+
+Notions avancées
+    * Espaces de nom
+        - Fonctionnement et principe
+        - L'autoloader
+    * Fonctions anonymes
+    * Exceptions
+    * Reflexion et méta-programmation
+    * Notions de Traits
+    * Sérialization
+    * Quelques design patterns
 
 Bonnes pratiques
     * Convention de codage
