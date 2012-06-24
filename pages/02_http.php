@@ -254,7 +254,64 @@ tableau <code>$_GET</code> :
 <p>
     <code>x=42&amp;y=1337</code> est ce que l'on apelle une <em>Query String</em></code>
 </p>
+</div>
+
+<div class="slide">
+<h3>Les formulaires</h3>
+
+<p class="textOnly">
+    Les formulaires représentent à eux seuls une partie très importante du développement d'un site
+web. De manière générale, ils constituent la plus grosse partie de l'intéraction entre l'utilisateur
+et les données stockées sur le serveur.
+</p>
+
+<p class="textOnly">
+    Afin de proposer un formulaire à ses utilisateurs, il faut d'abord leur envoyer le formulaire
+lui même, ce dernier peut être représenté facilement en HTML :
+</p>
+
+<?php echo $slidey->highlight('files/02/form.html', 'html5'); ?>
+
+<center>
+    <img src="<?php echo $slidey->image('img/form.jpg')->forceResize(900); ?>" />
+</center>
 
 </div>
 
+<div class="slide">
+<h3 class="slideOnly">GET vs POST</h3>
+<p class="textOnly">
+    L'attribut <code>method</code> de la balise <code>&lt;form&gt;</code> peut être définit à
+<code>get</code> ou à <code>post</code>. Ce choix détermine la manière dont les données du formulaire
+vont être transmise au serveur, dans le cas de <code>get</code>, les paramètres seront passés dans
+l'<b>URL</b> comme vu précédemment :
+</p>
+
+<?php echo $slidey->highlight('files/02/form_get.txt'); ?>
+
+<p class="textOnly">
+    Dans le cas de <code>post</code>, les donnée seront alors transmises dans la partie "données"
+de la requête. Cette méthode est largement préférable pour l'écriture de formulaires :
+</p>
+
+<hr class="slideOnly" />
+
+<?php echo $slidey->highlight('files/02/form_post.txt'); ?>
+
+<p class="textOnly">
+    Comme vous le constatez, la méthode <b>HTTP</b> utilisée est alors <code>POST</code>
+</p>
+
+</div>
+
+<div class="slide">
+<h3 class="slideOnly">Récupération des valeurs POST</h3>
+<p class="textOnly">
+    Lors de la récéption d'une requête <code>POST</code>, <b>PHP</b> mettra à votre disposition 
+le tableau superglobal <code>$_POST</code> qui contiendra les associations clé/valeurs postées
+par l'utilisateur :
+</p>
+
+<?php echo $slidey->highlight('files/02/post.php'); ?>
+</div>
 
