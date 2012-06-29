@@ -30,3 +30,7 @@
     color:#c13131;
     font-style:italic;
 }
+
+.slideEnabled .warning {
+    margin-top:50px;
+}
