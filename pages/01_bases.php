@@ -386,4 +386,4 @@ répértoire actuel :
 </div>
 
 <?php echo $slidey->part('TD'); ?>
-<?php echo $slidey->annex('annex/td1.php'); ?>
+<?php echo $slidey->annex('tds/td1.php'); ?>

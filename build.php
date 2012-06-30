@@ -15,7 +15,8 @@ $slidey->template->footer = file_get_contents('license.htm');
  * Adding custom directories
  */
 $slidey->copy('css');
-$slidey->copy('files');
+$slidey->mkdir('files');
+$slidey->copy('files/*.zip', 'files/');
 $slidey->copy('static/favicon.ico');
 
 $slidey->build('../php');

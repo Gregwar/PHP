@@ -485,4 +485,8 @@ jeter son jeton de sécurité, le compteur repartira alors à 0.
 
 </div>
 
+<div class="slide">
+<?php echo $slidey->part('TD'); ?>
 
+<?php echo $slidey->annex('tds/td2.php'); ?>
+</div>
