@@ -85,3 +85,13 @@ utilisant le type de champ HTML5 <code>email</code>, le client pourra toujours t
 requête <code>POST</code>. C'est pour cela qu'il <u>faut impérativement</u> vérifier coté serveur que l'adresse fournie est
 bien formée, vous pourrez utiliser la fonction <b>PHP</b> <a href="http://php.net/filter_var"><code>filter_var()</code></a>.
 </p>
+
+<?php echo $slidey->part('Exercice 3 : Sécurisation'); ?>
+
+<p>
+    Le dossier <code>exercice3/</code> contient une page web dont l'accès devrait être sécurisé. A l'aide d'un formulaire et
+des sessions <b>PHP</b>, sécurisez l'accès à la page pour que les utilisateurs présents dans le fichier <code>users.php</code>
+puissent s'idientifier avec leurs mots de passe. Pour inclure <code>users.php</code>, vous pourrez utiliser la notation&nbsp;:
+</p>
+
+<?php echo $slidey->highlight('files/02/include_return.php'); ?>

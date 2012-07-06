@@ -223,6 +223,18 @@ normalement.
 </div>
 
 <div class="slide">
+<h3 class="slideOnly">Exemple de structure</h3>
+
+<p class="textOnly">
+    Il est par exemple parfaitement possible d'ouvrir et de fermer des structures de contrôles et de poursuivre
+le document comme ceci&nbsp;:
+</p>
+
+<?php echo $slidey->highlight('files/02/structure.php'); ?>
+
+</div>
+
+<div class="slide">
 <h3>Variables superglobales</h3>
 
 <p>
