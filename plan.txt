@@ -32,6 +32,7 @@ Programmation orientée objet
         - Visibilité
         - self/parent/static
         - Classes abstraites
+    * Espaces de nom
     * Clonage
     * Type hinting
     * Serialisation
@@ -51,7 +52,6 @@ Les bases de données
     * Introduction aux ORM (aperçu de Doctrine2)
 
 Notions avancées
-    * Espaces de nom
         - Fonctionnement et principe
         - L'autoloader
     * Fonctions anonymes
@@ -64,7 +64,7 @@ Notions avancées
 Bonnes pratiques
     * Convention de codage
     * Tests unitaires, serveur d'intégration
-    * Utiliser la mise en cache
+    * Utiliser la mise en cache (APC)
     * Gérer les URLs
         - Réécriture d'URL
         - Routage
@@ -72,10 +72,14 @@ Bonnes pratiques
         - UTF8
         - Echappement HTML
     * De la sécurité
+        - HTTPS
+        - Visibilité des pages
+        - Dangers liés à l'upload de fichiers
         - Attention à l'inclusion
-        - Failles XSS
+        - Failles XSS (échappement, httponly)
         - Failles CSRF
         - Injections SQL
+        - Hachage des mots de passes
 
 Présentation du framework Symfony2
     * Le modèle MVC
