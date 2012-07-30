@@ -10,10 +10,11 @@ include('controller.php');
     </head>
     <body>
         <h1>Arena</h1>
-        <h2>Combat</h2>
+        <a href="?action=reset">Réinitialiser</a>
 
+        <h2>Combat</h2>
         <?php if ($winner) { ?>
-            <?php echo $winner; ?> a gagné ! <a href="?action=reset">Réinitialiser</a>
+            <?php echo $winner; ?> a gagné !
         <?php } else { ?>
             <?php foreach ($fight->creatures as $creature) { ?>
                 <div class="creature">
