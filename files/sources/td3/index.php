@@ -18,7 +18,7 @@ include('controller.php');
         <?php } else { ?>
             <?php foreach ($fight->creatures as $creature) { ?>
                 <div class="creature">
-                <img src="img/<?php echo $creature->getName(); ?>.jpg" />
+                <img src="images/<?php echo $creature->getName(); ?>.jpg" />
                 <span class="name"><?php echo $creature; ?></span><br />
                 <div class="life"><div class="life_inside" style="width:<?php echo $creature->getLife(); ?>px;"></div></div>
                 </div>

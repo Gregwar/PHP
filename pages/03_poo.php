@@ -292,7 +292,7 @@ d'obtenir un objet à partir d'une chaîne sérialisée&nbsp;:
 <p class="textOnly">
     Il existe en <b>PHP</b> des <a href="http://fr.php.net/manual/en/language.oop5.magic.php">
 méthodes dites "<em>magiques</em>"</a>. Ces dernières peuvent par exemple permettre de
-surcharger l'accès à un attribut même s'il n'existe pas&nbsp;:
+surcharger l'accès à un attribut ou une méthode même s'il/elle n'existe pas&nbsp;:
 </p>
 
 <table>
@@ -314,6 +314,9 @@ surcharger l'accès à un attribut même s'il n'existe pas&nbsp;:
     </tr>
 </table>
 
-
 </div>
+
+<?php echo $slidey->part('TD'); ?>
+
+<?php echo $slidey->annex('tds/td3.php'); ?>
 
