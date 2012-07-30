@@ -1,0 +1,60 @@
+* {
+    padding:0;
+    margin:0;
+}
+
+li {
+    margin-left:20px;
+    list-style:circle;
+}
+
+body {
+    width:800px;
+    margin-top:10px;
+    margin:auto;
+    font-family:Sans-serif;
+}
+
+h2 {
+    margin-top:20px;
+    margin-bottom:10px;
+    clear:both;
+}
+
+a {
+    color:#c00;
+}
+
+a:hover {
+    color:#000;
+}
+
+ul {
+    margin-top:10px;
+}
+
+.creature {
+    width:100px;
+    height:150px;
+    float:left;
+    margin:5px;
+    text-align:center;
+}
+
+.creature .name {
+    font-size:12px;
+}
+
+.creature .life {
+    width:100px;
+    border:1px solid #999;
+    background-color:#ccc;
+    height:10px;
+    border-radius:3px;
+    overflow:hidden;
+}
+
+.creature .life_inside {
+    height:10px;
+    background-color:green;
+}
