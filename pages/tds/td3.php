@@ -103,7 +103,7 @@ comprenez ce qu'est le <code>PATH_INFO</code> et comment il fonctionne.
 
 <b><?php echo $n++; ?>. Arguments</b><br />
 <p>
-    A quoi sert le <code>\</code> devant <code>\Closure</code> ? Indices : enlevez le et observez les
+    A quoi sert le <code>\</code> devant <code>\Closure</code> ? Indice : enlevez le et observez les
 erreurs.
 </p>
 
