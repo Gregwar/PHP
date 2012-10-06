@@ -30,8 +30,12 @@ class Router
     /**
      * Effectue le routage
      */
-    public function route($path)
+    public function route($path = null)
     {
+        if ($path === null) {
+            $path = $_SERVER['PATH_INFO'];
+        }
+
         if (!$path) {
             $path = '/';
         }

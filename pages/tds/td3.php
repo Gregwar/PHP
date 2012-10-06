@@ -4,11 +4,14 @@
 <p>
     Vous trouverez l'ensemble du code de ce TD dans <a href="files/td3.zip">td3.zip</a>.
 Vous aurez besoin de déployer son contenu sur un espace web disposant de l'intérpréteur
-<b>PHP</b>. Pensez à créer un répértoire <code>data</code> avec les droits en écriture 
-(<code>chmod 777 data</code> par exemple).
+<b>PHP</b>. 
 </p>
 
 <?php echo $slidey->part('Exercice 1 : une arène'); ?>
+
+Lisez et déployez le code du dossier <code>arena/</code>.
+Pensez à créer un répértoire <code>data</code> avec les droits en écriture 
+(<code>chmod 777 data</code> par exemple).
 
 <h3>Compréhension</h3>
 <p>
@@ -85,4 +88,46 @@ méthode <code>getEntries()</code> sur le logger pour afficher l'ensemble des ac
 
 <?php echo $slidey->part('Exercice 2 : Le routeur'); ?>
 
+Un routeur est un composant clé dans une application web, car il est responsable de l'attribution
+des requêtes à une certaine méthode (ou contrôlleur. Lisez le code contenu dans le dossier <code>router/</code>.
+
+<h3>Compréhension</h3>
+
+<?php $n = 1; ?>
+
+<b><?php echo $n++; ?>. PATH_INFO</b><br />
+<p>
+    A l'aide de la page de documentation de la variable <a href="http://php.net/_SERVER">$_SERVER</a>,
+comprenez ce qu'est le <code>PATH_INFO</code> et comment il fonctionne.
+</p>
+
+<b><?php echo $n++; ?>. Arguments</b><br />
+<p>
+    A quoi sert le <code>\</code> devant <code>\Closure</code> ? Indices : enlevez le et observez les
+erreurs.
+</p>
+
+<b><?php echo $n++; ?>. $$</b><br />
+<p>
+    Observez de plus près la méthode <code>render()</code>, à quoi sert la notation <code>$$</code> ?
+</p>
+
+<b><?php echo $n++; ?>. call_user_func_array</b><br />
+<p>
+    Dans <code>Rule.php</code>, la méthode <code>call_user_func_array()</code> est utilisée, lisez sa documentation
+pour en comprendre le fonctionnement.
+</p>
+
+<h3>Intégration</h3>
+
+<p>
+    Créez un nouveau dossier en copiant <code>arena/</code> et incluez y le routeur pour effectuer les
+actions au lieu d'utiliser les paramètres <code>GET</code>.
+</p>
+
+<p>
+    <em>Note: il ne vous est pas demandé d'utiliser des templates, mais uniquement de mettre en place
+le routeur dans le code de l'exercice précédent, cette intégration peut en fait être réalisée en quelques
+minutes.</em>
+</p>
 

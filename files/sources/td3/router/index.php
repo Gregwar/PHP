@@ -3,6 +3,7 @@ include('Router/autoload.php');
 
 $router = new Router\Router;
 
+// Rendu d'une page
 function render($page, $variables)
 {
     global $router;
@@ -15,7 +16,7 @@ function render($page, $variables)
 }
 
 // Page d'accueil
-$router->register('index', '/', function() {
+$router->register('home', '/', function() {
     render('home');
 });
 
@@ -24,13 +25,13 @@ $router->register('hello', '/hello/*', function($name) {
     render('hello', array('name' => $name));
 });
 
-// Page par défaut dans le cas échéant
+// Route par défaut dans le cas ou aucune autre n'a été trouvée
 $router->fallback(function() {
     render('404');
 });
 
 try {
-    $router->route($_SERVER['PATH_INFO']);
+    $router->route();
 } catch (\Exception $e)  {
     echo 'Erreur: ' . $e->getMessage();
 }

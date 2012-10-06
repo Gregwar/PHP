@@ -48,7 +48,7 @@ class Rule
             $url .= $parts[$position++];
             $url .= $parameter;
         }
-        for (; $position<count($pats); $position++) {
+        for (; $position<count($parts); $position++) {
             $url .= $parts[$position];
         }
 

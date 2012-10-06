@@ -6,8 +6,8 @@ include('controller.php');
     <head>
         <meta charset="utf-8" />
         <title>Arena</title>
-        <link rel="stylesheet" type="text/css" href="style.css" />
-        <link rel="shortcut icon" href="favicon.ico" />
+        <link rel="stylesheet" type="text/css" href="<?php echo $root; ?>/style.css" />
+        <link rel="shortcut icon" href="<?php echo $root; ?>/favicon.ico" />
     </head>
     <body>
         <h1>Arena</h1>
@@ -19,7 +19,7 @@ include('controller.php');
         <?php } else { ?>
             <?php foreach ($fight->creatures as $creature) { ?>
                 <div class="creature">
-                <img src="images/<?php echo $creature->getName(); ?>.jpg" />
+                <img src="<?php echo $root; ?>/images/<?php echo $creature->getName(); ?>.jpg" />
                 <span class="name"><?php echo $creature; ?></span><br />
                 <div class="life"><div class="life_inside" style="width:<?php echo $creature->getLife(); ?>px;"></div></div>
                 </div>

@@ -6,6 +6,8 @@ use Arena\Creature\Wizard;
 use Arena\Fight\Fight;
 use Arena\Fight\FightLoader;
 
+$root = dirname($_SERVER['SCRIPT_NAME']);
+
 /**
  * Initialisation du combat
  */
