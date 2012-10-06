@@ -6,7 +6,9 @@ class A
 }
 
 if (file_exists('a.txt')) {
-    $a = unserialize(file_get_contents('a.txt'));
+    $a = unserialize(
+        file_get_contents('a.txt')
+    );
 } else {
     $a = new A;
 }

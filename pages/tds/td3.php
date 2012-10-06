@@ -8,7 +8,9 @@ Vous aurez besoin de déployer son contenu sur un espace web disposant de l'int�
 (<code>chmod 777 data</code> par exemple).
 </p>
 
-<?php echo $slidey->part('Exercice 1 : Compréhension'); ?>
+<?php echo $slidey->part('Exercice 1 : une arène'); ?>
+
+<h3>Compréhension</h3>
 <p>
     Tout d'abord, testez et lisez le code source.
 </p>
@@ -19,6 +21,11 @@ Vous aurez besoin de déployer son contenu sur un espace web disposant de l'int�
     <b><?php echo $n++; ?>. Persistence</b><br />
     Comment les données du combat sont t-elles persistées d'une requête sur l'autre ?<br />
     Quels sont les avantages/défauts de cette technique ?
+</p>
+
+<p>
+    <b><?php echo $n++; ?>. Opérateur ?:</b><br />
+    Remarquez l'utilisation de l'opérateur <code>?:</code>, à quoi sert t-il ?
 </p>
 
 <p>
@@ -34,7 +41,7 @@ et d'éviter beaucoup de problèmes tout en bénéficiant d'une inclusion "fain�
 à dire uniquement des classes utilisées dans l'application.
 </p>
 
-<?php echo $slidey->part('Exercice 2 : Quelques modifications'); ?>
+<h3>Quelques modifications</h3>
 
 <?php $n = 1; ?>
 
@@ -55,7 +62,7 @@ disposant des attaques <code>Tackle</code> et <code>Vampirism</code>.
 dans <code>controller.php</code>) pour remplacer un des combattant par un vampire.
 </p>
 
-<?php echo $slidey->part('Exercice 3 : Incorporation du Logger'); ?>
+<h3>Incorporation d'un logger</h3>
 
 <p>
     Comme vous pourrez l'observer, les attaques sont actuellement muettes, nous aimerions pouvoir
@@ -75,4 +82,7 @@ méthode <code>getEntries()</code> sur le logger pour afficher l'ensemble des ac
     Attention, votre logger ne doit pas être sérialisé ! Il faudra pour cela utiliser la méthode magique
 <code><a href="http://php.net/__sleep">__sleep()</a></code> de <b>PHP</b>
 </p>
+
+<?php echo $slidey->part('Exercice 2 : Le routeur'); ?>
+
 

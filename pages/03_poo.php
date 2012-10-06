@@ -316,6 +316,17 @@ surcharger l'accès à un attribut ou une méthode même s'il/elle n'existe pas&
 
 </div>
 
+<div class="slide">
+<h3>L'autoloader</h3>
+
+<p>
+L'autoloading est un mécanisme apparu dans <b>PHP 5.3</b> qui permet d'exécuter du code
+au moment ou une classe est demandée et qu'elle n'est pas chargée dans le but de la charger
+dynamiquement.
+</p>
+
+</div>
+
 <?php echo $slidey->part('TD'); ?>
 
 <?php echo $slidey->annex('tds/td3.php'); ?>
