@@ -60,6 +60,8 @@ Notions avancées
     * Notions de Traits
     * Sérialization
     * Quelques design patterns
+        - MVC
+        - Inversion de contrôle
 
 Bonnes pratiques
     * Convention de codage
@@ -82,7 +84,6 @@ Bonnes pratiques
         - Hachage des mots de passes
 
 Présentation du framework Symfony2
-    * Le modèle MVC
     * Avantages de l'utilisation d'un framework
         - ORM
         - Moteur de template

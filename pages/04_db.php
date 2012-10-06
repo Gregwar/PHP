@@ -130,8 +130,60 @@ et les états incohérents pourront être évités.
 </p>
 </div>
 
+<div class="slide">
 <?php echo $slidey->part('Les ORM'); ?>
 
-<p>
-    A venir
+<h3>Présentation</h3>
+
+<center>
+    <img src="<?php echo $slidey->image('img/orm.jpg')->resize(650)->jpeg(); ?>" />
+</center>
+
+<p class="textOnly">
+    Un <b>ORM</b>, pour Object Relational Mapping, désigne le fait de réaliser un <em>mapping</em>,
+ou une association entre le monde relationnel (tables, lignes, champs ...) et le monde objet
+(classes, instances, attributs ...).
 </p>
+
+<p class="textOnly">
+    Ce mapping est généralement fait à l'aide de fichiers de configuration ou d'annotations.
+</p>
+
+</div>
+
+<div class="slide">
+<h3>Correspondance</h3>
+<p>
+    <table>
+        <tr>
+            <th>Relationnel</th>
+            <th>Objet</th>
+        </tr>
+        <tr>
+            <td>Table</td>
+            <td>Classe</td>
+        </tr>
+        <tr>
+            <td>Ligne</td>
+            <td>Instance</td>
+        </tr>
+        <tr>
+            <td>Colonne</td>
+            <td>Attribut</td>
+        </tr>
+        <tr>
+            <td>Clé étrangère</td>
+            <td>Référence</td>
+        </tr>
+    </table>
+</p>
+</div>
+
+<div class="slide">
+<h3>Utilisation</h3>
+
+<p>
+    L'<b>ORM</b> se base sur la notion d'entité, qui sont des classes mappées avec la base
+de données (correspondance avec les tables).
+</p>
+</div>
