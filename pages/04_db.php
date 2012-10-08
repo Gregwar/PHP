@@ -161,7 +161,7 @@ ou une association entre le monde relationnel (tables, lignes, champs ...) et le
         </tr>
         <tr>
             <td>Table</td>
-            <td>Classe</td>
+            <td>Classe (ou entité)</td>
         </tr>
         <tr>
             <td>Ligne</td>
@@ -177,6 +177,12 @@ ou une association entre le monde relationnel (tables, lignes, champs ...) et le
         </tr>
     </table>
 </p>
+
+<p>
+    <em>
+        Cette correspondance ressort si l'on compare un schéma entité association (MCD) avec un schéma UML.
+    </em>
+</p>
 </div>
 
 <div class="slide">
@@ -186,4 +192,17 @@ ou une association entre le monde relationnel (tables, lignes, champs ...) et le
     L'<b>ORM</b> se base sur la notion d'entité, qui sont des classes mappées avec la base
 de données (correspondance avec les tables).
 </p>
+
+<p>
+Les avantages sont notamment&nbsp;:
+</p>
+<ul>
+    <li>La persistence des objets</li>
+    <li>Le requêtage, parfois à travers une couche d'abstraction supplémentaire</li>
+    <li>La notion de transaction est préservée</li>
+    <li>La création et la mise à jour de la structure de la base de données à partir de la définition des entités</li>
+    <li>Possibilité de faire abstraction du système de gestion de base de données sous-jacent</li>
+</ul>
 </div>
+
+
