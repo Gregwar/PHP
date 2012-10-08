@@ -6,8 +6,14 @@
  * - Utilisateur
  * - Mot de passe
  */
-return new PDO(
-    'mysql:dbname=user;host=127.0.0.1',
-    'user', 
-    'pass'
-);
+try {
+    return new PDO(
+        'mysql:dbname=user;host=127.0.0.1',
+        'user', 
+        'pass'
+    );
+} catch (PDOException $exception) {
+    echo 'Erreur: '.$exception->getMessage()
+        ."\n";
+    exit(1);
+}
