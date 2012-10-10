@@ -39,6 +39,8 @@ Programmation orientée objet
     * Passage par référence
     * Les interfaces
     * Méthodes magiques
+    * Exceptions
+    * Méta programmation
 
 Les bases de données
     * PHP et PDO
@@ -50,18 +52,6 @@ Les bases de données
         - Colonnes, clé primaires & étrangères
         - Requêtage
     * Introduction aux ORM (aperçu de Doctrine2)
-
-Notions avancées
-        - Fonctionnement et principe
-        - L'autoloader
-    * Fonctions anonymes
-    * Exceptions
-    * Reflexion et méta-programmation
-    * Notions de Traits
-    * Sérialization
-    * Quelques design patterns
-        - MVC
-        - Inversion de contrôle
 
 Bonnes pratiques
     * Convention de codage

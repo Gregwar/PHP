@@ -115,6 +115,32 @@ la notation "<code>implements</code> (interface)"&nbsp;:
 </div>
 
 <div class="slide">
+<h3>Exceptions</h3>
+
+<p class="textOnly">
+    Comme la plupart des langages orienté objet, <b>PHP</b> propose un mécanisme d'<a href="http://php.net/Exceptions">exceptions</a>
+permettant d'affiner la gestion d'erreur&nbsp;:
+</p>
+
+<?php echo $slidey->highlight('files/03/exception.php'); ?>
+</div>
+
+<div class="slide">
+<h3 class="slideOnly">Exception personalisée</h3>
+<p class="textOnly">
+    <b>PHP</b> vous offre également la possibilité de surcharger les classes d'exception, dont <code>Exception</code> est
+la "racine" pour créer vos propres types d'exceptions&nbsp;:
+</p>
+
+<?php echo $slidey->highlight('files/03/exception2.php'); ?>
+
+<p class="textOnly">
+    Comme vous le constatez, les exceptions peuvent être capturées avec un certain ordre de priorité.
+</p>
+
+</div>
+
+<div class="slide">
 <h3>Remarques</h3>
 <p class="textOnly">
     <b>PHP</b> ne supporte pas le polymorphisme, méthodes ayant le même nom mais des prototypes
@@ -323,6 +349,10 @@ surcharger l'accès à un attribut ou une méthode même s'il/elle n'existe pas&
 L'autoloading est un mécanisme apparu dans <b>PHP 5.3</b> qui permet d'exécuter du code
 au moment ou une classe est demandée et qu'elle n'est pas chargée dans le but de la charger
 dynamiquement.
+</p>
+
+<p>
+    Voir <a href="http://php.net/spl_autoload_register"><code>spl_autoload_register()</code></a>
 </p>
 
 </div>

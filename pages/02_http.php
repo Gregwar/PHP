@@ -465,7 +465,7 @@ sont donc sécurisées.
 <p class="slideOnly discover">
     Principe des sessions&nbsp;:
 
-    <ul>
+    <ul class="slideOnly">
         <li class="discover">"Jeton" de sécurité: <em>sessid</em></li>
         <li class="discover">Base de donnée ou fichiers coté serveur</li>
     </ul>
