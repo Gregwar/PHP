@@ -218,6 +218,31 @@ des données structurées, indexées et facile d'accès.
 </div>
 
 <div class="slide">
+<h3>Valeur null</h3>
+<p>
+    <b>PHP</b> propose une valeur spéciale <code>null</code>, qu'il ne faut pas confondre
+avec <code>false</code>, ni avec l'absence même de définition d'une variable&nbp;:
+</p>
+
+<?php echo $slidey->highlight('files/01/null.php'); ?>
+</div>
+
+<div class="slide">
+<h3>Comparaison</h3>
+<p>
+    <b>PHP</b> propose deux opérations de comparaisons, avec <code>==</code> et <code>!=</code>
+ou avec <code>===</code> et <code>!==</code>, qui sont respectivement "laxiste" et "strictes"&nbsp;:
+</p>
+
+<?php echo $slidey->highlight('files/01/compare.php'); ?>
+
+<p class="textOnly">
+    En fait, les valeurs <code>""</code>, <code>null</code>, <code>false</code> ou encore <code>0</code>
+sont par exemple équivalentes en comparaison laxiste, mais pas en strict.
+</p>
+</div>
+
+<div class="slide">
 <h3>Le switch/case</h3>
 <p>
     <b>PHP</b> comporte également le <code>switch()/case</code> :
