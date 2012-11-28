@@ -114,6 +114,10 @@ dans votre terminal :
 
     <?php echo $slidey->highlight('files/01/use.sh', 'html'); ?>
 </p>
+<p>
+    Il est également possible d'utiliser <b>PHP</b> en mode interactif pour réaliser
+des tests, à l'aide de la commande <code>php -a</code>.
+</p>
 </div>
 
 <div class="textOnly">
