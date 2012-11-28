@@ -1,12 +1,12 @@
 <?php return array (
-  'toto' => 
+  'chaussures' => 
   array (
-    'price' => NULL,
+    'price' => 17.99,
     'quantity' => 37,
   ),
-  'titi' => 
+  'porte-clef' => 
   array (
-    'price' => NULL,
+    'price' => 2.45,
     'quantity' => 12,
   ),
 );

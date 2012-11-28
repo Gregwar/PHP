@@ -19,7 +19,7 @@ function storeList()
     echo "Liste des produits :\n";
 
     foreach ($products as $name => $infos) {
-        printf("* %s, quantité: %d, prix: %d\n", $name, $infos['quantity'], $infos['price']);
+        printf("* %s, quantité: %d, prix: %g\n", $name, $infos['quantity'], $infos['price']);
     }
 }
 
