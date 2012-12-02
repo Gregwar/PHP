@@ -22,7 +22,7 @@ function createFight()
 /**
  * Initialisation/récupération du combat
  */
-$loader = new FightLoader(__DIR__ . '/data/fight.data');
+$loader = new FightLoader('/tmp/' . sha1('arena|'.__DIR__));
 $fight = $loader->loadFight() ?: createFight();
 
 /**
