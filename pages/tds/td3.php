@@ -89,7 +89,7 @@ méthode <code>getEntries()</code> sur le logger pour afficher l'ensemble des ac
 <?php echo $slidey->part('Exercice 2 : Le routeur'); ?>
 
 Un routeur est un composant clé dans une application web, car il est responsable de l'attribution
-des requêtes à une certaine méthode (ou contrôlleur. Lisez le code contenu dans le dossier <code>router/</code>.
+des requêtes à une certaine méthode (ou contrôlleur). Lisez le code contenu dans le dossier <code>router/</code>.
 
 <h3>Compréhension</h3>
 
@@ -114,8 +114,8 @@ erreurs.
 
 <b><?php echo $n++; ?>. call_user_func_array</b><br />
 <p>
-    Dans <code>Rule.php</code>, la méthode <code>call_user_func_array()</code> est utilisée, lisez sa documentation
-pour en comprendre le fonctionnement.
+    Souvenez vous du premier TD et de la méthode <code>call_user_func_array()</code>, qui est utilisée ici,
+consultez éventuellement la documentation à nouveau pour en comprendre le fonctionnement.
 </p>
 
 <h3>Intégration</h3>
