@@ -10,8 +10,6 @@ Vous aurez besoin de déployer son contenu sur un espace web disposant de l'int�
 <?php echo $slidey->part('Exercice 1 : une arène'); ?>
 
 Lisez et déployez le code du dossier <code>arena/</code>.
-Pensez à créer un répértoire <code>data</code> avec les droits en écriture 
-(<code>chmod 777 data</code> par exemple).
 
 <h3>Compréhension</h3>
 <p>
