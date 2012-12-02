@@ -103,6 +103,27 @@ sont différentes.
 </div>
 
 <div class="slide">
+<h3>Classes abstraites</h3>
+<p class="textOnly">
+<b>PHP</b> vous permet de déclarer des classes ou des méthodes comme abstraites à l'aide du mot clé
+<code>abstract</code>. Si au moins une méthode d'une classe est abstraite, ou que la classe
+est marquée elle même comme abstraite, elle ne pourra pas être instanciée&nbsp;:
+</p>
+
+<?php echo $slidey->highlight('files/03/abstract.php'); ?>
+</div>
+
+<div class="slide">
+<h3>Méthodes et classes finales</h3>
+<p class="textOnly">
+Il est possible d'utiliser le mot clé <code>final</code> sur une classe ou une méthode, afin d'en
+empêcher l'héritage&nbsp;:
+</p>
+
+<?php echo $slidey->highlight('files/03/final.php'); ?>
+</div>
+
+<div class="slide">
 <h3>Interfaces</h3>
 <p class="textOnly">
     En <b>PHP</b>, les interfaces se déclarent comme une classe à l'aide du mot clé <code>interface</code>,
