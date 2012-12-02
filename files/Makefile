@@ -8,6 +8,7 @@ TARGETS := $(addsuffix .zip,$(patsubst $(SOURCES_DIR)/%,%,$(SOURCES)))
 all: $(TARGETS)
 
 %.zip: $(SOURCES_DIR)/%
+	@rm -f $@
 	@echo "Zipping $< to $@..."
 	@zip -r $@ $< > /dev/null
 
