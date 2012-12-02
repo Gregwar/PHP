@@ -1,5 +1,5 @@
 <?php return array (
-  'chaussures' => 
+  'chaussure' => 
   array (
     'price' => 17.99,
     'quantity' => 37,

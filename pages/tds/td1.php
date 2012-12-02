@@ -114,21 +114,16 @@ et de <code>var_export()</code> qui permettent d'écrire la variable dans le fic
 <?php $n = 1; ?>
 
 <p>
+    <b><?php echo $n++; ?>. Définition du prix</b><br />
+
+    Ajoutez une commande "<code>php store.php set-price [product] [price]</code>" qui définit le prix d'un produit.
+</p>
+
+<p>
     <b><?php echo $n++; ?>. Pouvoir enlever des produits</b><br />
 
     Implémentez une commande "<code>php store.php remove [product] [quantity]</code>" qui enlève <code>quantity</code> produit de
 nom <code>product</code> du magasin.
-</p>
-
-<p>
-    <b><?php echo $n++; ?>. Import et export CSV</b><br />
-
-    Un fichier CSV est un tableau délimité du type :
-
-    <?php echo $slidey->highlight('files/01/example.csv', 'html'); ?>
-
-    A l'aide des fonctions <a href="http://php.net/fgetcsv">fgetcsv()</a> et <a href="http://php.net/fputcsv">fputcsv()</a>, ajoutez une commande "<code>php store.php import [fichier.csv]</code>"
-et "<code>php store.php export [fichier.csv]</code>" pour importer et exporter la liste des produits au format CSV.
 </p>
 
 <p>
@@ -143,6 +138,17 @@ et "<code>php store.php export [fichier.csv]</code>" pour importer et exporter l
 
     Créez une commande "<code>php store.php search [keyword]</code>" qui permet d'effectuer une recherche parmi les produits
 du magasin par nom ou description et qui affiche la liste des résultats.
+</p>
+
+<p>
+    <b><?php echo $n++; ?>. Import et export CSV</b><br />
+
+    Un fichier CSV est un tableau délimité du type :
+
+    <?php echo $slidey->highlight('files/01/example.csv', 'html'); ?>
+
+    A l'aide des fonctions <a href="http://php.net/fgetcsv">fgetcsv()</a> et <a href="http://php.net/fputcsv">fputcsv()</a>, ajoutez une commande "<code>php store.php import [fichier.csv]</code>"
+et "<code>php store.php export [fichier.csv]</code>" pour importer et exporter la liste des produits au format CSV.
 </p>
 
 <?php echo $slidey->part('Exercice 3 : Mandelbrot'); ?>
