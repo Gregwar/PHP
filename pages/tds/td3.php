@@ -53,12 +53,10 @@ playlists sont hiérarchiques, c'est à dire qu'une playlist peut être ajoutée
 <p>
     <pre>
     P2
-    |- Stairway to heaven (audio)
-    |- P1
-    |  |- Matrix (vidéo)
-    |  |- Joconde (image)
-    |  .
-    .
+    | Stairway to heaven (audio)
+    | P1
+    |  | Matrix (vidéo)
+    |  | Joconde (image)
     </pre>
 </p>
 
