@@ -125,6 +125,14 @@ disposant des attaques <code>Tackle</code> et <code>Vampirism</code>.
 dans <code>controller.php</code>) pour remplacer un des combattant par un vampire.
 </p>
 
+<p>
+    <b><?php echo $n++; ?>. Ajout des «PP»</b><br />
+    Remarquez que, pour l'instant, il n'est pas très intéréssant d'instancier les attaques. Vous
+allez maintenant implémenter les «PP», ou Points de Pouvoir. Chaque attaque dispose d'un certain
+nombre dont vous déciderez la quantité, et à chaque utilisation, ce nombre sera diminué. Lorsque
+cette quantité atteindra zéro, il ne sera plus possible d'effectuer l'attaque.
+</p>
+
 <h3>Incorporation d'un logger</h3>
 
 <p>
