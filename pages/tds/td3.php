@@ -98,6 +98,12 @@ et d'éviter beaucoup de problèmes tout en bénéficiant d'une inclusion "fain�
 à dire uniquement des classes utilisées dans l'application.
 </p>
 
+<h3>Classes</h3>
+
+<p>
+    A partir du code source, dessinez un diagramme de classes représentant l'architecture utilisée.
+</p>
+
 <h3>Quelques modifications</h3>
 
 <?php $n = 1; ?>
