@@ -1,2 +1,4 @@
 cache/
 files/*.zip
+vendor
+composer.lock

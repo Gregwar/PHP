@@ -1,8 +1,8 @@
 <?php
 
-include('slidey/slidey.php');
+include('vendor/autoload.php');
 
-$slidey = new Gregwar\Slidey\SlideyStandard;
+$slidey = new Gregwar\Slidey\Slidey;
 
 /**
  * Customizing template

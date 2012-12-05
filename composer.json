@@ -1,0 +1,25 @@
+{
+    "minimum-stability": "dev",
+    "name": "gregwar/php",
+    "description": "Cours de PHP",
+    "keywords": ["cours", "php"],
+    "homepage": "https://github.com/Gregwar/PHP",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Grégoire Passault",
+            "email": "g.passault@gmail.com",
+            "homepage": "http://www.gregwar.com/"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "gregwar/slidey": "dev-master"
+    },
+    "target-dir": "Gregwar/PHP",
+    "autoload": {
+        "psr-0": {
+            "Gregwar\\PHP": ""
+        }
+    }
+}
