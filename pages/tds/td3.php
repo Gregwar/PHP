@@ -20,15 +20,13 @@ est connue et une technologie de streaming peut leur être appliquée.<br />
 playlists sont hiérarchiques, c'est à dire qu'une playlist peut être ajoutée à une autre playlist.
 </p>
 
-<?php $n = 1; ?>
-
 <p>
-    <b><?php echo $n++; ?>. Conception</b><br />
-    Dessinez un schéma d'architecture de classes qui pourrait être utilisé ici
+    <h3>Conception</h3>
+    Dessinez un schéma d'architecture de classes qui pourrait être utilisée ici
 </p>
 
 <p>
-    <b><?php echo $n++; ?>. Ecriture de test</b><br />
+    <h3>Ecriture de test</h3>
     Avant d'écrire ces classes, écrivez un test de votre architecture répondant au scénario suivant :
 </p>
 <p>
@@ -43,12 +41,15 @@ playlists sont hiérarchiques, c'est à dire qu'une playlist peut être ajoutée
     Ajout de "Stairway to heaven" à "P2"
     Ajout de "P1" à "P2"
     Listage des entrées de "P2"
+    Lancement de la lecture de "Matrix"
     </pre>
 </p>
 
 <p>
-    <b><?php echo $n++; ?>. Ecriture du code</b><br />
-    Ecrivez enfin les classes de manière à ce que le test vous affiche une sortie de la forme:
+    <h3>Code</h3>
+    Ecrivez enfin les classes. Bien entendu, vous n'implémenterez pas réellement la lecture ou
+la diffusion en streaming mais effectuerai des sorties écran, le test ci-dessus pourrait générer
+une sortie de la forme suivante&nbsp;:
 </p>
 <p>
     <pre>
@@ -57,6 +58,8 @@ playlists sont hiérarchiques, c'est à dire qu'une playlist peut être ajoutée
     | P1
     |  | Matrix (vidéo)
     |  | Joconde (image)
+
+    [Vidéo] Lecture de Matrix
     </pre>
 </p>
 
