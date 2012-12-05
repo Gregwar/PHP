@@ -3,7 +3,7 @@ all: zips
 	@php build.php 
 
 redo: zips
-	@php build.php clean
+	@php build.php redo
 
 zips:
 	@make -C files/

@@ -7,7 +7,63 @@ Vous aurez besoin de déployer son contenu sur un espace web disposant de l'int�
 <b>PHP</b>. 
 </p>
 
-<?php echo $slidey->part('Exercice 1 : une arène'); ?>
+<?php echo $slidey->part('Exercice 1 : un peu de conception'); ?>
+
+<p>
+    Une plateforme d'hébergement et de distribution de fichiers souhaite pouvoir représenter
+ses médias. Il en existe principalement trois sortes, des images, des musiques et des vidéos.
+Ces trois sortes sont traités de manière différentes, mais pour chacun, on connaît un emplacement
+sur le disque dur (chemin) et un nom.<br />
+    La musique et les vidéos ont la particularité de pouvoir être diffusées en streaming, leur longueur
+est connue et une technologie de streaming peut leur être appliquée.<br />
+    Enfin, les utilisateurs peuvent constituer des playlists composées de plusieurs médias. Les
+playlists sont hiérarchiques, c'est à dire qu'une playlist peut être ajoutée à une autre playlist.
+</p>
+
+<p>
+    <h3>Conception</h3>
+    Dessinez un schéma d'architecture de classes qui pourrait être utilisée ici
+</p>
+
+<p>
+    <h3>Ecriture de test</h3>
+    Avant d'écrire ces classes, écrivez un test de votre architecture répondant au scénario suivant :
+</p>
+<p>
+    <pre>
+    Création d'une vidéo "Matrix"
+    Création d'une photo "Joconde"
+    Création d'une musique "Stairway to heaven"
+    Création d'une playlist "P1"
+    Ajout de "Matrix" à "P1"
+    Ajout de "Joconde" à "P1"
+    Création d'une playlist "P2"
+    Ajout de "Stairway to heaven" à "P2"
+    Ajout de "P1" à "P2"
+    Listage des entrées de "P2"
+    Lancement de la lecture de "Matrix"
+    </pre>
+</p>
+
+<p>
+    <h3>Code</h3>
+    Ecrivez enfin les classes. Bien entendu, vous n'implémenterez pas réellement la lecture ou
+la diffusion en streaming mais effectuerai des sorties écran, le test ci-dessus pourrait générer
+une sortie de la forme suivante&nbsp;:
+</p>
+<p>
+    <pre>
+    P2
+    | Stairway to heaven (audio)
+    | P1
+    |  | Matrix (vidéo)
+    |  | Joconde (image)
+
+    [Vidéo] Lecture de Matrix
+    </pre>
+</p>
+
+<?php echo $slidey->part('Exercice 2 : une arène'); ?>
 
 Lisez et déployez le code du dossier <code>arena/</code>.
 
@@ -40,6 +96,12 @@ spl_autoload_register()</a>, découvrez comment l'inclusion est faite.<br />
     Ce système permet de bénéficier d'une grande souplesse lors de l'écriture de code 
 et d'éviter beaucoup de problèmes tout en bénéficiant d'une inclusion "fainéante", c'est
 à dire uniquement des classes utilisées dans l'application.
+</p>
+
+<h3>Classes</h3>
+
+<p>
+    A partir du code source, dessinez un diagramme de classes représentant l'architecture utilisée.
 </p>
 
 <h3>Quelques modifications</h3>
@@ -84,7 +146,7 @@ méthode <code>getEntries()</code> sur le logger pour afficher l'ensemble des ac
 <code><a href="http://php.net/__sleep">__sleep()</a></code> de <b>PHP</b>
 </p>
 
-<?php echo $slidey->part('Exercice 2 : Le routeur'); ?>
+<?php echo $slidey->part('Exercice 3 : Le routeur'); ?>
 
 Un routeur est un composant clé dans une application web, car il est responsable de l'attribution
 des requêtes à une certaine méthode (ou contrôlleur). Lisez le code contenu dans le dossier <code>router/</code>.
