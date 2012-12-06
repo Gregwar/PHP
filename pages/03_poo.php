@@ -137,10 +137,23 @@ la notation "<code>implements</code> (interface)"&nbsp;:
 
 <div class="slide">
 <h3>Exceptions</h3>
-
 <p class="textOnly">
     Comme la plupart des langages orienté objet, <b>PHP</b> propose un mécanisme d'<a href="http://php.net/Exceptions">exceptions</a>
-permettant d'affiner la gestion d'erreur&nbsp;:
+permettant d'affiner la gestion d'erreur. Par défaut, les exceptions remonteront jusqu'à être disposée sous forme d'erreur&nbsp;:
+</p>
+
+<?php echo $slidey->highlight('files/03/uncaught.php'); ?>
+
+<div class="discover">
+<hr />
+<?php echo $slidey->highlight('files/03/uncaught.txt', 'html'); ?>
+</div>
+
+</div>
+
+<div class="slide">
+<h3>Try/Catch</h3>
+<p class="textOnly">
 </p>
 
 <?php echo $slidey->highlight('files/03/exception.php'); ?>
@@ -164,18 +177,22 @@ la "racine" pour créer vos propres types d'exceptions&nbsp;:
 <div class="slide">
 <h3>Remarques</h3>
 <p class="textOnly">
-    <b>PHP</b> ne supporte pas le polymorphisme, méthodes ayant le même nom mais des prototypes
-différents, vous pouvez cependant utiliser des paramètres optionnels et non typés
+    Il n'y a pas d'héritage multiple en <b>PHP</b>
 </p>
 <p class="textOnly">
-    Il n'y a pas d'héritage multiple en <b>PHP</b>
+    <b>PHP</b> ne supporte pas le polymorphisme, méthodes ayant le même nom mais des prototypes
+différents, vous pouvez cependant utiliser des paramètres optionnels et non typés, voici un exemple
+illustrant un argument optionel ayant une valeur par défaut&nbsp;:
 </p>
 
 <ul class="slideOnly">
-    <li>Pas de <b>polymorphisme</b> possible, mais les arguments peuvent être optionnels et non typés</li>
     <li>Pas d'héritage multiple</li>
+    <li>Pas de <b>polymorphisme</b> possible, mais les arguments peuvent être optionnels et non typés&nbsp;:</li>
 </ul>
 
+<div class="discover">
+<?php echo $slidey->highlight('files/03/optional.php'); ?>
+</div>
 </div>
 
 <div class="slide">
