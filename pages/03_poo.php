@@ -273,6 +273,11 @@ d'argument du mauvais type), il s'agit du <em>type hinting</em> (ou indication d
 
 <?php echo $slidey->highlight('files/03/hint.php'); ?>
 
+<div class="discover">
+<hr/>
+<?php echo $slidey->highlight('files/03/hint.txt', 'html'); ?>
+</div>
+
 <p class="textOnly">
     Le type indiqué dans les paramètres de la fonction peut être le type de la classe mère ou
 d'une interface qui doit être implémentée par l'objet passé. Il est fortement recommandé
@@ -323,12 +328,23 @@ déclaration entière du nom des classes&nbsp;:
 <?php echo $slidey->highlight('files/03/both.php'); ?>
 
 <p class="textOnly">
-    Ou encore à l'aide des alias&nbsp;:
+    Il est également possible d'importer une classe à l'aide du mot clé <code>use</code>,
+par  défaut, le nom de la classe (ici, <code>Image</code>) sera un raccourci vers son
+emplacement complet (ici, <code>Alice\Image</code>)&nbsp;:
 </p>
 
 <div class="discover">
 <hr class="slideOnly" />
+<?php echo $slidey->highlight('files/03/mix.php'); ?>
+</div>
 
+<p class="textOnly">
+    Enfin, le mot clé <code>as</code> permet de donner un nom de substitution (ou alias)
+à la classe dans le fichier courant&nbsp;:
+</p>
+
+<div class="discover">
+<hr class="slideOnly" />
 <?php echo $slidey->highlight('files/03/alias.php'); ?>
 </div>
 
