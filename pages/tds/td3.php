@@ -10,14 +10,14 @@ Vous aurez besoin de déployer son contenu sur un espace web disposant de l'int�
 <?php echo $slidey->part('Exercice 1 : un peu de conception'); ?>
 
 <p>
-    Une plateforme d'hébergement et de distribution de fichiers souhaite pouvoir représenter
-ses médias. Il en existe principalement trois sortes, des images, des musiques et des vidéos.
+    Une plateforme d'hébergement et de distribution de fichiers souhaite pouvoir héberger
+des médias. Il en existe principalement trois sortes, des images, des musiques et des vidéos.
 Ces trois sortes sont traités de manière différentes, mais pour chacun, on connaît un emplacement
 sur le disque dur (chemin) et un nom.<br />
     La musique et les vidéos ont la particularité de pouvoir être diffusées en streaming, leur longueur
 est connue et une technologie de streaming peut leur être appliquée.<br />
-    Enfin, les utilisateurs peuvent constituer des playlists composées de plusieurs médias. Les
-playlists sont hiérarchiques, c'est à dire qu'une playlist peut être ajoutée à une autre playlist.
+    Enfin, les utilisateurs peuvent constituer des playlists composées de plusieurs médias.<br />
+    Les playlists sont hiérarchiques, c'est à dire qu'une playlist peut être ajoutée à une autre playlist.
 </p>
 
 <p>
