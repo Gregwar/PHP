@@ -35,12 +35,13 @@ $router->register('films', '/films', function() use ($model) {
 $router->register('film', '/film/*', function($id) use ($model) {
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (isset($_POST['nom']) && isset($_POST['note']) && isset($_POST['critique'])) {
-            // A faire!
+            // XXX: A faire
         }
     }
 
     render('film', array(
-        'film' => $model->getFilm($id)
+        'film' => $model->getFilm($id),
+        'casting' => $model->getCasting($id),
     ));
 });
 

@@ -73,6 +73,15 @@ class Model
     }
 
     /**
+     * Récupérer les acteurs d'un film
+     */
+    public function getCasting($filmId)
+    {
+        // XXX: A faire
+        return array();
+    }
+
+    /**
      * Genres
      */
     public function getGenres()

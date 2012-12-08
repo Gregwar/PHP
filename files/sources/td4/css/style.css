@@ -22,8 +22,13 @@ h1 {
     font-size:55px;
 }
 
-h1, h2, h3, h4 {
+h1, h2 {
     color:#ca372e;
+}
+
+h3, h4 {
+    color:#666;
+    font-weight:normal;
 }
 
 .menu a {
@@ -66,13 +71,13 @@ a:hover {
     color:black;
 }
 
-.film {
+.film, .acteur {
     float:left;
     height:128px;
     width:300px;
 }
 
-.film img, .fiche img {
+.film img, .fiche img, .acteur img {
     float:left;
     margin:5px;
 }
@@ -81,7 +86,7 @@ a:hover {
     font-style:italic;
 }
 
-.commentaires {
+.commentaires, .casting {
     clear:both;
 }
 
