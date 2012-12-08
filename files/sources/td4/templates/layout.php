@@ -6,6 +6,10 @@
     </head>
     <body>
         <h1>Cinéma</h1>
+        <div class="menu">
+            <a href="<?php echo $router->generate('home'); ?>">Accueil</a> -
+            <a href="<?php echo $router->generate('films'); ?>">Films</a>
+        </div>        
 
         <?php include(__DIR__.'/'.$page.'.php'); ?>
     </body>
