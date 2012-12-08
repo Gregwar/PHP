@@ -7,10 +7,7 @@ $router = new Router\Router;
 function render($page, $variables)
 {
     global $router;
-
-    foreach ($variables as $k => $v) {
-        $$k = htmlspecialchars($v);
-    }
+    extract($variables);
 
     include(__DIR__ . '/templates/layout.php');
 }
