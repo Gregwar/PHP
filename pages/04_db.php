@@ -205,4 +205,6 @@ Les avantages sont notamment&nbsp;:
 </ul>
 </div>
 
+<?php echo $slidey->part('TD'); ?>
 
+<?php echo $slidey->annex('tds/td4.php'); ?>
