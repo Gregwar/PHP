@@ -175,9 +175,9 @@ comprenez ce qu'est le <code>PATH_INFO</code> et comment il fonctionne.
 erreurs.
 </p>
 
-<b><?php echo $n++; ?>. $$</b><br />
+<b><?php echo $n++; ?>. extract</b><br />
 <p>
-    Observez de plus près la méthode <code>render()</code>, à quoi sert la notation <code>$$</code> ?
+    Observez de plus près la méthode <code>render()</code>, à quoi sert la méthode <code>extract()</code> ?
 </p>
 
 <b><?php echo $n++; ?>. call_user_func_array</b><br />
