@@ -26,12 +26,34 @@ $router->register('home', '/', function() {
 
 // Liste des films
 $router->register('films', '/films', function() use ($model) {
-    render('films', array('films' => $model->getFilms()));
+    render('films', array(
+        'films' => $model->getFilms()
+    ));
 });
 
 // Fiche film
-$router->register('film', '/film/*', function($id) {
-    render('film');
+$router->register('film', '/film/*', function($id) use ($model) {
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        if (isset($_POST['nom']) && isset($_POST['note']) && isset($_POST['critique'])) {
+            // A faire!
+        }
+    }
+
+    render('film', array(
+        'film' => $model->getFilm($id)
+    ));
+});
+
+// Genres
+$router->register('genres', '/genres', function() use ($model) {
+    render('genres', array(
+        'genres' => $model->getGenres()
+    ));
+});
+
+// 404
+$router->register('404', '*', function() {
+    render('404');
 });
 
 $router->route();

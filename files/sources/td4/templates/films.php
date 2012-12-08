@@ -4,6 +4,7 @@
     <?php if (count($films)) { ?>
         <?php foreach ($films as $film) { ?>
         <div class="film">
+            <img width="64" src="<?php echo $film['image']; ?>" />
             <h3><?php echo $film['nom']; ?></h3>
             <em>Genre: <?php echo $film['genre_nom']; ?></em><br />
             <a href="<?php echo $router->generate('film', array($film['id'])); ?>">Fiche film &raquo;</a>

@@ -25,13 +25,62 @@ class Model
     }
 
     /**
+     * Récupère un résultat exactement
+     */
+    protected function fetchOne(\PDOStatement $query)
+    {
+        if ($query->rowCount() != 1) {
+            return false;
+        } else {
+            return $query->fetch();
+        }
+    }
+
+    /**
+     * Base de la requête pour obtenir un film
+     */
+    protected function getFilmSQL()
+    {
+        return
+            'SELECT films.image, films.id, films.nom, films.description, genres.nom as genre_nom FROM films '.
+                'INNER JOIN genres ON genres.id = films.genre_id ';
+    }
+
+    /**
      * Récupère la liste des films
      */
     public function getFilms()
     {
+        $sql = $this->getFilmSQL();
+
+        return $this->pdo->query($sql);
+    }
+
+    /**
+     * Récupère un film
+     */
+    public function getFilm($id)
+    {
         $sql = 
-            'SELECT films.id, films.nom, genres.nom as genre_nom FROM films '.
-            'INNER JOIN genres ON genres.id = films.genre_id'
+            $this->getFilmSQL() . 
+            'WHERE films.id = ?'
+            ;
+
+        $query = $this->pdo->prepare($sql);
+        $query->execute(array($id));
+
+        return $this->fetchOne($query);
+    }
+
+    /**
+     * Genres
+     */
+    public function getGenres()
+    {
+        $sql = 
+            'SELECT genres.nom, COUNT(*) as nb_films FROM genres '.
+            'INNER JOIN films ON films.genre_id = genres.id '.
+            'GROUP BY genres.id'
             ;
 
         return $this->pdo->query($sql);

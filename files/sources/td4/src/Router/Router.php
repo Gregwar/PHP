@@ -52,6 +52,14 @@ class Router
     }
 
     /**
+     * Génère une URL absolue pour un fichier statique
+     */
+    public function generateStatic($path)
+    {
+        return dirname($_SERVER['SCRIPT_NAME']) . '/'. $path;
+    }
+
+    /**
      * Génère l'URL correspondante
      */
     public function generate($name, array $parameters = array())
