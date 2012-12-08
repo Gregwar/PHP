@@ -1,0 +1,5 @@
+PHP Fatal error:  Uncaught exception 'Exception'
+with message 'Error!' in uncaught.php:3
+Stack trace:
+#0 {main}
+  thrown in uncaught.php on line 3

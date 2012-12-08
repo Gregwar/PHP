@@ -137,10 +137,23 @@ la notation "<code>implements</code> (interface)"&nbsp;:
 
 <div class="slide">
 <h3>Exceptions</h3>
-
 <p class="textOnly">
     Comme la plupart des langages orienté objet, <b>PHP</b> propose un mécanisme d'<a href="http://php.net/Exceptions">exceptions</a>
-permettant d'affiner la gestion d'erreur&nbsp;:
+permettant d'affiner la gestion d'erreur. Par défaut, les exceptions remonteront jusqu'à être disposée sous forme d'erreur&nbsp;:
+</p>
+
+<?php echo $slidey->highlight('files/03/uncaught.php'); ?>
+
+<div class="discover">
+<hr />
+<?php echo $slidey->highlight('files/03/uncaught.txt', 'html'); ?>
+</div>
+
+</div>
+
+<div class="slide">
+<h3>Try/Catch</h3>
+<p class="textOnly">
 </p>
 
 <?php echo $slidey->highlight('files/03/exception.php'); ?>
@@ -164,18 +177,22 @@ la "racine" pour créer vos propres types d'exceptions&nbsp;:
 <div class="slide">
 <h3>Remarques</h3>
 <p class="textOnly">
-    <b>PHP</b> ne supporte pas le polymorphisme, méthodes ayant le même nom mais des prototypes
-différents, vous pouvez cependant utiliser des paramètres optionnels et non typés
+    Il n'y a pas d'héritage multiple en <b>PHP</b>
 </p>
 <p class="textOnly">
-    Il n'y a pas d'héritage multiple en <b>PHP</b>
+    <b>PHP</b> ne supporte pas le polymorphisme, méthodes ayant le même nom mais des prototypes
+différents, vous pouvez cependant utiliser des paramètres optionnels et non typés, voici un exemple
+illustrant un argument optionel ayant une valeur par défaut&nbsp;:
 </p>
 
 <ul class="slideOnly">
-    <li>Pas de <b>polymorphisme</b> possible, mais les arguments peuvent être optionnels et non typés</li>
     <li>Pas d'héritage multiple</li>
+    <li>Pas de <b>polymorphisme</b> possible, mais les arguments peuvent être optionnels et non typés&nbsp;:</li>
 </ul>
 
+<div class="discover">
+<?php echo $slidey->highlight('files/03/optional.php'); ?>
+</div>
 </div>
 
 <div class="slide">
@@ -256,6 +273,11 @@ d'argument du mauvais type), il s'agit du <em>type hinting</em> (ou indication d
 
 <?php echo $slidey->highlight('files/03/hint.php'); ?>
 
+<div class="discover">
+<hr/>
+<?php echo $slidey->highlight('files/03/hint.txt', 'html'); ?>
+</div>
+
 <p class="textOnly">
     Le type indiqué dans les paramètres de la fonction peut être le type de la classe mère ou
 d'une interface qui doit être implémentée par l'objet passé. Il est fortement recommandé
@@ -306,12 +328,23 @@ déclaration entière du nom des classes&nbsp;:
 <?php echo $slidey->highlight('files/03/both.php'); ?>
 
 <p class="textOnly">
-    Ou encore à l'aide des alias&nbsp;:
+    Il est également possible d'importer une classe à l'aide du mot clé <code>use</code>,
+par  défaut, le nom de la classe (ici, <code>Image</code>) sera un raccourci vers son
+emplacement complet (ici, <code>Alice\Image</code>)&nbsp;:
 </p>
 
 <div class="discover">
 <hr class="slideOnly" />
+<?php echo $slidey->highlight('files/03/mix.php'); ?>
+</div>
 
+<p class="textOnly">
+    Enfin, le mot clé <code>as</code> permet de donner un nom de substitution (ou alias)
+à la classe dans le fichier courant&nbsp;:
+</p>
+
+<div class="discover">
+<hr class="slideOnly" />
 <?php echo $slidey->highlight('files/03/alias.php'); ?>
 </div>
 
