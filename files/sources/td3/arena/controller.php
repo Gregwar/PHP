@@ -1,4 +1,5 @@
 <?php
+session_start();
 include('Arena/autoload.php');
 
 use Arena\Creature\Elf;
@@ -22,7 +23,7 @@ function createFight()
 /**
  * Initialisation/récupération du combat
  */
-$loader = new FightLoader('/tmp/' . sha1('arena|'.__DIR__));
+$loader = new FightLoader(sha1('arena|'.__DIR__));
 $fight = $loader->loadFight() ?: createFight();
 
 /**

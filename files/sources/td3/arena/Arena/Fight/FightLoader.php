@@ -4,11 +4,11 @@ namespace Arena\Fight;
 
 class FightLoader
 {
-    protected $filename;
+    protected $key;
 
-    public function __construct($filename)
+    public function __construct($key)
     {
-        $this->filename = $filename;
+        $this->key = $key;
     }
 
     /**
@@ -18,8 +18,8 @@ class FightLoader
     {
         $fight = false;
 
-        if (file_exists($this->filename)) {
-            $fight = unserialize(file_get_contents($this->filename));
+        if (isset($_SESSION[$key])) {
+            $fight = unserialize($_SESSION[$key]);
         } 
 
         return $fight;
@@ -30,6 +30,6 @@ class FightLoader
      */
     public function saveFight($fight)
     {
-        file_put_contents($this->filename, serialize($fight));
+        $_SESSION[$key] = serialize($fight);
     }
 }
