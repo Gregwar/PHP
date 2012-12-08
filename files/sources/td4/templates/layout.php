@@ -4,6 +4,7 @@
         <meta charset="utf-8" />
         <title>Cinéma</title>
         <link rel="stylesheet" type="text/css" href="<?php echo $router->generateStatic('css/style.css'); ?>" />
+        <link rel="shortcut icon" href="<?php echo $router->generateStatic('css/favicon.ico'); ?>" />
     </head>
     <body>
         <h1>Cinéma</h1>
