@@ -83,6 +83,17 @@ d'échec, une exception de type <code>PDOException</code> sera levée.
 </div>
 
 <div class="slide">
+<h3>Attention aux SELECT *</h3>
+<p class="textOnly">
+    Les requêtes utilisant la notation <code>SELECT * FROM ...</code> peuvent sembler pratiques, mais
+elles deviennent vite problématique dans le cas suivant par exemple&nbsp;:
+</p>
+
+<?php echo $slidey->highlight('files/04/selectstar.php'); ?>
+
+</div>
+
+<div class="slide">
 <h3>Préparation de requêtes</h3>
 <p class="textOnly">
     Auparavant, il arivait souvent que les requêtes soient générées à la main par concaténation
