@@ -18,8 +18,8 @@ class FightLoader
     {
         $fight = false;
 
-        if (isset($_SESSION[$key])) {
-            $fight = unserialize($_SESSION[$key]);
+        if (isset($_SESSION[$this->key])) {
+            $fight = unserialize($_SESSION[$this->key]);
         } 
 
         return $fight;
@@ -30,6 +30,6 @@ class FightLoader
      */
     public function saveFight($fight)
     {
-        $_SESSION[$key] = serialize($fight);
+        $_SESSION[$this->key] = serialize($fight);
     }
 }
