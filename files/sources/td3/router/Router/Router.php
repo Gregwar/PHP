@@ -32,8 +32,10 @@ class Router
      */
     public function route($path = null)
     {
-        if ($path === null) {
-            $path = $_SERVER['PATH_INFO'];
+	if ($path === null) {
+	    if (isset($_SERVER['PATH_INFO'])) {
+		$path = $_SERVER['PATH_INFO'];
+	    }
         }
 
         if (!$path) {
