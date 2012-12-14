@@ -1,6 +1,6 @@
 <?php
 
-namespace Arena\Attack
+namespace Arena\Attack;
 
 use Arena\Creature\BaseCreature;
 
