@@ -60,3 +60,9 @@ Comment le résoudre ?
     Cette page est dotée de deux failles CSRF, qui sont nettement moins graves mais méritent tout de même d'être considérées. Repérez les et corrigez les.
 </p>
 
+<?php echo $slidey->part('Composer & Twig'); ?>
+
+<p>
+    Twig est un moteur de template, il est notamment disponible dans le gestionnaire de paquets composer. A l'aide
+du code contenu dans <code>composer/</code>, installez les dépendances composer et faites le fonctionner.
+</p>
