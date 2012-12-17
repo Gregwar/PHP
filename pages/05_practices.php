@@ -409,3 +409,5 @@ du PHP brut. Ils permettent notamment&nbsp;:
 </div>
 </div>
 
+<?php echo $slidey->part('TD'); ?>
+<?php echo $slidey->annex('tds/td5.php'); ?>
