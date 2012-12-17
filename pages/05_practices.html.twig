@@ -1,7 +1,7 @@
-<?php echo $slidey->chapter('Bonnes pratiques', 'bonnes-pratiques', 5); ?>
+{{ chapter('Bonnes pratiques', 'bonnes-pratiques', 5) }}
 
 <div class="slide">
-<?php echo $slidey->part('Travailler proprement'); ?>
+{{ part('Travailler proprement') }}
 <h3>Introduction</h3>
 
 <p>
@@ -30,7 +30,7 @@ conclure par des problèmes d'affichages.
 est similaire, et spécifier cet encodage dans la balise <code>meta</code> des pages HTML&nbsp;:
 </p>
 
-<?php echo $slidey->highlight('files/05/utf.php', 'html5'); ?>
+{{ highlight('files/05/utf.php', 'html5') }}
 
 <p class="textOnly">
     Notez que dans le cas d'une requête ajax, l'encodage des caractères n'est pas précisé
@@ -39,13 +39,13 @@ les en-têtes HTTP&nbsp;:
 </p>
 
 <hr class="slideOnly" />
-<?php echo $slidey->highlight('files/05/encoding.php', 'html'); ?>
+{{ highlight('files/05/encoding.php', 'html') }}
 </div>
 
 <div class="slide">
 <h3>Echappement</h3>
 
-<img style="float:right" src="<?php echo $slidey->image('img/magicQuotes.gif')->jpeg(); ?>" />
+<img style="float:right" src="{{ image('img/magicQuotes.gif').jpeg() }}" />
 
 <p class="textOnly">
     Pendant longtemps, <b>PHP</b> a comprit une option très controversée nommée 
@@ -59,7 +59,7 @@ injections SQL. Aujourd'hui, il est obselète et désactivé par défaut, il est
 conseillé de le désactiver (php.ini)&nbsp;:
 </p>
 
-<?php echo $slidey->highlight('files/05/quotes.php', 'ini'); ?>
+{{ highlight('files/05/quotes.php', 'ini') }}
 </div>
 
 <div class="slide">
@@ -88,7 +88,7 @@ pendant (voire avant) le développement est une bonne chose.
     Voici un exemple de test écrit avec PHPUnit&nbsp;:
 </p>
 
-<?php echo $slidey->highlight('files/05/test.php'); ?>
+{{ highlight('files/05/test.php') }}
 </div>
 
 <div class="slide">
@@ -97,7 +97,7 @@ pendant (voire avant) le développement est une bonne chose.
     Pour l'exécuter, simplement lancer <code>phpunit</code>&nbsp;:
 </p>
 
-<?php echo $slidey->highlight('files/05/phpunit.php', 'html'); ?>
+{{ highlight('files/05/phpunit.php', 'html') }}
 </div>
 
 <div class="slide">
@@ -114,7 +114,7 @@ une équipe de développeurs à la fragilité de l'application.
 </div>
 
 <div class="slide">
-<?php echo $slidey->part('Les performances'); ?>
+{{ part('Les performances') }}
 <h3>Contexte</h3>
 <p>
     N'oubliez pas que <b>PHP</b> est un langage interprété. Son utilisation doit donc
@@ -171,14 +171,14 @@ plus récupérées depuis la base de données par exemple. Voici un exemple d'ut
 magasin <b>APC</b>&nbsp;:
 </p>
 
-<?php echo $slidey->highlight('files/05/cache.php'); ?>
+{{ highlight('files/05/cache.php') }}
 </div>
 
 <div class="slide">
-<?php echo $slidey->part('Sécurité'); ?>
+{{ part('Sécurité') }}
 <h3>HTTPS</h3>
 
-<img style="float:right" src="<?php echo $slidey->image('img/cadenas.jpg')->resize('40%'); ?>" />
+<img style="float:right" src="{{ image('img/cadenas.jpg').resize('40%') }}" />
 
 <p class="textOnly">
     Comme vous le savez, les données transmises via <b>HTTP</b> sont envoyées en clair sur le
@@ -202,7 +202,7 @@ une architecture de répértoire séparant le code <b>PHP</b> pur et dur de la p
 visiteurs&nbsp;:
 </p>
 
-<?php echo $slidey->highlight('files/05/architecture.php', 'html'); ?>
+{{ highlight('files/05/architecture.php', 'html') }}
 </div>
 
 <div class="slide">
@@ -215,7 +215,7 @@ Cette pratique doit être scrupuleusement surveillée car une faille dans l'uplo
 par exemple. Si l'utilisateur upload le fichier suivant :
 </p>
 
-<?php echo $slidey->highlight('files/05/upload.php'); ?>
+{{ highlight('files/05/upload.php') }}
 
 <p class="textOnly">
     Dans ce cas là, il est recommandé de&nbsp;:
@@ -243,7 +243,7 @@ par exemple. Si l'utilisateur upload le fichier suivant :
 manière&nbsp;:
 </p>
 
-<?php echo $slidey->highlight('files/05/include.php'); ?>
+{{ highlight('files/05/include.php') }}
 
 <p class="textOnly">
     Cette manière de faire est dangereuse. Elle permet à l'utilisateur d'inclure n'importe quel fichier
@@ -259,7 +259,7 @@ très précis sur le nom de la page.
     Imaginons le formulaire suivant&nbsp;:
 </p>
 
-<?php echo $slidey->highlight('files/05/xss.php'); ?>
+{{ highlight('files/05/xss.php') }}
 
 <p class="textOnly">
     L'utilisateur pourra saisir n'importe quelle valeur, elle sera affichée dans la page. Le problème, c'est que 
@@ -285,7 +285,7 @@ certains moteurs de templates offrent la possibilité d'échapper tout par défa
     Imaginez la page suivant&nbsp;:
 </p>
 
-<?php echo $slidey->highlight('files/05/csrf.php', 'html5'); ?>
+{{ highlight('files/05/csrf.php', 'html5') }}
 
 <p class="textOnly">
     Et si, à l'instar de l'attaquant XSS, quelqu'un vous envoyait un e-mail ou vous faisait cliquer sur un lien,
@@ -308,7 +308,7 @@ son formulaire.
 des requêtes SQL par concaténation de chaîne de caractères. Prenons par exemple&nbsp;:
 </p>
 
-<?php echo $slidey->highlight('files/05/sql.php'); ?>
+{{ highlight('files/05/sql.php') }}
 
 
 <div class="discover">
@@ -353,7 +353,7 @@ messagerie, au compte bancaire ou à tout autre service sur lesquels vos utilisa
 Pour vous protéger, vous pouvez utiliser une fonction de hachage&nbsp;:
 </p>
 
-<?php echo $slidey->highlight('files/05/md5.php'); ?>
+{{ highlight('files/05/md5.php') }}
 
 <p class="textOnly">
     Dans cet exemple, le mot de passe (admin) n'apparaît pas en clair dans le code source et ne
@@ -362,7 +362,7 @@ peut d'ailleurs être retrouvé que par force brute.
 </div>
 
 <div class="slide">
-<?php echo $slidey->part('Framework & bibliothèques'); ?>
+{{ part('Framework & bibliothèques') }}
 <h3>Architecture MVC</h3>
 <p class="textOnly">
     Très souvent, vous serez confronté à un environnement respectant le patron de conception <b>MVC</b>,
@@ -376,7 +376,7 @@ des données</li>
 </ul>
 
 <center>
-    <img src="<?php echo $slidey->image('img/MVC.jpg')->resize('70%')->jpeg(); ?>" />
+    <img src="{{ image('img/MVC.jpg').resize('70%').jpeg() }}" />
 </center>
 </div>
 
@@ -388,7 +388,7 @@ recommandé d'en utiliser un dès que la base de données prend de l'ampleur. Vo
 gestionnaire d'entités de Doctrine2&nbsp;:
 </p>
 
-<?php echo $slidey->highlight('files/05/orm.php'); ?>
+{{ highlight('files/05/orm.php') }}
 </div>
 
 <div class="slide">
@@ -405,7 +405,7 @@ du PHP brut. Ils permettent notamment&nbsp;:
 </ul>
 
 <div class="discover">
-<?php echo $slidey->highlight('files/05/twig.php', 'html'); ?>
+{{ highlight('files/05/twig.php', 'html') }}
 </div>
 </div>
 
@@ -421,7 +421,7 @@ exemple. Il peut être obtenu ici&nbsp;: <a href="http://getcomposer.org/downloa
 comme par exemple&nbsp;:
 </p>
 
-<?php echo $slidey->highlight('files/05/composer.json', 'json'); ?>
+{{ highlight('files/05/composer.json', 'json') }}
 
 <p class="textOnly">
     Ainsi, composer installera pour vous les deux bibliothèques et générera un fichier <code>autoload.php</code>
@@ -430,9 +430,9 @@ que vous pourrez directement utiliser pour profiter des composants&nbsp;:
 
 <div class="discover">
 <hr class="slideOnly" />
-<?php echo $slidey->highlight('files/05/composer.log', 'html'); ?>
+{{ highlight('files/05/composer.log', 'html') }}
 </div>
 </div>
 
-<?php echo $slidey->part('TD'); ?>
-<?php echo $slidey->annex('tds/td5.php'); ?>
+{{ part('TD') }}
+{{ annex('tds/td5.html.twig') }}

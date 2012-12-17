@@ -1,7 +1,7 @@
-<?php echo $slidey->chapter('HTTP', 'http', 2); ?>
+{{ chapter('HTTP', 'http', 2) }}
 
 <div class="slide">
-<?php echo $slidey->part('Introduction au protocole HTTP'); ?>
+{{ part('Introduction au protocole HTTP') }}
 
 <h3>HTTP</h3>
 
@@ -11,8 +11,7 @@ agit en fait comme un <b>client HTTP (HyperText Transfer Protocol)</b>. Ce proto
 permet d'accéder à des resources distantes.
 </p>
 <p class="center">
-    <img src="<?php echo $slidey->image('img/browsers.jpg')
-                ->resize(500); ?>" />
+    <img src="{{ image('img/browsers.jpg').resize(500) }}" />
 </p>
 </div>
 
@@ -26,12 +25,9 @@ permanente de requêtes et répondent à leurs clients. On nommera par exemple <
 </p>
 
 <p class="center">
-    <img src="<?php echo $slidey->image('img/apache.png')
-                        ->resize(250); ?>" />
-    <img src="<?php echo $slidey->image('img/nginx.gif')
-                        ->resize(250); ?>" />
-    <img src="<?php echo $slidey->image('img/lighttpd.png')
-                        ->resize(250); ?>" />
+    <img src="{{ image('img/apache.png').resize(250) }}" />
+    <img src="{{ image('img/nginx.gif').resize(250) }}" />
+    <img src="{{ image('img/lighttpd.png').resize(250) }}" />
 </p>
 
 </div>
@@ -122,7 +118,7 @@ des en-têtes et éventuellement des données :
 sont les messages envoyés par le client et celles préfixées par <code>&lt;</code> sont celles
 reçues :
 </p>
-<?php echo $slidey->highlight('files/02/http.txt', 'html'); ?>
+{{ highlight('files/02/http.txt', 'html') }}
 <p class="textOnly">
     Ce protocole est très simple et lisible par un humain. Il est très important d'avoir connaissance
 de <b>HTTP</b> pour développer une application web. Certain plugins (Firebug, HTTPFox, Tamper data...)
@@ -138,7 +134,7 @@ permettent de visualiser les échanges et/ou de faire des statistiques sur le tr
 </div>
 
 <div class="slide">
-<?php echo $slidey->part('CGI'); ?>
+{{ part('CGI') }}
 <h3 class="slideOnly">Présentation</h3>
 
 <p class="textOnly">
@@ -158,7 +154,7 @@ le contenu de la page dynamique, c'est à dire différent selon l'utilisateur, l
 </p>
 
 <p class="center">
-    <img src="<?php echo $slidey->image('img/cgi.gif')->forceResize(900); ?>" />
+    <img src="{{ image('img/cgi.gif').forceResize(900) }}" />
 </p>
 </div>
 
@@ -178,7 +174,7 @@ ainsi que sur le contenu de la réponse.
 </div>
 
 <div class="slide">
-<?php echo $slidey->part('PHP et HTTP'); ?>
+{{ part('PHP et HTTP') }}
 <h3>Fonctionnement</h3>
 <p>
     En général, les scripts php sont identifiés par leur extension <code>.php</code>. Lorsque
@@ -189,7 +185,7 @@ transmettre son contenu vers le client.
     Dans le cas d'Apache, le paquet <code>libapache2-mod-php5</code> contient la passerelle
 Apache/PHP:
 </p>
-<?php echo $slidey->highlight('files/02/mod.txt', 'html'); ?>
+{{ highlight('files/02/mod.txt', 'html') }}
 </div>
 
 <div class="slide">
@@ -199,7 +195,7 @@ Apache/PHP:
 le script suivant :
 </p>
 
-<?php echo $slidey->highlight('files/02/date.php'); ?>
+{{ highlight('files/02/date.php') }}
 
 <div class="discover">
 <p>
@@ -207,7 +203,7 @@ le script suivant :
 du mod <b>PHP</b>, il recevra une réponse du style :
 </p>
 
-<?php echo $slidey->highlight('files/02/date.html'); ?>
+{{ highlight('files/02/date.html') }}
 
 </div>
 
@@ -230,7 +226,7 @@ normalement.
 le document comme ceci&nbsp;:
 </p>
 
-<?php echo $slidey->highlight('files/02/structure.php'); ?>
+{{ highlight('files/02/structure.php') }}
 
 </div>
 
@@ -275,7 +271,7 @@ transmettre une petite quantité d'informations directement dans une <b>URL</b> 
 tableau <code>$_GET</code> :
 </p>
 
-<?php echo $slidey->highlight('files/02/get.php'); ?>
+{{ highlight('files/02/get.php') }}
 
 <p>
     <code>x=42&amp;y=1337</code> est ce que l'on apelle une <em>Query String</em></code>
@@ -296,10 +292,10 @@ et les données stockées sur le serveur.
 lui même, ce dernier peut être représenté facilement en HTML :
 </p>
 
-<?php echo $slidey->highlight('files/02/form.html', 'html5'); ?>
+{{ highlight('files/02/form.html', 'html5') }}
 
 <center>
-    <img src="<?php echo $slidey->image('img/form.jpg')->forceResize(900); ?>" />
+    <img src="{{ image('img/form.jpg').forceResize(900) }}" />
 </center>
 
 </div>
@@ -313,7 +309,7 @@ vont être transmise au serveur, dans le cas de <code>get</code>, les paramètre
 l'<b>URL</b> comme vu précédemment :
 </p>
 
-<?php echo $slidey->highlight('files/02/form_get.txt', 'html'); ?>
+{{ highlight('files/02/form_get.txt', 'html') }}
 
 <p class="textOnly">
     Dans le cas de <code>post</code>, les donnée seront alors transmises dans la partie "données"
@@ -322,7 +318,7 @@ de la requête. Cette méthode est largement préférable pour l'écriture de fo
 
 <hr class="slideOnly" />
 
-<?php echo $slidey->highlight('files/02/form_post.txt', 'html'); ?>
+{{ highlight('files/02/form_post.txt', 'html') }}
 
 <p class="textOnly">
     Comme vous le constatez, la méthode <b>HTTP</b> utilisée est alors <code>POST</code>
@@ -338,7 +334,7 @@ le tableau superglobal <code>$_POST</code> qui contiendra les associations clé/
 par l'utilisateur&nbsp;:
 </p>
 
-<?php echo $slidey->highlight('files/02/post.php'); ?>
+{{ highlight('files/02/post.php') }}
 </div>
 
 <div class="slide">
@@ -350,7 +346,7 @@ de sa réponse. Ces en-têtes peuvent indiquer le type des données contenues, l
 l'heure du serveur, des cookies et un très grand nombre d'informations. Elles sont sous cette forme&nbsp;:
 </p>
 
-<?php echo $slidey->highlight('files/02/headers.txt', 'html'); ?>
+{{ highlight('files/02/headers.txt', 'html') }}
 
 <p class="textOnly">
     En <b>PHP</b>, il est possible de les modifier à l'aide de la fonction 
@@ -362,7 +358,7 @@ d'un autre type que celui définit par défaut (<code>text/html</code>), comme p
 <div class="discover">
 <hr class="slideOnly" />
 
-<?php echo $slidey->highlight('files/02/headers.php'); ?>
+{{ highlight('files/02/headers.php') }}
 </div>
 
 </div>
@@ -407,7 +403,7 @@ mais <b>PHP</b> mets à notre disposition la fonction <a href="http://php.net/se
 </a>, moins brute&nbsp;:
 </p>
 
-<?php echo $slidey->highlight('files/02/cookies.php'); ?>
+{{ highlight('files/02/cookies.php') }}
 
 </div>
 
@@ -417,7 +413,7 @@ mais <b>PHP</b> mets à notre disposition la fonction <a href="http://php.net/se
     Les cookies peuvent être supprimés de la manière suivante&nbsp;:
 </p>
 
-<?php echo $slidey->highlight('files/02/cookies_delete.php'); ?>
+{{ highlight('files/02/cookies_delete.php') }}
 
 </div>
 
@@ -486,7 +482,7 @@ sont donc sécurisées.
 </p>
 
 <div class="discover">
-<?php echo $slidey->highlight('files/02/sessions.php'); ?>
+{{ highlight('files/02/sessions.php') }}
 </div>
 
 <p class="textOnly">
@@ -498,7 +494,7 @@ jeter son jeton de sécurité, le compteur repartira alors à 0.
 </div>
 
 <div class="slide">
-<?php echo $slidey->part('TD'); ?>
+{{ part('TD') }}
 
-<?php echo $slidey->annex('tds/td2.php'); ?>
+{{ annex('tds/td2.html.twig') }}
 </div>

@@ -1,7 +1,7 @@
-<?php echo $slidey->chapter('Programation orientée objet', 'programation-orientee-objet', 3); ?>
+{{ chapter('Programation orientée objet', 'programation-orientee-objet', 3) }}
 
 <div class="slide">
-<?php echo $slidey->part('Présentation'); ?>
+{{ part('Présentation') }}
 <h3>Pourquoi faire de l'objet ?</h3>
 
 <p class="textOnly">
@@ -36,7 +36,7 @@ sur le paradigme objet.
     En <b>PHP</b>, voici à quoi ressemble une classe :
 </p>
 
-<?php echo $slidey->highlight('files/03/class.php'); ?>
+{{ highlight('files/03/class.php') }}
 
 <p class="textOnly">
     Remarquez que&nbsp;:
@@ -58,7 +58,7 @@ comme dans beaucoup d'autre langages</li>
 <div class="discover">
     <hr class="slideOnly" />
 
-    <?php echo $slidey->highlight('files/03/instance.php'); ?>
+    {{ highlight('files/03/instance.php') }}
 </div>
 </div>
 
@@ -70,7 +70,7 @@ comme dans beaucoup d'autre langages</li>
 <code>static</code>&nbsp;:
 </p>
 
-<?php echo $slidey->highlight('files/03/static.php'); ?>
+{{ highlight('files/03/static.php') }}
 
 <p class="textOnly">
     Les attributs et méthodes statiques ne sont pas spécifiques à une instance mais <b>globaux</b>.
@@ -88,7 +88,7 @@ sont différentes.
     L'héritage s'écrit avec "<code>extends</code> (classe mère)"&nbsp;:
 </p>
 
-<?php echo $slidey->highlight('files/03/extends.php'); ?>
+{{ highlight('files/03/extends.php') }}
 
 </div>
 
@@ -99,7 +99,7 @@ sont différentes.
 <code>parent</code>&nbsp;:
 </p>
 
-<?php echo $slidey->highlight('files/03/parent.php'); ?>
+{{ highlight('files/03/parent.php') }}
 </div>
 
 <div class="slide">
@@ -110,7 +110,7 @@ sont différentes.
 est marquée elle même comme abstraite, elle ne pourra pas être instanciée&nbsp;:
 </p>
 
-<?php echo $slidey->highlight('files/03/abstract.php'); ?>
+{{ highlight('files/03/abstract.php') }}
 </div>
 
 <div class="slide">
@@ -120,7 +120,7 @@ Il est possible d'utiliser le mot clé <code>final</code> sur une classe ou une 
 empêcher l'héritage&nbsp;:
 </p>
 
-<?php echo $slidey->highlight('files/03/final.php'); ?>
+{{ highlight('files/03/final.php') }}
 </div>
 
 <div class="slide">
@@ -131,7 +131,7 @@ elles ne contiennent que des prototypes de méthodes. Une classe peut implément
 la notation "<code>implements</code> (interface)"&nbsp;:
 </p>
 
-<?php echo $slidey->highlight('files/03/interface.php'); ?>
+{{ highlight('files/03/interface.php') }}
 
 </div>
 
@@ -142,11 +142,11 @@ la notation "<code>implements</code> (interface)"&nbsp;:
 permettant d'affiner la gestion d'erreur. Par défaut, les exceptions remonteront jusqu'à être disposée sous forme d'erreur&nbsp;:
 </p>
 
-<?php echo $slidey->highlight('files/03/uncaught.php'); ?>
+{{ highlight('files/03/uncaught.php') }}
 
 <div class="discover">
 <hr />
-<?php echo $slidey->highlight('files/03/uncaught.txt', 'html'); ?>
+{{ highlight('files/03/uncaught.txt', 'html') }}
 </div>
 
 </div>
@@ -156,7 +156,7 @@ permettant d'affiner la gestion d'erreur. Par défaut, les exceptions remonteron
 <p class="textOnly">
 </p>
 
-<?php echo $slidey->highlight('files/03/exception.php'); ?>
+{{ highlight('files/03/exception.php') }}
 </div>
 
 <div class="slide">
@@ -166,7 +166,7 @@ permettant d'affiner la gestion d'erreur. Par défaut, les exceptions remonteron
 la "racine" pour créer vos propres types d'exceptions&nbsp;:
 </p>
 
-<?php echo $slidey->highlight('files/03/exception2.php'); ?>
+{{ highlight('files/03/exception2.php') }}
 
 <p class="textOnly">
     Comme vous le constatez, les exceptions peuvent être capturées avec un certain ordre de priorité.
@@ -191,12 +191,12 @@ illustrant un argument optionel ayant une valeur par défaut&nbsp;:
 </ul>
 
 <div class="discover">
-<?php echo $slidey->highlight('files/03/optional.php'); ?>
+{{ highlight('files/03/optional.php') }}
 </div>
 </div>
 
 <div class="slide">
-<?php echo $slidey->part('Problèmes fréquents'); ?>
+{{ part('Problèmes fréquents') }}
 <h3>Références</h3>
 <p class="textOnly">
     Lorsque l'on passe un objet en argument d'une fonction, on ne passe pas une copie de cette objet
@@ -204,7 +204,7 @@ mais une référence vers l'objet (à ne pas confondre avec une référence vers
 Ainsi, toute modification se fera directement sur l'objet&nbsp;:
 </p>
 
-<?php echo $slidey->highlight('files/03/reference.php'); ?>
+{{ highlight('files/03/reference.php') }}
 </div>
 
 <div class="slide">
@@ -214,7 +214,7 @@ Ainsi, toute modification se fera directement sur l'objet&nbsp;:
 l'exemple suivant&nbsp;:
 </p>
 
-<?php echo $slidey->highlight('files/03/reference2.php'); ?>
+{{ highlight('files/03/reference2.php') }}
 
 <p class="textOnly">
     Dans ce cas, la ligne <code>$b = $a</code> fait en sorte que la variable <code>$b</code> référence
@@ -234,7 +234,7 @@ le même objet mais aussi la <b>même variable</b>.
 <b>clonage</b> de cet objet. <b>PHP</b> vous propose pour cela d'utiliser le mot clé <code>clone</code>. 
 </p>
 
-<?php echo $slidey->highlight('files/03/clone.php'); ?>
+{{ highlight('files/03/clone.php') }}
 
 </div>
 
@@ -247,7 +247,7 @@ Pour répondre à ces questions, il vous est possible d'écrire votre propre mé
 le nom "magique" <code>__clone()</code>&nbsp;:
 </p>
 
-<?php echo $slidey->highlight('files/03/__clone.php'); ?>
+{{ highlight('files/03/__clone.php') }}
 
 </div>
 
@@ -260,7 +260,7 @@ Ainsi, lorsque vous écrivez une méthode, les paramètres ne sont pas typés. C
 s'avérer pratique pour la substitution, mais aussi provoquer des problèmes très innatendus&nbsp;:
 </p>
 
-<?php echo $slidey->highlight('files/03/subst.php'); ?>
+{{ highlight('files/03/subst.php') }}
 
 </div>
 
@@ -271,11 +271,11 @@ s'avérer pratique pour la substitution, mais aussi provoquer des problèmes tr�
 d'argument du mauvais type), il s'agit du <em>type hinting</em> (ou indication de type)&nbsp;:
 </p>
 
-<?php echo $slidey->highlight('files/03/hint.php'); ?>
+{{ highlight('files/03/hint.php') }}
 
 <div class="discover">
 <hr/>
-<?php echo $slidey->highlight('files/03/hint.txt', 'html'); ?>
+{{ highlight('files/03/hint.txt', 'html') }}
 </div>
 
 <p class="textOnly">
@@ -301,13 +301,13 @@ même nom). Depuis <b>PHP 5.3</b>, il est possible d'utiliser des espaces de nom
     Par exemple, si le fichier <code>alice/image.php</code> contient&nbsp;:
 </p>
 
-<?php echo $slidey->highlight('files/03/alice/image.php'); ?>
+{{ highlight('files/03/alice/image.php') }}
 
 <p>
     On pourra l'utiliser comme cela&nbsp;:
 </p>
 
-<?php echo $slidey->highlight('files/03/use.php'); ?>
+{{ highlight('files/03/use.php') }}
 
 <p class="textOnly">
     Ainsi, la classe de Alice ne "pollue" pas l'espace de nom global mais est disponible 
@@ -325,7 +325,7 @@ noms <code>Bob\Image</code>, il sera possible d'utiliser les deux soit à l'aide
 déclaration entière du nom des classes&nbsp;:
 </p>
 
-<?php echo $slidey->highlight('files/03/both.php'); ?>
+{{ highlight('files/03/both.php') }}
 
 <p class="textOnly">
     Il est également possible d'importer une classe à l'aide du mot clé <code>use</code>,
@@ -335,7 +335,7 @@ emplacement complet (ici, <code>Alice\Image</code>)&nbsp;:
 
 <div class="discover">
 <hr class="slideOnly" />
-<?php echo $slidey->highlight('files/03/mix.php'); ?>
+{{ highlight('files/03/mix.php') }}
 </div>
 
 <p class="textOnly">
@@ -345,13 +345,13 @@ emplacement complet (ici, <code>Alice\Image</code>)&nbsp;:
 
 <div class="discover">
 <hr class="slideOnly" />
-<?php echo $slidey->highlight('files/03/alias.php'); ?>
+{{ highlight('files/03/alias.php') }}
 </div>
 
 </div>
 
 <div class="slide">
-<?php echo $slidey->part('Pour aller plus loin'); ?>
+{{ part('Pour aller plus loin') }}
 <h3>Sérialisation</h3>
 <p class="textOnly">
     Contrairement aux types "basiques" (nombres, chaînes, tableaux...), les objets peuvent
@@ -363,7 +363,7 @@ utiliser la <b>sérialisation</b>. Les fonctions <b>PHP</b> <a href="http://php.
 d'obtenir un objet à partir d'une chaîne sérialisée&nbsp;:
 </p>
 
-<?php echo $slidey->highlight('files/03/serialize.php'); ?>
+{{ highlight('files/03/serialize.php') }}
 </div>
 
 <div class="slide">
@@ -411,7 +411,7 @@ dynamiquement.
 
 </div>
 
-<?php echo $slidey->part('TD'); ?>
+{{ part('TD') }}
 
-<?php echo $slidey->annex('tds/td3.php'); ?>
+{{ annex('tds/td3.html.twig') }}
 

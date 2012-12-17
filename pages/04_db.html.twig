@@ -1,9 +1,9 @@
-<?php echo $slidey->chapter('Bases de données', 'base-de-donnees', 4); ?>
+{{ chapter('Bases de données', 'base-de-donnees', 4) }}
 
 <div class="slide">
-<?php echo $slidey->part('Introduction'); ?>
+{{ part('Introduction') }}
 
-<img src="<?php echo $slidey->image('img/db.png')->resize('50%')->png(); ?>" style="float:right" />
+<img src="{{ image('img/db.png').resize('50%').png() }}" style="float:right" />
 
 <p>
     Les bases de données représentent un point clé de l'organisation d'une application
@@ -26,7 +26,7 @@ d'autre type de bases.
 </div>
 
 <div class="slide">
-<?php echo $slidey->part('Le requêtage'); ?>
+{{ part('Le requêtage') }}
 
 <h3>Présentation</h3>
 <p class="textOnly">
@@ -62,7 +62,7 @@ c'est à dire (entre autre) :
     La connexion peut être établie en instanciant un <code>PDO</code> comme cela&nbsp;:
 </p>
 
-<?php echo $slidey->highlight('files/04/connection.php'); ?>
+{{ highlight('files/04/connection.php') }}
 
 <p class="textOnly">
     Les trois paramètres sont le nom de la source des données -et par conséquent le nom
@@ -79,7 +79,7 @@ d'échec, une exception de type <code>PDOException</code> sera levée.
     Voici un exemple de requêtage utilisant le <b>PDO</b>&nbsp;:
 </p>
 
-<?php echo $slidey->highlight('files/04/list.php'); ?>
+{{ highlight('files/04/list.php') }}
 </div>
 
 <div class="slide">
@@ -89,7 +89,7 @@ d'échec, une exception de type <code>PDOException</code> sera levée.
 elles deviennent vite problématique dans le cas suivant par exemple&nbsp;:
 </p>
 
-<?php echo $slidey->highlight('files/04/selectstar.php'); ?>
+{{ highlight('files/04/selectstar.php') }}
 
 </div>
 
@@ -110,7 +110,7 @@ certaines bases de données peuvent améliorer les performances</li>
     Pour palier à ces défauts, la préparation de requêtes est maintenant employée&nbsp;:
 </p>
 
-<?php echo $slidey->highlight('files/04/age.php'); ?>
+{{ highlight('files/04/age.php') }}
 
 </div>
 
@@ -121,7 +121,7 @@ certaines bases de données peuvent améliorer les performances</li>
     L'insertion peut se faire de la même manière que le requêtage&nbsp;:
 </p>
 
-<?php echo $slidey->highlight('files/04/insert.php'); ?>
+{{ highlight('files/04/insert.php') }}
 </div>
 
 <div class="slide">
@@ -133,7 +133,7 @@ qui permet d'effectuer des actions puis de les intégrer, ou de tout annuler de 
 atomique&nbsp;:
 </p>
 
-<?php echo $slidey->highlight('files/04/transaction.php'); ?>
+{{ highlight('files/04/transaction.php') }}
 
 <p class="textOnly">
     De cette manière, si quelque chose se passe mal, les requêtes seront toutes annulées,
@@ -142,12 +142,12 @@ et les états incohérents pourront être évités.
 </div>
 
 <div class="slide">
-<?php echo $slidey->part('Les ORM'); ?>
+{{ part('Les ORM') }}
 
 <h3>Présentation</h3>
 
 <center>
-    <img src="<?php echo $slidey->image('img/orm.jpg')->resize(650)->jpeg(); ?>" />
+    <img src="{{ image('img/orm.jpg').resize(650).jpeg() }}" />
 </center>
 
 <p class="textOnly">
@@ -216,6 +216,5 @@ Les avantages sont notamment&nbsp;:
 </ul>
 </div>
 
-<?php echo $slidey->part('TD'); ?>
-
-<?php echo $slidey->annex('tds/td4.php'); ?>
+{{ part('TD')}}
+{{ annex('tds/td4.html.twig') }}

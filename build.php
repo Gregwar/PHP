@@ -7,9 +7,9 @@ $slidey = new Gregwar\Slidey\Slidey;
 /**
  * Customizing template
  */
-$slidey->template->mainTitle = 'PHP';
+$slidey->template->set('mainTitle', 'PHP');
+$slidey->template->set('footer', file_get_contents('license.htm'));
 $slidey->template->addCss('css/style.css');
-$slidey->template->footer = file_get_contents('license.htm');
 
 /**
  * Adding custom directories

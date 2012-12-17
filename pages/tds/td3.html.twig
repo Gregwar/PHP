@@ -1,4 +1,4 @@
-<?php echo $slidey->chapter('TD3', 'td3'); ?>
+{{ chapter('TD3', 'td3') }}
 
 <h2>Préparation</h2>
 <p>
@@ -7,7 +7,7 @@ Vous aurez besoin de déployer son contenu sur un espace web disposant de l'int�
 <b>PHP</b>. 
 </p>
 
-<?php echo $slidey->part('Exercice 1 : un peu de conception'); ?>
+{{ part('Exercice 1 : un peu de conception') }}
 
 <p>
     Une plateforme d'hébergement et de distribution de fichiers souhaite pouvoir héberger
@@ -63,7 +63,7 @@ une sortie de la forme suivante&nbsp;:
     </pre>
 </p>
 
-<?php echo $slidey->part('Exercice 2 : une arène'); ?>
+{{ part('Exercice 2 : une arène') }}
 
 Lisez et déployez le code du dossier <code>arena/</code>.
 
@@ -72,21 +72,21 @@ Lisez et déployez le code du dossier <code>arena/</code>.
     Tout d'abord, testez et lisez le code source.
 </p>
 
-<?php $n = 1; ?>
+{% set n = 1 %}
 
 <p>
-    <b><?php echo $n++; ?>. Persistence</b><br />
+    <b>{{ n }}{% set n = n+1 %}. Persistence</b><br />
     Comment les données du combat sont t-elles persistées d'une requête sur l'autre ?<br />
     Quels sont les avantages/défauts de cette technique ?
 </p>
 
 <p>
-    <b><?php echo $n++; ?>. Opérateur ?:</b><br />
+    <b>{{ n }}{% set n = n+1 %}. Opérateur ?:</b><br />
     Remarquez l'utilisation de l'opérateur <code>?:</code>, à quoi sert t-il ?
 </p>
 
 <p>
-    <b><?php echo $n++; ?>. Chargement des classes</b><br />
+    <b>{{ n }}{% set n = n+1 %}. Chargement des classes</b><br />
     Remarquez que les fichiers des classes (comme <code>Arena\Creature\Elf.php</code>)
 ne sont jamais inclus nulle part explicitement.<br />
     En lisant le code et en regardant notamment la documentation de 
@@ -106,17 +106,17 @@ et d'éviter beaucoup de problèmes tout en bénéficiant d'une inclusion "fain�
 
 <h3>Quelques modifications</h3>
 
-<?php $n = 1; ?>
+{% set n = 1 %}
 
 <p>
-    <b><?php echo $n++; ?>. Ajout de la description des attaques</b><br />
+    <b>{{ n }}{% set n = n+1 %}. Ajout de la description des attaques</b><br />
     Ajouter une description aux attaques à l'aide d'une méthode <code>getDescription()</code> que
 vous surchargerez dans chaque classe. La description devra être visible à coté des
 actions réalisables.
 </p>
 
 <p>
-    <b><?php echo $n++; ?>. Ajout d'une créature</b><br />
+    <b>{{ n }}{% set n = n+1 %}. Ajout d'une créature</b><br />
     En vous inspirant des créatures déjà existantes, ajoutez une créature <code>Vampire</code>
 disposant des attaques <code>Tackle</code> et <code>Vampirism</code>.
 </p>
@@ -126,7 +126,7 @@ dans <code>controller.php</code>) pour remplacer un des combattant par un vampir
 </p>
 
 <p>
-    <b><?php echo $n++; ?>. Ajout des «PP»</b><br />
+    <b>{{ n }}{% set n = n+1 %}. Ajout des «PP»</b><br />
     Remarquez que, pour l'instant, il n'est pas très intéréssant d'instancier les attaques. Vous
 allez maintenant implémenter les «PP», ou Points de Pouvoir. Chaque attaque dispose d'un certain
 nombre dont vous déciderez la quantité, et à chaque utilisation, ce nombre sera diminué. Lorsque
@@ -141,7 +141,7 @@ logger ce qu'elles font afin d'afficher un message explicitant ce qui s'est pass
 le code de <code>Fight</code> pour qu'il puisse accepter un logger comme cela&nbsp;:
 </p>
 
-<?php echo $slidey->highlight('files/03/logger.php'); ?>
+{{ highlight('files/03/logger.php') }}
 
 <p>
     Par la suite, chaque attaque pourra retourner une chaîne décrivant le mouvement (vous êtes libres
@@ -154,33 +154,33 @@ méthode <code>getEntries()</code> sur le logger pour afficher l'ensemble des ac
 <code><a href="http://php.net/__sleep">__sleep()</a></code> de <b>PHP</b>
 </p>
 
-<?php echo $slidey->part('Exercice 3 : Le routeur'); ?>
+{{ part('Exercice 3 : Le routeur') }}
 
 Un routeur est un composant clé dans une application web, car il est responsable de l'attribution
 des requêtes à une certaine méthode (ou contrôlleur). Lisez le code contenu dans le dossier <code>router/</code>.
 
 <h3>Compréhension</h3>
 
-<?php $n = 1; ?>
+{% set n = 1 %}
 
-<b><?php echo $n++; ?>. PATH_INFO</b><br />
+<b>{{ n }}{% set n = n+1 %}. PATH_INFO</b><br />
 <p>
     A l'aide de la page de documentation de la variable <a href="http://php.net/_SERVER">$_SERVER</a>,
 comprenez ce qu'est le <code>PATH_INFO</code> et comment il fonctionne.
 </p>
 
-<b><?php echo $n++; ?>. Arguments</b><br />
+<b>{{ n }}{% set n = n+1 %}. Arguments</b><br />
 <p>
     A quoi sert le <code>\</code> devant <code>\Closure</code> ? Indice : enlevez le et observez les
 erreurs.
 </p>
 
-<b><?php echo $n++; ?>. extract</b><br />
+<b>{{ n }}{% set n = n+1 %}. extract</b><br />
 <p>
     Observez de plus près la méthode <code>render()</code>, à quoi sert la méthode <code>extract()</code> ?
 </p>
 
-<b><?php echo $n++; ?>. call_user_func_array</b><br />
+<b>{{ n }}{% set n = n+1 %}. call_user_func_array</b><br />
 <p>
     Souvenez vous du premier TD et de la méthode <code>call_user_func_array()</code>, qui est utilisée ici,
 consultez éventuellement la documentation à nouveau pour en comprendre le fonctionnement.

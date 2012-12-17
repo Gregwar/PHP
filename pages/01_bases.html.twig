@@ -1,12 +1,10 @@
-<?php $slidey->chapter('Les bases du PHP', 'bases-du-php', 1); ?>
+{{ chapter('Les bases du PHP', 'bases-du-php', 1) }}
 
 <div class="slide">
-<?php echo $slidey->part('Introduction : qu\'est-ce que PHP ?'); ?>
+{{ part('Introduction : qu\'est-ce que PHP ?') }}
 <h3>Présentation</h3>
 
-<img class="right" src="<?php echo $slidey->image('img/php.png')
-    ->resize(300)
-    ->guess(); ?>" title="Logo PHP" />
+<img class="right" src="{{ image('img/php.png').resize(300).guess() }}" title="Logo PHP" />
 
 <p class="textOnly">
     <b>PHP</b> est l'acronyme récursif de <b>PHP: Hypertext Preprocessor</b>, datant
@@ -48,7 +46,7 @@ programmation orientée objet.
 </div>
 
 <div class="slide">
-<?php echo $slidey->part('Installation et utilisation'); ?>
+{{ part('Installation et utilisation') }}
 <h3>Introduction</h3>
 <p>
     Le langage <b>PHP</b> est très largement utilisé pour réaliser des sites webs,
@@ -68,7 +66,7 @@ etre trouvés sur le site officiel <a href="http://php.net">http://php.net</a>.
 </p>
 <p>
     Sous linux, vous trouverez l'interpreteur <b>PHP</b> dans les dépôts <b>apt</b> :
-    <?php echo $slidey->highlight('files/01/apt.sh', 'html'); ?>
+    {{ highlight('files/01/apt.sh', 'html') }}
 </p>
 <p>
     Sous windows, vous trouverez les binaires à l'adresse suivante :<br />
@@ -81,19 +79,19 @@ etre trouvés sur le site officiel <a href="http://php.net">http://php.net</a>.
 <p>
 <div class="discover">
     Il est possible de faire un hello world simplement :
-    <?php echo $slidey->highlight('files/01/hello_world_1.php'); ?>
+    {{ highlight('files/01/hello_world_1.php') }}
 </div>
 </p>
 <p>
 <div class="discover">
     Ou encore en PHP brut :
-    <?php echo $slidey->highlight('files/01/hello_world_2.php'); ?>
+    {{ highlight('files/01/hello_world_2.php') }}
 </div>
 </p>
 <p>
 <div class="discover">
     Ou en version mixte :
-    <?php echo $slidey->highlight('files/01/hello_world_3.php'); ?>
+    {{ highlight('files/01/hello_world_3.php') }}
 </div>
 </p>
 <p class="textOnly">
@@ -112,7 +110,7 @@ de textes à trou dans lesquels le code vient s'insérer
     Pour utiliser l'interpreteur <b>PHP</b>, utilisez simplement la commande "php"
 dans votre terminal :
 
-    <?php echo $slidey->highlight('files/01/use.sh', 'html'); ?>
+    {{ highlight('files/01/use.sh', 'html') }}
 </p>
 <p>
     Il est également possible d'utiliser <b>PHP</b> en mode interactif pour réaliser
@@ -149,11 +147,11 @@ le protocole <b>HTTP</b>.
 </div>
 
 <div class="slide">
-<?php echo $slidey->part('Présentation du langage'); ?>
+{{ part('Présentation du langage') }}
 <h3>Exemple basique</h3>
 <p>
     <b>PHP</b> est faiblement typé :
-    <?php echo $slidey->highlight('files/01/bases.php'); ?>
+    {{ highlight('files/01/bases.php') }}
 </p>
 
 <div class="textOnly">
@@ -182,7 +180,7 @@ exclusivement pour les opérations mathématiques.
 <p>
     Les <code>array()</code> en <b>PHP</b> permettent de faire de nombreuses choses :
 
-    <?php echo $slidey->highlight('files/01/array.php'); ?>
+    {{ highlight('files/01/array.php') }}
 </p>
 
 <div class="textOnly">
@@ -203,7 +201,7 @@ d'un tableau à l'aide de la fonction <b>PHP</b> <code>count()</code>.
 <p>
     Un tableau peut bien entendu contenir des sous-tableaux :
 
-    <?php echo $slidey->highlight('files/01/array2.php'); ?>
+    {{ highlight('files/01/array2.php') }}
 </p>
 
 <p class="textOnly">
@@ -217,7 +215,7 @@ des données structurées, indexées et facile d'accès.
 <p>
     <b>PHP</b> comporte les structures classiques :
 
-    <?php echo $slidey->highlight('files/01/control.php'); ?>
+    {{ highlight('files/01/control.php') }}
 </p>
 </div>
 
@@ -228,7 +226,7 @@ des données structurées, indexées et facile d'accès.
 avec <code>false</code>, ni avec l'absence même de définition d'une variable&nbp;:
 </p>
 
-<?php echo $slidey->highlight('files/01/null.php'); ?>
+{{ highlight('files/01/null.php') }}
 </div>
 
 <div class="slide">
@@ -238,7 +236,7 @@ avec <code>false</code>, ni avec l'absence même de définition d'une variable&n
 ou avec <code>===</code> et <code>!==</code>, qui sont respectivement "laxiste" et "strictes"&nbsp;:
 </p>
 
-<?php echo $slidey->highlight('files/01/compare.php'); ?>
+{{ highlight('files/01/compare.php') }}
 
 <p class="textOnly">
     En fait, les valeurs <code>""</code>, <code>null</code>, <code>false</code> ou encore <code>0</code>
@@ -251,7 +249,7 @@ sont par exemple équivalentes en comparaison laxiste, mais pas en strict.
 <p>
     <b>PHP</b> comporte également le <code>switch()/case</code> :
 
-    <?php echo $slidey->highlight('files/01/switch.php'); ?>
+    {{ highlight('files/01/switch.php') }}
 </p>
 <p class="textOnly">
     Notons que sans le mot clé <code>break</code> le code continue de s'éxécuter entre deux
@@ -265,7 +263,7 @@ cases (comme dans les cas <code>1</code> et <code>2</code> ci-dessus).
     Il est possible d'utiliser <code>break</code> et <code>continue</code> (qui servent
 respectivement à sortir d'une boucle ou à passer à l'élément suivant) :
 
-    <?php echo $slidey->highlight('files/01/break.php'); ?>
+    {{ highlight('files/01/break.php') }}
 </p>
 <p class="textOnly">
     Il est aussi possible d'utiliser ces mots clés suivi d'un entier numérique
@@ -280,7 +278,7 @@ passer à l'itération suivante.
     Pour faciliter l'itération des tableaux, <b>PHP</b> propose la structure de contrôle
 <code>foreach()</code> :
 
-    <?php echo $slidey->highlight('files/01/foreach.php'); ?>
+    {{ highlight('files/01/foreach.php') }}
 </p>
 <p class="textOnly">
     Cette méthode permet de faciliter le parcours dans les tableaux, qui est fastidieux
@@ -295,7 +293,7 @@ lorsqu'il emploi une boucle <code>for</code> par exemple. Nous verrons plus tard
     A l'aide de la notation de référence <code>&amp;</code>, <b>PHP</b> vous permet d'itérer
 sur un tableau tout en modifiant la valeur de son contenu :
 
-    <?php echo $slidey->highlight('files/01/foreach2.php'); ?>
+    {{ highlight('files/01/foreach2.php') }}
 </p>
 </div>
 
@@ -305,7 +303,7 @@ sur un tableau tout en modifiant la valeur de son contenu :
     En utilisant <code>$key =&gt; $value</code>, nous pouvons itérer sur la clé <b>et</b>
 la valeur en même temps :
 
-    <?php echo $slidey->highlight('files/01/foreach3.php'); ?>
+    {{ highlight('files/01/foreach3.php') }}
 </p>
 </div>
 
@@ -314,7 +312,7 @@ la valeur en même temps :
 <p>
     <b>PHP</b> vous permet de définir des fonctions :
 
-    <?php echo $slidey->highlight('files/01/function.php'); ?>
+    {{ highlight('files/01/function.php') }}
 </p>
 <p class="textOnly">
     La fonction suivante prend en paramètre <code>$x</code> et retourne vrai si il est 
@@ -330,7 +328,7 @@ ou de paramètres.
 <p>
     Voici un exemple plus avancé qui utilise deux concepts introduits dans <b>PHP 5.3</b> :
 
-    <?php echo $slidey->highlight('files/01/function2.php'); ?>
+    {{ highlight('files/01/function2.php') }}
 </p>
 <div class="textOnly">
 <p>
@@ -350,13 +348,13 @@ est <code>Closure</code> et correspond au type des fonctions anonymes.
 </div>
 
 <div class="slide">
-<?php echo $slidey->part('Inclusion de fichiers'); ?>
+{{ part('Inclusion de fichiers') }}
     <h3>Les fonctions include et require</h3>
 <p>
     Il est possible d'inclure un autre fichier dans un script <b>PHP</b>, à l'aide des fonctions <code>include()</code>
 et <code>require()</code>, ou leur version assurant l'inclusion unique <code>include_once()</code> et <code>require_once()</code> :
 
-    <?php echo $slidey->highlight('files/01/include.php'); ?>
+    {{ highlight('files/01/include.php') }}
 </p>
 <div class="textOnly">
 <p>
@@ -411,8 +409,8 @@ magiques"</a> qui peuvent s'avérer très utile pour l'inclusion :
     Pour clarifier son comportement, il est généralement recommandé d'utiliser <code>__DIR__</code> pour désigner un répértoire relatif au
 répértoire actuel :
 </p>
-<?php echo $slidey->highlight('files/01/include_dir.php'); ?>
+{{ highlight('files/01/include_dir.php') }}
 </div>
 
-<?php echo $slidey->part('TD'); ?>
-<?php echo $slidey->annex('tds/td1.php'); ?>
+{{ part('TD') }}
+{{ annex('tds/td1.html.twig')|raw }}

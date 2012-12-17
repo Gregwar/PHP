@@ -1,4 +1,4 @@
-<?php echo $slidey->chapter('TD2', 'td2'); ?>
+{{ chapter('TD2', 'td2') }}
 
 <p>
     Dans ce TD, nous allons travailler avec <b>PHP</b> et un serveur web qui nous permettra
@@ -17,7 +17,7 @@ sur le site <a href="http://www.wampserver.com/">wampserver.com</a>.
 </p>
 
 
-<?php echo $slidey->part('Exercice 1 : Les commodités de PHP'); ?>
+{{ part('Exercice 1 : Les commodités de PHP') }}
 
 <p>
     Comme vu en dans le chapitre HTTP, les variables GET sont passées en paramètre d'une page comme ceci:
@@ -33,10 +33,10 @@ sur le site <a href="http://www.wampserver.com/">wampserver.com</a>.
     Ces variables peuvent être récupérées à l'aide du tableau <code>$_GET</code>.
 </p>
 
-<?php $n = 1; ?>
+{% set n = 1 %}
 
 <p>
-    <b><?php echo $n++; ?>. Factorisation</b><br />
+    <b>{{ n }}{% set n = n+1 %}. Factorisation</b><br />
 
     Examniez le code fournit dans le dossier <code>exercice1/</code>, il est constitué de plusieurs pages HTML, ce qui est problématique,
 car le code des en-têtes contenant le style et le menu est à chaque fois recopié&nbsp;! A l'aide de PHP, créez une unique page web
@@ -47,23 +47,23 @@ dans l'URL.
 </p>
 
 <p>
-    <b><?php echo $n++; ?>. Evolution</b><br />
+    <b>{{ n }}{% set n = n+1 %}. Evolution</b><br />
 
     Rajouter des pages à ce site pourrait devenir pénible, car la page principale <b>PHP</b> que vous avez créé va grossir et grossir.
 Quelle(s) solution(s) pourrait t-on utiliser pour pouvoir utiliser plusieurs fichiers tout en évitant la duplication de code&nbsp;? Appliquez
 et testez votre idée sur cet exemple. Apellez votre encadrant pour qu'il vérifie votre code.
 </p>
 
-<?php echo $slidey->part('Exercice 2 : Les formulaires'); ?>
+{{ part('Exercice 2 : Les formulaires') }}
 
 <p>
     Les formulaires représentent une très grande partie du développement d'un site web. 
 </p>
 
-<?php $n = 1; ?>
+{% set n = 1 %}
 
 <p>
-    <b><?php echo $n++; ?>. Compréhension</b>
+    <b>{{ n }}{% set n = n+1 %}. Compréhension</b>
 
     Lisez et testez le script <code>exercice2/form.php</code> de l'archive. Comment est detecté le fait que des données ont été
 postées ? A quoi correspond ce test vis à vis du protocole HTTP ? Pourquoi la fonction <a href="http://php.net/htmlspcialchars">
@@ -71,14 +71,14 @@ postées ? A quoi correspond ce test vis à vis du protocole HTTP ? Pourquoi la 
 </p>
 
 <p>
-    <b><?php echo $n++; ?>. Ajout d'un champ</b><br />
+    <b>{{ n }}{% set n = n+1 %}. Ajout d'un champ</b><br />
 
     Ajoutez un champ <code>nom</code> au formulaire. Lorsque le formulaire est soumis, si les deux champs sont remplis,
 la page devra indiquer: <code>"Vous vous nommez [Prénom] [Nom]"</code>.
 </p>
 
 <p>
-    <b><?php echo $n++; ?>. Un peu de validation</b><br />
+    <b>{{ n }}{% set n = n+1 %} Un peu de validation</b><br />
 
     Ajoutez maintenant un champ <code>email</code>. N'oubliez surtout pas comment fonctionne le protocole <b>HTTP</b>, même en
 utilisant le type de champ HTML5 <code>email</code>, le client pourra toujours transmettre des données arbitraires via une
@@ -86,7 +86,7 @@ requête <code>POST</code>. C'est pour cela qu'il <u>faut impérativement</u> v�
 bien formée, vous pourrez utiliser la fonction <b>PHP</b> <a href="http://php.net/filter_var"><code>filter_var()</code></a>.
 </p>
 
-<?php echo $slidey->part('Exercice 3 : Sécurisation'); ?>
+{{ part('Exercice 3 : Sécurisation') }}
 
 <p>
     Le dossier <code>exercice3/</code> contient une page web dont l'accès devrait être sécurisé. A l'aide d'un formulaire et
@@ -94,4 +94,4 @@ des sessions <b>PHP</b>, sécurisez l'accès à la page pour que les utilisateur
 puissent s'idientifier avec leurs mots de passe. Pour inclure <code>users.php</code>, vous pourrez utiliser la notation&nbsp;:
 </p>
 
-<?php echo $slidey->highlight('files/02/include_return.php'); ?>
+{{ highlight('files/02/include_return.php') }}
