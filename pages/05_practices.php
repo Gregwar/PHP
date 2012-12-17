@@ -409,5 +409,30 @@ du PHP brut. Ils permettent notamment&nbsp;:
 </div>
 </div>
 
+<div class="slide">
+<h3>Composer</h3>
+<p class="textOnly">
+    Composer est un outil de gestion des dépendances en <b>PHP</b>, il vous permet de spécifier de quel(s)
+autre(s) projet(s) votre projet dépend, et ainsi de créer des "paquets", un peu comme <code>apt</code> par
+exemple. Il peut être obtenu ici&nbsp;: <a href="http://getcomposer.org/download/">Téléchargement de composer</a>.
+</p>
+<p class="textOnly">
+    Vous pouvez alors spécifier les dépendances de votre application dans un fichier au format <code>JSON</code>,
+comme par exemple&nbsp;:
+</p>
+
+<?php echo $slidey->highlight('files/05/composer.json', 'json'); ?>
+
+<p class="textOnly">
+    Ainsi, composer installera pour vous les deux bibliothèques et générera un fichier <code>autoload.php</code>
+que vous pourrez directement utiliser pour profiter des composants&nbsp;:
+</p>
+
+<div class="discover">
+<hr class="slideOnly" />
+<?php echo $slidey->highlight('files/05/composer.log', 'html'); ?>
+</div>
+</div>
+
 <?php echo $slidey->part('TD'); ?>
 <?php echo $slidey->annex('tds/td5.php'); ?>
