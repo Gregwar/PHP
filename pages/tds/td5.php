@@ -29,3 +29,10 @@ le test unitaire.
 un bug dans un logiciel; de cette façon, non seulement vous corrigez une erreur, mais vous ajoutez
 également une forme de sécurité qui évitera que cette erreur ne se soit reproduite dans l'avenir.
 </p>
+
+<?php echo $slidey->part('Problème d\'encodage'); ?>
+
+<p>
+    Testez la page <code>encodings/index.php</code> et constatez le problème d'encodage. D'ou vient t-il ?
+Comment le résoudre ?
+</p>
