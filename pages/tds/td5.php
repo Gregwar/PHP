@@ -36,3 +36,27 @@ un bug dans un logiciel; de cette façon, non seulement vous corrigez une erreur
     Testez la page <code>encodings/index.php</code> et constatez le problème d'encodage. D'ou vient t-il ?
 Comment le résoudre ?
 </p>
+
+<?php echo $slidey->part('Sécurité'); ?>
+
+<p>
+    Testez le code du dossier <code>security/</code>, il est fonctionnel, mais ne respecte pas les bonnes pratiques et possède des failles de sécurité.
+</p>
+
+<?php $n = 1; ?>
+
+<h3><?php echo $n++; ?>. Faille XSS</h3>
+<p>
+    Cette page est dotée d'une faille XSS majeure. Repérez là et corrigez là.
+</p>
+
+<h3><?php echo $n++; ?>. Hachage du mot de passe</h3>
+<p>
+    Quelqu'un qui aurait accès au code source de la page connaîtrait le mot de passe. Il est possible d'éviter ce problème à l'aide d'une fonctione de hachage. Modifiez le code source de manière à ce que le mot de passe n'y apparaisse plus et ne soit plus facilement retrouvable.
+</p>
+
+<h3><?php echo $n++; ?>. Faille CSRF</h3>
+<p>
+    Cette page est dotée de deux failles CSRF, qui sont nettement moins graves mais méritent tout de même d'être considérées. Repérez les et corrigez les.
+</p>
+
