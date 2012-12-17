@@ -361,3 +361,51 @@ peut d'ailleurs être retrouvé que par force brute.
 </p>
 </div>
 
+<div class="slide">
+<?php echo $slidey->part('Framework & bibliothèques'); ?>
+<h3>Architecture MVC</h3>
+<p class="textOnly">
+    Très souvent, vous serez confronté à un environnement respectant le patron de conception <b>MVC</b>,
+ce qui correspond à un découpage du code en trois grande parties&nbsp;:
+</p>
+<ul class="textOnly">
+    <li>Le <b>modèle</b>, responsable de communiquer avec la base de données et de gérer la persistence
+des données</li>
+    <li>La <b>vue</b>, qui sert à représenter les données pour l'utilisateur (notion de <em>template</em>)</li>
+    <li>Les <b>contrôleurs</b>, qui coordonnent le modèle et la vue</li>
+</ul>
+
+<center>
+    <img src="<?php echo $slidey->image('img/MVC.jpg')->resize('70%')->jpeg(); ?>" />
+</center>
+</div>
+
+<div class="slide">
+<h3>Les ORM</h3>
+<p class="textOnly">
+    Comme vu précédemment, les ORM sont des outils très répandus pour manipuler la base de données. Il est grandement
+recommandé d'en utiliser un dès que la base de données prend de l'ampleur. Voici un exemple très simple impliquant le
+gestionnaire d'entités de Doctrine2&nbsp;:
+</p>
+
+<?php echo $slidey->highlight('files/05/orm.php'); ?>
+</div>
+
+<div class="slide">
+<h3>Les moteurs de template</h3>
+<p>
+    Les moteurs de templates sont des outils permettant d'écrire le code d'une vue sous une forme différente 
+du PHP brut. Ils permettent notamment&nbsp;:
+</p>
+<ul>
+    <li class="discover">L'échappement systématique des variables</li>
+    <li class="discover">L'héritage et la surcharge de templates</li>
+    <li class="discover">Une syntaxe plus légère</li>
+    <li class="discover">Des optimisations, mises en cache etc.</li>
+</ul>
+
+<div class="discover">
+<?php echo $slidey->highlight('files/05/twig.php', 'html'); ?>
+</div>
+</div>
+
