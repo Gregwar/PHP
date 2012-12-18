@@ -1,6 +1,6 @@
 <?php
 
-// Les points A, B et C avec leur 
+// Les points A, B et C avec leurs
 // coordonnées
 $points = array(
     'A' => array(12.2, 3.1),
