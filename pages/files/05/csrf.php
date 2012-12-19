@@ -2,6 +2,8 @@
 <html>
     <body>
         ...
-        <a href="destroy.php">Détruire mon compte</a>
+        <a href="destroy.php">
+        Détruire mon compte
+        </a>
     </body>
 </html>
