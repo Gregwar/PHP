@@ -2,3 +2,4 @@ cache/
 files/*.zip
 vendor
 composer.lock
+password.php
