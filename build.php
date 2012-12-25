@@ -19,4 +19,10 @@ $slidey->mkdir('files');
 $slidey->copy('files/*.zip', 'files/');
 $slidey->copy('static/favicon.ico');
 
+$password = @include('password.php');
+
+if ($password) {
+    $slidey->enableInteractive($password, '/tmp/slidey');
+}
+
 $slidey->build('../php');
