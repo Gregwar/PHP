@@ -22,7 +22,7 @@ $slidey->copy('static/favicon.ico');
 $password = @include('password.php');
 
 if ($password) {
-    $slidey->enableInteractive($password, '/tmp/slidey');
+    $slidey->enableInteractive($password, '/tmp/phpslidey');
 }
 
 $slidey->build('../php');
