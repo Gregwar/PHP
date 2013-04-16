@@ -35,6 +35,7 @@ sur le site <a href="http://www.wampserver.com/">wampserver.com</a>.
 
 {% set n = 1 %}
 
+<div class="step">
 <p>
     <b>{{ n }}{% set n = n+1 %}. Factorisation</b><br />
 
@@ -45,7 +46,9 @@ qui contiendra toutes ces pages.</b><br /><br />
     Vous pourrez utiliser les variables GET pour que le contenu de la page soit modifié en fonction du paramètre passé
 dans l'URL.
 </p>
+</div>
 
+<div class="step">
 <p>
     <b>{{ n }}{% set n = n+1 %}. Evolution</b><br />
 
@@ -53,6 +56,7 @@ dans l'URL.
 Quelle(s) solution(s) pourrait t-on utiliser pour pouvoir utiliser plusieurs fichiers tout en évitant la duplication de code&nbsp;? Appliquez
 et testez votre idée sur cet exemple. Apellez votre encadrant pour qu'il vérifie votre code.
 </p>
+</div>
 
 {{ part('Exercice 2 : Les formulaires') }}
 
@@ -62,6 +66,7 @@ et testez votre idée sur cet exemple. Apellez votre encadrant pour qu'il vérif
 
 {% set n = 1 %}
 
+<div class="step">
 <p>
     <b>{{ n }}{% set n = n+1 %}. Compréhension</b>
 
@@ -69,14 +74,18 @@ et testez votre idée sur cet exemple. Apellez votre encadrant pour qu'il vérif
 postées ? A quoi correspond ce test vis à vis du protocole HTTP ? Pourquoi la fonction <a href="http://php.net/htmlspcialchars">
 <code>htmlspecialchars()</code></a> est utilisée ici ?
 </p>
+</div>
 
+<div class="step">
 <p>
     <b>{{ n }}{% set n = n+1 %}. Ajout d'un champ</b><br />
 
     Ajoutez un champ <code>nom</code> au formulaire. Lorsque le formulaire est soumis, si les deux champs sont remplis,
 la page devra indiquer: <code>"Vous vous nommez [Prénom] [Nom]"</code>.
 </p>
+</div>
 
+<div class="step">
 <p>
     <b>{{ n }}{% set n = n+1 %} Un peu de validation</b><br />
 
@@ -85,17 +94,22 @@ utilisant le type de champ HTML5 <code>email</code>, le client pourra toujours t
 requête <code>POST</code>. C'est pour cela qu'il <u>faut impérativement</u> vérifier coté serveur que l'adresse fournie est
 bien formée, vous pourrez utiliser la fonction <b>PHP</b> <a href="http://php.net/filter_var"><code>filter_var()</code></a>.
 </p>
+</div>
 
 {{ part('Exercice 3 : Sécurisation') }}
 
+<div class="step">
 <p>
     Le dossier <code>exercice3/</code> contient une page web dont l'accès devrait être sécurisé. A l'aide d'un formulaire et
 des sessions <b>PHP</b>, sécurisez l'accès à la page pour que les utilisateurs présents dans le fichier <code>users.php</code>
 puissent s'idientifier avec leurs mots de passe. Pour inclure <code>users.php</code>, vous pourrez utiliser la notation&nbsp;:
 </p>
+</div>
 
 {{ highlight('files/02/include_return.php') }}
 
+<div class="step">
 <p>
     Implémenter ensuite une fonction de déconnexion.
 </p>
+</div>

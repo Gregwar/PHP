@@ -5,6 +5,8 @@
 </p>
 
 {{ part('Tests unitaires') }}
+
+<div class="step">
 <p>
     Lisez le code du dossier <code>tests</code>, et exécutez les tests à l'aide de la commande
 suivante&nbsp;:
@@ -16,10 +18,14 @@ suivante&nbsp;:
     Remarquez que la méthode <code>go()</code> ne fait aucune vérification sur la position, afin
 d'éviter les valeurs inférieures à zéro ou supérieure ou égale au maximum. 
 </p>
+
 <p>
     Ecrivez un test unitaire qui ne passe volontairement pas, c'est à dire qui provoque une erreur
 en faisant aller trop loin le bus par exemple.
 </p>
+</div>
+
+<div class="step">
 <p>
     Maintenant, modifiez le code source du bus de manière à corriger cette erreur et à faire passer
 le test unitaire.
@@ -29,13 +35,16 @@ le test unitaire.
 un bug dans un logiciel; de cette façon, non seulement vous corrigez une erreur, mais vous ajoutez
 également une forme de sécurité qui évitera que cette erreur ne se soit reproduite dans l'avenir.
 </p>
+</div>
 
 {{ part('Problème d\'encodage') }}
 
+<div class="step">
 <p>
     Testez la page <code>encodings/index.php</code> et constatez le problème d'encodage. D'ou vient t-il ?
 Comment le résoudre ?
 </p>
+</div>
 
 {{ part('Sécurité') }}
 
@@ -43,26 +52,34 @@ Comment le résoudre ?
     Testez le code du dossier <code>security/</code>, il est fonctionnel, mais ne respecte pas les bonnes pratiques et possède des failles de sécurité.
 </p>
 
+<div class="step">
 {% set n = 1 %}
 
 <h3>{{ n }}{% set n = n+1 %}. Faille XSS</h3>
 <p>
     Cette page est dotée d'une faille XSS majeure. Repérez là et corrigez là.
 </p>
+</div>
 
+<div class="step">
 <h3>{{ n }}{% set n = n+1 %}. Hachage du mot de passe</h3>
 <p>
     Quelqu'un qui aurait accès au code source de la page connaîtrait le mot de passe. Il est possible d'éviter ce problème à l'aide d'une fonctione de hachage. Modifiez le code source de manière à ce que le mot de passe n'y apparaisse plus et ne soit plus facilement retrouvable.
 </p>
+</div>
 
+<div class="step">
 <h3>{{ n }}{% set n = n+1 %}. Faille CSRF</h3>
 <p>
     Cette page est dotée de deux failles CSRF, qui sont nettement moins graves mais méritent tout de même d'être considérées. Repérez les et corrigez les.
 </p>
+</div>
 
 {{ part('Composer & Twig') }}
 
+<div class="step">
 <p>
     Twig est un moteur de template, il est notamment disponible dans le gestionnaire de paquets composer. A l'aide
 du code contenu dans <code>composer/</code>, installez les dépendances composer et faites le fonctionner.
 </p>
+</div>
