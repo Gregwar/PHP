@@ -1,0 +1,158 @@
+{{ chapter('Guide de conception', 'guide-de-conception') }}
+
+<div class="slide">
+{{ part('Introduction') }}
+<p>
+    Le <b>PHP</b> est un langage historique qui dispose désormais de nombreuses
+possibilités. Cependant, un très lourd fardeau historique pèse sur cette technologie
+qui est souvent critiqué par les développeurs le considérant comme trop permissif
+et propice à l'écriture de mauvais code.
+</p>
+<p class="discover">
+    Ce guide recence des règles de conception permettant d'écrire du code <b>PHP</b>
+moderne et de respecter les <a href="{{ ref('bonnes-pratiques') }}">bonnes pratiques</a>
+</p>
+</div>
+
+<div class="slide">
+<p class="warning">
+    <b>Attention,</b> ce guide ne contient <b>pas</b> des conseils mais des règles
+<u>à respecter impérativement</u> dans toute conception récente de projet PHP.
+</p>
+</div>
+
+<div class="slide">
+{{ part('Utilisation de PHP') }}
+<h3>Short tags</h3>
+<p>
+    Les short tags (<code>&lt;?</code> et <code>?&gt;</code>) sont encore très
+supportés mais ne <b>doivent pas être utilisés</b>
+</p>
+
+{{ highlight('files/guide/short.php') }}
+</div>
+
+<div class="slide">
+<h3>Fermeture du tag ?&gt;</h3>
+<p>
+    Le tag de fermeture <b>PHP</b> (<code>?&gt;</code>) ne doit <b>jamais être utilisé à
+la fin d'un fichier PHP pur</b>, car il n'est pas nécessaire et ne peut être
+source que d'erreur
+</p>
+
+{{ highlight('files/guide/close.php') }}
+</div>
+
+<div class="slide">
+{{ part('Organisation du code') }}
+<h3>Inclusion</h3>
+<p>
+    Dans un projet, les fonctions <code>include()</code> et <code>require()</code> ne <b>doivent pas
+être utilisées</b>, à part pour charger l'autoloader.
+</p>
+
+{{ highlight('files/guide/include.php') }}
+</div>
+
+<div class="slide">
+<h3>Nommage des fichiers</h3>
+<p>
+    L'utilisation d'un autoloader implique des règles à respecter pour nommer les fichiers
+présents dans un projet. Cette norme est décrite par <a href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md"><b>PSR-0</b></a> et <b>doit être impérativement
+respectée</b>.
+</p>
+<p>
+    <span class="textOnly">Pour résumer, si une classe se nomme <code>A\B\C</code>, elle devra éventuelement selon
+son préfixe se trouver dans un dossier de source sous le nom <code>A/B/C.php</code>.</span>
+    Ainsi, voici quelques exemples de correspondances&nbsp;:
+</p>
+<ul>
+    <li class="discover"><code>Gregwar\Example\Demo</code> &rarr; <code>lib/Gregwar/Example/Demo.php</code></li>
+    <li class="discover"><code>Gregwar\Something</code> &rarr; <code>vendor/gregwar/Gregwar/Something.php</code></li>
+</ul>
+<p class="discover">
+    <b>Toutes les classes doivent être dans au moins un espace de nom</b>.
+</p>
+</div>
+
+<div class="slide">
+<h3>Séparation des principes</h3>
+<p>
+    Le rendu (c'est à dire l'affichage de code HTML) et le requêtage MySQL <b>ne doivent jamais se mélanger</b>. Le
+travail de requêtage doit se faire avant toute forme de rendu, et seul les opérations basiques sont tolérées dans les
+vues.
+</p>
+
+{{ highlight('files/guide/separation.php') }}
+</div>
+
+<div class="slide">
+{{ part('Base de données') }}
+
+<h3>Ancienne extension MySQL</h3>
+<p>
+    Les fonctions MySQL obselètes telles que <code>mysql_connect()</code> ou <code>mysql_query()</code>
+ne <b>doivent pas être utilisées</b>. Ces dernières sont fortement dépréciées et seront supprimées
+dans un futur proche.
+</p>
+</div>
+
+<div class="slide">
+<h3>Préparation des requêtes</h3>
+<p>
+    Une requête SQL ne doit <b>jamais être construite par concaténation</b> de chaînes de caractères,
+mais dois utiliser la préparation des requêtes&nbsp;:
+</p>
+
+{{ highlight('files/guide/prepare.php') }}
+</div>
+
+<div class="slide">
+<h3>Echappement</h3>
+<p>
+    Les données stockées dans une base <b>ne doivent pas être échappées</b> par une fonction telle que
+<code>htmlspecialchars()</code> ou <code>htmlentities()</code>. L'échappement doit être fait au moment
+de l'affichage des données.
+</p>
+
+{{ highlight('files/guide/escape.php') }}
+
+<p class="textOnly">
+    En effet, l'échappement HTML correspond au rendu, et les données stockées dans la base doivent rester
+le plus possible découplées du système de rendu quel qu'il soit. Imaginez que votre base soit utilisée avec
+une application lourde ou par des scripts, vous seriez alors obligés de des-échapper les valeurs HTML.
+</p>
+</div>
+
+<div class="slide">
+{{ part('Programmation orientée objet') }}
+<h3>Utilisation de l'objet</h3>
+<p>
+    Afin de respecter l'organisation du code et de tirer le plus de profit de l'autoloader, le code
+d'un projet <b>doit être exclusivement dans des classes</b>. A l'exception du script "frontal" qui
+construit les objets pour lancer l'application.
+</p>
+</div>
+
+<div class="slide">
+<h3>Mot clé <code>var</code></h3>
+<p>
+    Le mot clé <code>var</code> ne <b>doit être utilisé sous aucun pretexte</b>, il s'agit d'une
+compatibilité avec les anciennes versions de PHP. Un mot clé de portée, tel que <code>public</code>,
+<code>protected</code>, ou <code>private</code> doit être utilisé à la place.
+</p>
+
+{{ highlight('files/guide/var.php') }}
+</div>
+
+<div class="slide">
+<h3>Utilisation du type hinting</h3>
+<p>
+    Les indications de type <b>doivent être impérativement données</b> lorsque cela est possible, c'est
+à dire pour les <code>array</code> et tout autre type non basique.
+</p>
+<p>
+    Si des objets variés peuvent être passés en paramètre d'une fonction, il faut impérativement étudier
+la possibilité de créer une interface alors implémentée afin de l'ajouter au type hinting de cette fonction.
+</p>
+</div>
