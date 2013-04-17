@@ -85,6 +85,28 @@ vues.
 </p>
 
 {{ highlight('files/guide/separation.php') }}
+<p>
+    Pour cela, le code peut suivre un principe comme par exemple MVC. 
+    <a href="{{ ref('bonnes-pratiques', 'mvc') }}">Voir le chapitre "Bonnes pratiques", partie MVC</a>
+</p>
+</div>
+
+<div class="slide">
+<h3>Standard de codage</h3>
+<p>
+    Tout projet <b>doit s'imposer un standard de codage et le respecter</b>. Un standard est définit par des règles, à
+propos par exemple de&nbsp;:
+</p>
+<ul>
+    <li class="discover">Le type de l'indentation (tabluations ou espaces? nombres d'espaces?)</li>
+    <li class="discover">Le fait de retourner ou non à la ligne après un <code>{</code></li>
+    <li class="discover">L'utilisation et le format des commentaires <code>//</code> ou <code>/* */</code> selon le contexte</li>
+    <li class="discover">L'utilisation de la CamelCase (<code>theMagicFunction()</code>) ou des underscores (<code>the_magic_function()</code>)</li>
+</ul>
+<p class="discover">
+    L'essentiel étant de rester cohérent et lisible. Afin d'éviter les polémiques stériles, je vous propose de suivre
+les standards proposés par le projet Symfony et disponible <a href="http://symfony.com/doc/current/contributing/code/standards.html">à cette adresse</a>.
+</p>
 </div>
 
 <div class="slide">
@@ -185,5 +207,8 @@ compatibilité avec les anciennes versions de PHP. Un mot clé de portée, tel q
 <p>
     Si des objets variés peuvent être passés en paramètre d'une fonction, il faut impérativement étudier
 la possibilité de créer une interface alors implémentée afin de l'ajouter au type hinting de cette fonction.
+</p>
+<p>
+    <a href="{{ ref('programation-orientee-objet', 'typehinting') }}">Voir le chapitre "POO", partie Type Hinting</a>
 </p>
 </div>
