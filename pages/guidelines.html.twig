@@ -17,7 +17,8 @@ moderne et de respecter les <a href="{{ ref('bonnes-pratiques') }}">bonnes prati
 <div class="slide">
 <p class="warning">
     <b>Attention,</b> ce guide ne contient <b>pas</b> des conseils mais des règles
-<u>à respecter impérativement</u> dans toute conception récente de projet PHP.
+<u>à respecter impérativement</u> dans toute conception récente de projet PHP. Ces
+règles seront prises en compte comme sèvère malus lors de mes évaluations de projets.
 </p>
 </div>
 
@@ -105,6 +106,10 @@ mais dois utiliser la préparation des requêtes&nbsp;:
 </p>
 
 {{ highlight('files/guide/prepare.php') }}
+
+<p>
+    <a href="{{ ref('bonnes-pratiques', 'sqlinjection') }}">Voir le chapitre "Bonnes pratiques", partie injections SQL</a>
+</p>
 </div>
 
 <div class="slide">
@@ -121,6 +126,32 @@ de l'affichage des données.
     En effet, l'échappement HTML correspond au rendu, et les données stockées dans la base doivent rester
 le plus possible découplées du système de rendu quel qu'il soit. Imaginez que votre base soit utilisée avec
 une application lourde ou par des scripts, vous seriez alors obligés de des-échapper les valeurs HTML.
+</p>
+</div>
+
+
+<div class="slide">
+{{ part('Les formulaires') }}
+<h3>Vérification coté serveur</h3>
+<p>
+    Une application <b>ne doit jamais faire confiance</b> aux données saisies par un utilisateur et toujours
+vérifier leur intégrité côté serveur. Notamment&nbsp;:
+</p>
+<ul>
+    <li class="discover">La valeur d'un <code>&lt;select&gt;</code> doit être parmi les options proposées</li>
+    <li class="discover">Le format d'une adresse e-mail doit être vérifié même si l'input est en HTML5 et vérifie
+    coté client son intégrité</li>
+    <li class="discover">Les champs <code>hidden</code> qui ont été créé pour le transport d'information doivent
+    bien entendu être vérifiés</li>
+</ul>
+</div>
+
+<div class="slide">
+<h3>Failles CSRF</h3>
+<p>
+    Tous les formulaires <b>doivent être sécurisé contre CSRF</b>. Ils doivent pour cela contenir un jeton CSRF
+qui permettra par la suite de vérifier qu'il a bien été posté en passant par le formulaire en question. 
+<a href="{{ ref('bonnes-pratiques', 'csrf') }}">Voir le chapitre "Bonnes pratiques", partie CSRF</a>
 </p>
 </div>
 
