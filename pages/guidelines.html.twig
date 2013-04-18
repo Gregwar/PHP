@@ -42,6 +42,14 @@ source que d'erreur
 </p>
 
 {{ highlight('files/guide/close.php') }}
+
+<p class="textOnly">
+    Les fichiers ne contenant en effet que du <b>PHP</b> pur commencent bien entendu par
+<code>&lt;?php</code> puis sont suivis du code, ils ne doivent alors pas se terminer par
+<code>?&gt;</code>, car ça n'est pas nécessaire et que l'ajout involontaire d'espaces
+ou de tabulation provoquerait l'envoi de caractère sur la sortie. Cette recommandation
+est soutenue par <a href="http://php.net/manual/en/language.basic-syntax.phptags.php">php.net</a>.
+</p>
 </div>
 
 <div class="slide">
@@ -68,6 +76,10 @@ PHP: Disabling magic quotes</a>
 </p>
 
 {{ highlight('files/guide/include.php') }}
+
+<p>
+    <a href="{{ ref('programation-orientee-objet', 'autoloader') }}">Voir le chapitre "POO", partie Autoloader</a>
+</p>
 </div>
 
 <div class="slide">
@@ -103,6 +115,22 @@ vues.
 <p>
     Pour cela, le code peut suivre un principe comme par exemple MVC. 
     <a href="{{ ref('bonnes-pratiques', 'mvc') }}">Voir le chapitre "Bonnes pratiques", partie MVC</a>
+</p>
+</div>
+
+<div class="slide">
+<h3>Templating en PHP</h3>
+<p>
+    <b>PHP</b> peut être utilisé comme moteur de template pour les rendus, cependant, attention à <b>ne pas mettre de
+logique dans vos pages</b>. Pour cela, vous pouvez restreindre les pages de rendu à des opérations simples d'affichage,
+de tests et de parcous de tableaux.
+</p>
+
+{{ highlight('files/guide/templates.php') }}
+
+<p class="textOnly warning">
+    Ce n'est pas parce que <b>PHP</b> est à la fois un langage de développement et un langage de template qu'il faut
+mélanger ces principes.
 </p>
 </div>
 

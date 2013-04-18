@@ -2,5 +2,5 @@
 
 // PHP pur
 
-// Mauvais, car non nécéssaire
+// Mauvais, car non nécessaire
 ?>(fin du fichier)
