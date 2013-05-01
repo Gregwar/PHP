@@ -92,14 +92,20 @@ le dossier <code>design/</code>.
 </p>
 <div class="step">
 <h3>Création du layout</h3>
+<img src="{{ image('img/pizza.png').jpeg() }}" style="float:right" />
 <p>
     Pour commencer, créez un layout principal <code>layout.html.twig</code> contenant la structure générale du 
 site. Placez la feuille de style et les images dans le dossier <code>web/</code> de Symfony et utilisez la
-fonction <code>asset()</code> de Twig pour inclure <code>style.css</code>. Vous pourrez par exemple placer un
-block <code>contents</code> à l'intérieur de votre page. Pour une documentation exhaustive, vous pouvez vous
+fonction <code>asset()</code> de Twig pour inclure <code>style.css</code>.
+</p>
+<p>
+    Toutes vos templates hériteront plus tard ce ce <code>layout.html.twig</code> et surchargeront certain
+de ses blocs.
+</p>
+<p>
+Vous pourrez par exemple placer un
+bloc <code>contents</code> à l'intérieur de votre page. Pour une documentation exhaustive, vous pouvez vous
 référer à la <a href="http://symfony.com/doc/current/book/templating.html">documentation "Templating"</a> de
 Symfony.
 </p>
 </div>
-
-

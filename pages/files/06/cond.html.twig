@@ -1,0 +1,9 @@
+{% if not users|length %}
+<i>Aucun utilisateur</i>
+{% else %}
+<ul>
+    {% for user in users %}
+        <li>{{ user }}</li>
+    {% endfor %}
+</ul>
+{% endif %}

@@ -95,4 +95,72 @@ site (inscription, identification, rappel du mot de passe etc.).
 </p>
 </div>
 
+<div class="slide">
+{{ part('Les templates') }}
+<h3>Présentation</h3>
+<img src="{{ image('img/twig.png').resize('40%') }}" style="float:right" />
+<p>
+    <b>Symfony 2</b> est livré avec un très bon système de templates nommé <i>Twig</i>.
+</p>
+<p class="textOnly">
+    Ce système permet
+de simplifier de donner une grande puissance à l'écriture des vues, c'est à dire du contenu des pages HTML
+qui seront rendues.
+</p>
+<p class="discover">
+    <i>Twig</i> supporte l'héritage, l'échappement par défaut et de nombreuses astuces syntaxiques
+pour simplifier l'écriture des <i>templates</i>.
+</p>
+</div>
+
+<div class="slide">
+<h3>Utilisation</h3>
+<p>
+   Voici un exemple de template&nbsp;: 
+</p>
+{{ highlight('files/06/index.html.twig', 'php') }}
+<p class="textOnly">
+    Comme vous le voyez, <i>Twig</i> permet d'écrire des documents directements en HTML, à l'exception de certain
+tags qui permettent d'y ajouter de la structure, à l'instar du <b>PHP</b>.
+</p>
+<p class="textOnly">
+    Dans cet exemple&nbsp;:
+</p>
+<ul class="textOnly">
+    <li><code>&#123;% block contents %&#125;</code> est un bloc qui pourra être surchargé dans les templates filles</li>
+    <li><code>&#123;% block('title') %&#125;</code> sert à ré-afficher le contenu du block title précédement utilisé</li>
+    <li><code>&#123;&#123; name &#125;&#125;</code> correspond à l'affichage d'une variable</li>
+</ul>
+</div>
+
+<div class="slide">
+<h3>Héritage</h3>
+<p>
+    La template précédente peut être héritée comme cela&nbsp;:
+</p>
+{{ highlight('files/06/page.html.twig', 'php') }}
+<p class="textOnly">
+    Le mot clé <code>extends</code> permet de décrire que cette page hérite de <code>index.html.twig</code>, de la même
+manière que l'héritage des classes votre template se basera alors sur cette template mère et pourra redéfinir son
+comportement.
+</p>
+<p class="textOnly">
+    Les blocs peuvent alors être surchargés, c'est à dire modifié en les redéfinissant. Il est aussi possible d'utiliser
+le mot clé <code>parent()</code> pour faire appel à la template mère et utiliser son contenu, comme dans le cas du titre
+qui deviendra ici "Mon titre - Ma page"
+</p>
+</div>
+
+<div class="slide">
+<h3>Boucles, conditions</h3>
+<p>
+    Il est également possible d'effectuer des tests et des boucles avec Twig&nbsp;:
+</p>
+{{ highlight('files/06/cond.html.twig', 'php') }}
+<p class="discover">
+    Pour une documentation plus exhaustive, vous pouvez consulter la <a href="http://twig.sensiolabs.org/documentation">
+documentation officielle de Twig</a>
+</p>
+</div>
+
 {{ annex('tds/td6.html.twig') }}
