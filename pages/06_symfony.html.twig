@@ -7,17 +7,92 @@
 de réaliser des applications web.
 </p>
 <p class="discover">
-    D'après son créateur <b>Fabien Potencier</b>, Symfony 2 est en fait plus un immense package
-de bibliothèques toutes fortement découplées assemblées et paramétrées pour fonctionner ensemble.
+    D'après son créateur <b>Fabien Potencier</b>, Symfony 2 est en fait plus un rassemblement
+de bibliothèques et de composants tous fortement découplés assemblées et paramétrés pour fonctionner ensemble.
 </p>
 <p class="discover">
-    En effet, <b>Symfony 2</b> se base sur plein de composants tels que&nbsp;:
+    En effet, <b>Symfony 2</b> se base notamment sur&nbsp;:
 </p>
 <ul>
     <li class="discover">Doctrine pour requêter la base de données</li>
     <li class="discover">Twig pour le rendu de ses templates</li>
     <li class="discover">SwiftMailer pour l'envoi d'e-mails</li>
 </ul>
+</div>
+
+<div class="slide">
+<h3>Installation</h3>
+<p>
+    <b>Symfony 2</b> se base sur <b>composer</b> pour organiser ce rassemblement de composants. <span class="textOnly">Cet outil
+déjà présenté précédemment dans ce cours permet de gérer les dépendances entre les différents composants.</span>
+</p>
+<p class="textOnly">
+   Il est possible de créer un projet <b>Symfony 2</b> à l'aide de la commande&nbsp;: 
+</p>
+<div class="discover">
+{{ highlightString('composer.phar create-project symfony/framework-standard-edition', 'bash') }}
+</div>
+<p class="discover">
+    <b>Composer</b> va alors chercher toutes les dépendances nécéssaire et vous créer un projet <b>Symfony 2</b> vide
+</p>
+</div>
+
+<div class="slide">
+<h3>Utilisation</h3>
+<p>
+    L'utilisation du <i>framework</i> est technique et fait appel à de nombreux principes et outils.
+</p>
+
+<p class="discover">
+    Ce cours n'ayant pas pour but de répeter l'excellente <a href="http://symfony.com/">documentation officielle</a>,
+nous allons seulement survoler les principes à connaître, et nous les appliquerons en TD par la suite.
+</p>
+</div>
+
+<div class="slide">
+{{ part('Communauté') }}
+<h3>Organisation</h3>
+<img src="{{ image('img/github.png').resize('60%').png() }}" style="float:right" />
+<p> 
+    <i>GitHub</i> joue un rôle extrêmement important dans l'organisation du développement de <b>Symfony 2</b> et
+de ses composants.
+</p>
+<p class="discover">
+    Aujourd'hui, la mailing list des développeurs risque même d'être fermée au profit du suivi d'anomalies de
+<i>GitHub</i>
+</p>
+</div>
+
+<div class="slide">
+<h3>Bundles</h3>
+<img src="{{ image('img/package.png').resize('80%').png() }}" style="float:right" /> 
+<p>
+    <b>Symfony 2</b> est basé sur un "coeur" d'application, nommé le <i>Kernel</i>, c'est le noyau de votre
+application.
+    Auprès de ce noyau sont enregistrés des <i>Bundles</i>, (ou "paquets") qui sont en fait des composants.
+Le framework est alors livré avec de nombreux bundle (templating, ORM, gestion des formulaires etc.).
+</p>
+<p class="discover">
+    Un <i>bundle</i> peut proposer de nombreuses choses, vues, contrôleurs, entités pour la base de données, services etc.
+</p>
+<p class="discover">
+    Tout le code que vous écrirez sera dans un ou plusieurs <i>bundle</i>. Si vous souhaitez factoriser des fonctionnalités
+d'un de vos sites à l'autre, vous pouvez les regrouper dans un <i>bundle</i> indépendant.
+</p>
+</div>
+
+<div class="slide">
+<h3>Des composants à la carte</h3>
+<p>
+    Les composants de base du framework peuvent être remplaçés par d'autre (pour changer la version par exemple).
+</p>
+<p class="discover">
+    De nombreux <i>bundles</i> open-source peuvent être trouvés, sur <i>GitHub</i>.
+</p>
+<p class="discover">
+    On pourra citer par exemple le <i>FOSUserBundle</i>, qui permet de simplifier la gestion des utilisateurs d'un
+site (inscription, identification, rappel du mot de passe etc.).
+</p>
 </div>
 
 {{ annex('tds/td6.html.twig') }}
