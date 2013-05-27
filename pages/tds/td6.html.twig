@@ -109,3 +109,31 @@ référer à la <a href="http://symfony.com/doc/current/book/templating.html">do
 Symfony.
 </p>
 </div>
+
+<div class="step">
+<h3>Une première page</h3>
+<p>
+    Maintenant que votre structure est en place, créez une nouvelle action pour lister les pizzas
+dans votre contrôleur.
+    Pour cela, vous pourrez ajouter une fonction de ce style avec ses annotations&nbsp;:
+</p>
+
+{{ highlight('files/06/action.php') }}
+
+<p>
+    Testez votre action en vous rendant à la page <code>/pizzas</code> de votre application, vous
+devriez voir un message d'erreur vous indicant que la template correspondante n'existe pas. Créez
+cette template en héritant du layout et surchargez le bloc du contenu pour afficher un message différent.
+</p>
+</div>
+
+<div class="step">
+<h3>Création du premier lien</h3>
+<p>
+    Modifiez le lien du bouton "Les pizzas" de manière à ce qu'il pointe vers la page que vous venez
+de créer. Attention: ne mettez pas l'adresse de votre cible "en dur", mais utilisez la fonction twig
+<code>path</code>&nbsp;:
+</p>
+
+{{ highlightString('<a href="{{ path("pizzas_list") }}">Les pizzas</a>') }}
+</div>
