@@ -4,7 +4,7 @@
     "description": "Cours de PHP",
     "keywords": ["cours", "php"],
     "homepage": "https://github.com/Gregwar/PHP",
-    "license": "MIT",
+    "license": "CC-BY-NC-3.0",
     "authors": [
         {
             "name": "Grégoire Passault",
