@@ -1,4 +1,4 @@
-{{ chapter('Bonnes pratiques', 'bonnes-pratiques', 5) }}
+{{ chapter('Bonnes pratiques', 'bonnes-pratiques') }}
 
 <div class="slide">
 {{ part('Travailler proprement') }}
@@ -43,6 +43,7 @@ les en-têtes HTTP&nbsp;:
 </div>
 
 <div class="slide">
+{{ anchor('escape') }}
 <h3>Echappement</h3>
 
 <img style="float:right" src="{{ image('img/magicQuotes.gif').jpeg() }}" />
@@ -280,6 +281,7 @@ certains moteurs de templates offrent la possibilité d'échapper tout par défa
 </div>
 
 <div class="slide">
+{{ anchor('csrf') }}
 <h3>Failles CSRF</h3>
 <p class="textOnly">
     Imaginez la page suivant&nbsp;:
@@ -288,9 +290,9 @@ certains moteurs de templates offrent la possibilité d'échapper tout par défa
 {{ highlight('files/05/csrf.php', 'html5') }}
 
 <p class="textOnly">
-    Et si, à l'instar de l'attaquant XSS, quelqu'un vous envoyait un e-mail ou vous faisait cliquer sur un lien,
-via un autre site dont il a le contrôle, pointant vers <code>destroy.php</code>? Vous détruiriez votre compte
-sans même vous en aperçevoir. C'est ce que l'on apelle une faille CSRF (Corss Site ReFerencing). Les formulaires
+    Et si, à l'instar de l'attaquant XSS, quelqu'un vous envoyait un e-mail ou vous faisait cliquer sur un lien
+pointant vers <code>destroy.php</code>? Vous détruiriez votre compte
+sans même vous en aperçevoir. C'est ce que l'on apelle une faille CSRF (Cross Site ReFerencing). Les formulaires
 soumis à l'aide de POST peuvent également être victime de ces attaques.
 </p>
 <p class="textOnly">
@@ -302,6 +304,7 @@ son formulaire.
 </div>
 
 <div class="slide">
+{{ anchor('sqlinjection') }}
 <h3>Injection SQL</h3>
 <p class="textOnly">
     Comme il a été expliqué plus tôt, dans le chapitre sur la base de données, il est très mauvais de créer
@@ -362,6 +365,7 @@ peut d'ailleurs être retrouvé que par force brute.
 </div>
 
 <div class="slide">
+{{ anchor('mvc') }}
 {{ part('Framework & bibliothèques') }}
 <h3>Architecture MVC</h3>
 <p class="textOnly">
@@ -378,6 +382,11 @@ des données</li>
 <center>
     <img src="{{ image('img/MVC.jpg').resize('70%').jpeg() }}" />
 </center>
+
+<p class="textOnly">
+    Ce principe est très célèbre et répandu, presque tous les frameworks le respectent. Vous trouverez une multitude
+d'informations sur internet à ce sujet.
+</p>
 </div>
 
 <div class="slide">

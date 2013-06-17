@@ -1,0 +1,268 @@
+{{ chapter('Guide de conception', 'guide-de-conception') }}
+
+<div class="slide">
+{{ part('Introduction') }}
+<p>
+    Le <b>PHP</b> est un langage historique qui dispose désormais de nombreuses
+possibilités. Cependant, un très lourd fardeau historique pèse sur cette technologie
+qui est souvent critiqué par les développeurs le considérant comme trop permissif
+et propice à l'écriture de mauvais code.
+</p>
+<p class="discover">
+    Ce guide recence des règles de conception permettant d'écrire du code <b>PHP</b>
+moderne et de respecter les <a href="{{ ref('bonnes-pratiques') }}">bonnes pratiques</a>
+</p>
+</div>
+
+<div class="slide">
+<p class="warning">
+    <b>Attention,</b> ce guide ne contient <b>pas</b> des conseils mais des règles
+<u>à respecter impérativement</u> dans toute conception récente de projet PHP. Ces
+règles seront prises en compte comme sèvère malus lors de mes évaluations de projets.
+</p>
+</div>
+
+<div class="slide">
+{{ part('Utilisation de PHP') }}
+<h3>Short tags</h3>
+<p>
+    Les short tags (<code>&lt;?</code> et <code>?&gt;</code>) sont encore très
+supportés mais ne <b>doivent pas être utilisés</b>
+</p>
+
+{{ highlight('files/guide/short.php') }}
+</div>
+
+<div class="slide">
+<h3>Fermeture du tag ?&gt;</h3>
+<p>
+    Le tag de fermeture <b>PHP</b> (<code>?&gt;</code>) ne doit <b>jamais être utilisé à
+la fin d'un fichier PHP pur</b>, car il n'est pas nécessaire et ne peut être
+source que d'erreur
+</p>
+
+{{ highlight('files/guide/close.php') }}
+
+<p class="textOnly">
+    Les fichiers ne contenant en effet que du <b>PHP</b> pur commencent bien entendu par
+<code>&lt;?php</code> puis sont suivis du code, ils ne doivent alors pas se terminer par
+<code>?&gt;</code>, car ça n'est pas nécessaire et que l'ajout involontaire d'espaces
+ou de tabulation provoquerait l'envoi de caractère sur la sortie. Cette recommandation
+est soutenue par <a href="http://php.net/manual/en/language.basic-syntax.phptags.php">php.net</a>.
+</p>
+</div>
+
+<div class="slide">
+<h3>Magic quotes</h3>
+<p>
+    Les magic quotes <b>sont obselètes et ne doivent pas être utilisés</b>. Ils sont d'ailleurs
+inexistants depuis <b>PHP 5.4</b>.
+</p>
+<p>
+    Vous pouvez pour cela lire la page de manuel <a href="http://php.net/manual/en/security.magicquotes.disabling.php">
+PHP: Disabling magic quotes</a>
+</p>
+<p>
+    <a href="{{ ref('bonnes-pratiques', 'escape') }}">Voir le chapitre "Bonnes pratiques", partie Echappement</a>
+</p>
+</div>
+
+<div class="slide">
+{{ part('Organisation du code') }}
+<h3>Inclusion</h3>
+<p>
+    Dans un projet, les fonctions <code>include()</code> et <code>require()</code> ne <b>doivent pas
+être utilisées</b>, à part pour charger l'autoloader.
+</p>
+
+{{ highlight('files/guide/include.php') }}
+
+<p>
+    <a href="{{ ref('programation-orientee-objet', 'autoloader') }}">Voir le chapitre "POO", partie Autoloader</a>
+</p>
+</div>
+
+<div class="slide">
+<h3>Nommage des fichiers</h3>
+<p>
+    L'utilisation d'un autoloader implique des règles à respecter pour nommer les fichiers
+présents dans un projet. Cette norme est décrite par <a href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md"><b>PSR-0</b></a> et <b>doit être impérativement
+respectée</b>.
+</p>
+<p>
+    <span class="textOnly">Pour résumer, si une classe se nomme <code>A\B\C</code>, elle devra éventuelement selon
+son préfixe se trouver dans un dossier de source sous le nom <code>A/B/C.php</code>.</span>
+    <span class="textOnly">Ainsi, voici quelques exemples de correspondances&nbsp;:</span>
+</p>
+<ul>
+    <li class="discover"><code>Gregwar\Example\Demo</code> &rarr; <code>lib/Gregwar/Example/Demo.php</code></li>
+    <li class="discover"><code>Gregwar\Something</code> &rarr; <code>vendor/gregwar/Gregwar/Something.php</code></li>
+</ul>
+<p class="discover">
+    <b>Toutes les classes doivent être dans au moins un espace de nom et correspondent à exactement un fichier</b>.
+</p>
+</div>
+
+<div class="slide">
+<h3>Séparation des principes</h3>
+<p>
+    Le rendu (c'est à dire l'affichage de code HTML) et le requêtage MySQL <b>ne doivent jamais se mélanger</b>. Le
+travail de requêtage doit se faire avant toute forme de rendu, et seul les opérations basiques sont tolérées dans les
+vues.
+</p>
+
+{{ highlight('files/guide/separation.php') }}
+<p>
+    Pour cela, le code peut suivre un principe comme par exemple MVC. 
+    <a href="{{ ref('bonnes-pratiques', 'mvc') }}">Voir le chapitre "Bonnes pratiques", partie MVC</a>
+</p>
+</div>
+
+<div class="slide">
+<h3>Templating en PHP</h3>
+<p>
+    <b>PHP</b> peut être utilisé comme moteur de template pour les rendus, cependant, attention à <b>ne pas mettre de
+logique dans vos pages</b>. Pour cela, vous pouvez restreindre les pages de rendu à des opérations simples d'affichage,
+de tests et de parcous de tableaux.
+</p>
+
+{{ highlight('files/guide/templates.php') }}
+
+<p class="textOnly warning">
+    Ce n'est pas parce que <b>PHP</b> est à la fois un langage de développement et un langage de template qu'il faut
+mélanger ces principes.
+</p>
+</div>
+
+<div class="slide">
+<h3>Standard de codage</h3>
+<p>
+    Tout projet <b>doit s'imposer un standard de codage et le respecter</b>. Un standard est définit par des règles, à
+propos par exemple de&nbsp;:
+</p>
+<ul>
+    <li class="discover">Le type de l'indentation (tabluations ou espaces? nombres d'espaces?)</li>
+    <li class="discover">Le fait de retourner ou non à la ligne après un <code>{</code></li>
+    <li class="discover">L'utilisation et le format des commentaires <code>//</code> ou <code>/* */</code> selon le contexte</li>
+    <li class="discover">L'utilisation de la CamelCase (<code>theMagicFunction()</code>) ou des underscores (<code>the_magic_function()</code>)</li>
+</ul>
+<p class="discover">
+    L'essentiel étant de rester cohérent et lisible. Afin d'éviter les polémiques stériles, je vous propose de suivre
+les standards <a href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md">PSR-1</a> et
+<a href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md">PSR-2</a>
+</p>
+</div>
+
+<div class="slide">
+<h3 class="slideOnly">Standard de codage</h3>
+<p>
+    Il existe des outils nommés "Code Sniffer" permettant de détectet automatiquement les problèmes liés aux standards de codage 
+</p>
+<p class="discover">
+    Sensio propose un logiciel permettant de corriger automatiquement les standards de codages&nbsp;: <a href="http://cs.sensiolabs.org/">http://cs.sensiolabs.org/</a>
+</p>
+</div>
+
+<div class="slide">
+{{ part('Base de données') }}
+
+<h3>Ancienne extension MySQL</h3>
+<p>
+    Les fonctions MySQL obselètes telles que <code>mysql_connect()</code> ou <code>mysql_query()</code>
+ne <b>doivent pas être utilisées</b>. Ces dernières sont fortement dépréciées et seront supprimées
+dans un futur proche.
+</p>
+</div>
+
+<div class="slide">
+<h3>Préparation des requêtes</h3>
+<p>
+    Une requête SQL ne doit <b>jamais être construite par concaténation</b> de chaînes de caractères,
+mais doit utiliser la préparation des requêtes&nbsp;:
+</p>
+
+{{ highlight('files/guide/prepare.php') }}
+
+<p>
+    <a href="{{ ref('bonnes-pratiques', 'sqlinjection') }}">Voir le chapitre "Bonnes pratiques", partie injections SQL</a>
+</p>
+</div>
+
+<div class="slide">
+<h3>Echappement</h3>
+<p>
+    Les données stockées dans une base <b>ne doivent pas être échappées</b> par une fonction telle que
+<code>htmlspecialchars()</code> ou <code>htmlentities()</code>. L'échappement doit être fait au moment
+de l'affichage des données.
+</p>
+
+{{ highlight('files/guide/escape.php') }}
+
+<p class="textOnly">
+    En effet, l'échappement HTML correspond au rendu, et les données stockées dans la base doivent rester
+le plus possible découplées du système de rendu quel qu'il soit. Imaginez que votre base soit utilisée avec
+une application lourde ou par des scripts, vous seriez alors obligés de des-échapper les valeurs HTML.
+</p>
+</div>
+
+
+<div class="slide">
+{{ part('Les formulaires') }}
+<h3>Vérification coté serveur</h3>
+<p>
+    Une application <b>ne doit jamais faire confiance</b> aux données saisies par un utilisateur et toujours
+vérifier leur intégrité côté serveur. Notamment&nbsp;:
+</p>
+<ul>
+    <li class="discover">La valeur d'un <code>&lt;select&gt;</code> doit être parmi les options proposées</li>
+    <li class="discover">Le format d'une adresse e-mail doit être vérifié même si l'input est en HTML5 et vérifie
+    coté client son intégrité</li>
+    <li class="discover">Les champs <code>hidden</code> qui ont été créé pour le transport d'information doivent
+    bien entendu être vérifiés</li>
+</ul>
+</div>
+
+<div class="slide">
+<h3>Protection CSRF</h3>
+<p>
+    Tous les formulaires <b>doivent être sécurisés contre CSRF</b>. Ils doivent pour cela contenir un jeton CSRF
+qui permettra par la suite de vérifier qu'il a bien été posté en passant par le formulaire en question. 
+<a href="{{ ref('bonnes-pratiques', 'csrf') }}">Voir le chapitre "Bonnes pratiques", partie CSRF</a>
+</p>
+</div>
+
+<div class="slide">
+{{ part('Programmation orientée objet') }}
+<h3>Utilisation de l'objet</h3>
+<p>
+    Afin de respecter l'organisation du code et de tirer le plus de profit de l'autoloader, le code
+d'un projet <b>doit être exclusivement dans des classes</b>. A l'exception du script "frontal" qui
+construit les objets pour lancer l'application.
+</p>
+</div>
+
+<div class="slide">
+<h3>Mot clé <code>var</code></h3>
+<p>
+    Le mot clé <code>var</code> ne <b>doit être utilisé sous aucun pretexte</b>, il s'agit d'une
+compatibilité avec les anciennes versions de PHP. Un mot clé de portée, tel que <code>public</code>,
+<code>protected</code>, ou <code>private</code> doit être utilisé à la place.
+</p>
+
+{{ highlight('files/guide/var.php') }}
+</div>
+
+<div class="slide">
+<h3>Utilisation du type hinting</h3>
+<p>
+    Les indications de type <b>doivent être impérativement données</b> lorsque cela est possible, c'est
+à dire pour les <code>array</code> et tout autre type non basique.
+</p>
+<p>
+    Si des objets variés peuvent être passés en paramètre d'une fonction, il faut impérativement étudier
+la possibilité de créer une interface alors implémentée afin de l'ajouter au type hinting de cette fonction.
+</p>
+<p>
+    <a href="{{ ref('programation-orientee-objet', 'typehinting') }}">Voir le chapitre "POO", partie Type Hinting</a>
+</p>
+</div>

@@ -8,11 +8,11 @@ class BusTest extends PHPUnit_Framework_TestCase
     {
 	$bus = new Bus(1);
 
-	$this->assertEquals($bus->getPosition(), 0);
+	$this->assertEquals(0, $bus->getPosition());
 	$bus->next();
-	$this->assertEquals($bus->getPosition(), 1);
+	$this->assertEquals(1, $bus->getPosition());
 	$bus->next();
-	$this->assertEquals($bus->getPosition(), 1);
+	$this->assertEquals(1, $bus->getPosition());
     }
 
     public function testNext()
@@ -28,6 +28,6 @@ class BusTest extends PHPUnit_Framework_TestCase
 	$bus = new Bus(10);
 
 	$bus->go(5);
-	$this->assertEquals($bus->getPosition(), 5);
+	$this->assertEquals(5, $bus->getPosition());
     }
 }

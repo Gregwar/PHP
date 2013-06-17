@@ -1,4 +1,4 @@
-{{ chapter('Les bases du PHP', 'bases-du-php', 1) }}
+{{ chapter('Les bases du PHP', 'bases-du-php') }}
 
 <div class="slide">
 {{ part('Introduction : qu\'est-ce que PHP ?') }}
@@ -29,6 +29,21 @@ de 1994. Il a été largement conçu et pensé pour réaliser des sites webs.<br
     <li class="discover">Doté d'un grand jeu d'extension et de bibliothèques</li>
 </ul>
 </div>
+
+<div class="poll">
+<p>
+    Avez vous déjà fait du PHP ?
+</p>
+<div class="option">
+    Oui
+</div>
+<div class="option">
+    Un peu
+</div>
+<div class="option">
+    Non, jamais
+</div>
+</div>
 </div>
 
 <div class="slide">
@@ -36,12 +51,12 @@ de 1994. Il a été largement conçu et pensé pour réaliser des sites webs.<br
     <p>
 	Avant d'aller plus loin, nous considérerons que vous avez des connaissances
 en web, notamment en <b>HTML</b>, <b>CSS</b> et <b>JavaScript</b>. Il est également
-nécéssaire d'avoir des connaissances en programmation impératives (variables, 
+nécessaire d'avoir des connaissances en programmation impératives (variables, 
 structures de contrôle, fonctions etc.). Il est préférable d'avoir déjà fait de la 
 programmation orientée objet.
     </p>
     <p>
-	En ce qui concerne le <b>PHP</b>, aucun prérequis n'est nécéssaire.
+	En ce qui concerne le <b>PHP</b>, aucun prérequis n'est nécessaire.
     </p>
 </div>
 
@@ -223,7 +238,7 @@ des données structurées, indexées et facile d'accès.
 <h3>Valeur null</h3>
 <p>
     <b>PHP</b> propose une valeur spéciale <code>null</code>, qu'il ne faut pas confondre
-avec <code>false</code>, ni avec l'absence même de définition d'une variable&nbp;:
+avec <code>false</code>, ni avec l'absence même de définition d'une variable&nbsp;:
 </p>
 
 {{ highlight('files/01/null.php') }}
@@ -373,7 +388,7 @@ peut exécuter du code sur la machine qui l'éxécute.
     <h3>Quelques constantes utiles</h3>
 <p>
     <b>PHP</b> met à notre disposition des <a href="http://fr.php.net/manual/en/language.constants.predefined.php">"constantes
-magiques"</a> qui peuvent s'avérer très utile pour l'inclusion :
+magiques"</a> qui peuvent s'avérer très utiles pour l'inclusion :
 </p>
 <table>
     <tr>

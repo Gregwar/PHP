@@ -19,6 +19,7 @@ soit sur une liste de fonction et éventuellement dans la recherche du site.
 
 {% set n = 1 %}
 
+<div class="step">
 <p>
     <b>{{ n }}{% set n = n+1 %}. La ligne de commande</b><br />
 
@@ -33,13 +34,16 @@ en main et de faire des tests. Créez un fichier <code>hello.php</code> et place
 
     Le message <code>Hello world!</code> devrait apparaître sur votre écran.
 </p>
+</div>
 
+<div class="step">
 <p>
     <b>{{ n }}{% set n = n+1 %}. Quelques exemples</b><br />
     
     Parcourez les exemples du dossier <code>exercice1/</code>, lisez bien les commentaires et explications
 et exécutez les pour en comprendre le comportement.
 </p>
+</div>
 
 {{ part('Exercice 2 : Gestion d\'un magasin') }}
 
@@ -57,6 +61,7 @@ fonctionnement.
 
 {% set n = 1 %}
 
+<div class="step">
 <p>
     <b>{{ n }}{% set n = n+1 %}. Quel est l'interêt du tableau <code>$actions</code> ? Quelle(s) autre(s) méthode aurait pu être employée ?</b>
 
@@ -108,38 +113,48 @@ des produits est t-elle sauvegardée ?</b>
 et de <code>var_export()</code> qui permettent d'écrire la variable dans le fichier telle quelle.
 </div>
 </p>
+</div>
 
 <h3>Implémentation</h3>
 
 {% set n = 1 %}
 
+<div class="step">
 <p>
     <b>{{ n }}{% set n = n+1 %}. Définition du prix</b><br />
 
     Ajoutez une commande "<code>php store.php set-price [product] [price]</code>" qui définit le prix d'un produit.
 </p>
+</div>
 
+<div class="step">
 <p>
     <b>{{ n }}{% set n = n+1 %}. Pouvoir enlever des produits</b><br />
 
     Implémentez une commande "<code>php store.php remove [product] [quantity]</code>" qui enlève <code>quantity</code> produit de
 nom <code>product</code> du magasin.
 </p>
+</div>
 
+<div class="step">
 <p>
     <b>{{ n }}{% set n = n+1 %}. Ajout de description</b><br />
 
     Modifiez le code de manière à ajouter une entrée "description" dans le tableau de chaque produit et ajoutez une commande 
 "<code>php store.php set-description product "description du produit"</code>" qui permet de définir la description d'un produit.
 </p>
+</div>
 
+<div class="step">
 <p>
     <b>{{ n }}{% set n = n+1 %}. Recherche de produits</b><br />
 
     Créez une commande "<code>php store.php search [keyword]</code>" qui permet d'effectuer une recherche parmi les produits
 du magasin par nom ou description et qui affiche la liste des résultats.
 </p>
+</div>
 
+<div class="step">
 <p>
     <b>{{ n }}{% set n = n+1 %}. Import et export CSV</b><br />
 
@@ -150,11 +165,13 @@ du magasin par nom ou description et qui affiche la liste des résultats.
     A l'aide des fonctions <a href="http://php.net/fgetcsv">fgetcsv()</a> et <a href="http://php.net/fputcsv">fputcsv()</a>, ajoutez une commande "<code>php store.php import [fichier.csv]</code>"
 et "<code>php store.php export [fichier.csv]</code>" pour importer et exporter la liste des produits au format CSV.
 </p>
+</div>
 
 {{ part('Exercice 3 : Mandelbrot') }}
 
 <img class="right" src="{{ image('img/mandelbrot.png').resize(430).guess() }}" title="L'ensemble de mandelbrot">
 
+<div class="step">
 <p>
     L'ensemble de mandelbrot est une fractale, c'est à dire sur lequel on peut "zommer" sans jamais en apréhender
 les limites (non dérivable). 
@@ -180,7 +197,7 @@ tend vers l'infini quand n tend vers l'infini (on utilisera de très grande born
 </p>
 <p>
     Une fois que votre implémentation fonctionne, il vous est possible d'implémenter le zoom sur la courbe fractale afin
-de l'observer de plus en plus pres.
+de l'observer de plus en plus près.
 </p>
-
+</div>
 
