@@ -1,0 +1,6 @@
+Sommaire
+========
+
+.. toctree::
+
+    bases

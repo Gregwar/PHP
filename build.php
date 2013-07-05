@@ -7,17 +7,17 @@ $slidey = new Gregwar\Slidey\Slidey;
 /**
  * Customizing template
  */
-$slidey->template->set('mainTitle', 'PHP');
-$slidey->template->set('footer', file_get_contents('license.htm'));
-$slidey->template->addCss('css/style.css');
+$slidey->setTitle('PHP');
+$slidey->addCss('css/style.css');
 
 /**
  * Adding custom directories
  */
-$slidey->copy('css');
+$slidey->copy('css', 'css');
+$slidey->copy('img', 'img');
 $slidey->mkdir('files');
-$slidey->copy('files/*.zip', 'files/');
-$slidey->copy('static/favicon.ico');
+$slidey->copy(__DIR__.'/files/*.zip', 'files/');
+$slidey->copy('favicon.ico');
 
 /**
  * Interactive mode
