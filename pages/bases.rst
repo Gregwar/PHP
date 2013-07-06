@@ -244,8 +244,6 @@ Un tableau peut bien entendu contenir des sous-tableaux::
         'C' => array(99, -1),
     );
 
-    {{ highlight('files/01/array2.php') }}
-
 .. textOnly::
     Ce type peut donc être utilisé à de nombreuses fins et permet de mettre rapidement en place
     des données structurées, indexées et facile d'accès.
