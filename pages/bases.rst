@@ -5,7 +5,7 @@ Les bases du PHP
 
 .. slide::
 
-#=) Introduction: qu'est-ce que PHP?
+Introduction: qu'est-ce que PHP?
 ------------------------------------
 
 Présentation
@@ -51,7 +51,7 @@ programmation orientée objet.
 
 .. slide::
 
-#=) Installation et utilisation
+Installation et utilisation
 -------------------------------
 
 Introduction
@@ -65,7 +65,7 @@ qu'à ses particularités.
 
 .. slide::
 
-#=) Installation de l'intérpreteur
+Installation de l'intérpreteur
 ----------------------------------
 
 L'ensemble de la documentation et des fichiers binaires de **PHP** peuvent 
@@ -76,7 +76,7 @@ Sous linux, vous trouverez l'interpreteur **PHP** dans les dépôts **apt** :
 .. code-block:: txt
     php5-cli - command-line interpreter for the php5 scripting language
 
-Sous windows, vous trouverez les binaires à l'adresse suivante~: 
+Sous windows, vous trouverez les binaires à l'adresse suivante: 
 `http://windows.php.net/download/ <http://windows.php.net/download/>`_
 
 .. slide::
@@ -84,7 +84,7 @@ Sous windows, vous trouverez les binaires à l'adresse suivante~:
 Hello world!
 ~~~~~~~~~~~~
 
-Il est possible de faire un hello world simplement~::
+Il est possible de faire un hello world simplement::
 
     Hello world !
 
@@ -114,7 +114,7 @@ Utilisation
 ~~~~~~~~~~~
 
 Pour utiliser l'interpreteur **PHP**, utilisez simplement la commande ``php``
-dans votre terminal~:
+dans votre terminal:
 
 .. code-block:: txt
 
@@ -155,7 +155,7 @@ Dans cette partie, nous utiliserons uniquement l'interpréteur en ligne de comma
 
 .. slide::
 
-#=) Présentation du langage
+Présentation du langage
 ---------------------------
 
 Exemple basique
@@ -523,7 +523,7 @@ Voici un exemple plus avancé qui utilise deux concepts introduits dans **PHP 5.
 
 .. slide::
 
-#=) Inclusion de fichier
+Inclusion de fichier
 ------------------------
 
 Les fonctions include et require
