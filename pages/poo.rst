@@ -227,6 +227,8 @@ Méthodes et classes finales
         }
     }
 
+.. slide::
+
 Interfaces
 ~~~~~~~~~~
 
@@ -614,8 +616,10 @@ Multiples classes de même nom
 .. textOnly::
     Si Bob écrit à son tour une classe ``Image`` et la place sous l'espace de
     noms ``Bob\Image``, il sera possible d'utiliser les deux soit à l'aide de la
-    déclaration entière du nom des classes::
-    
+    déclaration entière du nom des classes
+
+::
+
     <?php
 
     $a = new Bob\Image;
@@ -730,6 +734,8 @@ au moment ou une classe est demandée et qu'elle n'est pas chargée dans le but 
 dynamiquement.
 
 * Voir `spl_autoload_register() <http://php.net/spl_autoload_register>`_
+
+.. slide::
 
 TD
 ---

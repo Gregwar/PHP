@@ -597,6 +597,8 @@ répértoire actuel::
      */
     include_once(__DIR__.'/math.php');
 
+.. slide::
+
 TD
 ---
 

@@ -581,6 +581,8 @@ L'utilisation de tout ce mécanisme se fait **automatiquement** à l'aide de la 
     valeur arbitraire. En revanche, le client peut choisir de supprimer son cookie de session, c'est à dire
     jeter son jeton de sécurité, le compteur repartira alors à 0.
 
+.. slide::
+
 TD
 ---
 
