@@ -178,7 +178,7 @@ ainsi que sur le contenu de la réponse.
 .. slide::
 
 PHP et HTTP
-===========
+-----------
 
 Fonctionnement
 ~~~~~~~~~~~~~~
