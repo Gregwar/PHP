@@ -730,3 +730,9 @@ au moment ou une classe est demandée et qu'elle n'est pas chargée dans le but 
 dynamiquement.
 
 * Voir `spl_autoload_register() <http://php.net/spl_autoload_register>`_
+
+TD
+---
+
+* :doc:`tds/td3`
+
