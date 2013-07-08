@@ -97,7 +97,9 @@ Il est possible de faire un hello world simplement::
 
 .. discover::
     Ou en version mixte::
-        
+
+        <?php 
+
         Hello <?php echo 'world'; ?> !
 
 
@@ -594,3 +596,9 @@ répértoire actuel::
      * Permet d'éviter les ambiguités
      */
     include_once(__DIR__.'/math.php');
+
+TD
+---
+
+* :doc:`tds/td1`
+
