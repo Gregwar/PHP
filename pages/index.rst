@@ -4,3 +4,5 @@ Sommaire
 .. toctree::
 
     bases
+    http
+
