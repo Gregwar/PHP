@@ -1,6 +1,7 @@
 <?php
 
 include('vendor/autoload.php');
+include('phpnet.php');
 
 $slidey = new Gregwar\Slidey\Slidey;
 
@@ -9,6 +10,13 @@ $slidey = new Gregwar\Slidey\Slidey;
  */
 $slidey->setTitle('PHP');
 $slidey->addCss('css/style.css');
+
+/**
+ * Setting up the php.net :method: references
+ */
+$slidey->addEnvironmentHook(function ($env) {
+    $env->registerReference(new PhpNet);
+});
 
 /**
  * Adding custom directories
