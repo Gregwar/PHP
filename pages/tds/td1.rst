@@ -10,7 +10,6 @@ Lorsque vous ignorez la signification d'une fonction **PHP**, comme par exemple 
 rendez vous simplement à l'adresse `php.net/strlen <http://php.net/strlen>`_ (ajoutez votre
 fonction ou mot clé à la suite de ``http://php.net``). Vous arriverez alors soit directement sur la page de la fonction
 soit sur une liste de fonction et éventuellement dans la recherche du site.
-</p>
 
 Exercice 1: Les bases
 ---------------------

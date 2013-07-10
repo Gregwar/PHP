@@ -14,7 +14,6 @@ Introduction
 Le langage **PHP** peut être très vite maîtrisé. En revanche, l'apprentissage
 des méthodes et l'organisation sont plus complexes et primordiales dans l'écriture
 d'une application web.
-</p>
 
 Dans cette partie, nous survolerons un ensemble de bonnes pratiques fortement liées 
 au développement d'application **PHP**.
