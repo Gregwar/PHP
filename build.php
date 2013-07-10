@@ -3,6 +3,11 @@
 include('vendor/autoload.php');
 include('phpnet.php');
 
+if (isset($argv[1]) && $argv[1] == 'clean') {
+    shell_exec('rm -rf '.__DIR__.'/../php');
+    exit();
+}
+
 $slidey = new Gregwar\Slidey\Slidey;
 
 /**

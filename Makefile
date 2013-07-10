@@ -3,11 +3,11 @@ all: zips
 	@php build.php 
 
 redo: zips
-	rm -rf ../php
-	@php build.php 
+	@php build.php clean
+	@php build.php
 
 clean:
-	rm -rf ../php
+	@php build.php clean
 
 zips:
 	@make -C files/
