@@ -4,7 +4,7 @@ TD3
 Préparation
 -----------
 
-Vous trouverez l'ensemble du code de ce TD dans <a href="files/td3.zip">td3.zip</a>.
+Vous trouverez l'ensemble du code de ce TD dans `td3.zip </files/td3.zip>`_.
 Vous aurez besoin de déployer son contenu sur un espace web disposant de l'intérpréteur
 **PHP**. 
 

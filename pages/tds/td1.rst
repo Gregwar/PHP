@@ -135,7 +135,7 @@ Implémentation
         "produit1";"12";"32"
         "produit2";"102";"11"
 
-    A l'aide des fonctions <a href="http://php.net/fgetcsv">fgetcsv()</a> et <a href="http://php.net/fputcsv">fputcsv()</a>, ajoutez une commande "``php store.php import [fichier.csv]``"
+    A l'aide des fonctions :method:`fgetcsv` et :method:`fputcsv`, ajoutez une commande "``php store.php import [fichier.csv]``"
     et "``php store.php export [fichier.csv]``" pour importer et exporter la liste des produits au format CSV.
 
 .. step::
