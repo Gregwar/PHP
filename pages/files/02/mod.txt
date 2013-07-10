@@ -1,1 +1,0 @@
-libapache2-mod-php5 - server-side, HTML-embedded scripting language (Apache 2 module)

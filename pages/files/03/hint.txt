@@ -1,5 +1,0 @@
-PHP Catchable fatal error: 
-Argument 1 passed to f() must be an
-instance of A, array given, called in
-hint.php on line 11 and defined in
-hint.php on line 3

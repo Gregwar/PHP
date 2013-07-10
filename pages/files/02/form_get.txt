@@ -1,3 +1,0 @@
-> GET /form.html?firstname=Marty&lastname=McFly HTTP/1.1
-> ...
-> 
