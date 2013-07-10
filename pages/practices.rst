@@ -155,13 +155,12 @@ Tests unitaires: exécution
 Serveur d'intégration
 ~~~~~~~~~~~~~~~~~~~~~
 
-.. textOnly::
-    Un serveur d'intégration est une application généralement couplée au système de versionnement
-    (tels que *git* ou *svn*), et qui vérifie continuellement que les tests unitaires
-    et standards de codages sont respectés.
-    
-    Il permet de provoquer des alertes dans le cas d'une mauvaise manipulation et de sensibiliser
-    une équipe de développeurs à la fragilité de l'application.
+Un serveur d'intégration est une application généralement couplée au système de versionnement
+(tels que *git* ou *svn*), et qui vérifie continuellement que les tests unitaires
+et standards de codages sont respectés.
+
+Il permet de provoquer des alertes dans le cas d'une mauvaise manipulation et de sensibiliser
+une équipe de développeurs à la fragilité de l'application.
 
 .. slide::
 
