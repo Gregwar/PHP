@@ -1,3 +1,5 @@
+.. slide:: middleSlide
+
 Bases de données
 ================
 

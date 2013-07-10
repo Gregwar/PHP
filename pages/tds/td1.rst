@@ -164,9 +164,15 @@ Implémentation
         y_{n+1} = 2x_ny_n+b
         \end{cases}
         
-    Et tester que la suite diverge, c'est à dire que ``Xn`` ou ``Yn``
+    Et tester que la suite diverge, c'est à dire que |Xn| ou |Yn|
     tend vers l'infini quand n tend vers l'infini (on utilisera de très grande bornes).
 
     Une fois que votre implémentation fonctionne, il vous est possible d'implémenter le zoom sur la courbe fractale afin
     de l'observer de plus en plus près.
+
+.. |Xn| math::
+    x_n
+
+.. |Yn| math::
+    y_n
 

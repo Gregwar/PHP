@@ -347,13 +347,13 @@ Remarques
 .. textOnly::
     Il n'y a pas d'héritage multiple en **PHP**
 
-    **PHP** ne supporte pas le polymorphisme, méthodes ayant le même nom mais des prototypes
+    **PHP** ne supporte pas la surcharge, méthodes ayant le même nom mais des prototypes
     différents, vous pouvez cependant utiliser des paramètres optionnels et non typés, voici un exemple
     illustrant un argument optionel ayant une valeur par défaut:
 
 .. slideOnly::
     * Pas d'héritage multiple
-    * Pas de **polymorphisme** possible, mais les arguments peuvent être optionnels et non typés:
+    * Pas de **surcharge** possible, mais les arguments peuvent être optionnels et non typés:
 
 ::
 

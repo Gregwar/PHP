@@ -27,12 +27,12 @@ Présentation
     **PHP** est :
 
     .. discoverList::
-        * Interprété
-        * Faiblement typé	
-        * Multi paradigmes (impératif, objet, fonctionnel etc.)
-        * Libre et gratuit
-        * Très répandu sur le marché
-        * Doté d'un grand jeu d'extension et de bibliothèques
+    * Interprété
+    * Faiblement typé	
+    * Multi paradigmes (impératif, objet, fonctionnel etc.)
+    * Libre et gratuit
+    * Très répandu sur le marché
+    * Doté d'un grand jeu d'extension et de bibliothèques
 
 
 .. slide::

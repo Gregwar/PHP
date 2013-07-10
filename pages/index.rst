@@ -7,4 +7,5 @@ Sommaire
     http
     poo
     db
+    practices
 
