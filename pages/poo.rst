@@ -508,7 +508,7 @@ Substitution
 
 .. textOnly::
     **PHP** étant interprété, les types ne sont connus qu'au moment de l'execution.
-    Ainsi, lorsque vous écrivez une méthode, les paramètres ne sont pas typés. Cela peut 
+    Ainsi, lorsque vous écrivez une méthode, les paramètres ne sont pas typés. Cela peut
     s'avérer pratique pour la substitution, mais aussi provoquer des problèmes très innatendus:
 
 ::
@@ -539,7 +539,7 @@ Type hinting
 
 .. textOnly::
     Depuis **PHP 5.3**, un mécanisme permet d'éviter ce genre d'erreur fréquente (passage
-    d'argument du mauvais type), il s'agit du <em>type hinting</em> (ou indication de type):
+    d'argument du mauvais type), il s'agit du *type hinting* (ou indication de type):
 
 ::
 
