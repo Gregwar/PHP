@@ -209,3 +209,9 @@ Il est également possible d'effectuer des tests et des boucles avec Twig:
 .. discover::
     Pour une documentation plus exhaustive, vous pouvez consulter la
     `documentation officielle de Twig <http://twig.sensiolabs.org/documentation>`_.
+
+TD
+---
+
+* :doc:`tds/td6`
+
