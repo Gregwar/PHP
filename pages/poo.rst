@@ -266,7 +266,7 @@ Exceptions
 ~~~~~~~~~~
 
 .. textOnly::
-    Comme la plupart des langages orienté objet, **PHP** propose un mécanisme d'<a href="http://php.net/Exceptions">exceptions</a>
+    Comme la plupart des langages orienté objet, **PHP** propose un mécanisme d':method:`exceptions`
     permettant d'affiner la gestion d'erreur. Par défaut, les exceptions remonteront jusqu'à être disposée sous forme d'erreur:
 
 ::

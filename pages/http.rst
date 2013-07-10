@@ -247,8 +247,8 @@ Exemple de structure
 Variables superglobales
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-La paserelle **PHP** met à votre disposition des variables spéciales nommées <a href="http://php.net/superglobals">
-superglobales</a>. Elles contiennent des informations sur la requête en cours :
+La paserelle **PHP** met à votre disposition des variables spéciales nommées :method:`superglobales <superglobals>`.
+Elles contiennent des informations sur la requête en cours :
 
 * ``$_SERVER``: Contient les informations sur la requête **HTTP**
 * ``$_GET``: Variables GET
@@ -407,7 +407,7 @@ Les en-têtes
 
 .. textOnly::
     En **PHP**, il est possible de les modifier à l'aide de la fonction 
-    `header() <http://php.net/header>`_. Exemple
+    :method:`header`. Exemple
     typique, lorsque vous désirez transmettre des données qui doivent être comprise par le client comme étant
     d'un autre type que celui définit par défaut (``text/html``), comme par exemple une image:
 
@@ -465,7 +465,7 @@ Les cookies
     Ces valeurs sont fournies plus tard par le client à chaque requête avec l'en-tête ``Cookie``.
 
     Les cookies peuvent <span class="textOnly">donc</span> être définis grâce à l'en-tête ``Set-cookie``,
-    mais **PHP** mets à notre disposition la fonction `setcookie() <http://php.net/setcookie/>`_
+    mais **PHP** mets à notre disposition la fonction :method:`setcookie`
     moins brute:
 
 ::
@@ -556,7 +556,7 @@ Utilisation des sessions
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 L'utilisation de tout ce mécanisme se fait **automatiquement** à l'aide de la fonction **PHP**
-`session_start() <http://php.net/session_start>`_ et du tableau ``$_SESSION``:
+:method:`session_start` et du tableau ``$_SESSION``:
 
 :: 
 
