@@ -740,8 +740,8 @@ dynamiquement.
 
 .. slide::
 
-TD
----
+TD 3
+----
 
 * :doc:`tds/td3`
 

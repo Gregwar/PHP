@@ -597,8 +597,8 @@ Composer
         Writing lock file
         Generating autoload files
 
-TD
----
+TD 5
+----
 
 * :doc:`tds/td5`
 

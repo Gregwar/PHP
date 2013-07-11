@@ -284,8 +284,8 @@ Les avantages sont notamment:
 * La création et la mise à jour de la structure de la base de données à partir de la définition des entités
 * Possibilité de faire abstraction du système de gestion de base de données sous-jacent
 
-TD
----
+TD 4
+----
 
 * :doc:`tds/td4`
 

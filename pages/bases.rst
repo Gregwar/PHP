@@ -599,8 +599,8 @@ répértoire actuel::
 
 .. slide::
 
-TD
----
+TD 1
+----
 
 * :doc:`tds/td1`
 
