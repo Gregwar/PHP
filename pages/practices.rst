@@ -597,6 +597,8 @@ Composer
         Writing lock file
         Generating autoload files
 
+.. slide::
+
 TD 5
 ----
 
