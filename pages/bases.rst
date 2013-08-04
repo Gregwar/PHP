@@ -564,17 +564,17 @@ Quelques constantes utiles
 **PHP** met à notre disposition des `constantes magiques <http://fr.php.net/manual/en/language.constants.predefined.php>`_
 qui peuvent s'avérer très utiles pour l'inclusion:
 
-================== ===================================
-**Nom**            **Utilité**
-================== ===================================
-``__DIR__``        Le répértoire du script actuel
-================== ===================================
-``__FILE__``       Le fichier du script actuel
-================== ===================================
-``__LINE__``       La ligne actuelle dans le script
-================== ===================================
-``__FUNCTION__``   Le nom de la fonction actuelle
-================== ===================================
++------------------+----------------------------------+
+| **Nom**          |  **Utilité**                     |
++------------------+----------------------------------+
+| ``__DIR__``      |  Le répértoire du script actuel  |
++------------------+----------------------------------+
+| ``__FILE__``     |  Le fichier du script actuel     |
++------------------+----------------------------------+
+| ``__LINE__``     |  La ligne actuelle dans le script|
++------------------+----------------------------------+
+| ``__FUNCTION__`` |  Le nom de la fonction actuelle  |
++------------------+----------------------------------+
 
 .. slide::
 
@@ -599,8 +599,8 @@ répértoire actuel::
 
 .. slide::
 
-TD
----
+TD 1
+----
 
 * :doc:`tds/td1`
 

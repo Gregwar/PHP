@@ -254,17 +254,17 @@ Présentation
 Correspondance
 ~~~~~~~~~~~~~~
 
-========================= ==========================
-Relationnel               Objet
-========================= ==========================
-Table                     Classe (ou entité)
-========================= ==========================
-Ligne                     Instance
-========================= ==========================
-Colonne                   Attribut
-========================= ==========================
-Clé étrangère             Référence
-========================= ==========================
++-------------------------+-------------------------+
+| Relationnel             | Objet                   |
++-------------------------+-------------------------+
+| Table                   | Classe (ou entité)      |
++-------------------------+-------------------------+
+| Ligne                   | Instance                |
++-------------------------+-------------------------+
+| Colonne                 | Attribut                |
++-------------------------+-------------------------+
+| Clé étrangère           | Référence               |
++-------------------------+-------------------------+
 
 *Cette correspondance ressort si l'on compare un schéma entité association (MCD) avec un schéma UML.*
 
@@ -284,8 +284,10 @@ Les avantages sont notamment:
 * La création et la mise à jour de la structure de la base de données à partir de la définition des entités
 * Possibilité de faire abstraction du système de gestion de base de données sous-jacent
 
-TD
----
+.. slide::
+
+TD 4
+----
 
 * :doc:`tds/td4`
 

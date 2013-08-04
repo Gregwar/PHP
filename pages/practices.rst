@@ -597,8 +597,10 @@ Composer
         Writing lock file
         Generating autoload files
 
-TD
----
+.. slide::
+
+TD 5
+----
 
 * :doc:`tds/td5`
 

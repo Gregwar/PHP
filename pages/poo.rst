@@ -712,17 +712,18 @@ Les méthodes magiques
     Ces dernières peuvent par exemple permettre de
     surcharger l'accès à un attribut ou une méthode même s'il/elle n'existe pas:
 
-============================= ================================================
-**Nom**                       **Utilité**
-============================= ================================================
-``__get($name)``              Apellée lors de l'accès en lecture à un attribut
-                              non-existant
-============================= ================================================
-``__set($name, $value)``      Apellée lors de l'accès en écriture à un attribut
-                              non-existant
-============================= ================================================
-``__call($method, $args)``    Appelée lors d'un appel à une méthode non existante
-============================= ================================================
+
++-----------------------------+----------------------------------------------------+
+| **Nom**                     | **Utilité**                                        |
++-----------------------------+----------------------------------------------------+
+| ``__get($name)``            | Apellée lors de l'accès en lecture à un attribut   |
+|                             | non-existant                                       |
++-----------------------------+----------------------------------------------------+
+| ``__set($name, $value)``    | Apellée lors de l'accès en écriture à un attribut  |
+|                             | non-existant                                       |
++-----------------------------+----------------------------------------------------+
+| ``__call($method, $args)``  | Appelée lors d'un appel à une méthode non existante|
++-----------------------------+----------------------------------------------------+
 
 .. slide::
 
@@ -739,8 +740,8 @@ dynamiquement.
 
 .. slide::
 
-TD
----
+TD 3
+----
 
 * :doc:`tds/td3`
 

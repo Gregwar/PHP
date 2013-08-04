@@ -583,8 +583,8 @@ L'utilisation de tout ce mécanisme se fait **automatiquement** à l'aide de la 
 
 .. slide::
 
-TD
----
+TD 2
+----
 
 * :doc:`tds/td2`
 

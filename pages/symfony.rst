@@ -210,8 +210,10 @@ Il est également possible d'effectuer des tests et des boucles avec Twig:
     Pour une documentation plus exhaustive, vous pouvez consulter la
     `documentation officielle de Twig <http://twig.sensiolabs.org/documentation>`_.
 
-TD
----
+.. slide::
+
+TD 6
+----
 
 * :doc:`tds/td6`
 

@@ -45,9 +45,9 @@ Installation de Symfony 2
 .. slide::
 
 .. center::
-    .. image:: /img/sfwelcome.jpg
+    .. image:: /img/sfwelcome.png
 
- .. slide::
+.. slide::
 
 .. step::
     Etape 3: créer votre Bundle
