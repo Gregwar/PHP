@@ -38,7 +38,7 @@ Ces variables peuvent être récupérées à l'aide du tableau ``$_GET``.
     **#-. Evolution**
 
     Rajouter des pages à ce site pourrait devenir pénible, car la page principale **PHP** que vous avez créé va grossir et grossir.
-    Quelle(s) solution(s) pourrait t-on utiliser pour pouvoir utiliser plusieurs fichiers tout en évitant la duplication de code&nbsp;? Appliquez
+    Quelle(s) solution(s) pourrait t-on utiliser pour pouvoir utiliser plusieurs fichiers tout en évitant la duplication de code? Appliquez
     et testez votre idée sur cet exemple. Apellez votre encadrant pour qu'il vérifie votre code.
 
 Exercice 2 : Les formulaires
