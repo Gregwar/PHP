@@ -15,12 +15,12 @@ de réaliser des applications web.
     D'après son créateur **Fabien Potencier**, Symfony 2 est en fait plus un rassemblement
     de bibliothèques et de composants tous fortement découplés assemblées et paramétrés pour fonctionner ensemble.
     
-     En effet, **Symfony 2** se base notamment sur:
+    En effet, **Symfony 2** se base notamment sur:
 
 .. discoverList::
-    * Doctrine pour requêter la base de données
-    * Twig pour le rendu de ses templates
-    * SwiftMailer pour l'envoi d'e-mails
+    * *Doctrine* pour requêter la base de données
+    * *Twig* pour le rendu de ses templates
+    * *SwiftMailer* pour l'envoi d'e-mails
 
 .. slide::
 
@@ -76,15 +76,14 @@ Bundles
 .. image:: /img/package.png
     :style: float:right
 
-**Symfony 2** est basé sur un "coeur" d'application, nommé le *Kernel*, c'est le noyau de votre
-application.
+Au centre d'une application **Symfony 2**, on trouve le *Kernel*, ou le noyau.
 
 .. discover::
     Auprès de ce noyau sont enregistrés des *Bundles*, (ou "paquets") qui sont en fait des composants.
-    Le framework est alors livré avec de nombreux bundle (templating, ORM, gestion des formulaires etc.).
+    Le framework est alors livré avec de nombreux bundle de base (templates, **ORM**, gestion des formulaires etc.).
 
 .. discover::
-    Un *bundle* peut proposer de nombreuses choses, vues, contrôleurs, entités pour la base de données, services etc.
+    Un *bundle* peut proposer de nombreuses choses: vues, contrôleurs, entités pour la base de données, services etc.
 
 .. discover::
     Tout le code que vous écrirez sera dans un ou plusieurs *bundle*. Si vous souhaitez factoriser des fonctionnalités
@@ -98,11 +97,15 @@ Des composants à la carte
 Les composants de base du framework peuvent être remplaçés par d'autre (pour changer la version par exemple).
 
 .. discover::
-    De nombreux *bundles* open-source peuvent être trouvés, sur *GitHub*.
+    De nombreux *bundles* open-source peuvent être trouvés, ils sont notamment regroupés sur `KnpBundles <http://www.knpbundles.com>`_.
 
 .. discover::
     On pourra citer par exemple le *FOSUserBundle*, qui permet de simplifier la gestion des utilisateurs d'un
     site (inscription, identification, rappel du mot de passe etc.).
+
+.. discover::
+    Ces bundles sont en général disponibles sur composer, ce qui permet d'écrire son application
+    et ses dépendances simplement à l'aide de  ``composer.json``
 
 .. slide::
 
