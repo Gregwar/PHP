@@ -675,9 +675,9 @@ Sérialisation
     Contrairement aux types "basiques" (nombres, chaînes, tableaux...), les objets peuvent
     s'avérer complexes à représenter sous forme de chaîne de caractère pour être sauvegardé dans
     un fichier, un cookie ou encore une variable de session par exemple. Pour cela, vous pouvez
-    utiliser la **sérialisation**. Les fonctions **PHP** `serialize() <http://php.net/serialize>`_
-    et `unserialize() <http://php.net/unserialize
-    </a> permettent de représenter un objet sous forme de chaîne de caractères et, inversement,
+    utiliser la **sérialisation**. Les fonctions **PHP** :method:`serialize()`
+    et :method:`unserialize()`
+    permettent de représenter un objet sous forme de chaîne de caractères et, inversement,
     d'obtenir un objet à partir d'une chaîne sérialisée:
 
 ::
