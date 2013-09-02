@@ -215,6 +215,25 @@ Il est également possible d'effectuer des tests et des boucles avec Twig:
 
 .. slide::
 
+.. image:: /img/doctrine.png
+    :style: float:right
+
+Base de données
+---------------
+
+Doctrine2
+~~~~~~~~~
+
+Pour gérer la persistance en base de données,
+**Symfony2** intègre la célèbre bibliothèque **Doctrine2**, très ressemblante à
+`Hibernate <http://www.hibernate.org/>`_, un outil provenant du monde Java.
+
+Cet outil permet de faire abstraction des accès à la base de données, de réaliser des
+requêtes, mais surtout de faire le lien (on parle de "mappage") entre le monde relationnel
+de votre base de données et le monde objet (on parle alors d'**ORM**).
+
+.. slide::
+
 TD 6
 ----
 
