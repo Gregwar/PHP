@@ -52,14 +52,14 @@ L'utilisation du *framework* est technique et fait appel à de nombreux principe
 
 .. slide::
 
+.. image:: /img/github.png
+    :style: float:right
+
 Communauté
 ----------
 
 Organisation
 ~~~~~~~~~~~~
-
-.. image:: /img/github.png
-    :style: float:right
     
 *GitHub* joue un rôle extrêmement important dans l'organisation du développement de **Symfony 2** et
 de ses composants.
