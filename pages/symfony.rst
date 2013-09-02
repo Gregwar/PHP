@@ -234,6 +234,69 @@ de votre base de données et le monde objet (on parle alors d'**ORM**).
 
 .. slide::
 
+Principe
+~~~~~~~~
+
+.. textOnly::
+
+    Les enregistrement de votre base de données seront mis en correspondance avec les
+    objets que vous manipulez. 
+
+    Ainsi, au lieu de penser à votre base de données, vous n'avez qu'à penser objet.
+    Si vous souhaitez par exemple manipuler des produits, vous écrirez:
+
+::
+
+    <?php
+
+    class Product
+    {
+        private $id;
+        private $price;
+        private $name;
+    }
+
+.. textOnly::
+
+    Ceci est une classe simple qui définit votre objet, vous pourriez l'écrire et
+    l'utiliser dans n'importe quel contexte, c'est "simplement" une classe.
+
+    Le principe maintenant n'est pas d'agir au niveau du fonctionnement de cette classe,
+    mais de fournir des informations à **Doctrine2** pour qu'il puisse savoir comment
+    persister et récupérer des produits dans la base de données, c'est ce que l'on appelle
+    le *mapping*, ou mapage.
+
+    Il est par exemple possible dans **Symfony2** de réaliser ce mappage à l'aide d'annotations:
+
+.. discover::
+
+    .. slideOnly::
+        ----------------------
+
+    ::
+
+        <?php
+
+        class Product
+        {
+           /** 
+             * @ORM\Column(type="string")
+             */
+            private $name; 
+        
+            // ...
+        }
+
+.. fix for vi: **
+
+.. textOnly::
+
+    Ici, le commentaire au dessus du texte est en fait lu et utilisé par **Doctrine2** pour
+    savoir comment faire correspondre l'atribut ``$name`` avec la base de données.
+
+
+.. slide::
+
 TD 6
 ----
 
