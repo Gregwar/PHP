@@ -2,25 +2,49 @@
 <head>
     <meta charset="utf-8" />
     <title>Pizza</title>
+    <link rel="stylesheet" href="dist/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="css/style.css" type="text/css" />
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 </head>
 <body>
-    <div class="header">
+    <header>
         <h1>Pizza</h1>
-        <div class="menu">
-            <a href="#">Présentation</a>
-            <a href="#">Les pizzas</a>
-            <a href="#">Commander</a>
-        </div>
-    </div>
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="navbar-contents">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#"><i class="glyphicon glyphicon-home"></i> Présentation</a></li>
+                    <li><a href="#"><i class="glyphicon glyphicon-list"></i> Les pizzas</a></li>
+                    <li><a href="#"><i class="glyphicon glyphicon-usd"></i> Commander</a></li>
+                </ul>
 
-    <h2>Présentation</h2>
-    <p class="textBlock">
-        Bienvenue sur l'application de commande de pizzas en ligne&nbsp;!
-    </p>
-    <p class="textBlock">
-        Ici vous pourrez consulter nos pizzas et passer votre commande pour être
-        livré chez vous. Une petite faim&nbsp;? <a href="#">C'est par ici &raquo;</a>
-    </p>
+                <div class="navbar-search">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+                        <input type="text" class="form-control" />
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section>
+        <article>
+            <h2>Présentation</h2>
+            <p>
+                Bienvenue sur l'application de commande de pizzas en ligne&nbsp;!
+            </p>
+            <p>
+                Ici vous pourrez consulter nos pizzas et passer votre commande pour être
+                livré chez vous.
+            </p>
+            <div class="well">
+                <p>
+                    Une petite faim&nbsp;?
+                </p>
+                <p>
+                    <a class="btn btn-primary" href="#">C'est par ici &raquo;</a>
+                </p>
+            </div>
+        </article>
+    </section>
 </body>
