@@ -514,13 +514,13 @@ Attention aux cookies
     **Attention 1:** comme ``header()``, ``setcookie()`` doit être effectué avant
     tout envoi de données.
 
-.. warning::
-    .. discover::
+.. discover::
+    .. warning::
         **Attention 2:** définir une chaîne de caractère vide ou la valeur ``false`` dans votre
         cookie essaiera de le supprimer, si vous souhaitez stocker un booléen, utilisez ``0`` et ``1``.
 
-.. warning::
-    .. discover::
+.. discover::
+    .. warning::
         **Attention 3:** **n'ayez **pas** confiance** en les valeurs que vous obtenez dans le
         tableau ``$_COOKIE``, il peut contenir **tout ce que l'utilisateur souhaite**. En effet, même
         si le serveur définit les clients, ils sont stockés en clair et modifiable à volonté par le client. 
