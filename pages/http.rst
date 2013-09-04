@@ -416,6 +416,8 @@ Les en-têtes
     d'un autre type que celui définit par défaut (``text/html``), comme par exemple une image:
 
 .. discover::
+    .. slideOnly::
+            --------------------------
 
     ::
 
