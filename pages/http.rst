@@ -276,7 +276,7 @@ Données GET
     transmettre une petite quantité d'informations directement dans une **URL**:
 
 .. important::
-    http://monsite.com/page.php?<u>x=42&amp;y=1337</u>
+    http://monsite.com/page.php?``x=42&y=1337``
 
 .. textOnly::
     Depuis le code source **PHP**, ces variables seront accessibles directement dans le
@@ -349,6 +349,9 @@ GET vs POST
 .. textOnly::
     Dans le cas de ``post``, les donnée seront alors transmises dans la partie "données"
     de la requête. Cette méthode est largement préférable pour l'écriture de formulaires:
+
+.. slideOnly::
+    --------------------------
 
 .. code-block:: text
 
