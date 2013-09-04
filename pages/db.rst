@@ -21,9 +21,12 @@ web. **PHP** propose des extensions pour piloter les bases les plus courantes :
 
 .. textOnly::
     Pour ce cours, nous considérerons que vous avez déjà des notions de bases de données,
-    et ne parlerons que de l'intégration des bases de données dans du code **PHP**. Notez que
-    nous nous focaliserons sur les bases de données relationelles, mais qu'il existe également
-    d'autre type de bases.
+    et ne parlerons que de l'intégration des bases de données dans du code **PHP**.
+    
+    .. note::
+        Notez que
+        nous nous focaliserons sur les bases de données relationelles, mais qu'il existe également
+        d'autre type de bases.
 
 .. slide::
 

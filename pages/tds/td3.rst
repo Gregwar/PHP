@@ -199,6 +199,7 @@ Intégration
     Créez un nouveau dossier en copiant ``arena/`` et incluez y le routeur pour effectuer les
     actions au lieu d'utiliser les paramètres ``GET``.
 
-    *Note: il ne vous est pas demandé d'utiliser des templates, mais uniquement de mettre en place
-    le routeur dans le code de l'exercice précédent, cette intégration peut en fait être réalisée en quelques
-    minutes.*
+    .. note::
+        Note: il ne vous est pas demandé d'utiliser des templates, mais uniquement de mettre en place
+        le routeur dans le code de l'exercice précédent, cette intégration peut en fait être réalisée en quelques
+        minutes.

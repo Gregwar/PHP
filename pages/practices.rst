@@ -41,16 +41,21 @@ Encodage des caractères
     </head>
 
 .. textOnly::
-    Notez que dans le cas d'une requête ajax, l'encodage des caractères n'est pas précisé
-    car la page HTML peut être partielle. Dans ce cas là, il est possible de le préciser dans 
-    les en-têtes HTTP:
+    .. note::
+        Notez que dans le cas d'une requête ajax, l'encodage des caractères n'est pas précisé
+        car la page HTML peut être partielle. Dans ce cas là, il est possible de le préciser dans 
+        les en-têtes HTTP:
 
-.. discover::
-    .. slideOnly::
-        ----------------
+        .. code-block:: text
+            Content-type: text/html; charset=utf-8
 
-    .. code-block:: text
-        Content-type: text/html; charset=utf-8
+.. slideOnly::
+    .. discover::
+        .. slideOnly::
+            ----------------
+
+        .. code-block:: text
+            Content-type: text/html; charset=utf-8
 
 .. slide::
 

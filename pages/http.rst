@@ -213,9 +213,10 @@ le script suivant::
     Toute sortie standard sera automatiquement envoyée en tant que données de la réponse **HTTP**.
 
 .. textOnly::
-    Notez ici tout l'interêt de pouvoir ouvrir et fermer les balises ``<?php ?>``, cela vous permet
-    alors d'utiliser **PHP** uniquement aux emplacements dynamique de votre page web et de rédiger le reste
-    normalement.
+    .. note::
+        Notez ici tout l'interêt de pouvoir ouvrir et fermer les balises ``<?php ?>``, cela vous permet
+        alors d'utiliser **PHP** uniquement aux emplacements dynamique de votre page web et de rédiger le reste
+        normalement.
 
 .. slide::
 

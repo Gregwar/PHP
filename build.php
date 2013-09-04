@@ -14,7 +14,6 @@ $slidey = new Gregwar\Slidey\Slidey;
  * Customizing template
  */
 $slidey->setTitle('PHP');
-$slidey->addCss('css/style.css');
 
 /**
  * Setting up the php.net :method: references
@@ -26,7 +25,6 @@ $slidey->addEnvironmentHook(function ($env) {
 /**
  * Adding custom directories
  */
-$slidey->copy('css', 'css');
 $slidey->copy('img', 'img');
 $slidey->mkdir('files');
 $slidey->copy(__DIR__.'/files/*.zip', 'files/');
