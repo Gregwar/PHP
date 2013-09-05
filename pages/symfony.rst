@@ -28,8 +28,11 @@ Installation
 ~~~~~~~~~~~~
 
 .. textOnly::
-    **Symfony 2** se base sur **composer** pour organiser ce rassemblement de composants. <span class="textOnly">Cet outil
-    déjà présenté précédemment dans ce cours permet de gérer les dépendances entre les différents composants.</span>
+    **Symfony 2** se base sur **composer** pour organiser ce rassemblement de composants.
+    
+.. textOnly::
+    Cet outil déjà présenté précédemment dans ce cours permet de gérer les dépendances entre les
+    différents composants.
 
 Il est possible de créer un projet **Symfony 2** à l'aide de la commande: 
 
@@ -107,6 +110,83 @@ Les composants de base du framework peuvent être remplaçés par d'autre (pour 
     Ces bundles sont en général disponibles sur composer, ce qui permet d'écrire son application
     et ses dépendances simplement à l'aide de  ``composer.json``
 
+.. slide::
+
+Fonctionnement
+--------------
+
+Cycle de vie
+~~~~~~~~~~~~
+
+.. textOnly::
+    Lors de la réception d'une requête, elle est fournie au coeur de Symfony (noyau, ou kernel),
+    qui fait appel à son composant de routage pour tenter de trouver un contrôleur associé à l'URL
+    appellée.
+
+    Si un contrôleur est trouvée, la méthode correspondante est appellée, cette méthode prend en
+    entrée un objet de type ``Request`` et doit retourner un objet de type ``Response``, qui est
+    éventuellement rendue à l'aide d'un moteur de template. Cette réponse est alors envoyée à l'utilisateur.
+
+.. center::
+    .. image:: /img/flow.png
+
+.. slide::
+
+Contrôleurs
+~~~~~~~~~~~
+
+Les **contrôleurs** sont des fonctions généralement regroupées dans des classes par 
+"thème" qui génèrent une réponse à partir d'une requête:
+
+.. discover::
+    ::
+
+        <?php
+        class MyController {
+            public function myAction() {
+                return new Response;
+            }
+        }
+
+        
+
+.. discover::
+    Le **routage** est le fait d'écrire des règles pour associer des URLs à ces
+    actions
+
+.. slide::
+
+Annotations
+~~~~~~~~~~~
+
+.. textOnly::
+    Afin de simplifier la configuration, **Symfony** vous propose d'utiliser massivement
+    des **annotations**, il s'agit en fait de commentaires que vous pouvez ajouter au dessus
+    de classes ou méthodes qui vous permettent d'ajouter des informations. 
+
+    Par exemple, il est possible de configurer le routage de cette manière:
+
+::
+
+    <?php
+    class MyController
+    {
+        /**
+         * @Route("/hello/{name}")
+         */
+         public function helloAction($name) {
+            return new Response('Hello '.$name);
+         }
+    }
+
+.. textOnly::
+    Dans cet exemple, nous décrivons au routeur que les URLs de la forme ``/hello/quelquechose``
+    devra utiliser la méthode ``helloAction($name)`` pour générer la réponse, en passant le
+    ``quelquechose`` en ``$name``
+
+    Pour plus d'informations sur le routage, rendez-vous sur la `documentation officielle <http://symfony.com/doc/current/book/routing.html>`_,
+    ou dans le TD au cours duquel nous l'utiliserons.
+ 
 .. slide::
 
 Les templates
@@ -215,6 +295,34 @@ Il est également possible d'effectuer des tests et des boucles avec Twig:
 
 .. slide::
 
+Dans Symfony2
+~~~~~~~~~~~~~
+
+.. textOnly::
+    Dans **Symfony2**, il est possible d'ajouter l'annotation ``@Template()`` pour
+    rendre une template:
+
+::
+
+    <?php
+    class MyController {
+        /**
+         * @Route("/hello/{$name}")
+         * @Template()
+         */
+         public function helloAction($name) {
+            return array('name' => $name);
+         }
+    }
+
+.. textOnly::
+    Cet exemple rendra la template dont le nom sera guidé par une norme de nomage, en l'occurence
+    ``My/hello.html.twig``, avec comme paramètre ``name`` qui vaudra le nom passé en paramètre.
+
+    Pour plus d'informations rendez-vous dans la page de `documentation officielle <http://symfony.com/doc/current/book/templating.html>`_.
+
+.. slide::
+
 .. image:: /img/doctrine.png
     :style: float:right
 
@@ -277,6 +385,9 @@ Principe
 
         <?php
 
+        /**
+         * @ORM\Entity()
+         */
         class Product
         {
            /** 
@@ -294,6 +405,17 @@ Principe
     Ici, le commentaire au dessus du texte est en fait lu et utilisé par **Doctrine2** pour
     savoir comment faire correspondre l'atribut ``$name`` avec la base de données.
 
+.. slide::
+
+.. slideOnly::
+    Principe
+    ~~~~~~~~
+
+En clair, les entités persistés sont des **classes normales** excepté qu'elles sont mise en
+correspondance avec la base de données
+
+N'hésitez pas à lire la `documentation officielle <http://symfony.com/doc/current/book/doctrine.html>`_,
+nous étudierons plus en détail **Doctrine2** au cours du TD.
 
 .. slide::
 
