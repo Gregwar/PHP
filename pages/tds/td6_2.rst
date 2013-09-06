@@ -10,7 +10,7 @@ Configuration
 -------------
 
 .. step::
-    Nous allons dans un premier temps configurer **Symfony** pour qu'il accède 
+    Nous allons dans un premier temps configurer **Symfony** pour qu'il accède
     à la base de données.
 
     Pour cela, éditez le fichier ``app/config/parameters.yml`` et remplissez les
