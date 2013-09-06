@@ -521,7 +521,7 @@ Attention aux cookies
 
 .. discover::
     .. warning::
-        **Attention 3:** **n'ayez **pas** confiance** en les valeurs que vous obtenez dans le
+        **Attention 3:** **n'ayez pas confiance** en les valeurs que vous obtenez dans le
         tableau ``$_COOKIE``, il peut contenir **tout ce que l'utilisateur souhaite**. En effet, même
         si le serveur définit les clients, ils sont stockés en clair et modifiable à volonté par le client. 
 
