@@ -49,9 +49,10 @@ Utilisation
 
 L'utilisation du *framework* est technique et fait appel à de nombreux principes et outils.
 
-.. textOnly::
-    Ce cours n'ayant pas pour but de répeter l'excellente `documentation officielle <http://symfony.com/>`_,
-    nous allons seulement survoler les principes à connaître, et nous les appliquerons en TD par la suite.
+.. discover::
+    .. warning::
+        Ce cours n'ayant pas pour but de répeter **l'excellente `documentation officielle <http://symfony.com/>`_**,
+        nous allons seulement survoler les principes à connaître, et nous les appliquerons en :doc:`TD <tds/td6>` par la suite.
 
 .. slide::
 

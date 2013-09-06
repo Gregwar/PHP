@@ -1,0 +1,166 @@
+TD6-2: La base de données
+=========================
+
+Dans cette partie du TD, nous allons créer la base de données associée à notre
+application web.
+
+Lecture recommandée: la `documentation officielle de Symfony.com sur Doctrine <http://symfony.com/doc/current/book/doctrine.html>`_
+
+Configuration
+-------------
+
+.. step::
+    Nous allons dans un premier temps configurer **Symfony** pour qu'il accède 
+    à la base de données.
+
+    Pour cela, éditez le fichier ``app/config/parameters.yml`` et remplissez les
+    champs préfixés par ``database_``.
+
+    Vous pouvez par exemple vérifier en lançant une commande doctrine comme:
+
+    .. code-block:: text
+
+        php app/console doctrine:schema:validate
+
+    Cette commande sert à vérifier que votre base de données est en accord avec votre
+    application, dans votre cas vous n'avez pas encore décrit de classes mappées avec
+    la base de données mais cela peut vous permettre de tester que la connexion fonctionne.
+
+Entités
+-------
+
+.. step::
+    Création
+    ~~~~~~~~
+
+    Nous allons maintenant créer nos entités. Commençons simplement avec les pizzas.
+    Pour cela, vous pouvez utiliser un outil proposé par Doctrine::
+        
+        php app/console doctrine:generate:entity
+
+    Il vous sera alors demandé de nommer votre entité, apellez là ``StudentPizzaBundle:Pizza``,
+    nous utiliserons ici aussi la configuration par annotations.
+
+    Vous pourrez alors saisir les champs de manière interactive, ajouter un champ ``name`` de
+    type ``string``, un champ ``description`` de type ``text``, un champ ``price`` de type
+    ``decimal``.
+
+    Regarder attentivement le fichier ``Entity/Pizza.php`` qui aura été généré dans votre bundle,
+    son contenu en terme de code est trivial, mais les annotations décrivent la correspondance
+    avec la base de données.
+
+.. step::
+    Génération de la base
+    ~~~~~~~~~~~~~~~~~~~~~
+
+    Maintenant que nous avons créé une entité, nous allons demander à Doctrine de créer la
+    base de données correspondante, pour cela, utilisez:
+
+    .. code-block:: text
+
+        $ php app/console doctrine:schema:create 
+        ATTENTION: This operation should not be executed in a production environment.
+
+        Creating database schema...
+        Database schema created successfully!
+
+    Rendez-vous dans votre base de données, avec par exemple *phpMyAdmin* et constatez
+    que la table ``Pizza`` a été créée.
+
+.. step::
+    Ajout d'une entité
+    ~~~~~~~~~~~~~~~~~~
+
+    Nous allons ajouter une entité ingrédient, de la même manière que précédemment, créez
+    l'entité ``StudentPizzaBundle:Ingredient`` ayant juste un champ ``name`` de type ``string``.
+
+    Une deuxième entité ``Entity/Ingredient.php`` apparaîtra.
+
+    Maintenant, nous pouvons demander à Doctrine de **mettre à jour** la base de données,
+    essayez:
+
+    .. code-block:: text
+
+        $ php app/console doctrine:schema:update --dump-sql
+        CREATE TABLE Ingredient (id INT AUTO_INCREMENT NOT NULL, name VARCHAR(255) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB
+
+    Ici, doctrine nous affiche la requête qui permet de mettre à jour la base pour qu'elle
+    corresponde à nos entités. Vous pouvez également lui demandez d'exécuter les requêtes nécéssaire avec
+    ``--force``:
+
+    .. code-block:: text
+
+        $ php app/console doctrine:schema:update --force
+        Updating database schema...
+        Database schema updated successfully! "1" queries were executed
+
+.. step::
+    Mise en relation
+    ~~~~~~~~~~~~~~~~
+
+    Une pizza doit avoir plusieurs ingrédients, et un ingrédient doit pouvoir être dans plusieurs
+    pizzas. Pour mettre en relation ces deux entités, il faudrait normalement créer manuellement
+    une table intéremédiaire. Doctrine va également s'en charger pour nous!
+
+    Pour cela, ajoutez le champ suivant dans l'entité ``Pizza``::
+
+        /** 
+         * @ORM\ManyToMany(targetEntity="Ingredient", inversedBy="pizzas")
+         */
+        private $ingredients;
+    
+    Et le champ suivant dans ``Ingredient``::
+
+        /** 
+         * @ORM\ManyToMany(targetEntity="Pizza", mappedBy="ingredients")
+         */
+        private $pizzas
+
+    Fermez les fichier ``Ingredient.php`` et ``Pizza.php`` et utilisez la commande suivante:
+
+    .. code-block:: text
+
+        $ php app/console doctrine:generate:entities
+
+    Réouvrez les fichiers, qu'observez vous?
+
+    Demandez maintenant à Doctrine la requête de mise à jour du schéma pour observer les changements.
+    Remarquez qu'il créera une nouvelle table, exécutez la requête.
+
+.. vi fix: **
+
+Requêtage
+---------
+
+Maintenant que nous avons mis les mains dans le terminal et dans Doctrine, nous allons revenir
+un peu à Symfony et requêter la base de données.
+
+Insertion
+~~~~~~~~~
+
+.. step::
+    Nous allons créer des pizzas, pour ne pas parler tout de suite des formulaires, nous écrirons
+    une action qui inserera les pizzas.
+
+    Voici un exemple::
+
+        <?php
+            // ...
+
+            public function insertPizzasAction() {
+                $em = $this->get('doctrine')->getManager();
+                $pizza = new Pizza;
+                $pizza
+                    ->setName('4 fromages');
+                    ->setDescription('Pour les fans de fromage')
+                    ;
+                $em->persist();
+                $em->flush();
+
+                return new Response('Pizzas créées');
+            }
+
+    Remarquez l'utilisation des accesseurs (``setName`` et ``setDescription``) qui ont été générés
+    par Doctrine et que l'on peut apeller à la chaîne.
+
+    Documentez vous sur les fonctions ``persist()`` et ``flush()`` de Doctrine, à quoi servent t-elles?
