@@ -43,7 +43,7 @@ Entités
 
     Vous pourrez alors saisir les champs de manière interactive, ajouter un champ ``name`` de
     type ``string``, un champ ``description`` de type ``text``, un champ ``price`` de type
-    ``decimal``.
+    ``float``.
 
     Regarder attentivement le fichier ``Entity/Pizza.php`` qui aura été généré dans votre bundle,
     son contenu en terme de code est trivial, mais les annotations décrivent la correspondance
@@ -120,7 +120,7 @@ Entités
 
     .. code-block:: text
 
-        $ php app/console doctrine:generate:entities
+        $ php app/console doctrine:generate:entities Student
 
     Réouvrez les fichiers, qu'observez vous?
 
@@ -149,12 +149,21 @@ Insertion
 
             public function insertPizzasAction() {
                 $em = $this->get('doctrine')->getManager();
+                $fromage = new Ingredient;
+                $fromage
+                    ->setName('Mozarella')
+                    ;
                 $pizza = new Pizza;
                 $pizza
-                    ->setName('4 fromages');
+                    ->setName('4 fromages')
                     ->setDescription('Pour les fans de fromage')
+                    ->setPrice(12.9)
                     ;
-                $em->persist();
+                $fromage
+                    ->addPizza($pizza)
+                    ;
+                $em->persist($pizza);
+                $em->persist($fromage);
                 $em->flush();
 
                 return new Response('Pizzas créées');
@@ -164,3 +173,44 @@ Insertion
     par Doctrine et que l'on peut apeller à la chaîne.
 
     Documentez vous sur les fonctions ``persist()`` et ``flush()`` de Doctrine, à quoi servent t-elles?
+
+    Executez cette requêtes et allez voir dans la base de données pour vérifier la présence des nouvelles
+    lignes dans les tables.
+
+Listage
+~~~~~~~
+
+.. step::
+
+    Nous allons maintenant récupérer les pizzas pour les lister. Vous pourrez par exemple utiliser::
+
+        <?php
+            
+            $pizzas = $em->getRepository('StudentPizzaBundle')
+                        ->findAll();
+
+    Ainsi, vous pourrez passer les pizzas en paramètres à une vue comme dans la partie précédente et
+    en afficher la liste. Voici un exemple de code twig:
+
+    .. code-block:: text
+
+        <ul>
+        {% for pizza in pizzas %}
+            <li>{{ pizza.name }}</li>
+        {% endfor %}
+        </ul>
+
+    .. note::
+        Remarquez ici que ``pizza.name`` fera appel à ``$pizza->getName()``, Twig est assez intelligent
+        pour résoudre ce genre de syntaxe
+
+    Vous pourriez également écrire ``{{ pizza }}``, moyennant une surcharge de l'opérateur ``__toString()``
+    de la classe ``Pizza``
+
+.. step::
+
+    Affichez également entre parenthèse tous les ingrédients d'une pizza. Pour cela, c'est très simple,
+    vous pouvez accéder à l'entrée ``ingredients``, qui apellera elle-même la méthode ``getIngredients()``
+    qui retournera un tableau (un peu spécial car géré par Doctrine) contenant tous les ingrédients.
+
+    Utilisez le filtre `join <http://twig.sensiolabs.org/doc/filters/join.html>`_ de Twig pour cela.
