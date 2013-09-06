@@ -68,11 +68,11 @@ Questions
      
             <?php
 
-            if (0 == null) {
+            if (0 == null) { // Vrai
                 echo "0 == null!\n";
             }
 
-            if (0 === null) {
+            if (0 === null) { // Faux
                 echo "0 === null!\n";
             }
 
