@@ -1,7 +1,124 @@
 
+TD6-3: La sécurité
+==================
 
-TD6-3: Les formulaires
-======================
+Dans cette partie du TD, nous allons créer une zone sécurisée pour administrer
+le site.
 
-*En cours de rédaction*
+Lecture recommandée: la `documentation officielle de Symfony.com sur la sécurité <http://symfony.com/doc/current/book/security.html>`_
 
+Configuration
+-------------
+
+Création du système de sécurité
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. step::
+    Premièrement, il vous faudra configurer le module de sécurité de Symfony. Pour cela,
+    éditez le fichier ``app/config/security.yml``.
+
+    Pour simplifier, nous allons utiliser des utilisateurs stockés en mémoire, c'est à dire directement
+    dans le fichier de configuration de l'application. Voici un exemple:
+
+    ::
+
+        security:
+            encoders:
+                Symfony\Component\Security\Core\User\User: plaintext
+
+            role_hierarchy:
+                ROLE_ADMIN:       ROLE_USER
+
+            providers:
+
+
+                in_memory:
+                    memory:
+                        users:
+                            admin: { password: something, roles: [ 'ROLE_ADMIN' ] }
+
+            firewalls:
+                dev:
+                    pattern:  ^/(_(profiler|wdt)|css|images|js)/
+                    security: false
+
+                login:
+                    pattern:  ^/home$
+                    security: false
+
+                main:
+                    pattern:    ^/
+                    form_login:
+                        check_path: login_check
+                        login_path: home
+                    logout:
+                        path:   logout
+                        target: home
+                    anonymous: ~
+
+            access_control:
+                - { path: ^/admin/, roles: ROLE_ADMIN }
+
+    Ce fichier:
+
+    * Définit l'encodage des mots de passes de ``Symfony\Component\Security\Core\User\User`` comme ``plaintext``,
+      c'est à dire texte brut sans hachage
+    * Exhibe une hiérarchie entre les rôles (un admin est un user)
+    * Définit plusieurs pare-feux (ou *firewalls*):
+        * ``dev``: ce pare-feu sert à laisser l'accès aux fichiers utiles pendant le développement
+        * ``login``: sert à désactiver la sécurité sur la page d'accueil que nous considérerons
+          comme page de login pour simplifier
+        * ``main``: pare-feu principal qui couvre tout le site, autorisant les utilisateurs
+          anonymes et décrivant la page de vérification de login comme étant ``login_check``,
+          celle de déconnexion ``logout`` et d'identification ``home`` (ces noms sont évidement
+          des noms de routes)
+    * Définit un filtrage d'accès sur les URLs commençant par ``/admin/``, il faudra le role
+      ``ROLE_ADMIN`` pour y accéder
+
+    Créez ensuite des routes dans ``app/config/routing.yml`` pour les actions ``login_check`` et
+    ``logout``::
+
+        login_check:
+            pattern: /login/check
+
+        logout:
+            pattern: /logout
+
+    Modifiez maintenant l'action du formulaire d'identification afin qu'il pointe vers ``login_check``,
+    vous devriez alors pouvoir vous identifier (vous pouvez vérifier que vous êtes identifiés dans la
+    barre de développement en bas de l'écran)
+
+Utilisation dans la vue
+~~~~~~~~~~~~~~~~~~~~~~~
+
+.. step::
+
+    Désormais, nous allons modifier notre vue pour afficher:
+
+    * Le lien de déconnexion lorsque l'utilisateur est identifié
+    * Le formulaire de login sinon
+
+    Pour cela, vous pouvez utiliser le chemin vers la page ``logout`` et la variable
+    ``app.user`` dans Twig qui vous donnera un accès à l'utilisateur identifié dans
+    l'application
+
+Contrôleur sécurirsé
+--------------------
+
+.. step::
+
+    Maintenant, écrivez un nouveau contrôleur, le ``AdminController`` qui servira à
+    gérer les pages réservées à l'administration du site.
+
+    Vous pouvez pour cela vous inspirer du ``DefaultController`` existant.
+
+.. step::
+
+    Utilisez ensuite l'annotation ``@Route("/admin/")`` sur la **classe** ``AdminController``,
+    cette dernière est un *préfixe*, elle signifie que toutes les routes que vous définierai
+    dans ce contrôleur seront préfixées par ``/admin/``.
+
+.. step::
+
+    Testez que tout fonctionne bien en écrivant votre première action dans le contrôleur admin,
+    et en essayant d'y accéder en étant identifié ou pas.

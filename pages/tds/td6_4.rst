@@ -1,7 +1,88 @@
 
+TD6-4: Formulaires
+==================
 
-TD6-4: Utilisation d'un bundle
-==============================
+Maintenant que nous avons :doc:`sécurisé l'espace admin <td6_3>`,
+nous allons créer un formulaire d'ajout de pizzas.
 
-*En cours de rédaction*
+Lecture recommandée: la `documentation officielle de Symfony.com sur les formulaires <http://symfony.com/doc/current/book/forms.html>`_
+
+Création du formulaire
+----------------------
+
+.. step::
+
+    Notre formulaire sera géré par une classe::
+
+        // Forms/PizzaType.php
+        namespace Student\PizzaBundle\Forms;
+
+        use Symfony\Component\Form\AbstractType;
+        use Symfony\Component\Form\FormBuilderInterface;
+        use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+
+        class PizzaType extends AbstractType
+        {
+            public function buildForm(FormBuilderInterface $builder, array $options)
+            {
+                $builder
+                    ->add('name')
+                    ->add('price')
+                    ->add('description')
+                    ->add('ingredients')
+                    ;
+            }
+
+            public function getName()
+            {
+                return 'pizza_form';
+            }
+            
+            public function setDefaultOptions(OptionsResolverInterface $resolver)
+            {
+                $resolver->setDefaults(array(
+                    'data_class' => 'Student\PizzaBundle\Entity\Pizza',
+                ));
+            }
+        
+        }
+
+    Ici, nous décrivons un type de formulaire qui correspond à la classe de l'entité ``Pizza``
+    de notre bundle.
+
+    Nous ajoutons alors nos champs, notez que nous ne précisons nullement leur type, il sera deviné
+    par Symfony.
+
+    A l'aide de la `documentation officielle <http://symfony.com/doc/current/book/forms.html>`_ et
+    de cette classe, créez un formulaire servant à créer une pizza dans l'espace administrateur.
+
+Questions
+---------
+
+Labels
+~~~~~~
+
+.. step::
+
+    Remarquez que les labels sont mis en place par défaut par Symfony en utilisant le nom du champ
+    concerné (qui est anglais ici). A l'aide de la `documentation <http://symfony.com/doc/current/book/forms.html>`_,
+    modifiez les.
+
+Champ supplémentaire
+~~~~~~~~~~~~~~~~~~~~
+
+.. step::
+
+    Une champ caché en plus apparaîtra dans votre formulaire "``...token``", de quoi s'agit t-il?
+
+Stylisation
+~~~~~~~~~~~
+
+.. step::
+
+    Notez que les champs ne sont pas stylisés par notre feuille de style, pour cela, il faudrait
+    leur ajouter la classe ``form-control`` de Bootstrap.
+
+    A l'aide de cette `page du manuel Symfony <http://symfony.com/doc/master/cookbook/form/form_customization.html>`_,
+    modifiez le rendu des champs du formulaire de manière à ajouter cette classe.
 

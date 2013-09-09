@@ -146,28 +146,29 @@ Insertion
 
         <?php
             // ...
-
             public function insertPizzasAction() {
                 $em = $this->get('doctrine')->getManager();
-                $fromage = new Ingredient;
-                $fromage
-                    ->setName('Mozarella')
-                    ;
-                $pizza = new Pizza;
-                $pizza
+
+                $mozarella = new Ingredient;
+                $mozarella->setName('Mozarella');
+                $parmesan = new Ingredient;
+                $parmesan->setName('Parmesan');
+                $quatreFromages = new Pizza;
+                $quatreFromages
                     ->setName('4 fromages')
+                    ->setPrice(32.2)
                     ->setDescription('Pour les fans de fromage')
-                    ->setPrice(12.9)
-                    ;
-                $fromage
-                    ->addPizza($pizza)
-                    ;
-                $em->persist($pizza);
-                $em->persist($fromage);
+                    ;   
+                $quatreFromages->addIngredient($mozarella);
+                $quatreFromages->addIngredient($parmesan);
+                $em->persist($quatreFromages);
+                $em->persist($mozarella);
+                $em->persist($parmesan);
                 $em->flush();
 
                 return new Response('Pizzas créées');
-            }
+            }   
+
 
     Remarquez l'utilisation des accesseurs (``setName`` et ``setDescription``) qui ont été générés
     par Doctrine et que l'on peut apeller à la chaîne.
@@ -186,7 +187,7 @@ Listage
 
         <?php
             
-            $pizzas = $em->getRepository('StudentPizzaBundle')
+            $pizzas = $em->getRepository('StudentPizzaBundle:Pizza')
                         ->findAll();
 
     Ainsi, vous pourrez passer les pizzas en paramètres à une vue comme dans la partie précédente et
@@ -202,9 +203,9 @@ Listage
 
     .. note::
         Remarquez ici que ``pizza.name`` fera appel à ``$pizza->getName()``, Twig est assez intelligent
-        pour résoudre ce genre de syntaxe
+        pour utiliser les accesseurs
 
-    Vous pourriez également écrire ``{{ pizza }}``, moyennant une surcharge de l'opérateur ``__toString()``
+    Vous pourriez également écrire ``{{ pizza }}``, moyennant une surcharge de la méthode ``__toString()``
     de la classe ``Pizza``
 
 .. step::

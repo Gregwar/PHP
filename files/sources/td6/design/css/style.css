@@ -32,8 +32,13 @@ section article {
     margin:auto;
 }
 
-.navbar-search {
+.navbar-login {
     float:right;
-    width:200px;
     padding-top:5px;
+}
+
+.navbar-login .input-group {
+    width:160px;
+    float:left;
+    margin:2px;
 }

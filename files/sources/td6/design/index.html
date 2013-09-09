@@ -12,16 +12,23 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="navbar-contents">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#"><i class="glyphicon glyphicon-home"></i> Présentation</a></li>
+                    <li><a href="#"><i class="glyphicon glyphicon-home"></i> Présentation</a></li>
                     <li><a href="#"><i class="glyphicon glyphicon-list"></i> Les pizzas</a></li>
                     <li><a href="#"><i class="glyphicon glyphicon-usd"></i> Commander</a></li>
                 </ul>
 
-                <div class="navbar-search">
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
-                        <input type="text" class="form-control" />
-                    </div>
+                <div class="navbar-login">
+                    <form method="post">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input type="text" class="form-control" />
+                        </div>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                            <input type="password" class="form-control" />
+                        </div>
+                        <input type="submit" class="hide" />
+                    </form>
                 </div>
             </div>
         </nav>
