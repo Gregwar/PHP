@@ -98,8 +98,6 @@ Il est possible de faire un hello world simplement::
 .. discover::
     Ou en version mixte::
 
-        <?php 
-
         Hello <?php echo 'world'; ?> !
 
 
