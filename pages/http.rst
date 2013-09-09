@@ -190,7 +190,7 @@ transmettre son contenu vers le client.
 Dans le cas d'Apache, le paquet ``libapache2-mod-php5`` contient la passerelle
 Apache/PHP::
 
-    t   libapache2-mod-php5 - server-side, HTML-embedded scripting language (Apache 2 module)
+    libapache2-mod-php5 - server-side, HTML-embedded scripting language (Apache 2 module)
 
 
 .. slide::
