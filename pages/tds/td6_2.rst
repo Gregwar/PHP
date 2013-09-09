@@ -192,7 +192,7 @@ Listage
     Ainsi, vous pourrez passer les pizzas en paramètres à une vue comme dans la partie précédente et
     en afficher la liste. Voici un exemple de code twig:
 
-    .. code-block:: text
+    .. code-block:: django
 
         <ul>
         {% for pizza in pizzas %}

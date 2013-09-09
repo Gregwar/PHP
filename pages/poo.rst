@@ -67,7 +67,7 @@ Classes et instanciation
         * Les **modifieurs** ``private``, ``protected`` et ``public`` sont présents,
         comme dans beaucoup d'autre langages
         * Le **constructeur** se définit à l'aide de la fonction magique ``__construct()``
-        * Les **attributs et méthodes** de classes sont accessibles par l'opérateur ``-&gt;``, le point
+        * Les **attributs et méthodes** de classes sont accessibles par l'opérateur ``->``, le point
         étant réservé pour la concaténation de chaines
 
 .. textOnly::
@@ -433,8 +433,8 @@ Attention aux références
 
 .. textOnly::
     Dans ce cas, la ligne ``$b = $a`` fait en sorte que la variable ``$b`` référence
-    le même objet que ``$a``. Ainsi la modification de l'attribut sur ``$b-&gt;attr`` est aussi
-    visible sur ``$a-&gt;attr``. En revanche, la variable ``$b`` est bien **différente**
+    le même objet que ``$a``. Ainsi la modification de l'attribut sur ``$b->attr`` est aussi
+    visible sur ``$a->attr``. En revanche, la variable ``$b`` est bien **différente**
     de ``$a``, c'est pourquoi l'affecter à ``null`` ne change nullement la valeur de ``$a``;
     En revanche, l'utilisation de l'opérateur de référence ``&amp;`` pour créer la variable ``$c``
     fait en sorte que ``$c`` soit un **alias** de ``$a``, il référencera alors non pas seulement

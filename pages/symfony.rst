@@ -217,7 +217,7 @@ Utilisation
 
 Voici un exemple de template:
 
-.. code-block:: html5
+.. code-block:: django
 
     <html>
         <head>
@@ -250,7 +250,7 @@ Héritage
 
 La template précédente peut être héritée comme cela:
 
-.. code-block:: html5
+.. code-block:: django
 
     {% extends 'index.html.twig' %}
 
@@ -278,7 +278,7 @@ Boucles, conditions
 
 Il est également possible d'effectuer des tests et des boucles avec Twig:
 
-.. code-block:: html5
+.. code-block:: django
     
     {% if not users|length %}
     <i>Aucun utilisateur</i>

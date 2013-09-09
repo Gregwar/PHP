@@ -163,7 +163,7 @@ le dossier ``design/``.
     de créer. Attention: ne mettez pas l'adresse de votre cible "en dur", mais utilisez la fonction twig
     ``path``:
 
-    .. code-block:: html5
+    .. code-block:: django
         <a href="{{ path('pizzas_list') }}">Les pizzas</a>
 
 .. step::
