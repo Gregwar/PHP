@@ -11,13 +11,14 @@ Vous aurez besoin de déployer son contenu sur un espace web disposant de l'int�
 Exercice 1 : un peu de conception
 --------------------------------
 
-Une plateforme d'hébergement et de distribution de fichiers souhaite pouvoir héberger
-des médias. Il en existe principalement trois sortes, des images, des musiques et des vidéos.
-Ces trois sortes sont traités de manière différentes, mais pour chacun, on connaît un nom et il est
-possible de les jouer à l'aide de la fonction ``play()``.
-Les musiques et les vidéos ont une durée dans le temps et peuvent être diffusées en streaming.
-Enfin, les utilisateurs peuvent constituer des playlists composées de plusieurs médias.
-Les playlists sont hiérarchiques, c'est à dire qu'une playlist peut être ajoutée à une autre playlist.
+    Une plateforme d'hébergement et de distribution de fichiers souhaite pouvoir héberger
+    des médias. Il en existe principalement trois sortes, des images, des musiques et des vidéos.
+    Ces trois sortes sont traités de manière différentes, mais pour chacun, on connaît un nom et il est
+    possible de les jouer à l'aide de la fonction ``play()``.
+
+    Les musiques et les vidéos ont une durée dans le temps et peuvent être diffusées en streaming.
+    Enfin, les utilisateurs peuvent constituer des playlists composées de plusieurs médias.
+    Les playlists sont hiérarchiques, c'est à dire qu'une playlist peut être ajoutée à une autre playlist.
 
 .. step::
     Conception
