@@ -51,10 +51,15 @@ Création du formulaire
     de notre bundle.
 
     Nous ajoutons alors nos champs, notez que nous ne précisons nullement leur type, il sera deviné
-    par Symfony.
+    par **Symfony**.
 
     A l'aide de la `documentation officielle <http://symfony.com/doc/current/book/forms.html>`_ et
     de cette classe, créez un formulaire servant à créer une pizza dans l'espace administrateur.
+
+.. step::
+
+    Lorsque le formulaire est soumis et valide, insérez alors la ``Pizza`` ainsi créée dans la base
+    de données à l'aide de **Doctrine**.
 
 Questions
 ---------
@@ -64,7 +69,7 @@ Labels
 
 .. step::
 
-    Remarquez que les labels sont mis en place par défaut par Symfony en utilisant le nom du champ
+    Remarquez que les labels sont mis en place par défaut par **Symfony** en utilisant le nom du champ
     concerné (qui est anglais ici). A l'aide de la `documentation <http://symfony.com/doc/current/book/forms.html>`_,
     modifiez les.
 
