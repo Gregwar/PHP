@@ -26,7 +26,7 @@ Compréhension
     #-. Le routeur
     ~~~~~~~~~~~~~
 
-        Le routeur du TD précédent a été réutilisé ici. Il permet de simplifier le routage des requêtes,
+    Le routeur du TD précédent a été réutilisé ici. Il permet de simplifier le routage des requêtes,
     ainsi que la génération des url à l'aide de la méthode ``generate``. Son utilisation est
     inspirée de micro-frameworks, tels que `Silex <http://silex.sensiolabs.org>`_. Observez
     la manière dont il est utilisé et dont il fonctionne. 
