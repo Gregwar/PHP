@@ -24,3 +24,6 @@ les instructions progressivement:
     td6_2
     td6_3
     td6_4
+    td6_5
+    td6_6
+

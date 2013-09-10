@@ -1,0 +1,37 @@
+
+TD6-5: Utilisation de bundle
+============================
+
+.. image:: /img/package.png
+    :style: float:right
+
+Dans cette partie, nous allons utiliser une **bundle**, c'est à dire un
+paquet pour **Symfony**.
+
+Nous utiliserons un des **bundles** les plus connus: `FOSUserBundle <https://github.com/FriendsOfSymfony/FOSUserBundle/>`_,
+ce dernier permet de gérer les utilisateurs d'un site, de leur stockage en base de données
+aux formulaires d'inscription et d'édition de profil, en passant par les e-mails
+de confirmations etc.
+
+Installation
+------------
+
+.. step::
+    Pour l'installation, vous allez **suivre scrupuleusement** les étapes 
+    proposées par la documentation officielle:
+
+    .. important::
+        `Installation de FOSUserBundle <https://github.com/FriendsOfSymfony/FOSUserBundle/blob/master/Resources/doc/index.md>`_
+
+    Pour cela, il y a 7 étapes à suivre, vous utiliserez évidemment **composer** pour l'installation du bundle
+    ainsi que **Doctrine** pour la partie base de données.
+
+Utilisation
+-----------
+
+.. step::
+    Une fois le bundle installé, utilisez les nouvelles commandes **Symfony**
+    ``fos:user:create`` et ``fos:user:promote`` afin de créer votre utilisateur
+    administrateur et de lui ajouter le role ``ROLE_ADMIN``. Vous pouvez alors
+    essayer de vous identifier
+
