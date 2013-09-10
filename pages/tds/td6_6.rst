@@ -1,6 +1,6 @@
 
-TD6-6: Les commandes
-====================
+TD6-6: A vous de jouer
+======================
 
 .. note::
     Dans cette partie, vous aurez plus d'autonomie que dans les précédentes,
