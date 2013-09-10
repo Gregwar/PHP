@@ -41,6 +41,9 @@ Compréhension
 Ecriture de requête/code
 ------------------------
 
+.. image:: /img/movie.png
+    :class: right
+
 .. step::
     #-. Casting d'un film
     ~~~~~~~~~~~~~~~~~~~~~
