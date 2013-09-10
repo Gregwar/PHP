@@ -1,6 +1,9 @@
 TD2
 ===
 
+.. image:: /img/http.png
+    :class: right
+
 Dans ce TD, nous allons travailler avec **PHP** et un serveur web qui nous permettra
 de faire la "paserelle" entre les données **HTTP** et **PHP**.
 

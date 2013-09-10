@@ -11,6 +11,9 @@ Vous aurez besoin de déployer son contenu sur un espace web disposant de l'int�
 Exercice 1 : un peu de conception
 --------------------------------
 
+.. image:: /img/cubes.png
+    :class: right
+
     Une plateforme d'hébergement et de distribution de fichiers souhaite pouvoir héberger
     des médias. Il en existe principalement trois sortes, des images, des musiques et des vidéos.
     Ces trois sortes sont traités de manière différentes, mais pour chacun, on connaît un nom et il est
@@ -77,6 +80,9 @@ une sortie de la forme suivante:
 Exercice 2 : un arène
 ---------------------
 
+.. image:: /img/sword.png
+    :class: right
+
 Lisez et déployez le code du dossier ``arena/``.
 
 Compréhension
@@ -124,6 +130,9 @@ Quelques modifications
     vous surchargerez dans chaque classe. La description devra être visible à coté des
     actions réalisables.
 
+.. image:: /img/vampire.png
+    :class: right
+
 .. step::
     **#~. Ajout d'une créature**
 
@@ -163,6 +172,9 @@ Incorporation d'un logger
 
 Exercice 3 : le routeur
 -----------------------
+
+.. image:: /img/routes.png
+    :class: right
 
 Un routeur est un composant clé dans une application web, car il est responsable de l'attribution
 des requêtes à une certaine méthode (ou contrôlleur). Lisez le code contenu dans le dossier ``router/``.

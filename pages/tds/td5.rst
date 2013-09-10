@@ -13,6 +13,9 @@ Tests unitaires
     .. code-block:: text
         php phpunit.phar test.php
 
+    .. image:: /img/phpunit.png
+        :class: right
+
     Remarquez que la méthode ``go()`` ne fait aucune vérification sur la position, afin
     d'éviter les valeurs inférieures à zéro ou supérieure ou égale au maximum. 
 
@@ -37,6 +40,9 @@ Problème d'encodage
 
 Sécurité
 --------
+
+.. image:: /img/security.png
+    :class: right
 
 .. step::
     Testez le code du dossier ``security/``, il est fonctionnel, mais ne respecte pas les bonnes
