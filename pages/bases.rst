@@ -142,6 +142,9 @@ des tests, à l'aide de la commande ``php -a``.
 
 .. slide::
 
+.. image:: /img/terminal.png
+    :class: right
+
 .. slideOnly::
     Utilisation (suite)
     ~~~~~~~~~~~~~~~~~~~

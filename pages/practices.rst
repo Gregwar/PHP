@@ -171,6 +171,9 @@ une équipe de développeurs à la fragilité de l'application.
 Les performances
 ----------------
 
+.. image:: /img/apc-monitor.png
+    :class: right
+
 Contexte
 ~~~~~~~~
 

@@ -36,14 +36,18 @@ Le requêtage
 Présentation
 ~~~~~~~~~~~~
 
+.. image:: /img/sql.png
+    :class: right
+
 .. textOnly::
     L'interêt du requêtage est d'intéragir dynamiquement avec la base de données,
     c'est à dire (entre autre):
 
-* Effectuer des requêtes à paramètres dynamiques
-* Modifier la base de données selon des formulaires
-* Itérer parmis des réultats
-* **Etablir une correspondance entre le monde objet et le monde relationnel**
+.. discoverList::
+    * Effectuer des requêtes à paramètres dynamiques
+    * Modifier la base de données selon des formulaires
+    * Itérer parmis des réultats
+    * **Etablir une correspondance entre le monde objet et le monde relationnel**
 
 .. slide::
 
@@ -276,16 +280,22 @@ Correspondance
 Utilisation
 ~~~~~~~~~~~
 
-L'**ORM** se base sur la notion d'entité, qui sont des classes mappées avec la base
-de données (correspondance avec les tables).
+.. image:: /img/orm.png
+    :class: right
 
-Les avantages sont notamment:
+.. textOnly::
+    L'**ORM** se base sur la notion d'entité, qui sont des classes mappées avec la base
+    de données (correspondance avec les tables).
 
-* La persistence des objets
-* Le requêtage, parfois à travers une couche d'abstraction supplémentaire
-* La notion de transaction est préservée
-* La création et la mise à jour de la structure de la base de données à partir de la définition des entités
-* Possibilité de faire abstraction du système de gestion de base de données sous-jacent
+.. discover::
+    Les avantages sont notamment:
+
+.. discoverList::
+    * La persistence des objets
+    * Le requêtage, parfois à travers une couche d'abstraction supplémentaire
+    * La notion de transaction est préservée
+    * La création et la mise à jour de la structure de la base de données à partir de la définition des entités
+    * Possibilité de faire abstraction du système de gestion de base de données sous-jacent
 
 .. slide::
 

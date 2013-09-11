@@ -13,6 +13,9 @@ Présentation
 Pourquoi faire de l'objet ?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. image:: /img/boxes.png
+    :class: right
+
 .. textOnly::
     L'objet est un paradigme de programmation très répandu et qui a fait ses preuves dans de
     nombreux projets. Son utilisation n'apporte pas de fonctionnalités au langage, c'est à dire
@@ -23,11 +26,12 @@ Pourquoi faire de l'objet ?
     à maîtriser pour tout développeur **PHP**.
 
 .. slideOnly::
-    * Simplicité de compréhension
-    * Maintenance
-    * Factorisation et découpage de code
-    * Travail collaboratif
-    * Conception
+    .. discoverList::
+        * Simplicité de compréhension
+        * Maintenance
+        * Factorisation et découpage de code
+        * Travail collaboratif
+        * Conception
 
 .. textOnly::
     Presque toutes les bibliothèques et frameworks que vous serez amenés à utiliser se basent 
@@ -731,6 +735,9 @@ Les méthodes magiques
 
 L'autoloader
 ~~~~~~~~~~~~
+
+.. image:: /img/php_file.png
+    :class: right
 
 L'autoloading est un mécanisme apparu dans **PHP 5.3** qui permet d'exécuter du code
 au moment ou une classe est demandée et qu'elle n'est pas chargée dans le but de la charger
