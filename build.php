@@ -3,38 +3,20 @@
 include('vendor/autoload.php');
 include('phpnet.php');
 
-if (isset($argv[1]) && $argv[1] == 'clean') {
-    shell_exec('rm -rf '.__DIR__.'/../php');
-    exit();
-}
+use Gregwar\Slidey\Slidey;
 
-$slidey = new Gregwar\Slidey\Slidey;
+$slidey = new Slidey;
 
-/**
- * Customizing template
- */
-$slidey->setTitle('PHP');
+$slidey
+    ->setTitle('PHP')
+    ->addReference(new PhpNet)
+    ->copy('img')
+    ->mkdir('files')
+    ->copy(__DIR__.'/files/*.zip', 'files/')
+    ->copy('favicon.ico')
+    ;
 
-/**
- * Setting up the php.net :method: references
- */
-$slidey->addEnvironmentHook(function ($env) {
-    $env->registerReference(new PhpNet);
-});
-
-/**
- * Adding custom directories
- */
-$slidey->copy('img', 'img');
-$slidey->mkdir('files');
-$slidey->copy(__DIR__.'/files/*.zip', 'files/');
-$slidey->copy('favicon.ico');
-
-/**
- * Interactive mode
- */
 $password = @include('password.php');
-
 if ($password) {
     $slidey->enableInteractive($password, '/tmp/phpslidey');
 }
