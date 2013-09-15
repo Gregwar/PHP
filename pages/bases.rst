@@ -73,7 +73,7 @@ etre trouvés sur le site officiel `php <http://php.net>`_ .
 
 Sous linux, vous trouverez l'interpreteur **PHP** dans les dépôts **apt** :
 
-.. code-block:: txt
+.. code-block:: text
     php5-cli - command-line interpreter for the php5 scripting language
 
 Sous windows, vous trouverez les binaires à l'adresse suivante: 
@@ -116,7 +116,7 @@ Utilisation
 Pour utiliser l'interpreteur **PHP**, utilisez simplement la commande ``php``
 dans votre terminal:
 
-.. code-block:: txt
+::
 
     $ cat hello_world.php
     <?php
