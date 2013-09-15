@@ -7,14 +7,32 @@ TD2
 Dans ce TD, nous allons travailler avec **PHP** et un serveur web qui nous permettra
 de faire la "paserelle" entre les données **HTTP** et **PHP**.
 
+Les fichiers relatifs à ce TD sont disponibles dans l'archive `td2.zip <../files/td2.zip>`_.
+
+Installations
+-------------
+
+Utiliser un serveur
+~~~~~~~~~~~~~~~~~~~
+
 Avant de commencer, vous pouvez installer un serveur sur une machine personelle. Sous Debian/Ubuntu,
 vous pouvez installer les paquets ``apache2``  et ``libapache2-mod-php5``.
 
 Sous Windows, il est préférable d'utiliser un outil tel que **WAMP**, que vous pourrez trouver
 sur le site `wampserver.com <http://www.wampserver.com/>`_.
 
-Les fichiers relatifs à ce TD sont disponibles dans l'archive `td2.zip <../files/td2.zip>`_.
+Serveur intégré
+~~~~~~~~~~~~~~~
 
+Une autre option beaucoup plus élégante et pratique est d'utiliser le serveur web intégré à **PHP**
+depuis sa version ``5.4``, pour cela, placez vous dans le dossier que vous souhaitez et tapez:
+
+.. code-block:: text
+
+    $ php -S localhost:8080
+
+Un serveur web se lancera alors en écoutant sur le port ``8080``, vous pourrez donc vous connecter
+à la page ``http://localhost:8080/`` et vous accéderez à votre application web.
 
 Exercice 1 : Les commodités de PHP
 ----------------------------------
