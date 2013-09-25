@@ -36,7 +36,7 @@ Installation
 
 Il est possible de créer un projet **Symfony 2** à l'aide de la commande: 
 
-.. code-block:: text
+.. code-block:: no-highlight
     composer.phar create-project symfony/framework-standard-edition'
 
 .. textOnly::

@@ -114,7 +114,7 @@ Voici un exemple de **requête/réponse HTTP**, les lignes préfixées par ``>``
 sont les messages envoyés par le client et celles préfixées par ``<`` sont celles
 reçues:
 
-.. code-block:: text
+.. code-block:: no-highlight
 
     http://gregwar.com/hello.txt
 
@@ -340,7 +340,7 @@ GET vs POST
     vont être transmise au serveur, dans le cas de ``get``, les paramètres seront passés dans
     l'**URL** comme vu précédemment:
 
-.. code-block:: text
+.. code-block:: no-highlight
 
     > GET /form.html?firstname=Marty&lastname=McFly HTTP/1.1
     > ...
@@ -353,7 +353,7 @@ GET vs POST
 .. slideOnly::
     --------------------------
 
-.. code-block:: text
+.. code-block:: no-highlight
 
     > POST /form.html HTTP/1.1
     > Content-Type: application/x-www-form-urlencoded
@@ -399,7 +399,7 @@ Les en-têtes
     de sa réponse. Ces en-têtes peuvent indiquer le type des données contenues, leur longueur, l'encodage,
     l'heure du serveur, des cookies et un très grand nombre d'informations. Elles sont sous cette forme:
 
-.. code-block:: text
+.. code-block:: no-highlight
 
     HTTP/1.1 200 OK
     Server: Apache

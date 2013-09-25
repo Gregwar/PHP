@@ -283,7 +283,7 @@ Exceptions
 .. discover::
     Donnera lieu à :
     
-    .. code-block:: text
+    .. code-block:: no-highlight
         PHP Fatal error:  Uncaught exception 'Exception'
         with message 'Error!' in uncaught.php:3
         Stack trace:
@@ -562,7 +562,7 @@ Type hinting
 .. discover::
     -----------
     
-    .. code-block:: text
+    .. code-block:: no-highlight
 
         PHP Catchable fatal error: 
         Argument 1 passed to f() must be an

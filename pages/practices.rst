@@ -46,7 +46,7 @@ Encodage des caractères
         car la page HTML peut être partielle. Dans ce cas là, il est possible de le préciser dans 
         les en-têtes HTTP:
 
-        .. code-block:: text
+        .. code-block:: no-highlight
             Content-type: text/html; charset=utf-8
 
 .. slideOnly::
@@ -54,7 +54,7 @@ Encodage des caractères
         .. slideOnly::
             ----------------
 
-        .. code-block:: text
+        .. code-block:: no-highlight
             Content-type: text/html; charset=utf-8
 
 .. slide::
@@ -142,7 +142,7 @@ Tests unitaires: exécution
 .. textOnly::
     Pour l'exécuter, simplement lancer ``phpunit``:
 
-.. code-block:: text
+.. code-block:: no-highlight
 
     $ phpunit test.php
     PHPUnit 3.6.3 by Sebastian Bergmann.
@@ -271,7 +271,7 @@ Visibilité des fichiers
     une architecture de répértoire séparant le code **PHP** pur et dur de la partie visible par vos
     visiteurs:
 
-.. code-block:: text
+.. code-block:: no-highlight
 
     Exemple d'architecture :
 
@@ -552,7 +552,7 @@ du PHP brut. Ils permettent notamment:
 
 .. discover::
 
-    .. code-block:: text
+    .. code-block:: no-highlight
         {% for user in users %}
             * {{ user.name }}
         {% else %}
@@ -572,7 +572,7 @@ Composer
     Vous pouvez alors spécifier les dépendances de votre application dans un fichier au format ``JSON``,
     comme par exemple:
 
-.. code-block:: text
+.. code-block:: no-highlight
 
     {
         "require": {
@@ -590,7 +590,7 @@ Composer
     .. slideOnly::
         -------------------
 
-    .. code-block:: text
+    .. code-block:: no-highlight
 
         $ composer.phar install
 

@@ -16,7 +16,7 @@ Installation de Symfony 2
     La meilleure solution afin d'installer Symfony 2 est de passer par composer. Pour cela,
     installez tout d'abord composer quelque part et utilisez la commande ``create-project``:
 
-    .. code-block:: text
+    .. code-block:: no-highlight
         composer.phar create-project symfony/framework-standard-edition pizza
         
     Composer va alors travailler un moment et vous déploiera le framework dans le dossier ``pizza/``.
@@ -32,7 +32,7 @@ Installation de Symfony 2
     Vous devrez donner les droits aux serveurs en écriture dans les dossiers ``app/cache`` et
     ``app/logs``, par exemple:
 
-    .. code-block:: text
+    .. code-block:: no-highlight
         chmod -R 777 app/cache/ app/logs/
 
     Dans le cas ou vous ne travaillez pas sur votre propre machine, il faudra éventuellement modifier le 
@@ -68,7 +68,7 @@ Installation de Symfony 2
     Créez maintenant votre Bundle, appellons le ``PizzaBundle`` et plaçons le sous le
     nom de vendeur ``Student``:
 
-    .. code-block:: text
+    .. code-block:: no-highlight
         php app/console generate:bundle
         
     Répondez alors ``Student/PizzaBundle`` à la première question qui vous sera posée, et
