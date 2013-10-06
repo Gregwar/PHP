@@ -707,6 +707,36 @@ Sérialisation
     file_put_contents('a.txt', serialize($a));
 
 .. slide::
+    .. slideOnly::
+        Sérialisation (suite)
+        ~~~~~~~~~~~~~~~~~~~~~
+
+.. textOnly::
+    Notez que la sérialisation peut aussi gérer les références, par exemple:
+
+::
+
+    <?php
+
+    class A { 
+        public $a;
+        public $x = 1;
+    }
+
+    $a = new A;
+    $a->a = $a;
+    $a->x = 2;
+
+    $b = unserialize(serialize($a));
+    $b->x = 3;
+
+    echo $b->a->x, "\n"; // ?
+
+.. textOnly::
+    Ce code affichera bien ``3``, car la référence (qui est même une référence de l'objet
+    vers lui-même) est aussi inclu dans la sérialisation.
+
+.. slide::
 
 Les méthodes magiques
 ~~~~~~~~~~~~~~~~~~~~~
