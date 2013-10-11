@@ -6,6 +6,21 @@ Sommaire
 Présentation
 ------------
 
+Support et auteur
+~~~~~~~~~~~~~~~~~
+
+.. important::
+    Grégoire Passault 
+    *g.passault@gmail.com*
+ 
+    `http://gregwar.com/php/ <http://gregwar.com/php/>`_
+
+
+.. slide::
+
+Matière
+~~~~~~~
+
 Dans ce cours, nous étudierons:
 
 .. discoverList::
