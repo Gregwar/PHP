@@ -550,8 +550,8 @@ Les sessions
 .. slideOnly::
     Principe des sessions:
 
-    * "Jeton" de sécurité: *sessid** 
-    * Base de donnée ou fichiers coté serveur* 
+    * "Jeton" de sécurité: **sessid**
+    * Base de donnée ou fichiers coté serveur
 
     .. discover::
         Ainsi, les données sont sécurisées car elles ne peuvent pas être modifiées arbitrairement par le client
