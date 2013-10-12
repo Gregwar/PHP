@@ -42,8 +42,7 @@ class Router
             $path = '/';
         }
 
-        foreach ($this->rules as $rule)
-        {
+        foreach ($this->rules as $rule) {
             if (($tokens = $rule->match($path)) != null) {
                 $rule->execute($tokens);
                 return;
