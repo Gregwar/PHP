@@ -4,7 +4,8 @@ TD4
 .. image:: /img/db.png
     :class: right
 
-Les fichiers de ce TD sont disponibles dans l'archive `td4.zip </files/td4.zip>`_
+.. important::
+    `Télécharger l'archive td4.zip <../files/td4.zip>`_
 
 Compréhension
 -------------

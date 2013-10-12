@@ -1,7 +1,8 @@
 TD1
 ===
 
-Les fichiers relatifs à ce TD se situent dans l'archive `td1.zip <../files/td1.zip>`_
+.. important::
+    `Télécharger l'archive td1.zip <../files/td1.zip>`_
 
 Astuce
 ------

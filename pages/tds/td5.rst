@@ -1,7 +1,8 @@
 TD5
 ===
 
-Les fichiers de ce TD sont disponibles dans l'archive `td5.zip </files/td5.zip>`_
+.. important::
+    `Télécharger l'archive td5.zip <../files/td5.zip>`_
 
 Tests unitaires
 ---------------

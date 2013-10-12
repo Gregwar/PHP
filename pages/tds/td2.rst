@@ -7,7 +7,8 @@ TD2
 Dans ce TD, nous allons travailler avec **PHP** et un serveur web qui nous permettra
 de faire la "paserelle" entre les données **HTTP** et **PHP**.
 
-Les fichiers relatifs à ce TD sont disponibles dans l'archive `td2.zip <../files/td2.zip>`_.
+.. important::
+    `Télécharger l'archive td2.zip <../files/td2.zip>`_
 
 Installations
 -------------
@@ -103,4 +104,4 @@ Exercice 3 : Sécurisation
         $users = include('users.php');
 
 .. step::
-    Implémenter ensuite une fonction de déconnexion.
+    Implémentez ensuite une fonction de déconnexion.

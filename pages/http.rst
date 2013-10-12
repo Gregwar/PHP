@@ -11,33 +11,38 @@ Introduction au protocol HTTP
 HTTP
 ~~~~
 
-Lorsque vous naviguez sur internet, vous utilisez un **navigateur** qui
-agit en fait comme un **client HTTP (HyperText Transfer Protocol)**. Ce protocole
-permet d'accéder à des resources distantes.
+.. discover::
+    Lorsque vous naviguez sur internet, vous utilisez un **navigateur** qui
+    est en fait un **client HTTP (HyperText Transfer Protocol)**. Ce protocole
+    permet d'accéder à des resources distantes.
 
-.. center::
-    .. image:: /img/browsers.jpg
-        :width: 500
-        :class: center
+.. discover::
+    .. center::
+        .. image:: /img/browsers.jpg
+            :width: 500
+            :class: center
 
 .. slide::
 
 Serveur HTTP
 ~~~~~~~~~~~~
 
-De l'autre coté, des serveurs **HTTP** (ou serveurs web) sont à l'écoute
-permanente de requêtes et répondent à leurs clients. On nommera par exemple **Apache**,
-**Nginx** ou **Lighttpd**
+.. discover::
+    De l'autre coté, des serveurs **HTTP** (ou serveurs web) sont à l'écoute
+    permanente de requêtes et répondent à leurs clients.
+    
+    On nommera par exemple **Apache**, **Nginx** ou **Lighttpd**
 
-.. center::
-    .. image:: /img/apache.png
-        :width: 250
+.. discover::
+    .. center::
+        .. image:: /img/apache.png
+            :width: 250
 
-    .. image:: /img/nginx.gif
-        :width: 250
+        .. image:: /img/nginx.gif
+            :width: 250
 
-    .. image:: /img/lighttpd.png
-        :width: 250
+        .. image:: /img/lighttpd.png
+            :width: 250
 
 .. slide::
 
@@ -74,15 +79,16 @@ Requête HTTP
 .. slideOnly::
     Une **requête HTTP** formée par un navigateur ou client peut contenir :
 
-* La méthode, le nom de la resource demandée et la version du protocole
-*  Des en-têtes pouvant contenir :
-        * Le nom d'hôte du serveur
-        * Les cookies
-        * Des informations sur le navigateur 
-        * Les langues et formats acceptés
-        * Le type et contenu des données (si présentes)
-        * etc.
-* Eventuellement des données (e.x: formulaires, envoi de fichier etc.)
+.. discoverList::
+    1. La méthode, le nom de la resource demandée et la version du protocole
+    2.  Des en-têtes pouvant contenir :
+            * Le nom d'hôte du serveur
+            * Les cookies
+            * Des informations sur le navigateur 
+            * Les langues et formats acceptés
+            * Le type et contenu des données (si présentes)
+            * etc.
+    3. Eventuellement des données (e.x: formulaires, envoi de fichier etc.)
 
 .. slide::
 
@@ -97,13 +103,14 @@ Réponse HTTP
 .. slideOnly::
     Une **réponse HTTP** formée par un serveur peut contenir :
 
-* Un code de réponse (200, 404, 403, 302...) et la version du protocole
-* Des en-têtes pouvant inclure:
-        * Des définition de cookies
-        * Un type et une taille de contenue
-        * Des informations sur le serveur, le type de connexion
-        * etc.
-* Eventuellement des données
+.. discoverList::
+    1. Un code de réponse (200, 404, 403, 302...) et la version du protocole
+    2. Des en-têtes pouvant inclure:
+            * Des définition de cookies
+            * Un type et une taille de contenu
+            * Des informations sur le serveur, le type de connexion
+            * etc.
+    3. Eventuellement des données
 
 .. slide::
 
@@ -114,27 +121,29 @@ Voici un exemple de **requête/réponse HTTP**, les lignes préfixées par ``>``
 sont les messages envoyés par le client et celles préfixées par ``<`` sont celles
 reçues:
 
-.. code-block:: no-highlight
+.. discover::
+    .. code-block:: no-highlight
 
-    http://gregwar.com/hello.txt
+        http://gregwar.com/hello.txt
 
-    > GET /hello.txt HTTP/1.1
-    > Host: gregwar.com
-    > 
-    < HTTP/1.1 200 OK
-    < Content-Length: 13
-    < Content-Type: text/plain
-    < 
-    < Hello world!
+        > GET /hello.txt HTTP/1.1
+        > Host: gregwar.com
+        > 
+        < HTTP/1.1 200 OK
+        < Content-Length: 13
+        < Content-Type: text/plain
+        < 
+        < Hello world!
 
 .. textOnly::
     Ce protocole est très simple et lisible par un humain. Il est très important d'avoir connaissance
     de **HTTP** pour développer une application web. Certain plugins (Firebug, HTTPFox, Tamper data...)
     permettent de visualiser les échanges et/ou de faire des statistiques sur le trafic.
 
-* Protocole **très simple**, lisible par un humain.
-* Important à connaître pour **comprendre ce que l'on développe**.
-* Utilisation de plugins tels que **Firebug** ou **HTTPFox** recommandée.
+.. discoverList::
+    * Protocole **très simple**, lisible par un humain.
+    * Important à connaître pour **comprendre ce que l'on développe**.
+    * Utilisation de plugins tels que **Firebug** ou **HTTPFox** recommandée.
 
 .. slide::
 
@@ -460,12 +469,13 @@ Utilité des en-têtes
 
 Les en-têtes peuvent servir à de nombreuses choses, généralement, on les utilise pour :
 
-* Modifier le type du fichier envoyé (``Content-type``)
-* Rediriger le client (``Location``)
-* Faire télécharger le fichier au client (``Content-Disposition``)
-* Contrôler l'expiration (``Expires``)
-* Changer le code de réponse
-* etc.
+.. discoverList::
+    * Modifier le type du fichier envoyé (``Content-type``)
+    * Rediriger le client (``Location``)
+    * Faire télécharger le fichier au client (``Content-Disposition``)
+    * Contrôler l'expiration (``Expires``)
+    * Changer le code de réponse
+    * etc.
 
 .. slide::
 
@@ -497,11 +507,11 @@ Les cookies
 
     if (isset($_COOKIE['seen']))
     {
-        echo "J'ai l'impression de vous connaitre";
+        echo "J'ai l'impression de vous connaître";
     }
     else
     {
-        echo "Tiens, un nouveau visage !";
+        echo 'Tiens, un nouveau visage !';
 
         // Definit le cookie seen à 1, qui expire 
         // dans une heure (=3600 secondes)
@@ -540,7 +550,7 @@ Attention aux cookies
     .. warning::
         **Attention 3:** **n'ayez pas confiance** en les valeurs que vous obtenez dans le
         tableau ``$_COOKIE``, il peut contenir **tout ce que l'utilisateur souhaite**. En effet, même
-        si le serveur définit les clients, ils sont stockés en clair et modifiable à volonté par le client. 
+        si le serveur les définit, ils sont stockés en clair et modifiable à volonté par le client. 
 
 .. slide::
 
@@ -579,7 +589,7 @@ Utilisation des sessions
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 L'utilisation de tout ce mécanisme se fait **automatiquement** à l'aide de la fonction **PHP**
-:method:`session_start` et du tableau ``$_SESSION``:
+:method:`session_start()` et du tableau ``$_SESSION``:
 
 :: 
 
