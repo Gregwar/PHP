@@ -69,7 +69,7 @@ Classes et instanciation
 
         * Les attributs peuvent être **initialisés** directement dans leur définition
         * Les **modifieurs** ``private``, ``protected`` et ``public`` sont présents,
-        comme dans beaucoup d'autre langages
+          comme dans beaucoup d'autre langages
         * Le **constructeur** se définit à l'aide de la fonction magique ``__construct()``
         * Les **attributs et méthodes** de classes sont accessibles par l'opérateur ``->``, le point
         étant réservé pour la concaténation de chaines
@@ -93,7 +93,7 @@ Classes et instanciation
 Méthodes et attributs statiques
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-En **PHP**, il est possible de rendre des méthodes et des attributs statiques à l'aide du modifieur 
+En **PHP**, il est possible de rendre des méthodes et des attributs statiques à l'aide du modifieur
 ``static``::
 
     <?php
@@ -124,7 +124,7 @@ En **PHP**, il est possible de rendre des méthodes et des attributs statiques �
 Héritage
 ~~~~~~~~
 
-L'héritage s'écrit avec "``extends`` (classe mère)"::
+L'héritage s'écrit avec ``extends``::
 
     <?php
 
@@ -158,8 +158,8 @@ Classe mère
 
     class Rectangle
     {
-        public $width;
-        public $height;
+        protected $width;
+        protected $height;
 
         public function __construct($width, $height)
         {
@@ -599,15 +599,16 @@ Par exemple, si le fichier ``alice/image.php`` contient::
         // ...
     }
 
-On pourra l'utiliser comme cela::
+.. discover::
+    On pourra l'utiliser comme cela::
 
-    <?php
+        <?php
 
-    include('alice/image.php');
+        include('alice/image.php');
 
-    use Alice\Image;
+        use Alice\Image;
 
-    $image = new Image;
+        $image = new Image;
 
 .. textOnly::
     Ainsi, la classe de Alice ne "pollue" pas l'espace de nom global mais est disponible 
@@ -707,9 +708,10 @@ Sérialisation
     file_put_contents('a.txt', serialize($a));
 
 .. slide::
-    .. slideOnly::
-        Sérialisation (suite)
-        ~~~~~~~~~~~~~~~~~~~~~
+
+.. slideOnly::
+    Sérialisation (suite)
+    ~~~~~~~~~~~~~~~~~~~~~
 
 .. textOnly::
     Notez que la sérialisation peut aussi gérer les références, par exemple:
