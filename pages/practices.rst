@@ -401,14 +401,14 @@ Failles CSRF
 .. textOnly::
     Imaginez la page suivant:
 
-::
+.. code-block:: html
 
     <!DOCTYPE html>
     <html>
         <body>
             ...
             <a href="destroy.php">
-            Détruire mon compte
+                Détruire mon compte
             </a>
         </body>
     </html>
@@ -552,7 +552,7 @@ du PHP brut. Ils permettent notamment:
 
 .. discover::
 
-    .. code-block:: no-highlight
+    .. code-block:: jinja
         {% for user in users %}
             * {{ user.name }}
         {% else %}
