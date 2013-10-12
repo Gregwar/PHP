@@ -577,7 +577,7 @@ Composer
     {
         "require": {
             "twig/twig": "1.*",
-        "gregwar/image": "dev-master"
+            "gregwar/image": "dev-master"
         }
     }
 
