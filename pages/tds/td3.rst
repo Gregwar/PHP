@@ -67,7 +67,7 @@ Ecrivez enfin les classes. Bien entendu, vous n'implémenterez pas réellement l
 la diffusion en streaming mais effectuerai des sorties écran, le test ci-dessus pourrait générer
 une sortie de la forme suivante:
 
-.. code-block:: text
+.. code-block:: no-highlight
 
     P2
     | Stairway to heaven (audio)

@@ -27,7 +27,7 @@ Serveur intégré
 Une autre option beaucoup plus élégante et pratique est d'utiliser le serveur web intégré à **PHP**
 depuis sa version ``5.4``, pour cela, placez vous dans le dossier que vous souhaitez et tapez:
 
-.. code-block:: text
+.. code-block:: no-highlight
 
     $ php -S localhost:8080
 

@@ -283,7 +283,7 @@ Exceptions
 .. discover::
     Donnera lieu à :
     
-    .. code-block:: text
+    .. code-block:: no-highlight
         PHP Fatal error:  Uncaught exception 'Exception'
         with message 'Error!' in uncaught.php:3
         Stack trace:
@@ -562,7 +562,7 @@ Type hinting
 .. discover::
     -----------
     
-    .. code-block:: text
+    .. code-block:: no-highlight
 
         PHP Catchable fatal error: 
         Argument 1 passed to f() must be an
@@ -705,6 +705,36 @@ Sérialisation
     echo $a->attr."\n";
 
     file_put_contents('a.txt', serialize($a));
+
+.. slide::
+    .. slideOnly::
+        Sérialisation (suite)
+        ~~~~~~~~~~~~~~~~~~~~~
+
+.. textOnly::
+    Notez que la sérialisation peut aussi gérer les références, par exemple:
+
+::
+
+    <?php
+
+    class A { 
+        public $a;
+        public $x = 1;
+    }
+
+    $a = new A;
+    $a->a = $a;
+    $a->x = 2;
+
+    $b = unserialize(serialize($a));
+    $b->x = 3;
+
+    echo $b->a->x, "\n"; // ?
+
+.. textOnly::
+    Ce code affichera bien ``3``, car la référence (qui est même une référence de l'objet
+    vers lui-même) est aussi inclu dans la sérialisation.
 
 .. slide::
 

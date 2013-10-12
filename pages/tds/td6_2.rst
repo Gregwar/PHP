@@ -18,7 +18,7 @@ Configuration
 
     Vous pouvez par exemple vérifier en lançant une commande doctrine comme:
 
-    .. code-block:: text
+    .. code-block:: no-highlight
 
         php app/console doctrine:schema:validate
 
@@ -56,7 +56,7 @@ Entités
     Maintenant que nous avons créé une entité, nous allons demander à Doctrine de créer la
     base de données correspondante, pour cela, utilisez:
 
-    .. code-block:: text
+    .. code-block:: no-highlight
 
         $ php app/console doctrine:schema:create 
         ATTENTION: This operation should not be executed in a production environment.
@@ -79,7 +79,7 @@ Entités
     Maintenant, nous pouvons demander à Doctrine de **mettre à jour** la base de données,
     essayez:
 
-    .. code-block:: text
+    .. code-block:: no-highlight
 
         $ php app/console doctrine:schema:update --dump-sql
         CREATE TABLE Ingredient (id INT AUTO_INCREMENT NOT NULL, name VARCHAR(255) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB
@@ -88,7 +88,7 @@ Entités
     corresponde à nos entités. Vous pouvez également lui demandez d'exécuter les requêtes nécéssaire avec
     ``--force``:
 
-    .. code-block:: text
+    .. code-block:: no-highlight
 
         $ php app/console doctrine:schema:update --force
         Updating database schema...
@@ -118,7 +118,7 @@ Entités
 
     Fermez les fichier ``Ingredient.php`` et ``Pizza.php`` et utilisez la commande suivante:
 
-    .. code-block:: text
+    .. code-block:: no-highlight
 
         $ php app/console doctrine:generate:entities Student
 

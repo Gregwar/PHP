@@ -10,7 +10,7 @@ Tests unitaires
     Lisez le code du dossier ``tests``, et exécutez les tests à l'aide de la commande
     suivante:
 
-    .. code-block:: text
+    .. code-block:: no-highlight
         php phpunit.phar test.php
 
     .. image:: /img/phpunit.png

@@ -1,6 +1,37 @@
 Sommaire
 ========
 
+.. slide::
+
+Présentation
+------------
+
+Support et auteur
+~~~~~~~~~~~~~~~~~
+
+.. important::
+    Grégoire Passault 
+    *g.passault@gmail.com*
+ 
+    `http://gregwar.com/php/ <http://gregwar.com/php/>`_
+
+
+.. slide::
+
+Matière
+~~~~~~~
+
+Dans ce cours, nous étudierons:
+
+.. discoverList::
+    * **Les principes de bases** du langage PHP, c'est à dire savoir tout
+      ce qu'il est possible de faire avec le langage lui-même
+    * **Les concepts**, ou les principes de programmations, patrons de conceptions,
+      ou encore les catégories d'outils 
+    * **Les outils**, comme Symfony2, Doctrine2, composer etc.
+
+.. slide::
+
 Cours
 -----
 
@@ -12,6 +43,8 @@ Cours
     db
     practices
     symfony
+
+.. slide::
 
 Guide
 -----
