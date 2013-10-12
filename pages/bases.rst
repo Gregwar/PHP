@@ -41,10 +41,15 @@ Prérequis
 ~~~~~~~~~
 
 Avant d'aller plus loin, nous considérerons que vous avez des connaissances
-en web, notamment en **HTML**, **CSS** et **JavaScript**. Il est également
-nécessaire d'avoir des connaissances en programmation impératives (variables, 
-structures de contrôle, fonctions etc.). Il est préférable d'avoir déjà fait de la 
-programmation orientée objet.
+en web, notamment en **HTML**, **CSS** et **JavaScript**.
+
+.. discover::
+    Il est également nécessaire d'avoir des connaissances en programmation impératives (variables,
+    structures de contrôle, fonctions etc.).
+
+.. discover::
+    Il est très grandement conseillé d'avoir déjà fait de la
+    programmation orientée objet.
 
 .. discover::
     En ce qui concerne le **PHP**, aucun prérequis n'est nécessaire.
