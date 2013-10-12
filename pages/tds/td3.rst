@@ -60,22 +60,22 @@ Exercice 1 : un peu de conception
 
 .. step::
 
-Code
-~~~~
+    Code
+    ~~~~
 
-Ecrivez enfin les classes. Bien entendu, vous n'implémenterez pas réellement la lecture ou
-la diffusion en streaming mais effectuerai des sorties écran, le test ci-dessus pourrait générer
-une sortie de la forme suivante:
+    Ecrivez enfin les classes. Bien entendu, vous n'implémenterez pas réellement la lecture ou
+    la diffusion en streaming mais effectuerai des sorties écran, le test ci-dessus pourrait générer
+    une sortie de la forme suivante:
 
-.. code-block:: no-highlight
+    .. code-block:: no-highlight
 
-    P2
-    | Stairway to heaven (audio)
-    |  P1
-    |  | Matrix (vidéo)
-    |  | Joconde (image)
+        P2
+        | Stairway to heaven (audio)
+        |  P1
+        |  | Matrix (vidéo)
+        |  | Joconde (image)
 
-    [Vidéo] Lecture de Matrix
+        [Vidéo] Lecture de Matrix
 
 Exercice 2 : un arène
 ---------------------
