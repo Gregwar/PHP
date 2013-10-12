@@ -73,8 +73,8 @@ qu'à ses particularités.
 Installation de l'intérpreteur
 ----------------------------------
 
-L'ensemble de la documentation et des fichiers binaires de **PHP** peuvent 
-etre trouvés sur le site officiel `php <http://php.net>`_ .
+L'ensemble de la documentation et des fichiers binaires de **PHP** peuvent
+être trouvés sur le site officiel `php <http://php.net>`_ .
 
 Sous linux, vous trouverez l'interpreteur **PHP** dans les dépôts **apt** :
 
@@ -89,9 +89,10 @@ Sous windows, vous trouverez les binaires à l'adresse suivante:
 Hello world!
 ~~~~~~~~~~~~
 
-Il est possible de faire un hello world simplement::
+.. discover::
+    Il est possible de faire un hello world simplement::
 
-    Hello world !
+        Hello world !
 
 .. discover::
     Ou encore en PHP brut::
@@ -121,19 +122,21 @@ Utilisation
 Pour utiliser l'interpreteur **PHP**, utilisez simplement la commande ``php``
 dans votre terminal:
 
-::
+.. discover::
+    ::
 
-    $ cat hello_world.php
-    <?php
+        $ cat hello_world.php
+        <?php
 
-    echo "Hello world!\n";
+        echo "Hello world!\n";
 
-    $ php hello_world.php
-    Hello world!
-    $ 
+        $ php hello_world.php
+        Hello world!
+        $ 
 
-Il est également possible d'utiliser **PHP** en mode interactif pour réaliser
-des tests, à l'aide de la commande ``php -a``.
+.. discover::
+    Il est également possible d'utiliser **PHP** en mode interactif pour réaliser
+    des tests, à l'aide de la commande ``php -a``.
 
 .. textOnly::
     Utiliser l'intérpréteur peut être très utile, il peut vous servir à faire des
@@ -172,7 +175,7 @@ Exemple basique
 **PHP** est faiblement typé::
 
     <?php
-    // les variables sont préfixées par $
+    // Les variables sont préfixées par $
     // $a n'est pas typé
     $a = 12; // entier
     $a = 'hello'; // chaîne
@@ -311,7 +314,8 @@ Comparaison
 ~~~~~~~~~~~
 
 **PHP** propose deux opérations de comparaisons, avec ``==`` et ``!=``
-ou avec ``===`` et ``!==``, qui sont respectivement "laxiste" et "strictes"::
+ou avec ``===`` et ``!==``. Les ``==`` comparent les variables sans
+prendre en compte le type, alors que ``===`` le prend en compte::
 
     <?php
 
@@ -367,7 +371,7 @@ respectivement à sortir d'une boucle ou à passer à l'élément suivant)::
     $x = 0;
     while (true) {
         if ($x == 30) {
-        break;
+            break;
         }
         $x++;
     }
@@ -376,7 +380,7 @@ respectivement à sortir d'une boucle ou à passer à l'élément suivant)::
 
     for ($i=0; $i=100; $i++) {
         if ($i == 50) {
-        continue;
+            continue;
         }
 
         // Tous les $i sauf 50
@@ -420,7 +424,7 @@ Pour faciliter l'itération des tableaux, **PHP** propose la structure de contr�
 Itérations avec modification
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A l'aide de la notation de référence ``&amp;``, **PHP** vous permet d'itérer
+A l'aide de la notation de référence ``&``, **PHP** vous permet d'itérer
 sur un tableau tout en modifiant la valeur de son contenu::
    
     <?php
@@ -458,7 +462,7 @@ la valeur en même temps::
 
     // Itère à travers les clés et valeurs
     foreach ($sigles as $sigle => $signification) {
-        echo $sigle . " veut dire $signification\n";
+        echo "$sigle veut dire $signification\n";
     }
 
 .. slide::
@@ -506,7 +510,7 @@ Voici un exemple plus avancé qui utilise deux concepts introduits dans **PHP 5.
     function ifIsEven($x, Closure $callback)
     {
         if (($x%2) == 0) {
-        $callback();
+            $callback();
         }
     }
 
@@ -590,23 +594,25 @@ Problèmes liés à l'inclusion
 Lors de l'inclusion d'un fichier, la fonction ``include`` (ou ``require``) va chercher à plusieurs endroits
 (dans le ``include_path``, dans le dossier du script qui include, dans le dossier de travail, etc.)
 
-Pour clarifier son comportement, il est généralement recommandé d'utiliser ``__DIR__`` pour désigner un répértoire relatif au
-répértoire actuel::
+.. discover::
+    Pour clarifier son comportement, il est généralement recommandé d'utiliser ``__DIR__`` pour désigner un répértoire relatif au
+    répértoire actuel::
 
-    <?php
+        <?php
 
-    /**
-     * Inclus le fichier math.php qui se situe dans
-     * le même répértoire que celui du script
-     *
-     * Permet d'éviter les ambiguités
-     */
-    include_once(__DIR__.'/math.php');
+        /**
+         * Inclus le fichier math.php qui se situe dans
+         * le même répértoire que celui du script
+         *
+         * Permet d'éviter les ambiguités
+         */
+        include_once(__DIR__.'/math.php');
 
 .. slide::
 
 TD 1
 ----
 
-* :doc:`tds/td1`
+.. important::
+    :doc:`tds/td1`
 

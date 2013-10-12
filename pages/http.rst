@@ -592,5 +592,5 @@ L'utilisation de tout ce mécanisme se fait **automatiquement** à l'aide de la 
 TD 2
 ----
 
-* :doc:`tds/td2`
-
+.. important::
+    :doc:`tds/td2`

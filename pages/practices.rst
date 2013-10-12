@@ -610,5 +610,6 @@ Composer
 TD 5
 ----
 
-* :doc:`tds/td5`
+.. important::
+    :doc:`tds/td5`
 

@@ -302,5 +302,6 @@ Utilisation
 TD 4
 ----
 
-* :doc:`tds/td4`
+.. important::
+    :doc:`tds/td4`
 

@@ -440,7 +440,7 @@ Attention aux références
     le même objet que ``$a``. Ainsi la modification de l'attribut sur ``$b->attr`` est aussi
     visible sur ``$a->attr``. En revanche, la variable ``$b`` est bien **différente**
     de ``$a``, c'est pourquoi l'affecter à ``null`` ne change nullement la valeur de ``$a``;
-    En revanche, l'utilisation de l'opérateur de référence ``&amp;`` pour créer la variable ``$c``
+    En revanche, l'utilisation de l'opérateur de référence ``&`` pour créer la variable ``$c``
     fait en sorte que ``$c`` soit un **alias** de ``$a``, il référencera alors non pas seulement
     le même objet mais aussi la **même variable**.
 
@@ -780,5 +780,6 @@ dynamiquement.
 TD 3
 ----
 
-* :doc:`tds/td3`
+.. important::
+    :doc:`tds/td3`
 
