@@ -37,7 +37,7 @@ permanente de requêtes et répondent à leurs clients. On nommera par exemple *
         :width: 250
 
     .. image:: /img/lighttpd.png
-        :width:250
+        :width: 250
 
 .. slide::
 
@@ -74,7 +74,7 @@ Requête HTTP
 .. slideOnly::
     Une **requête HTTP** formée par un navigateur ou client peut contenir :
 
-* La méthode, le nom de la resource demandée et la version du protocole* 
+* La méthode, le nom de la resource demandée et la version du protocole
 *  Des en-têtes pouvant contenir :
         * Le nom d'hôte du serveur
         * Les cookies
@@ -217,6 +217,23 @@ le script suivant::
         Notez ici tout l'interêt de pouvoir ouvrir et fermer les balises ``<?php ?>``, cela vous permet
         alors d'utiliser **PHP** uniquement aux emplacements dynamique de votre page web et de rédiger le reste
         normalement.
+
+.. slide::
+
+Serveur embarqué
+~~~~~~~~~~~~~~~~
+
+Depuis **PHP 5.4**, l'outil ``php`` en ligne de commande est proposé avec un serveur embarqué
+qui vous permettra de lancer simplement un serveur web depuis n'importe quel dossier.
+
+.. discover::
+    .. code-block:: no-highlight
+        php -S localhost:8080
+
+.. discover::
+    Cette commande lançera un serveur web avec **PHP** depuis le dossier courant sur le
+    port 8080. Il suffira donc d'ouvrir un navigateur à l'adresse ``http://localhost:8080``
+    pour accéder aux pages.
 
 .. slide::
 
