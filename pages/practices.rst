@@ -381,7 +381,7 @@ Failles XSS
 .. textOnly::
     L'utilisateur pourra saisir n'importe quelle valeur, elle sera affichée dans la page. Le problème, c'est que 
     le code HTML sera lui aussi interprété. Par exemple, si l'utilisateur saisit ``<u>test</u>``,
-    le mot "<u>test</u>" apparaîtra en souligné. Ainsi, un utilisateur mal intentionné pourra par exemple injecter du code
+    le mot "test" apparaîtra en souligné. Ainsi, un utilisateur mal intentionné pourra par exemple injecter du code
     Javascript dans la page, et aura accès entre autre à la variable ``document.cookie`` qui contient le
     cookie du navigateur exécutant le code. En s'arrangeant pour qu'une victime se rende sur son lien, il pourra alors
     récupérer son cookie et s'identifier à sa place.
@@ -460,6 +460,20 @@ Injection SQL
 .. textOnly::
     Ce qui est toujours vrai. Il faut donc éviter absolument de générer des requêtes à la main et toujours
     utiliser le mécanisme de préparation des requêtes.
+
+.. slide:: darkSlide fullSlide slideOnly
+
+.. discover:: 
+    Préparez
+
+.. discover::
+    vos 
+
+.. discover::
+    requêtes
+
+.. discover::
+    !
 
 .. slide::
 

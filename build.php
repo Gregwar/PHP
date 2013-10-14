@@ -11,8 +11,10 @@ $slidey
     ->setTitle('PHP')
     ->addReference(new PhpNet)
     ->copy('img')
+    ->copy('css')
     ->mkdir('files')
     ->copy(__DIR__.'/files/*.zip', 'files/')
+    ->addCss('css/style.css')
     ->copy('favicon.ico')
     ;
 
