@@ -68,9 +68,9 @@ Echappement
     :style: float:right
 
 .. textOnly::
-    Pendant longtemps, **PHP** a comprit une option très controversée nommée 
+    Pendant longtemps, **PHP** a comprit une option très controversée nommée
     les *magic quotes*. Ce système échappait automatiquement les données qui parvenaient
-    à l'application web concernée (en ajoutant des \ devant les "). 
+    à l'application web concernée (en ajoutant des \ devant les ").
     
     Mécanisme souvent à l'origine de problèmes qui se traduisent par l'apparition de \
     involontaires, ce système se voulait protecteur contre les failles liées notamment aux
@@ -108,7 +108,7 @@ Tests untaires: exemple
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 .. textOnly::
-    Voici un exemple de test écrit avec PHPUnit:
+    Voici un exemple de test écrit avec **PHPUnit**:
 
 ::
 
@@ -128,7 +128,7 @@ Tests untaires: exemple
         {
             for ($i=0; $i<10; $i++) {
                 $this->assertEquals(
-                    Calculator::add($i, $i), 2*$i
+                    2*$i, Calculator::add($i, $i)
                 );
             }
         }
