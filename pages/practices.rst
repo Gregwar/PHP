@@ -15,7 +15,7 @@ Le langage **PHP** peut être très vite maîtrisé. En revanche, l'apprentissag
 des méthodes et l'organisation sont plus complexes et primordiales dans l'écriture
 d'une application web.
 
-Dans cette partie, nous survolerons un ensemble de bonnes pratiques fortement liées 
+Dans cette partie, nous survolerons un ensemble de bonnes pratiques, en "vrac", fortement liées
 au développement d'application **PHP**.
 
 .. slide::
@@ -282,9 +282,9 @@ Visibilité des fichiers
      |   |- img/
      |   -
      |
-     |- src/     Documents invisibles
-     |   |- config.php Configuration
-     |   |- functions.php
+     |- src/            Documents invisibles
+     |   |- config.php  Configuration
+     |   |- autoload.php
      |   |- ...
      -   -
 
