@@ -1,4 +1,4 @@
-.slide.darkSlide {
+.slide.redSlide, .slide.darkSlide {
     padding-top:10px;
     line-height:1.0;
     font-family:EdmondSansBold;
@@ -7,7 +7,15 @@
     display:table-cell;
     vertical-align:middle;
     height:500px;
+}
+
+.slide.darkSlide {
     background-color:#111;
+    color:#eee;
+}
+
+.slide.redSlide {
+    background-color:#c00;
     color:#eee;
 }
 
@@ -27,6 +35,10 @@
     width:850px;
     margin:auto;
     font-size:40px;
+}
+
+.slide.codeLeftTiny pre > code {
+    font-size:30px;
 }
 
 .importantText {

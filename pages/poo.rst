@@ -707,19 +707,11 @@ Sérialisation
 
     file_put_contents('a.txt', serialize($a));
 
-.. slide::
-
-.. slideOnly::
-    Sérialisation (suite)
-    ~~~~~~~~~~~~~~~~~~~~~
-
-.. textOnly::
-    Notez que la sérialisation peut aussi gérer les références, par exemple:
-
+.. slide:: darkSlide fullSlide slideOnly codeLeft
+    
 ::
 
     <?php
-
     class A { 
         public $a;
         public $x = 1;
@@ -732,9 +724,29 @@ Sérialisation
     $b = unserialize(serialize($a));
     $b->x = 3;
 
-    echo $b->a->x, "\n"; // ?
+    echo $b->a->x, "\n"; // ???
 
 .. textOnly::
+
+    Notez que la sérialisation peut aussi gérer les références, par exemple:
+
+    ::
+
+        <?php
+        class A { 
+            public $a;
+            public $x = 1;
+        }
+
+        $a = new A;
+        $a->a = $a;
+        $a->x = 2;
+
+        $b = unserialize(serialize($a));
+        $b->x = 3;
+
+        echo $b->a->x, "\n"; // ?
+
     Ce code affichera bien ``3``, car la référence (qui est même une référence de l'objet
     vers lui-même) est aussi inclu dans la sérialisation.
 
@@ -776,6 +788,37 @@ au moment ou une classe est demandée et qu'elle n'est pas chargée dans le but 
 dynamiquement.
 
 * Voir `spl_autoload_register() <http://php.net/spl_autoload_register>`_
+
+.. slide:: darkSlide fullSlide slideOnly
+
+AUTOLOADING
+
+.. div:: inSlide
+    .. discoverList::
+        * user: ``new Bob\Something``
+        * php: Hm, this class is not loaded
+        * php: Let's call the autoloader methods
+        * autoloader method: ``Bob\Something``, this is
+          likely in ``/home/bob/lib/Bob/Something.php``,
+          let's include it
+        * php: OK, the class is now loaded, let's
+          instanciate it
+
+.. slide:: darkSlide fullSlide slideOnly codeLeft codeLeftTiny
+
+AUTOLOADING
+
+::
+
+    <?php
+    // autoload.php
+    spl_autoload_register(function($cName) {
+        if (strpos($cName, 'Bob')===0) {
+            $file = str_replace('\\', '/', 
+                                    $cName);
+            include(__DIR__.'/'.$file.'.php');
+        }
+    });
 
 .. slide::
 

@@ -170,6 +170,11 @@ reçues:
     REGARDER LES 
     REQUÊTES HTTP
 
+.. slide:: fullSlide slideOnly darkSlide
+
+.. div:: importantText
+    ...VRAIMENT!
+
 .. slide::
 
 CGI
@@ -686,12 +691,6 @@ L'utilisation de tout ce mécanisme se fait **automatiquement** à l'aide de la 
     Ce compteur ne peut pas être faussé par le client, ou plus exactement il ne peut pas être amené à une
     valeur arbitraire. En revanche, le client peut choisir de supprimer son cookie de session, c'est à dire
     jeter son jeton de sécurité, le compteur repartira alors à 0.
-
-.. slide:: darkSlide fullSlide slideOnly
-
-.. div:: inSlide
-    .. discoverList::
-        * Hello, I'm Jeff
 
 .. slide::
 

@@ -546,7 +546,7 @@ Voici un exemple plus avancé qui utilise deux concepts introduits dans **PHP 5.
         }   
     ];
 
-    $toDo = array('sayHello', 'quit');
+    $toDo = ['sayHello', 'quit'];
     foreach ($toDo as $task) {
         $actions[$task]();
     }

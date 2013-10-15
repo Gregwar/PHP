@@ -356,7 +356,7 @@ Inclusion
     présent sur le serveur, voire d'interpréter du code arbitraire. Il faut dans ce cas exercer un contrôle 
     très précis sur le nom de la page.
 
-.. slide:: darkSlide fullSlide slideOnly
+.. slide:: redSlide fullSlide slideOnly
 
 .. div:: importantText
     DON'T DO 
@@ -397,7 +397,7 @@ Failles XSS
     et risquée, car le moindre oubli pourrait ouvrir une brèche sur l'application ainsi créée. Pour palier à cela,
     certains moteurs de templates offrent la possibilité d'échapper tout par défaut.
 
-.. slide:: darkSlide fullSlide slideOnly
+.. slide:: redSlide fullSlide slideOnly
 
 .. div:: importantText
     DON'T DO 
@@ -436,7 +436,7 @@ Failles CSRF
     par l'utilisateur est égal à celui contenu dans la session, c'est bien qu'il est passé par le site pour obtenir 
     son formulaire.
 
-.. slide:: darkSlide fullSlide slideOnly
+.. slide:: redSlide fullSlide slideOnly
 
 .. div:: importantText
     DON'T DO 
@@ -479,7 +479,7 @@ Injection SQL
     Ce qui est toujours vrai. Il faut donc éviter absolument de générer des requêtes à la main et toujours
     utiliser le mécanisme de préparation des requêtes.
 
-.. slide:: darkSlide fullSlide slideOnly
+.. slide:: redSlide fullSlide slideOnly
 
 .. div:: importantText
     PREPAREZ 
