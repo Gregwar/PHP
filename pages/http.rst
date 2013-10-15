@@ -2,6 +2,11 @@
 
 HTTP
 ====
+.. slide:: fullSlide slideOnly darkSlide
+
+.. div:: importantText
+    HM... 
+    WAIT
 
 .. slide::
 
@@ -634,6 +639,23 @@ Les sessions
     .. discover::
         Ainsi, les données sont sécurisées car elles ne peuvent pas être modifiées arbitrairement par le client
 
+.. slide:: fullSlide slideOnly darkSlide
+
+THE SESSION SHOW
+
+.. div:: inSlide
+    .. discoverList::
+    * Browser: Hello Server, I'm ``ryan``, my
+      password is ``admin``
+    * Server:
+      * Check that the password is good... ok
+      * Generate random token ``aef6172e``
+      * Write ``ryan`` to ``sessions/aef6172e``
+      * Ok Ryan, take this token: ``aef6172e``
+    * Browser: Hello Server, I hold ``aef6172e``
+    * Server: Hi, Ryan!
+
+
 .. slide::
 
 Utilisation des sessions
@@ -664,6 +686,12 @@ L'utilisation de tout ce mécanisme se fait **automatiquement** à l'aide de la 
     Ce compteur ne peut pas être faussé par le client, ou plus exactement il ne peut pas être amené à une
     valeur arbitraire. En revanche, le client peut choisir de supprimer son cookie de session, c'est à dire
     jeter son jeton de sécurité, le compteur repartira alors à 0.
+
+.. slide:: darkSlide fullSlide slideOnly
+
+.. div:: inSlide
+    .. discoverList::
+        * Hello, I'm Jeff
 
 .. slide::
 

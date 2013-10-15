@@ -37,3 +37,7 @@
     margin:20px;
     padding:0;
 }
+
+.darkSlide code {
+    font-size:35px;
+}
