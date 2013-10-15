@@ -356,6 +356,12 @@ Inclusion
     présent sur le serveur, voire d'interpréter du code arbitraire. Il faut dans ce cas exercer un contrôle 
     très précis sur le nom de la page.
 
+.. slide:: darkSlide fullSlide slideOnly
+
+.. div:: importantText
+    DON'T DO 
+    THAT!
+
 .. slide::
 
 Failles XSS
@@ -391,6 +397,12 @@ Failles XSS
     et risquée, car le moindre oubli pourrait ouvrir une brèche sur l'application ainsi créée. Pour palier à cela,
     certains moteurs de templates offrent la possibilité d'échapper tout par défaut.
 
+.. slide:: darkSlide fullSlide slideOnly
+
+.. div:: importantText
+    DON'T DO 
+    THAT!
+
 .. slide::
 
 .. _csrf:
@@ -423,6 +435,12 @@ Failles CSRF
     placer dans un champ caché (*input hidden*) du formulaire. Au moment de la requête, si le jeton fournit 
     par l'utilisateur est égal à celui contenu dans la session, c'est bien qu'il est passé par le site pour obtenir 
     son formulaire.
+
+.. slide:: darkSlide fullSlide slideOnly
+
+.. div:: importantText
+    DON'T DO 
+    THAT!
 
 .. slide::
 
@@ -463,10 +481,13 @@ Injection SQL
 
 .. slide:: darkSlide fullSlide slideOnly
 
-PREPAREZ 
-VOS 
-REQUÊTES 
-!!!
+.. div:: importantText
+    PREPAREZ 
+    VOS 
+    REQUÊTES 
+
+.. discover::
+    !!!
 
 .. slide::
 
