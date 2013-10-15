@@ -26,7 +26,7 @@ Support et auteur
 
 .. div:: importantText
     TOUT LE MONDE 
-    A DEJA FAIT 
+    A DÉJÀ FAIT 
     DU PHP
 
 .. slide:: darkSlide fullSlide slideOnly
@@ -39,7 +39,7 @@ Support et auteur
 
 .. div:: importantText
     PEU DE GENS SONT 
-    REELEMENT EXPERTS 
+    RÉELEMENT EXPERTS 
     EN PHP
 
 .. slide:: darkSlide fullSlide slideOnly 
