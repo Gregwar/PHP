@@ -140,10 +140,30 @@ reçues:
     de **HTTP** pour développer une application web. Certain plugins (Firebug, HTTPFox, Tamper data...)
     permettent de visualiser les échanges et/ou de faire des statistiques sur le trafic.
 
-.. discoverList::
-    * Protocole **très simple**, lisible par un humain.
-    * Important à connaître pour **comprendre ce que l'on développe**.
-    * Utilisation de plugins tels que **Firebug** ou **HTTPFox** recommandée.
+.. slide:: fullSlide slideOnly darkSlide
+
+.. div:: importantText
+    HTTP 
+    EST 
+    SIMPLE
+
+.. slide:: fullSlide slideOnly darkSlide
+
+.. div:: importantText
+    VOUS DEVEZ 
+    COMPRENDRE 
+    HTTP...
+
+.. discover::
+    ...AVANT PHP
+
+.. slide:: fullSlide slideOnly darkSlide
+
+.. div:: importantText
+    AYEZ TOUJOURS 
+    UN MOYEN DE 
+    REGARDER LES 
+    REQUÊTES HTTP
 
 .. slide::
 
@@ -227,22 +247,36 @@ le script suivant::
         alors d'utiliser **PHP** uniquement aux emplacements dynamique de votre page web et de rédiger le reste
         normalement.
 
-.. slide::
+.. textOnly::
 
-Serveur embarqué
-~~~~~~~~~~~~~~~~
+    Serveur embarqué
+    ~~~~~~~~~~~~~~~~
 
-Depuis **PHP 5.4**, l'outil ``php`` en ligne de commande est proposé avec un serveur embarqué
-qui vous permettra de lancer simplement un serveur web depuis n'importe quel dossier.
+    Depuis **PHP 5.4**, l'outil ``php`` en ligne de commande est proposé avec un serveur embarqué
+    qui vous permettra de lancer simplement un serveur web depuis n'importe quel dossier.
 
-.. discover::
-    .. code-block:: no-highlight
-        php -S localhost:8080
+    .. discover::
+        .. code-block:: no-highlight
+            php -S localhost:8080
 
-.. discover::
     Cette commande lançera un serveur web avec **PHP** depuis le dossier courant sur le
     port 8080. Il suffira donc d'ouvrir un navigateur à l'adresse ``http://localhost:8080``
     pour accéder aux pages.
+
+.. slide:: fullSlide darkSlide slideOnly codeLeft
+
+.. div:: importantText
+    PHP >= 5.4
+
+::
+
+    $ cat index.php
+    <?php echo "Hello world!\n"; ?>
+    $ php -S localhost:8080
+
+.. code-block:: no-highlight
+
+    $ firefox http://localhost:8080/
 
 .. slide::
 
@@ -551,6 +585,23 @@ Attention aux cookies
         **Attention 3:** **n'ayez pas confiance** en les valeurs que vous obtenez dans le
         tableau ``$_COOKIE``, il peut contenir **tout ce que l'utilisateur souhaite**. En effet, même
         si le serveur les définit, ils sont stockés en clair et modifiable à volonté par le client. 
+
+.. slide:: darkSlide slideOnly fullSlide codeLeft
+
+NEVER TRUST 
+USER INPUT
+
+.. discover::
+    ::
+
+        <?php
+        // Don't trust 
+        $name = $_GET['name'];
+        // Don't trust
+        $name = $_POST['name'];
+        // Don't trust
+        $name = $_COOKIE['name'];
+        // ...
 
 .. slide::
 

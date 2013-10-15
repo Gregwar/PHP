@@ -463,17 +463,10 @@ Injection SQL
 
 .. slide:: darkSlide fullSlide slideOnly
 
-.. discover:: 
-    Préparez
-
-.. discover::
-    vos 
-
-.. discover::
-    requêtes
-
-.. discover::
-    !
+PREPAREZ 
+VOS 
+REQUÊTES 
+!!!
 
 .. slide::
 

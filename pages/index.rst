@@ -15,6 +15,77 @@ Support et auteur
  
     `http://gregwar.com/php/ <http://gregwar.com/php/>`_
 
+.. slide:: darkSlide fullSlide slideOnly
+
+.. discover::
+    .. div:: importantText
+        TOUT LE MONDE 
+        CONNAÎT PHP
+
+.. slide:: darkSlide fullSlide slideOnly
+
+.. div:: importantText
+    TOUT LE MONDE 
+    A DEJA FAIT 
+    DU PHP
+
+.. slide:: darkSlide fullSlide slideOnly
+
+.. div:: importantText
+    TOUT LE MONDE A 
+    UN AVIS SUR PHP
+
+.. slide:: darkSlide fullSlide slideOnly
+
+.. div:: importantText
+    PEU DE GENS SONT 
+    REELEMENT EXPERTS 
+    EN PHP
+
+.. slide:: darkSlide fullSlide slideOnly 
+
+.. discover::
+    .. div:: inSlide
+        .. discover::
+            .. image:: /img/troll.png
+                :class: right
+        TECHNOS RASOIRES
+
+        * ASP.net
+        * JAVA J2EE
+        * WebDev
+
+        .. discover::
+            --------------------
+
+            TECHNOS COOLS
+
+            * Ruby On Rails
+            * Django (Python)
+            * node.js (JavaScript)
+
+        .. discover::
+            --------------------
+
+            PHP
+
+.. slide:: darkSlide fullSlide slideOnly 
+
+.. discover::
+    .. div:: importantText
+        PHP EST RASOIR
+
+.. discover::
+    PHP EST COOL
+
+.. slide:: darkSlide fullSlide slideOnly 
+
+.. div:: importantText
+    PHP <3
+
+.. discover::
+    .. code-block::
+        <?php echo "Let's go!"; ?>
 
 .. slide::
 

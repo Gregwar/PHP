@@ -531,6 +531,27 @@ Voici un exemple plus avancé qui utilise deux concepts introduits dans **PHP 5.
     le cas ou le paramètre serait du mauvais type, ce qui peut permettre d'éviter les erreurs. Le type utilisé
     est ``Closure`` et correspond au type des fonctions anonymes.
 
+.. slide:: darkSlide fullSlide slideOnly codeLeft
+
+::
+
+    <?php
+    // PHP 5.4
+    $actions = [ 
+        'sayHello' => function() {
+            echo "Hello!\n";
+        },  
+        'quit' => function() {
+            die("Quitting\n");
+        }   
+    ];
+
+    $toDo = array('sayHello', 'quit');
+    foreach ($toDo as $task) {
+        $actions[$task]();
+    }
+
+
 .. slide::
 
 Inclusion de fichier
