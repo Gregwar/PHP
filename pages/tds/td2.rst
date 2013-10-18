@@ -86,7 +86,7 @@ Les formulaires représentent une très grande partie du développement d'un sit
 
     Ajoutez maintenant un champ ``email``. N'oubliez surtout pas comment fonctionne le protocole **HTTP**, même en
     utilisant le type de champ HTML5 ``email``, le client pourra toujours transmettre des données arbitraires via une
-    requête ``POST``. C'est pour cela qu'il <u>faut impérativement</u> vérifier coté serveur que l'adresse fournie est
+    requête ``POST``. C'est pour cela qu'il **faut impérativement** vérifier coté serveur que l'adresse fournie est
     bien formée, vous pourrez utiliser la fonction **PHP** `filter_var() <http://php.net/filter_var>`_.
 
 Exercice 3 : Sécurisation
