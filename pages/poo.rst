@@ -673,6 +673,42 @@ Multiples classes de même nom
 Pour aller plus loin
 --------------------
 
+Test d'instance
+~~~~~~~~~~~~~~~
+
+.. textOnly::
+    Il est possible de tester qu'un objet est bien l'instance d'une classe en PHP à
+    l'aide du mot clé ``instanceof``:
+
+::
+
+    <?php
+
+    interface P {};
+    class A {};
+    class B extends A {};
+    class Q implements P {};
+
+    $a = new A;
+    $b = new B;
+    $q = new Q;
+
+    var_dump($a instanceof A); // true
+    var_dump($b instanceof A); // true
+    var_dump($a instanceof B); // false
+    var_dump($q instanceof A); // false
+    var_dump($q instanceof P); // true
+
+.. textOnly::
+    Notez que si l'objet testé est l'instance d'une classe fille de la classe passée,
+    ``instanceof`` retournera vrai, comme par exemple pour l'expression ``$b instanceof A``
+    ci-dessus.
+
+    Ce système fonctionne également pour tester si un objet implémente une interface,
+    comme avec ``$q instanceof P`` ci-dessus.
+
+.. slide::
+
 Sérialisation
 ~~~~~~~~~~~~~
 

@@ -8,7 +8,7 @@ Dans ce TD, nous allons travailler avec **PHP** et un serveur web qui nous perme
 de faire la "paserelle" entre les données **HTTP** et **PHP**.
 
 .. important::
-    `Télécharger l'archive td2.zip <../files/td2.zip>`_
+    `Télécharger l'archive td2.zip </files/td2.zip>`_
 
 Installations
 -------------
