@@ -1,5 +1,25 @@
+.. slide:: middleSlide
+
 TD1
 ===
+
+.. slide:: darkSlide fullSlide slideOnly
+
+SOME TROUBLE?
+
+.. div:: inSlide
+
+    .. discover::
+        "What ``strlen``?"
+
+    .. discover::
+        → Type ``http://php.net/``+``strlen``
+
+    .. center::
+        .. discover::
+            .. image:: /img/cat.gif
+
+.. slide::
 
 .. important::
     `Télécharger l'archive td1.zip <../files/td1.zip>`_
