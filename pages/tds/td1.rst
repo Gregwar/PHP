@@ -138,3 +138,45 @@ Implémentation
     A l'aide des fonctions :method:`fgetcsv` et :method:`fputcsv`, ajoutez une commande "``php store.php import [fichier.csv]``"
     et "``php store.php export [fichier.csv]``" pour importer et exporter la liste des produits au format CSV.
 
+Exercice 3: Programmation fonctionnelle
+---------------------------------------
+
+.. step::
+    Ecrivez une fonction ``map()`` qui prend en paramètre un tableau et un fonction
+    et qui retourne un tableau en ayant appliqué la fonctions à tout ses éléments.
+    Par exemple::
+
+        <?php
+        $t = [1, 2, 3, 4];
+        $p = map($t, function($x) { return 2*$x; });
+        // Double des éléments: [2, 4, 6, 8]
+
+.. step::
+    Ecrivez une fonction ``filter()`` qui prend en paramètre un tableau et une fonction
+    et qui retourne un tableau ne contenant que les éléments pour lesquels la fonction
+    est vraie. Pae exemple::
+
+        <?php
+        $t = [1, 2, 3, 4];
+        $p = filter($t, function($x) { return $x%2==0; });
+        // Elements pairs: [2, 4]
+
+.. step::
+    Ecrivez une fonction ``reduce()`` qui prend en paramètre un tableau et une fonction
+    et qui retourne la fonction appliquée aux deux premiers éléments du tableau, puis au
+    résultat obtenu et à l'élément suivant et ainsi de suite. Par exemple::
+
+        <?php
+        $t = [1, 2, 3, 4];
+        $p = reduce($t, function($x, $y) { return $x+$y; });
+        // Somme des éléments: 10
+
+.. step::
+    Enfin, utilisez le script ``generate.php`` pour générer le fichier ``persons.php``:
+
+    .. code-block:: no-highlight
+        php generate.php > persons.php
+
+    Puis, à l'aide des fonctions ci-dessus, obtenez la somme de l'argent détenu par les
+    personnes qui se prénomment ``John``.
+
