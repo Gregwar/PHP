@@ -52,8 +52,9 @@ Environment
 
         php hello.php
 
-.. step::
     Le message ``Hello world!`` devrait apparaître sur votre écran.
+
+.. step::
 
     **#~. Quelques exemples**
         
