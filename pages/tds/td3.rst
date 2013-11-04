@@ -33,6 +33,8 @@ Exercice 1 : un peu de conception
 
 .. step::
     Lecture du test
+    ~~~~~~~~~~~~~~~
+
     Lisez le code suivant, vous devrez alors écrire les classes correspondantes afin de le faire fonctionnel tel quel::
 
         <?php
