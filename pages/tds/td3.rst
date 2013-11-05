@@ -150,9 +150,14 @@ Quelques modifications
     **#~. Ajout des «PP»**
 
     Remarquez que, pour l'instant, il n'est pas très intéréssant d'instancier les attaques. Vous
-    allez maintenant implémenter les «PP», ou Points de Pouvoir. Chaque attaque dispose d'un certain
-    nombre dont vous déciderez la quantité, et à chaque utilisation, ce nombre sera diminué. Lorsque
+    allez maintenant implémenter les «PP», ou Points de Pouvoir. 
+    
+    Certaines attaques (en l'occurence, toutes sauf "Lutte" qui est l'attaque la plus basique)
+    disposent d'un certain
+    nombre de PP dont vous déciderez la quantité, et à chaque utilisation, ce nombre sera diminué de 1. Lorsque
     cette quantité atteindra zéro, il ne sera plus possible d'effectuer l'attaque.
+
+    N'hésitez pas à modifier l'organisation du code pour implémenter cette fonctionalité.
 
 Incorporation d'un logger
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -160,7 +165,7 @@ Incorporation d'un logger
 .. step::
     Comme vous pourrez l'observer, les attaques sont actuellement muettes, nous aimerions pouvoir
     logger ce qu'elles font afin d'afficher un message explicitant ce qui s'est passé. Pour cela, modifiez
-    le code de ``Fight`` pour qu'il puisse accepter un logger comme cela::
+    le code de ``Fight`` pour qu'il puisse accepter un *logger* comme cela::
 
         <?php
 

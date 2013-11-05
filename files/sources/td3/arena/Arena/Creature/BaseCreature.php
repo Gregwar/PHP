@@ -2,6 +2,8 @@
 
 namespace Arena\Creature;
 
+use Arena\Attack\Struggle;
+
 abstract class BaseCreature
 {
     /**
@@ -12,7 +14,7 @@ abstract class BaseCreature
     /**
      * Attaques
      */
-    protected $attacks;
+    protected $attacks = array();
 
     /**
      * Surnom de la créature
@@ -22,6 +24,7 @@ abstract class BaseCreature
     public function __construct($nickname)
     {
         $this->nickname = $nickname;
+        $this->attacks = array(new Struggle);
     }
 
     /**
