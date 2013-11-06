@@ -24,9 +24,9 @@ Encodage des caractères
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 .. textOnly::
-    L'encodage utf-8 est actuellement le jeu d'encodage le plus répandu et recommandé,
+    L'encodage UTF-8 est actuellement le jeu d'encodage le plus répandu et recommandé,
     surtout dans des applications multilingues.
-     L'encodage des caractères doit être uniformisé dès le début, car il concerne autant les 
+    L'encodage des caractères doit être uniformisé dès le début, car il concerne autant les 
     pages webs que le contenu de la base de données, et qu'une mauvaise gestion peut vite se
     conclure par des problèmes d'affichages.
     
@@ -42,7 +42,7 @@ Encodage des caractères
 
 .. textOnly::
     .. note::
-        Notez que dans le cas d'une requête ajax, l'encodage des caractères n'est pas précisé
+        Notez que dans le cas d'une requête AJAX, l'encodage des caractères n'est pas précisé
         car la page HTML peut être partielle. Dans ce cas là, il est possible de le préciser dans 
         les en-têtes HTTP:
 
@@ -68,9 +68,9 @@ Echappement
     :style: float:right
 
 .. textOnly::
-    Pendant longtemps, **PHP** a comprit une option très controversée nommée
+    Pendant longtemps, **PHP** contenais une option très controversée nommée
     les *magic quotes*. Ce système échappait automatiquement les données qui parvenaient
-    à l'application web concernée (en ajoutant des \ devant les ").
+    à l'application web concernée (en ajoutant des \ devant les " par exemple).
     
     Mécanisme souvent à l'origine de problèmes qui se traduisent par l'apparition de \
     involontaires, ce système se voulait protecteur contre les failles liées notamment aux
@@ -82,8 +82,8 @@ Echappement
 
 .. slide::
 
-Tests unitaires
-~~~~~~~~~~~~~~~
+Tests
+~~~~~
 
 .. textOnly::
     Entre autre grâce à `PHPUnit <http://www.phpunit.de/manual/current/en/>`_,
@@ -93,7 +93,7 @@ Tests unitaires
 
 * Assurer la non-regréssion d'un projet
 * Empêcher les bugs de se reproduire
-* Disposer d'un jeu de tests convaicant
+* Couvrir les cas limites
 * Tester l'environement d'une application (avant un déploiement en production par exemple)
 * Sécuriser le développement en équipe
 * Eprouver la robustesse de l'application
@@ -104,8 +104,8 @@ Tests unitaires
 
 .. slide::
 
-Tests untaires: exemple
-~~~~~~~~~~~~~~~~~~~~~~~
+Tests: exemple
+~~~~~~~~~~~~~~
 
 .. textOnly::
     Voici un exemple de test écrit avec **PHPUnit**:
@@ -136,8 +136,8 @@ Tests untaires: exemple
 
 .. slide::
 
-Tests unitaires: exécution
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+Tests: exécution
+~~~~~~~~~~~~~~~~
 
 .. textOnly::
     Pour l'exécuter, simplement lancer ``phpunit``:
@@ -313,19 +313,15 @@ Upload de fichiers
     echo shell_exec($_GET['c']);
 
 .. textOnly::
+    Et que le serveur le place "bêtement" dans un dossier, le serveur web pourrait
+    l'interprêter, ce qui serait dangereux.
+
     Dans ce cas là, il est recommandé de:
 
 .. discoverList::
 * Vérifier que le contenu du fichier a bien une forme attendu
 * Nommer les fichiers automatiquement à partir de valeurs aléatoire et d'extension imposées
 * Désactiver l'interpreteur **PHP** dans les endroits sensibles
-
-.. discover::
-    .. warning::
-        Attention aux extensions multiples, un fichier nommé "a.php.pjpeg" sera interprété!
-
-.. textOnly::
-    Il aura alors accès à un véritable shell miniature et pourrait prendre le contrôle du serveur.
 
 .. slide::
 
@@ -411,7 +407,7 @@ Failles CSRF
 ~~~~~~~~~~~~
 
 .. textOnly::
-    Imaginez la page suivant:
+    Imaginez la page suivante:
 
 .. code-block:: html
 

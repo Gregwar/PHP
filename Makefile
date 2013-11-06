@@ -8,6 +8,7 @@ redo: zips
 
 clean:
 	@php build.php clean
+	make -C files clean
 
 zips:
 	@make -C files/
