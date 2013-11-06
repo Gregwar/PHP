@@ -1,6 +1,6 @@
 <?php
 
-include('code.php');
+include('Bus.php');
 
 class BusTest extends PHPUnit_Framework_TestCase
 {
