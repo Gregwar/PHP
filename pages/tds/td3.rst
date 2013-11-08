@@ -46,13 +46,13 @@ Exercice 1 : un peu de conception
         // Création d'une musique "Stairway to heaven"
         $stairway = new Music('Stairway to heaven');
         // Création d'une playlist "P1"
-        $p1 = new Playlist;
+        $p1 = new Playlist('P1');
         // Ajout de "Matrix" à "P1"
         $p1->add($matrix);
         // Ajout de "Joconde" à "P1"
         $p1->add($joconde);
         // Création d'une playlist "P2"
-        $p2 = new Playlist;
+        $p2 = new Playlist('P2');
         // Ajout de "Stairway to heaven" à "P2"
         $p2->add($stairway);
         // Ajout de "P1" à "P2"
