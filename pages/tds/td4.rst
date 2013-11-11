@@ -39,6 +39,17 @@ Compréhension
     Intéressez vous au code de la classe ``Cinema\Model``, à quoi sert t-elle ? Pourquoi
     regrouper ces méthodes dans une classe?
 
+.. step::
+
+    #-. Système de template
+    ~~~~~~~~~~~~~~~~~~~~~~~
+
+    Regardez de plus près le fonctionnement de la méthode `render()`, quel est le rôle des
+    variables qui lui sont passées ?
+
+    Ici, **PHP** est utilisé comme un langage de programmation, mais aussi comme un 
+    `système de templates <http://fr.wikipedia.org/wiki/Gabarit_%28mise_en_page%29>`_.
+
 Ecriture de requête/code
 ------------------------
 
