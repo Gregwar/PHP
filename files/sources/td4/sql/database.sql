@@ -141,7 +141,8 @@ INSERT INTO `roles` (`id`, `acteur_id`, `film_id`, `role`) VALUES
 (11, 7, 5, 'Zeus Carver'),
 (12, 7, 6, 'Jules Winnfield'),
 (13, 8, 6, 'Vincent Vega'),
-(14, 9, 6, 'Mia Wallace');
+(14, 9, 6, 'Mia Wallace'),
+(15, 1, 6, 'Butch Coolidge');
 
 --
 -- Contraintes pour les tables exportées
