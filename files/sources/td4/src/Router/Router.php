@@ -42,8 +42,7 @@ class Router
             $path = '/';
         }
 
-        foreach ($this->rules as $rule)
-        {
+        foreach ($this->rules as $rule) {
             if (($tokens = $rule->match($path)) != null) {
                 $rule->execute($tokens);
                 return;
@@ -58,7 +57,13 @@ class Router
      */
     public function generateStatic($path)
     {
-        return dirname($_SERVER['SCRIPT_NAME']) . '/'. $path;
+        $root = dirname($_SERVER['SCRIPT_NAME']);
+
+        if ($root && $root[strlen($root)-1]!='/') {
+            $root .= '/';
+        }
+
+        return $root . $path;
     }
 
     /**

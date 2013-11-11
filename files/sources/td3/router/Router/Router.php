@@ -32,7 +32,7 @@ class Router
      */
     public function route($path = null)
     {
-	if ($path === null) {
+        if ($path === null) {
 	    if (isset($_SERVER['PATH_INFO'])) {
 		$path = $_SERVER['PATH_INFO'];
 	    }
@@ -50,6 +50,20 @@ class Router
         }
 
         throw new \Exception('Unable to find a suitable route for ' . $path);
+    }
+
+    /**
+     * Génère une URL absolue pour un fichier statique
+     */
+    public function generateStatic($path)
+    {
+        $root = dirname($_SERVER['SCRIPT_NAME']);
+
+        if ($root && $root[strlen($root)-1]!='/') {
+            $root .= '/';
+        }
+
+        return $root . $path;
     }
 
     /**
