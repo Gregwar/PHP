@@ -225,3 +225,8 @@ Intégration
         Note: il ne vous est pas demandé d'utiliser des templates, mais uniquement de mettre en place
         le routeur dans le code de l'exercice précédent, cette intégration peut en fait être réalisée en quelques
         minutes.
+
+Si il vous reste du temps, vous pourrez regarder la documentation de l'outil `Silex <http://silex.sensiolabs.org/>`_,
+un micro-framework basé sur Symfony qui propose une interface de programmation assez ressemblante,
+avec beaucoup plus de fonctionnalités.
+
