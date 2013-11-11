@@ -50,6 +50,19 @@ Compréhension
     Ici, **PHP** est utilisé comme un langage de programmation, mais aussi comme un 
     `système de templates <http://fr.wikipedia.org/wiki/Gabarit_%28mise_en_page%29>`_.
 
+(Rétro) Conception
+------------------
+
+.. step::
+    A partir de la base de données fournies, dessinez le schéma entité-association de
+    la base de données fournie.
+
+    .. note::
+        Notes:
+
+        * Attention aux cardinalités
+        * Le nombre de table n'est pas forcément égal au nombre d'entités
+
 Ecriture de requête/code
 ------------------------
 

@@ -29,7 +29,7 @@ Exercice 1 : un peu de conception
     Conception
     ~~~~~~~~~~
 
-    Dessinez un schéma d'architecture de classes qui pourrait être utilisée ici
+    Dessinez un schéma (type UML) d'architecture de classes qui pourrait être utilisée ici
 
 .. step::
     Lecture du test
