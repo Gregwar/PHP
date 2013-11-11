@@ -76,6 +76,17 @@ Ecriture de requête/code
     En écrivant le code de la méthode ``getCasting()`` du modèle, écrivez une requête récupérant
     les acteurs jouant dans un film (prénom, nom et image).
 
+    .. note::
+        Conseil: vous pouvez utiliser un otuil tel que **phpMyAdmin** pour réaliser vos requêtes
+        et les essayer sur un exemple avant de les placer dans le code et de les rendre dynamique
+
+    ::
+
+        <?php
+        // Attention, vous DEVEZ préparer vos requêtes
+        // Ne faites SURTOUT PAS ce genre de choses:
+        $sql = 'SELECT * FROM users WHERE name='.$name; // MAUVAIS
+ 
 .. step::
     #-. Formulaire d'ajout de critique
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
