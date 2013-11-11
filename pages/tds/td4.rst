@@ -109,6 +109,17 @@ Ecriture de requête/code
     c'est à dire ayant la meilleure note moyenne.
 
 .. step::
+
+    #-. Affichage des films par genre
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Remarquez qu'il est possible de consulter le nombre de films par genre, mais pas de voir la 
+    liste des films d'un genre.
+
+    Rendez cliquable la ligne de chaque genre sur la page ``/genres`` et faites apparaître
+    la liste des films étant dans le genre concerné.
+
+.. step::
     #-. Formulaire d'ajout de film
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
