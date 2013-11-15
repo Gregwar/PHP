@@ -44,7 +44,7 @@ Compréhension
     #-. Système de template
     ~~~~~~~~~~~~~~~~~~~~~~~
 
-    Regardez de plus près le fonctionnement de la méthode `render()`, quel est le rôle des
+    Regardez de plus près le fonctionnement de la méthode ``render()``, quel est le rôle des
     variables qui lui sont passées ?
 
     Ici, **PHP** est utilisé comme un langage de programmation, mais aussi comme un 

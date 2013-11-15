@@ -46,7 +46,7 @@ Présentation
 .. discoverList::
     * Effectuer des requêtes à paramètres dynamiques
     * Modifier la base de données selon des formulaires
-    * Itérer parmi des réultats
+    * Itérer parmi des résultats
     * **Etablir une correspondance entre le monde objet et le monde relationnel**
 
 .. slide::
