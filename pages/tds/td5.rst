@@ -35,9 +35,19 @@ un bug dans un logiciel; de cette façon, non seulement vous corrigez une erreur
 Problème d'encodage
 -------------------
 
+Encodage de fichiers
+~~~~~~~~~~~~~~~~~~~~
+
 .. step::
     Testez la page ``encodings/index.php`` et constatez le problème d'encodage. D'ou vient t-il ?
     Comment le résoudre ?
+
+Une erreur étrange
+~~~~~~~~~~~~~~~~~~
+
+.. step::
+    Essayez d'exécuter le script ``syntax_error/hello.php``, que constatez vous? Tentez de trouver
+    ce qui provoque cette erreur de syntaxe.
 
 Sécurité
 --------
