@@ -81,7 +81,7 @@ Exercice 1 : un peu de conception
 
         [Vidéo] Lecture de Matrix
 
-Exercice 2 : un arène
+Exercice 2 : une arène
 ---------------------
 
 .. image:: /img/sword.png

@@ -128,5 +128,5 @@ Ecriture de requête/code
     * Le nom du film
     * Sa description
     * Son année
-    * Son genre, parmis les genres de la base de données
+    * Son genre, parmi les genres de la base de données
     * Les acteurs qui y jouent (dans la base de données), et les roles qu'ils y occupent
