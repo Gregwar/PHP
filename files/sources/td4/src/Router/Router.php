@@ -58,6 +58,7 @@ class Router
     public function generateStatic($path)
     {
         $root = dirname($_SERVER['SCRIPT_NAME']);
+        $root = str_replace('\\', '/', $root);
 
         if ($root && $root[strlen($root)-1]!='/') {
             $root .= '/';
