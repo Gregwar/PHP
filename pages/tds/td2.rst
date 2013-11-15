@@ -35,6 +35,9 @@ depuis sa version ``5.4``, pour cela, placez vous dans le dossier que vous souha
 Un serveur web se lancera alors en écoutant sur le port ``8080``, vous pourrez donc vous connecter
 à la page ``http://localhost:8080/`` et vous accéderez à votre application web.
 
+Sous windows, vous pouvez utiliser le `script php.bat </files/php.bat>`_, placez le dans le dossier
+des sources et exécutez le.
+
 Exercice 1 : Les commodités de PHP
 ----------------------------------
 
