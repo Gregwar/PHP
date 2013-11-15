@@ -14,6 +14,7 @@ $slidey
     ->copy('css')
     ->mkdir('files')
     ->copy(__DIR__.'/files/*.zip', 'files/')
+    ->copy(__DIR__.'/files/*.bat', 'files/')
     ->addCss('css/style.css')
     ->copy('favicon.ico')
     ;
