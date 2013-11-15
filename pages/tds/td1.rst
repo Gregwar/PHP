@@ -65,7 +65,7 @@ Exercice 2: Gestion d'un magasin
 --------------------------------
 
 Dans cet exercice, on s'intéresse à la gestion d'un magasin. Le code source est en fait un utilitaire en
-ligne de commande qui permet de naviguer parmis les produits.
+ligne de commande qui permet de naviguer parmi les produits.
 
 Questions
 ~~~~~~~~~
