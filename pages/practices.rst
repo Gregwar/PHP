@@ -371,7 +371,7 @@ Failles XSS
     <html>
     <?php
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        echo 'Ton nom es: '.$_POST['nom'];
+        echo 'Ton nom est: '.$_POST['nom'];
     }
     ?>
     <form method="post">
