@@ -29,8 +29,10 @@ $admin = isset($_SESSION['admin']);
 
 	<a href="?logout=1">Déconnexion</a>
 	<?php } else { ?>
-	Vous n'êtes pas identifiés !<br />
-	<span style="color:red"><?php echo $error; ?></span>
+        Vous n'êtes pas identifiés !<br />
+        <?php if (isset($error)) { ?>
+            <span style="color:red"><?php echo $error; ?></span>
+        <?php } ?>
 
 	<form>
 	    Identifiant&nbsp;: <input type="text" name="login" /><br />
