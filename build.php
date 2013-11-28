@@ -5,6 +5,11 @@ include('phpnet.php');
 
 use Gregwar\Slidey\Slidey;
 
+/**
+ * Dossier dans lequel sera construit le site
+ */
+$targetDirectory = '../web/';
+
 $slidey = new Slidey;
 
 $slidey
@@ -24,4 +29,4 @@ if ($password) {
     $slidey->enableInteractive($password, '/tmp/phpslidey');
 }
 
-$slidey->build('../php');
+$slidey->build($targetDirectory);
