@@ -239,7 +239,7 @@ Voici un exemple de template:
     
     Dans cet exemple:
 
-    * ``[% block contents %}`` est un bloc qui pourra être surchargé dans les templates filles
+    * ``{% block contents %}`` est un bloc qui pourra être surchargé dans les templates filles
     * ``{% block('title') %}`` sert à ré-afficher le contenu du block title précédement utilisé
     * ``{{ name }}`` correspond à l'affichage d'une variable
 
