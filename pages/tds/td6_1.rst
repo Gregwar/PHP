@@ -136,7 +136,7 @@ le dossier ``design/``.
 
         <?php
 
-            /***
+            /**
              * @Route("/pizzas", name="pizzas_list")
              * @Template()
              */
