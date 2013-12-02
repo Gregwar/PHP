@@ -19,23 +19,29 @@ Compréhension
 
         composer.phar install
 
-    Ou alors décompressez le dossier vendor qui est fourni dans ``vendor.tgz``.
+    Ou alors décompressez le dossier ``vendor`` qui est fourni dans ``vendor.tgz``.
 
 .. step::
     #-. L'autoloader
     ~~~~~~~~~~~~~~~~
 
-    L'autoloader utilisé ici est celui de composer.
+    L'autoloader utilisé ici est celui de composer. A quoi sert la ligne suivante?
+
+    ::
+
+        $loader->add('', 'src');
 
 .. step::
     #-. Le routeur
     ~~~~~~~~~~~~~
 
-    Le routeur du framework [Silex](http://silex.sensiolabs.org/) a été réutilisé ici.
+    Observez le fonctionnement des appels à ``match()``.
+
+    Le routeur du framework `Silex <http://silex.sensiolabs.org/>`_ a été réutilisé ici.
     Il permet de simplifier le routage des requêtes,
     ainsi que la génération des url à l'aide de la méthode ``path()``.
 
-    Vous pouvez [consulter cette page](http://silex.sensiolabs.org/doc/usage.html) pour
+    Vous pouvez `consulter cette page <http://silex.sensiolabs.org/doc/usage.html>`_ pour
     plus d'informations.
 
 
@@ -43,7 +49,7 @@ Compréhension
     #-. Modèle
     ~~~~~~~~~~
 
-    Intéressez vous au code de la classe ``Cinema\Model``, à quoi sert t-elle ? Pourquoi
+    Intéressez vous au code de la classe ``Cinema\Model``, à quoi sert t-elle? Pourquoi
     regrouper ces méthodes dans une classe?
 
 .. step::
@@ -51,9 +57,9 @@ Compréhension
     #-. Système de templates
     ~~~~~~~~~~~~~~~~~~~~~~~~
     
-    Ici, [Twig](http://twig.sensiolabs.org/) est utilisé pour le rendu des templates.
+    Ici, `Twig <http://twig.sensiolabs.org/>`_ est utilisé pour le rendu des templates.
     Observez comment ``layout.html.twig`` est définit et comment son block ``content``
-    est surchargé.
+    est surchargé dans les pages filles telles que ``film.html.twig``.
 
     Regardez de plus près l'utilisation de la méthode ``render()``, quel est le rôle des
     variables qui lui sont passées ?
