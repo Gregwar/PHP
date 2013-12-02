@@ -151,7 +151,7 @@ le dossier ``design/``.
 
     Testez votre action en vous rendant à la page ``/pizzas`` de votre application, vous
     devriez voir un message d'erreur vous indicant que la template correspondante n'existe pas. Créez
-    cette template en héritant du layout et surchargez le bloc du contenu pour afficher un message différent.
+    cette template en héritant du layout et surchargez le bloc du contenu pour afficher la liste des pizzas passées à la template.
 
 .. vi fix: **
 
