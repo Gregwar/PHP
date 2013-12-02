@@ -1,0 +1,11 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+<h2>Genres</h2>
+
+<ul>
+{% for genre in genres %}
+    <li>{{ genre.nom }} ({{ genre.nb_films}})</li>
+{% endfor %}
+</ul>
+{% endblock %}

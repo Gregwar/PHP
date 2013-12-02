@@ -1,60 +1,57 @@
 <?php
 
-include('src/autoload.php');
+$loader = include('vendor/autoload.php');
+$loader->add('', 'src');
 
-$router = new Router\Router;
+$app = new Silex\Application;
+$app->register(new Silex\Provider\UrlGeneratorServiceProvider());
+$app->register(new Silex\Provider\TwigServiceProvider(), array(
+    'twig.path' => __DIR__.'/views',
+));
 
-$model = new Cinema\Model(
+$app['model'] = new Cinema\Model(
     'localhost',  // Hôte
-    'example',    // Base de données
-    'example',    // Utilisateur
-    'example'     // Mot de passe
+    'cinema',    // Base de données
+    'root',    // Utilisateur
+    'root'     // Mot de passe
 );
 
-// Rendu d'une page
-function render($page, $variables = array())
-{
-    global $router;
-    extract($variables);
-    include(__DIR__ . '/templates/layout.php');
-}
-
 // Page d'accueil
-$router->register('home', '/', function() {
-    render('home');
-});
+$app->match('/', function() use ($app) {
+    return $app['twig']->render('home.html.twig');
+})->bind('home');
 
 // Liste des films
-$router->register('films', '/films', function() use ($model) {
-    render('films', array(
-        'films' => $model->getFilms()
+$app->match('/films', function() use ($app) {
+    return $app['twig']->render('films.html.twig', array(
+        'films' => $app['model']->getFilms()
     ));
-});
+})->bind('films');
 
 // Fiche film
-$router->register('film', '/film/*', function($id) use ($model) {
+$app->match('/film/{id}', function($id) use ($app) {
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (isset($_POST['nom']) && isset($_POST['note']) && isset($_POST['critique'])) {
             // XXX: A faire
         }
     }
 
-    render('film', array(
-        'film' => $model->getFilm($id),
-        'casting' => $model->getCasting($id),
+    return $app['twig']->render('film.html.twig', array(
+        'film' => $app['model']->getFilm($id),
+        'casting' => $app['model']->getCasting($id),
     ));
-});
+})->bind('film');
 
 // Genres
-$router->register('genres', '/genres', function() use ($model) {
-    render('genres', array(
-        'genres' => $model->getGenres()
+$app->match('/genres', function() use ($app) {
+    return $app['twig']->render('genres.html.twig', array(
+        'genres' => $app['model']->getGenres()
     ));
+})->bind('genres');
+
+// Fait remonter les erreurs
+$app->error(function($error) {
+    throw $error;
 });
 
-// 404
-$router->register('404', '*', function() {
-    render('404');
-});
-
-$router->route();
+$app->run();

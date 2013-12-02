@@ -15,22 +15,29 @@ Compréhension
     de données disponible dans le fichier ``sql/database.sql``, puis modifier le fichier
     ``index.php`` pour que les paramètres de connexion soient corrects.
 
-.. step::
-    #-. Un autoloader générique
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Pour installer l'application, utilisez soit composer::
 
-    Ici, l'*autoloader* est générique, c'est à dire que toutes les classes du dossier
-    ``src/`` seront chargées, par exemple ``A/B/C.php`` sera inclus si l'on
-    fait référence à la classe ``A\B\C``.
+        composer.phar install
+
+    Ou alors décompressez le dossier vendor qui est fourni dans ``vendor.tgz``.
+
+.. step::
+    #-. L'autoloader
+    ~~~~~~~~~~~~~~~~
+
+    L'autoloader utilisé ici est celui de composer.
 
 .. step::
     #-. Le routeur
     ~~~~~~~~~~~~~
 
-    Le routeur du TD précédent a été réutilisé ici. Il permet de simplifier le routage des requêtes,
-    ainsi que la génération des url à l'aide de la méthode ``generate``. Son utilisation est
-    inspirée de micro-frameworks, tels que `Silex <http://silex.sensiolabs.org>`_. Observez
-    la manière dont il est utilisé et dont il fonctionne. 
+    Le routeur du framework [Silex](http://silex.sensiolabs.org/) a été réutilisé ici.
+    Il permet de simplifier le routage des requêtes,
+    ainsi que la génération des url à l'aide de la méthode ``path()``.
+
+    Vous pouvez [consulter cette page](http://silex.sensiolabs.org/doc/usage.html) pour
+    plus d'informations.
+
 
 .. step::
     #-. Modèle
@@ -41,14 +48,15 @@ Compréhension
 
 .. step::
 
-    #-. Système de template
-    ~~~~~~~~~~~~~~~~~~~~~~~
+    #-. Système de templates
+    ~~~~~~~~~~~~~~~~~~~~~~~~
+    
+    Ici, [Twig](http://twig.sensiolabs.org/) est utilisé pour le rendu des templates.
+    Observez comment ``layout.html.twig`` est définit et comment son block ``content``
+    est surchargé.
 
-    Regardez de plus près le fonctionnement de la méthode ``render()``, quel est le rôle des
+    Regardez de plus près l'utilisation de la méthode ``render()``, quel est le rôle des
     variables qui lui sont passées ?
-
-    Ici, **PHP** est utilisé comme un langage de programmation, mais aussi comme un 
-    `système de templates <http://fr.wikipedia.org/wiki/Gabarit_%28mise_en_page%29>`_.
 
 (Rétro) Conception
 ------------------
@@ -91,15 +99,15 @@ Ecriture de requête/code
     #-. Formulaire d'ajout de critique
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    Les films peuvent être critiqué, complétez le code de gestion de l'URL ``/film/*`` de manière
+    Les films peuvent être critiqué, complétez le code de gestion de l'URL ``/film/{id}`` de manière
     à enregistrer les critiques valides dans la base de données, n'oubliez pas de passer par le modèle.
 
 .. step::
     #-. Rendu des critiques
     ~~~~~~~~~~~~~~~~~~~~~~~
 
-    Modifier de nouveau le code pour que les critiques soient récupérées puis affichées dans la page sous
-    le film.
+    Modifier de nouveau le code pour que les critiques soient récupérées de la base de données
+    puis affichées dans la page sous le film.
 
 .. step::
     #-. Classement des films

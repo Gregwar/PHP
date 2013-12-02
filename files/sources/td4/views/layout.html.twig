@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Cinéma</title>
+        <link rel="stylesheet" type="text/css" href="{{ app.request.basePath }}/css/style.css" />
+        <link rel="shortcut icon" href="{{ app.request.basePath }}/css/favicon.ico" />
+    </head>
+    <body>
+        <h1>Cinéma</h1>
+        <div class="menu">
+            <a href="{{ path('home') }}">Accueil</a>
+            <a href="{{ path('films') }}">Films</a>
+            <a href="{{ path('genres') }}">Genres</a>
+        </div>        
+
+        <div class="contents">
+            {% block content %}{% endblock %}
+        </div>
+    </body>
+</html>

@@ -1,27 +1,32 @@
-<?php if (!$film) { ?>
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+
+{% if film %}
+<div class="fiche">
+    <img src="{{ film.image }}" />
+    <h2>{{ film.nom }} - Fiche film</h2>
+    <b>Genre: {{ film.genre_nom }}</b>
+    <p class="description">
+        {{ film.description }}
+    </p>
+</div>
+{% else %}
 <h2>Fiche film</h2>
 
 Film non trouvé!
-<?php } else { ?>
-<div class="fiche">
-    <img src="<?php echo $film['image']; ?>" />
-    <h2><?php echo $film['nom']; ?> - Fiche film</h2>
-    <b>Genre: <?php echo $film['genre_nom']; ?></b>
-    <p class="description">
-        <?php echo $film['description']; ?>
-    </p>
-</div>
+{% endif %}
 
 <div class="casting">
     <h2>Casting</h2>
-    <?php foreach ($casting as $acteur) { ?>
+    {% for acteur in casting %}
         <div class="acteur">
-            <img src="<?php echo $acteur['image']; ?>" width="64" />
-            <h3><?php echo $acteur['prenom'].' '.$acteur['nom']; ?></h3>
+            <img src="<?php echo {{ acteur.image }}" width="64" />
+            <h3>{{ acteur.prenom }} {{ acteur.nom }}</h3>
             <em>dans le role de</em>
-            <h3><?php echo $acteur['role']; ?>
+            <h3>{{ acteur.role }}</h3>
         </div>
-    <?php } ?>
+    {% endfor %}
 </div>
 
 <div class="commentaires">
@@ -39,4 +44,5 @@ Film non trouvé!
         </form>
     </div>
 </div>
-<?php } ?>
+
+{% endblock %}
