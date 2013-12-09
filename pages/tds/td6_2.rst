@@ -114,7 +114,7 @@ Entités
         /** 
          * @ORM\ManyToMany(targetEntity="Pizza", mappedBy="ingredients")
          */
-        private $pizzas
+        private $pizzas;
 
     Fermez les fichier ``Ingredient.php`` et ``Pizza.php`` et utilisez la commande suivante:
 
