@@ -42,10 +42,6 @@ Création du système de sécurité
                     pattern:  ^/(_(profiler|wdt)|css|images|js)/
                     security: false
 
-                login:
-                    pattern:  ^/home$
-                    security: false
-
                 main:
                     pattern:    ^/
                     form_login:
