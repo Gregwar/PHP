@@ -638,6 +638,6 @@ Lors de l'inclusion d'un fichier, la fonction ``include`` (ou ``require``) va ch
 TD 1
 ----
 
-.. important::
-    :doc:`tds/td1`
+.. toctree::
 
+    tds/td1

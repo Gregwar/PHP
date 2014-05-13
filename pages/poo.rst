@@ -863,6 +863,6 @@ AUTOLOADING
 TD 3
 ----
 
-.. important::
-    :doc:`tds/td3`
+.. toctree::
 
+    tds/td3

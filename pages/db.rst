@@ -304,6 +304,6 @@ Utilisation
 TD 4
 ----
 
-.. important::
-    :doc:`tds/td4`
+.. toctree::
 
+    tds/td4

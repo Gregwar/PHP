@@ -636,6 +636,7 @@ Composer
 TD 5
 ----
 
-.. important::
-    :doc:`tds/td5`
+.. toctree::
+    
+    tds/td5
 

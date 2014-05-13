@@ -425,6 +425,6 @@ nous étudierons plus en détail **Doctrine2** au cours du TD.
 TD 6
 ----
 
-.. important::
-    :doc:`tds/td6`
+.. toctree::
 
+    tds/td6

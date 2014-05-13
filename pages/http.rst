@@ -699,5 +699,6 @@ L'utilisation de tout ce mécanisme se fait **automatiquement** à l'aide de la 
 TD 2
 ----
 
-.. important::
-    :doc:`tds/td2`
+.. toctree::
+
+    tds/td2
