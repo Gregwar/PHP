@@ -694,6 +694,8 @@ L'utilisation de tout ce mécanisme se fait **automatiquement** à l'aide de la 
 
 .. slide::
 
+.. redirection-title:: tds/td2
+
 TD 2
 ----
 

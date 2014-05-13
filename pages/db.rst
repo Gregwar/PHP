@@ -299,6 +299,8 @@ Utilisation
 
 .. slide::
 
+.. redirection-title:: tds/td4
+
 TD 4
 ----
 

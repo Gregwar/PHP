@@ -631,6 +631,8 @@ Composer
 
 .. slide::
 
+.. redirection-title:: tds/td5
+
 TD 5
 ----
 

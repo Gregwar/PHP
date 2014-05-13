@@ -32,8 +32,8 @@ rendez vous simplement à l'adresse `php.net/strlen <http://php.net/strlen>`_ (a
 fonction ou mot clé à la suite de ``http://php.net``). Vous arriverez alors soit directement sur la page de la fonction
 soit sur une liste de fonction et éventuellement dans la recherche du site.
 
-Exercice 1: Les bases
----------------------
+Exercice 1: Prise en main
+-------------------------
 
 Environment
 ~~~~~~~~~~~
@@ -61,7 +61,46 @@ Environment
     Parcourez les exemples du dossier ``exercice1/``, lisez bien les commentaires et explications
     et exécutez les pour en comprendre le comportement.
 
-Exercice 2: Gestion d'un magasin
+Exercice 2: Les bases
+---------------------
+
+Comme :doc:`vu en cours </bases#arrays>`,  le tableau (``array()`` ou encore ``[]`` dans les 
+dernières versions) représente la structure de données la plus importante en ``PHP``.
+
+Il est important de maîtriser parfaitement la création et la manipulation de ces tableaux avant
+de pouvoir aller plus loin.
+
+Ouvrez à présent le fichier ``functions.php``. Ce fichier contient des fonctions
+dont vous devez écrire le code:
+
+.. step::
+    
+    ** #~. ``somme_entiers($n)`` **
+
+    Cette fonction calcule la somme des n premiers entiers et la retourne.
+
+    ** #~. ``somme_tableau($tab)`` **
+
+    Cette fonction doit calculer la somme des éléments d'un tableau et la retourner.
+
+    ** #~. ``valeur_min($tab)`` **
+    
+    Cette fonction doit retourner l'élément le plus petit d'un tableau passé en paramètre.
+
+    ** #~. ``valeur_min_indice($tab)`` **
+    
+    Cette fonction doit retourner l'indice de l'élément le plus petit d'un tableau passé en paramètre.
+
+    ** #~. ``tri($tab)`` **
+
+    Cette fonction trie les éléments du tableau passé en paramètre et les retourne. Elle ne doit pas
+    utiliser les fonctions de tri de PHP, mais doit en revanche utiliser ``valeur_min_indice($tab)``.
+
+    *Note: Comme vous vous en doutez, il s'agit d'un exercice, la fonction ainsi produite ne sera 
+    pas très efficace.*
+
+
+Exercice 3: Gestion d'un magasin
 --------------------------------
 
 Dans cet exercice, on s'intéresse à la gestion d'un magasin. Le code source est en fait un utilitaire en
@@ -159,7 +198,7 @@ Implémentation
     A l'aide des fonctions :method:`fgetcsv` et :method:`fputcsv`, ajoutez une commande "``php store.php import [fichier.csv]``"
     et "``php store.php export [fichier.csv]``" pour importer et exporter la liste des produits au format CSV.
 
-Exercice 3: Programmation fonctionnelle
+Exercice 4: Programmation fonctionnelle
 ---------------------------------------
 
 .. step::

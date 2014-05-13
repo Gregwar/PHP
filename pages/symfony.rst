@@ -420,6 +420,8 @@ nous étudierons plus en détail **Doctrine2** au cours du TD.
 
 .. slide::
 
+.. redirection-title:: tds/td6
+
 TD 6
 ----
 

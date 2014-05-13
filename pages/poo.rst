@@ -858,6 +858,8 @@ AUTOLOADING
 
 .. slide::
 
+.. redirection-title:: tds/td3
+
 TD 3
 ----
 

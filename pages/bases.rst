@@ -16,7 +16,7 @@ Présentation
 
 .. textOnly::
     **PHP** est l'acronyme récursif de **PHP: Hypertext Preprocessor**, datant
-    de 1994. Il a été largement conçu et pensé pour réaliser des sites webs. 
+    de ``1994``. Il a été largement conçu et pensé pour réaliser des sites webs. 
     Cependant, c'est avant tout un langage de programmation et de scripting. 
 
 .. slideOnly::
@@ -204,6 +204,8 @@ Exemple basique
         
     L'opérateur de concaténation est le ``.``, le ``+`` étant réservé
     exclusivement pour les opérations mathématiques.
+
+.. _arrays:
 
 .. slide::
 
@@ -630,6 +632,8 @@ Lors de l'inclusion d'un fichier, la fonction ``include`` (ou ``require``) va ch
         include_once(__DIR__.'/math.php');
 
 .. slide::
+
+.. redirection-title:: tds/td1
 
 TD 1
 ----
