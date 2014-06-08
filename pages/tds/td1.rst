@@ -79,17 +79,25 @@ dont vous devez écrire le code:
 
     Cette fonction calcule la somme des n premiers entiers et la retourne.
 
+.. step::
+
     ** #~. ``somme_tableau($tab)`` **
 
     Cette fonction doit calculer la somme des éléments d'un tableau et la retourner.
+
+.. step::
 
     ** #~. ``valeur_min($tab)`` **
     
     Cette fonction doit retourner l'élément le plus petit d'un tableau passé en paramètre.
 
+.. step::
+
     ** #~. ``valeur_min_indice($tab)`` **
     
     Cette fonction doit retourner l'indice de l'élément le plus petit d'un tableau passé en paramètre.
+
+.. step::
 
     ** #~. ``tri($tab)`` **
 
