@@ -39,7 +39,7 @@ Présentation
 Personnalités
 ~~~~~~~~~~~~~
 
-**Rasmus Lerdorf**
+**Rasmus Lerdorf (@rasmus)**
 
 .. center::
     .. image:: /img/rasmus.jpg
@@ -52,7 +52,7 @@ Personnalités
 
 .. slide::
 
-**Fabien Potencier**
+**Fabien Potencier (@fabpot)**
 
 .. center::
     .. image:: /img/potencier.jpg
