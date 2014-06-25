@@ -21,9 +21,11 @@ SOME TROUBLE?
 
 .. slide::
 
-.. important::
-    `Télécharger l'archive td1.zip <../files/td1.zip>`_
+.. |archive| image:: /img/archive.png
 
+.. important::
+    `|archive| Télécharger l'archive td1.zip </files/td1.zip>`_
+    
 Astuce
 ------
 

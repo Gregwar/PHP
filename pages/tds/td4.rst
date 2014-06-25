@@ -4,8 +4,10 @@ TD4
 .. image:: /img/db.png
     :class: right
 
+.. |archive| image:: /img/archive.png
+
 .. important::
-    `Télécharger l'archive td4.zip <../files/td4.zip>`_
+    `|archive| Télécharger l'archive td4.zip </files/td4.zip>`_
 
 Compréhension
 -------------

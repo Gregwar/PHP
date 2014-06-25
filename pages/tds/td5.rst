@@ -1,8 +1,10 @@
 TD5
 ===
 
+.. |archive| image:: /img/archive.png
+
 .. important::
-    `Télécharger l'archive td5.zip <../files/td5.zip>`_
+    `|archive| Télécharger l'archive td5.zip </files/td5.zip>`_
 
 Tests unitaires
 ---------------

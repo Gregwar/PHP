@@ -4,8 +4,10 @@ TD3
 Préparation
 -----------
 
+.. |archive| image:: /img/archive.png
+
 .. important::
-    `Télécharger l'archive td3.zip <../files/td3.zip>`_
+    `|archive| Télécharger l'archive td3.zip </files/td3.zip>`_
 
 Vous aurez besoin de déployer son contenu sur un espace web disposant de l'intérpréteur
 **PHP**. 
