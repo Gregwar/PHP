@@ -47,6 +47,10 @@ Support et auteur
 .. div:: importantText
     PHP: UN OUTIL INDISPENSABLE?
 
+.. discover::
+    .. div:: importantText
+    PAS DU TOUT!
+
 .. slide:: darkSlide fullSlide slideOnly
 
 .. div:: importantText
