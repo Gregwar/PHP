@@ -112,7 +112,7 @@ Génération d'un jeu de données
 
 .. step::
 
-    Tout d'abord, utilisez le script ``generate.php`` (dans ``exercice3/``) pour 
+    Tout d'abord, utilisez le script ``generate.php`` (dans ``exercice3/``) pour
     générer des données::
 
         php generate.php > data.php
