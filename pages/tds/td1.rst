@@ -35,11 +35,8 @@ soit sur une liste de fonction et éventuellement dans la recherche du site.
 Exercice 1: Prise en main
 -------------------------
 
-Environment
-~~~~~~~~~~~
-
 .. step::
-    **#~. La ligne de commande**
+    **#-. La ligne de commande**
 
     L'intérpréteur **PHP** peut être utilisé en ligne de commande, ce qui vous permettra de prendre le langage
     en main et de faire des tests. Créez un fichier ``hello.php`` et placez-y le contenu suivant::
@@ -56,7 +53,7 @@ Environment
 
 .. step::
 
-    **#~. Quelques exemples**
+    **#-. Quelques exemples**
         
     Parcourez les exemples du dossier ``exercice1/``, lisez bien les commentaires et explications
     et exécutez les pour en comprendre le comportement.
@@ -75,31 +72,31 @@ dont vous devez écrire le code:
 
 .. step::
     
-    ** #~. ``somme_entiers($n)`` **
+    ** #-. ``somme_entiers($n)`` **
 
     Cette fonction calcule la somme des n premiers entiers et la retourne.
 
 .. step::
 
-    ** #~. ``somme_tableau($tab)`` **
+    ** #-. ``somme_tableau($tab)`` **
 
     Cette fonction doit calculer la somme des éléments d'un tableau et la retourner.
 
 .. step::
 
-    ** #~. ``valeur_min($tab)`` **
+    ** #-. ``valeur_min($tab)`` **
     
     Cette fonction doit retourner l'élément le plus petit d'un tableau passé en paramètre.
 
 .. step::
 
-    ** #~. ``valeur_min_indice($tab)`` **
+    ** #-. ``valeur_min_indice($tab)`` **
     
     Cette fonction doit retourner l'indice de l'élément le plus petit d'un tableau passé en paramètre.
 
 .. step::
 
-    ** #~. ``tri($tab)`` **
+    ** #-. ``tri($tab)`` **
 
     Cette fonction trie les éléments du tableau passé en paramètre et les retourne. Elle ne doit pas
     utiliser les fonctions de tri de PHP, mais doit en revanche utiliser ``valeur_min_indice($tab)``.
@@ -107,8 +104,55 @@ dont vous devez écrire le code:
     *Note: Comme vous vous en doutez, il s'agit d'un exercice, la fonction ainsi produite ne sera 
     pas très efficace.*
 
+Exercice 3: Manipulations de tableaux
+-------------------------------------
 
-Exercice 3: Gestion d'un magasin
+Génération d'un jeu de données
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. step::
+
+    Tout d'abord, utilisez le script ``generate.php`` (dans ``exercice3/``) pour 
+    générer des données::
+
+        php generate.php > data.php
+
+    Vous pourrez alors utiliser ces données dans vos scripts en les incluant::
+
+        <?php
+        $data = @include('data.php');
+
+    Les données sont constituées d'un grand tableau contenant des personnes (nom, prénom
+    et age).
+
+.. step::
+    #-. Affichage des données
+    ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Ecrivez un premier fichier ``list.php`` qui affiche les données sur chaque ligne
+    sous la forme::
+
+        * Prénom Nom (Age)
+        * Prénom Nom (Age)
+        * Prénom Nom (Age)
+        ...
+
+.. step::
+    #-. Trouver l'individu le plus jeune
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Créez un second fichier ``youngest.php`` qui affiche l'individu le prénom, le nom
+    et l'age de l'individu le plus jeune de vos données.
+
+.. step::
+
+    #-. Occurences des prénoms
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Créez un fichier ``names.php`` qui affiche tous les prénoms et leur nombre d'occurences
+    dans le fichier.
+
+Exercice 4: Gestion d'un magasin
 --------------------------------
 
 Dans cet exercice, on s'intéresse à la gestion d'un magasin. Le code source est en fait un utilitaire en
