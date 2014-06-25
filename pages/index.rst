@@ -42,6 +42,16 @@ Support et auteur
     RÉELEMENT EXPERTS 
     EN PHP
 
+.. slide:: darkSlide fullSlide slideOnly
+
+.. div:: importantText
+    PHP: UN OUTIL INDISPENSABLE?
+
+.. slide:: darkSlide fullSlide slideOnly
+
+.. div:: importantText
+    PHP EST UN CHOIX
+
 .. slide:: darkSlide fullSlide slideOnly 
 
 .. discover::

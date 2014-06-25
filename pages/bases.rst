@@ -34,6 +34,35 @@ Présentation
     * Très répandu sur le marché
     * Doté d'un grand jeu d'extension et de bibliothèques
 
+.. slide::
+
+Personnalités
+~~~~~~~~~~~~~
+
+**Rasmus Lerdorf**
+
+.. center::
+    .. image:: /img/rasmus.jpg
+
+.. textOnly::
+    Il est le créateur de **PHP**. Son approche du développement est très
+    pragmatique. 
+
+    *«I've never thought of PHP as more than a simple tool to solve problems.»*
+
+.. slide::
+
+**Fabien Potencier**
+
+.. center::
+    .. image:: /img/potencier.jpg
+
+.. textOnly::
+    C'est le fondateur de *SensioLabs*, entreprise responsable du framework
+    Symfony, Silex, de Twig et bien d'autres.
+
+    C'est un français, et l'un des membres les plus célèbres de la communauté
+    PHP à ce jour.
 
 .. slide::
 
