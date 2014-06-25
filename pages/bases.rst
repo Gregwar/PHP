@@ -16,7 +16,7 @@ Présentation
 
 .. textOnly::
     **PHP** est l'acronyme récursif de **PHP: Hypertext Preprocessor**, datant
-    de ``1994``. Il a été largement conçu et pensé pour réaliser des sites webs. 
+    de *1994*. Il a été largement conçu et pensé pour réaliser des sites webs. 
     Cependant, c'est avant tout un langage de programmation et de scripting. 
 
 .. slideOnly::
