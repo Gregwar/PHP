@@ -18,7 +18,7 @@ function valeur_min($tab)
 {
 }
 
-if (valeur_min(array(5,23,8,19,28,3,55,-52,100,82,75,22))==-52) {
+if (valeur_min(array(5,23,8,19,28,3,55,-52,100,82,75,22)) == -52) {
     echo "OK: valeur_min\n";
 }
 
@@ -30,7 +30,7 @@ function valeur_min_indice($tab)
 }
 
                 // indices: 0 1  2 3  4  5 6  7   8   9  10 11
-if (valeur_min_indice(array(5,23,8,19,28,3,55,-52,100,82,75,22))==7) {
+if (valeur_min_indice(array(5,23,8,19,28,3,55,-52,100,82,75,22)) == 7) {
     echo "OK: valeur_min_indice\n";
 }
 
