@@ -44,7 +44,7 @@ Exercice 1: Prise en main
     en main et de faire des tests. Créez un fichier ``hello.php`` et placez-y le contenu suivant::
 
             <?php
-
+            // hello.php
             echo "Hello world !\n";
 
     Pour éxécutez votre code, lancez dans un terminal::

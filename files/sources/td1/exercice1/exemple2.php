@@ -1,5 +1,16 @@
 <?php
 
+// Les fonctions se déclarent simplement comme cela:
+function ajoute_dix($x)
+{
+    return $x + 10;
+}
+
+$x = 32;
+$x = ajoute_dix($x);
+
+echo "x = $x\n"; // x = 42
+
 // PHP Permet de faire des références, on peut
 // ainsi créer des variables qui ne sont que des
 // alias
@@ -20,6 +31,3 @@ $x = 32;
 change($x);
 
 echo "x = $x\n"; // x = 42
-
-// Nous reparlerons de cela lorsque nous étudierons la
-// programmation orienté objet en PHP
