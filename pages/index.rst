@@ -15,32 +15,32 @@ Support et auteur
  
     `http://gregwar.com/php/ <http://gregwar.com/php/>`_
 
-.. slide:: darkSlide fullSlide slideOnly
+.. slide:: slideOnly
 
-.. discover::
-    .. div:: importantText
-        TOUT LE MONDE 
-        CONNAÎT PHP
+Avez-vous déjà fait du PHP?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. slide:: darkSlide fullSlide slideOnly
+.. poll::
+    * Oui
+    * Non
 
-.. div:: importantText
-    TOUT LE MONDE 
-    A DÉJÀ FAIT 
-    DU PHP
+.. slide:: slideOnly
 
-.. slide:: darkSlide fullSlide slideOnly
+Avez-vous déjà fait du PHP Objet?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. div:: importantText
-    TOUT LE MONDE A 
-    UN AVIS SUR PHP
+.. poll::
+    * Oui
+    * Non
 
-.. slide:: darkSlide fullSlide slideOnly
+.. slide:: slideOnly
 
-.. div:: importantText
-    PEU DE GENS SONT 
-    RÉELEMENT EXPERTS 
-    EN PHP
+Avez-vous déjà fait du PHP, dans le cadre d'un framework/CMS?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. poll::
+    * Oui
+    * Non
 
 .. slide:: darkSlide fullSlide slideOnly
 
