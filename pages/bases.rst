@@ -94,8 +94,8 @@ Introduction
 Le langage **PHP** est très largement utilisé pour réaliser des sites webs,
 il a même été conçu pour cela.
 
-Dans un premier temps, nous allons nous intérésser au langage en lui même ainsi
-qu'à ses particularités.
+Dans un premier temps, nous allons nous intérésser au langage en lui même, sans
+faire de web en particulier.
 
 .. slide::
 
