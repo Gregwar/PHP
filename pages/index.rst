@@ -21,26 +21,10 @@ Avez-vous déjà fait du PHP?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. poll::
-    * Oui
     * Non
-
-.. slide:: slideOnly
-
-Avez-vous déjà fait du PHP Objet?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. poll::
-    * Oui
-    * Non
-
-.. slide:: slideOnly
-
-Avez-vous déjà fait du PHP, dans le cadre d'un framework/CMS?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. poll::
-    * Oui
-    * Non
+    * Oui, un peu
+    * Oui, avec de l'objet
+    * Oui, dans le cadre d'un framework/CMS objet
 
 .. slide:: darkSlide fullSlide slideOnly
 
