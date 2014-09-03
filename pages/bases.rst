@@ -761,7 +761,7 @@ Lors de l'inclusion d'un fichier, la fonction ``include`` (ou ``require``) va ch
 .. poll::
 
 * Affiche ``100``
-* Affiche ``1000``
+* Affiche ``10000``
 * Provoque une erreur
 
 .. TD
