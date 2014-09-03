@@ -660,6 +660,112 @@ Lors de l'inclusion d'un fichier, la fonction ``include`` (ou ``require``) va ch
          */
         include_once(__DIR__.'/math.php');
 
+.. Sondages
+
+.. slide:: slideOnly
+
+::
+
+        // Qu'est-ce qui produit?
+        echo '1'+1;
+
+.. poll::
+
+* Affiche ``11``
+* Affiche ``2``
+* Provoque une erreur
+
+.. slide:: slideOnly
+
+::
+
+        $tab = array(1, 2, 3);
+        // Syntaxe correcte ?
+        for ($i in $tab) {
+        }
+
+.. poll::
+
+* Oui
+* Non
+
+.. slide:: slideOnly
+
+::
+    
+        // Comment afficher ces noms?
+        $tab = array(
+            'Bob' => 'Smith',
+            'William' => 'Taylor',
+        );
+        // A)
+        foreach ($tab as $f => $l) echo $f.' '.$l;
+        // B)
+        foreach ($tab as $f, $l) echo $f.' '.$l;
+        // C)
+        foreach ($tab as $v) echo $v[0].' '.$v[1];
+
+.. poll::
+
+* Solution A
+* Solution B
+* Solution C
+
+.. slide:: slideOnly
+
+::
+
+    $tab = array(
+        array(1, 2, 3),
+        array(4, 5, 6),
+        array(7, 8, 9)
+    );
+    foreach ($tab as $i=>$v) echo $v[$i];
+
+.. poll::
+
+* Affiche ``1 2 3``
+* Affiche ``1 4 7``
+* Affiche ``1 5 9``
+* Affiche ``2 5 9``
+* Provoque une erreur
+
+.. slide:: slideOnly
+
+::
+
+    $tab = array();
+    $tab[3] = 8;
+    $tab[1] = 3;
+    $tab[8] = 12;
+    $tab[2] = 4;
+    echo $tab[$tab[$tab[1]]];
+
+.. poll::
+
+* Affiche ``2``
+* Affiche ``3``
+* Affiche ``12``
+* Provoque une erreur
+
+.. slide:: slideOnly
+
+::
+
+    $tab = array();
+    for ($i=0; $i<100; $i++) {
+        $tab[$i] = $i*$i;
+    }
+    echo $tab[$tab[$tab[10]]];
+
+.. poll::
+
+* Affiche ``100``
+* Affiche ``1000``
+* Provoque une erreur
+
+.. TD
+
 .. slide::
 
 .. redirection-title:: tds/td1
