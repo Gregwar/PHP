@@ -715,25 +715,6 @@ Lors de l'inclusion d'un fichier, la fonction ``include`` (ou ``require``) va ch
 
 ::
 
-    $tab = array(
-        array(1, 2, 3),
-        array(4, 5, 6),
-        array(7, 8, 9)
-    );
-    foreach ($tab as $i=>$v) echo $v[$i];
-
-.. poll::
-
-* Affiche ``1 2 3``
-* Affiche ``1 4 7``
-* Affiche ``1 5 9``
-* Affiche ``2 5 9``
-* Provoque une erreur
-
-.. slide:: slideOnly
-
-::
-
     $tab = array();
     $tab[3] = 8;
     $tab[1] = 3;
@@ -763,6 +744,26 @@ Lors de l'inclusion d'un fichier, la fonction ``include`` (ou ``require``) va ch
 * Affiche ``100``
 * Affiche ``10000``
 * Provoque une erreur
+
+.. slide:: slideOnly
+
+::
+
+    $tab = array(
+        array(1, 2, 3),
+        array(4, 5, 6),
+        array(7, 8, 9)
+    );
+    foreach ($tab as $i=>$v) echo $v[$i];
+
+.. poll::
+
+* Affiche ``1 2 3``
+* Affiche ``1 4 7``
+* Affiche ``1 5 9``
+* Affiche ``2 5 9``
+* Provoque une erreur
+
 
 .. TD
 
