@@ -85,6 +85,16 @@ Avez-vous déjà fait du PHP?
     .. code-block::
         <?php echo "Let's go!"; ?>
 
+.. slide:: darkSlide fullSlide slideOnly
+
+.. div:: importantText
+    ONE MORE THING
+
+.. slide:: fullSlide slideOnly
+
+.. center::
+    .. image:: /img/stats.png
+
 .. slide::
 
 Matière
