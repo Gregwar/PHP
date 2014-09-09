@@ -487,6 +487,11 @@ Injection SQL
 
 .. slide::
 
+.. center::
+    .. image:: /img/exploits_of_a_mom.png
+
+.. slide::
+
 Hachage des mots de passes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
