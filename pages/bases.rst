@@ -186,12 +186,12 @@ dans votre terminal:
     Utilisation (suite)
     ~~~~~~~~~~~~~~~~~~~
 
-Utiliser l'intérpréteur peut servir à :
+    Utiliser l'intérpréteur peut servir à :
 
-* Faire des tests (pratique pour découvrir le langage)
-* Utiliser PHP comme langage de script
+    * Faire des tests (pratique pour découvrir le langage)
+    * Utiliser PHP comme langage de script
 
-Dans cette partie, nous utiliserons uniquement l'interpréteur en ligne de commande.
+    Dans cette partie, nous utiliserons uniquement l'interpréteur en ligne de commande.
 
 .. slide::
 
