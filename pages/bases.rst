@@ -666,7 +666,7 @@ Lors de l'inclusion d'un fichier, la fonction ``include`` (ou ``require``) va ch
 
 ::
 
-        // Qu'est-ce qui produit?
+        // Qu'est-ce qui sera affiché?
         echo '1'+1;
 
 .. poll::
@@ -679,15 +679,70 @@ Lors de l'inclusion d'un fichier, la fonction ``include`` (ou ``require``) va ch
 
 ::
 
+    // Vrai ou faux?
+    if ('123' == 123) {
+    }
+
+.. poll::
+
+* Vrai
+* Faux
+
+.. slide:: slideOnly
+
+::
+
+    $a = array(17, 42, 23 87, 12);
+    // Que faut t-il mettre à la place
+    // des ??? pour afficher 42?
+    echo $a[???];
+
+.. poll::
+
+* 0
+* 1
+* 2
+* 42
+
+.. slide:: slideOnly
+
+::
+
+    // Vrai ou faux?
+    if (-12 !== '-12') {
+    }
+
+.. poll::
+
+* Vrai
+* Faux
+
+.. slide:: slideOnly
+
+::
+    
+    // Vrai ou faux?
+    if (0 == 'foo') {
+    }
+
+.. poll::
+
+* Vrai
+* Faux
+
+.. slide:: slideOnly
+
+::
+
         $tab = array(1, 2, 3);
-        // Syntaxe correcte ?
         for ($i in $tab) {
+            echo $i;
         }
 
 .. poll::
 
-* Oui
-* Non
+* Affiche les nombres 1, 2, 3
+* Provoque une erreur
 
 .. slide:: slideOnly
 
@@ -695,8 +750,8 @@ Lors de l'inclusion d'un fichier, la fonction ``include`` (ou ``require``) va ch
     
         // Comment afficher ces noms?
         $tab = array(
-            'Bob' => 'Smith',
-            'William' => 'Taylor',
+            'Jack' => 'Bauer',
+            'Allison' => 'Taylor',
         );
         // A)
         foreach ($tab as $f => $l) echo $f.' '.$l;
