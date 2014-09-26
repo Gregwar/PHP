@@ -70,52 +70,23 @@ Ou :
 
 .. slide::
 
-Requête HTTP
-~~~~~~~~~~~~
+HTTP
+~~~~
 
 .. textOnly::
-    Lors de l'accès à une page web, le navigateur effectue plusieurs opérations, il
-    résoud le nom d'hôte et ouvre une connexion avec le serveur web. Il utilise pour cela
-    le protocole **HTTP** basé sur la couche **TCP/IP** de la machine.
 
-    Il envoie ensuite une **requête HTTP**, qui est constituée d'un ensemble d'en-têtes
-    et éventuellement de données pouvant contenir :
+    Le protocole HTTP est un protocole requête/réponse, le serveur ne parle que
+    lorsqu'il a reçu une requête bien formée.
 
-.. slideOnly::
-    Une **requête HTTP** formée par un navigateur ou client peut contenir :
+    Requête et réponses ont à peu près la même forme:
 
 .. discoverList::
-    1. La méthode, le nom de la resource demandée et la version du protocole
-    2.  Des en-têtes pouvant contenir :
-            * Le nom d'hôte du serveur
-            * Les cookies
-            * Des informations sur le navigateur 
-            * Les langues et formats acceptés
-            * Le type et contenu des données (si présentes)
-            * etc.
-    3. Eventuellement des données (e.x: formulaires, envoi de fichier etc.)
 
-.. slide::
-
-Réponse HTTP
-~~~~~~~~~~~~
-
-.. textOnly::
-    Le serveur utilise alors les éléments fournis par le client pour tenter de localiser
-    la resource demandée et lui répond en lui transférant sous une forme très ressemblante
-    des en-têtes et éventuellement des données:
-    
-.. slideOnly::
-    Une **réponse HTTP** formée par un serveur peut contenir :
-
-.. discoverList::
-    1. Un code de réponse (200, 404, 403, 302...) et la version du protocole
-    2. Des en-têtes pouvant inclure:
-            * Des définition de cookies
-            * Un type et une taille de contenu
-            * Des informations sur le serveur, le type de connexion
-            * etc.
-    3. Eventuellement des données
+* Une ligne particulière, indiquant:
+  * La méthode et la page demandée (requête)
+  * Le code de retour (serveur)
+* Des en-têtes (clé/valeur)
+* Du contenu
 
 .. slide::
 
@@ -691,6 +662,54 @@ L'utilisation de tout ce mécanisme se fait **automatiquement** à l'aide de la 
     Ce compteur ne peut pas être faussé par le client, ou plus exactement il ne peut pas être amené à une
     valeur arbitraire. En revanche, le client peut choisir de supprimer son cookie de session, c'est à dire
     jeter son jeton de sécurité, le compteur repartira alors à 0.
+
+.. slide:: slideOnly
+
+Les sessions....
+
+.. poll::
+
+* N'ont rien à voir avec les cookies
+* S'appuient sur les cookies
+* Sont nécessaire pour le bon fonctionnement des cookies
+
+.. slide:: slideOnly
+
+Est-ce qu'un utilisateur peut choisir de ne **jamais** enregistrer les
+variables de ``$_COOKIE`` ?
+
+.. poll::
+
+* Oui
+* Non
+
+.. slide:: slideOnly
+
+Est-ce qu'un utilisateur peut accepter les cookies, mais refuser les
+sessions ?
+
+.. poll::
+
+* Oui
+* Non
+
+.. slide:: slideOnly
+
+Est t-il possible de lire un cookie depuis Javascript?
+
+.. poll::
+
+* Oui
+* Non
+
+.. slide:: slideOnly
+
+Est t-il possible de lire une variable de session depuis Javascript?
+
+.. poll::
+
+* Oui
+* Non
 
 .. slide::
 
