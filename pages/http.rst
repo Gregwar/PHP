@@ -665,6 +665,26 @@ L'utilisation de tout ce mécanisme se fait **automatiquement** à l'aide de la 
 
 .. slide:: slideOnly
 
+Est-ce qu'un visiteur de votre site peut lire votre code source PHP?
+
+.. poll::
+
+* Oui
+* Non
+
+.. slide:: slideOnly
+
+Un visiteur peut définir arbitrairement les valeurs de...
+
+.. poll::
+
+* ``$_GET``
+* ``$_GET`` et ``$_POST``
+* ``$_GET``, ``$_POST`` et ``$_COOKIE``
+* ``$_GET``, ``$_POST``, ``$_COOKIE`` et ``$_SESSION``
+
+.. slide:: slideOnly
+
 Les sessions....
 
 .. poll::
@@ -705,6 +725,28 @@ Est t-il possible de lire un cookie depuis Javascript?
 .. slide:: slideOnly
 
 Est t-il possible de lire une variable de session depuis Javascript?
+
+.. poll::
+
+* Oui
+* Non
+
+.. slide:: slideOnly
+
+Est t-il possible de changer les en-têtes de la réponse HTTP depuis du code PHP?
+
+.. poll::
+
+* Oui
+* Non
+
+.. slide:: slideOnly
+
+Ce code est-t-il correct?::
+
+    <?php
+    echo "Redirection en cours...";
+    header("location: /elsewhere");
 
 .. poll::
 
