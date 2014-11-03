@@ -794,7 +794,7 @@ Lors de l'inclusion d'un fichier, la fonction ``include`` (ou ``require``) va ch
 
 .. poll::
 
-* Affiche ``2``
+* Affiche ``8``
 * Affiche ``3``
 * Affiche ``12``
 * Provoque une erreur
@@ -807,7 +807,7 @@ Lors de l'inclusion d'un fichier, la fonction ``include`` (ou ``require``) va ch
     for ($i=0; $i<100; $i++) {
         $tab[$i] = $i*$i;
     }
-    echo $tab[$tab[$tab[10]]];
+    echo $tab[$tab[10]];
 
 .. poll::
 
