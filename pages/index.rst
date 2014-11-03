@@ -79,7 +79,7 @@ Avez-vous déjà fait du PHP?
 .. slide:: darkSlide fullSlide slideOnly 
 
 .. div:: importantText
-    PHP <3
+    PHP Powa!
 
 .. discover::
     .. code-block::
