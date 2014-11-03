@@ -41,7 +41,7 @@ function somme_tableau($tab)
 {
 }
 
-if (somme_tableau(array(12,23,4)) == 78) {
+if (somme_tableau(array(12,23,4)) == 39) {
     echo "OK: somme_tableau\n";
 }
 
