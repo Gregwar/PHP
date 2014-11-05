@@ -76,8 +76,13 @@ Les formulaires représentent une très grande partie du développement d'un sit
 .. step::
     **#-. Compréhension**
 
-    Lisez et testez le script ``exercice2/form.php`` de l'archive. Comment est detecté le fait que des données ont été
-    postées ? A quoi correspond ce test vis à vis du protocole HTTP ? Pourquoi la fonction `htmlspecialchars() <http://php.net/htmlspcialchars>`_
+    Lisez et testez le script ``exercice2/form.php`` de l'archive.
+    
+    A) Comment est detecté le fait que le formulaire a été posté ?
+    
+    B) A quoi correspond ce test vis à vis du protocole HTTP ?
+    
+    C) Pourquoi la fonction `htmlspecialchars() <http://php.net/htmlspcialchars>`_
     est utilisée ici ?
 
 .. step::
