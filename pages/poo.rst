@@ -37,6 +37,31 @@ Pourquoi faire de l'objet ?
     Presque toutes les bibliothèques et frameworks que vous serez amenés à utiliser se basent 
     sur le paradigme objet.
 
+.. slide:: darkSlide fullSlide slideOnly
+
+.. div:: importantText
+    OBJET?
+
+.. slide:: darkSlide fullSlide slideOnly
+
+.. div:: importantText
+    POLYMORPHISME?
+
+.. slide:: darkSlide fullSlide slideOnly
+
+.. div:: importantText
+    HERITAGE?
+
+.. slide:: darkSlide fullSlide slideOnly
+
+.. div:: importantText
+    CLASSE ABSTRAITE?
+
+.. slide:: darkSlide fullSlide slideOnly
+
+.. div:: importantText
+    SURCHARGE?
+
 .. slide::
 
 Classes et instanciation
@@ -855,6 +880,15 @@ AUTOLOADING
             include(__DIR__.'/'.$file.'.php');
         }
     });
+
+.. slide:: slideOnly
+
+PHP supporte t-il l'héritage multiple ?
+
+.. poll::
+
+* Oui
+* Non
 
 .. slide::
 
