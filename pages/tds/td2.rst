@@ -51,22 +51,20 @@ Comme vu en dans le chapitre HTTP, les variables GET sont passées en paramètre
 
 Ces variables peuvent être récupérées à l'aide du tableau ``$_GET``.
 
-.. step::
     **#-. Factorisation**
 
     Examniez le code fournit dans le dossier ``exercice1/``, il est constitué de plusieurs pages HTML, ce qui est problématique,
     car le code des en-têtes contenant le style et le menu est à chaque fois recopié! A l'aide de PHP, créez une unique page web
     qui contiendra toutes ces pages.
 
-    Vous pourrez utiliser les variables GET pour que le contenu de la page soit modifié en fonction du paramètre passé
+.. step::
+    Dans un premier temps, utilisez les variables GET pour que le contenu de la page soit modifié en fonction du paramètre passé
     dans l'URL.
 
 .. step::
-    **#-. Evolution**
 
     Rajouter des pages à ce site pourrait devenir pénible, car la page principale **PHP** que vous avez créé va grossir et grossir.
-    Quelle(s) solution(s) pourrait t-on utiliser pour pouvoir utiliser plusieurs fichiers tout en évitant la duplication de code? Appliquez
-    et testez votre idée sur cet exemple. Apellez votre encadrant pour qu'il vérifie votre code.
+    Proposez une autre manière de factoriser le code entre les pages.
 
 Exercice 2 : Les formulaires
 ----------------------------
