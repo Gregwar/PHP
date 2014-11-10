@@ -51,11 +51,11 @@ Comme vu en dans le chapitre HTTP, les variables GET sont passées en paramètre
 
 Ces variables peuvent être récupérées à l'aide du tableau ``$_GET``.
 
-    **#-. Factorisation**
+**#-. Factorisation**
 
-    Examniez le code fournit dans le dossier ``exercice1/``, il est constitué de plusieurs pages HTML, ce qui est problématique,
-    car le code des en-têtes contenant le style et le menu est à chaque fois recopié! A l'aide de PHP, créez une unique page web
-    qui contiendra toutes ces pages.
+Examniez le code fournit dans le dossier ``exercice1/``, il est constitué de plusieurs pages HTML, ce qui est problématique,
+car le code des en-têtes contenant le style et le menu est à chaque fois recopié! A l'aide de PHP, créez une unique page web
+qui contiendra toutes ces pages.
 
 .. step::
     Dans un premier temps, utilisez les variables GET pour que le contenu de la page soit modifié en fonction du paramètre passé
