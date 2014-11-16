@@ -715,7 +715,7 @@ sessions ?
 
 .. slide:: slideOnly
 
-Est t-il possible de lire un cookie depuis Javascript?
+Est t-il possible de lire un cookie depuis Javascript (coté client)?
 
 .. poll::
 
@@ -724,7 +724,7 @@ Est t-il possible de lire un cookie depuis Javascript?
 
 .. slide:: slideOnly
 
-Est t-il possible de lire une variable de session depuis Javascript?
+Est t-il possible de lire une variable de session depuis Javascript (coté client)?
 
 .. poll::
 
