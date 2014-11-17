@@ -919,7 +919,7 @@ Une classe PHP peut implémenter plusieurs interfaces.
 
 .. slide:: slideOnly
 
-La fonction ``instanceof()`` permet de vérifier:
+``instanceof`` permet de vérifier:
 
 .. poll::
 
