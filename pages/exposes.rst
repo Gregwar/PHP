@@ -88,7 +88,7 @@ Voici la liste des sujets qu'il est possible de choisir, ainsi que quelques pist
 ------------------------------------------------
 
 * Quelles sont les évolutions récentes du langage PHP?
-* Qu'est-ce qu'une RFC? (Présentez-en quelques une)
-* Quelles évolutions futures (prochaînes versions)?
+* Qu'est-ce qu'une RFC? (Présentez-en quelques unes)
+* Quelles évolutions futures (prochaines versions)?
 * Qu'est-ce que HHVM? HackLang?
 
