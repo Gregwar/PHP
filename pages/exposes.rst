@@ -84,7 +84,7 @@ Voici la liste des sujets qu'il est possible de choisir, ainsi que quelques pist
 * Pourquoi les utiliser?
 * Quels sont les avantages/inconvénients?
 
-#=) PHP: Evolutions passées et future du langage
+#=) PHP: Evolutions passées et futures du langage
 ------------------------------------------------
 
 * Quelles sont les évolutions récentes du langage PHP?
