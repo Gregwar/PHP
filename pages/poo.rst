@@ -250,7 +250,7 @@ Méthodes et classes finales
         }
     }
 
-    class B
+    class B extends A
     {
         public function f()
         {
@@ -511,7 +511,7 @@ Clonage personnalisé
 
     class Identified
     {
-        static $instances = 0;
+        public static $instances = 0;
         public $instance;
 
         public function __construct()
@@ -654,8 +654,8 @@ Multiples classes de même nom
 
     <?php
 
-    $a = new Bob\Image;
-    $b = new Alice\Image;
+    $a = new Alice\Image;
+    $b = new Bob\Image;
 
 .. textOnly::
     Il est également possible d'importer une classe à l'aide du mot clé ``use``,
@@ -690,8 +690,8 @@ Multiples classes de même nom
         use Bob\Image as BobImage;
         use Alice\Image as AliceImage;
 
-        $a = new BobImage;
-        $b = new AliceImage;
+        $a = new AliceImage;
+        $b = new BobImage;
 
 .. slide::
 
