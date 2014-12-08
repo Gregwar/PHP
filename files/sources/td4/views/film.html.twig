@@ -21,7 +21,7 @@ Film non trouvé!
     <h2>Casting</h2>
     {% for acteur in casting %}
         <div class="acteur">
-            <img src="<?php echo {{ acteur.image }}" width="64" />
+            <img src="{{ acteur.image }}" width="64" />
             <h3>{{ acteur.prenom }} {{ acteur.nom }}</h3>
             <em>dans le role de</em>
             <h3>{{ acteur.role }}</h3>
