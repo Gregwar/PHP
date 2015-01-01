@@ -18,9 +18,9 @@ la base de données et en changeant les paramètres dans ``bdd/pdo.php``.
 1) Correction de problèmes
 --------------------------
 
-#-) Problèmes d'encodages
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. step::
+    #-) Problèmes d'encodages
+    ~~~~~~~~~~~~~~~~~~~~~~~~~
+
     La page d'accueil ne s'affiche pas correctement, mais présente des problèmes d'encodages.
     A quoi sont t-ils dus?
