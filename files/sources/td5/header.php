@@ -21,8 +21,7 @@ include('bdd/pdo.php');
             <li><a href="register.php">Inscription</a></li>
             <li><a href="login.php">Identification</a></li>
             <li><a href="logout.php">Déconnexion</a></li>
-            <li><a href="my-polls.php">Mes sondages</a></li>
-            <li><a href="create.php">Nouveau sondage</a></li>
+            <li><a href="polls.php">Sondages</a></li>
           </ul>
         </div>
     </nav> 
