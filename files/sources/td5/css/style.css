@@ -1,0 +1,18 @@
+body {
+    width:800px;
+    margin:auto;
+    font-size:16px;
+    text-align:justify;
+    margin-top:5px;
+}
+
+.mania {
+   color:#9b3737; 
+}
+
+h1 {
+    font-family:impact;
+    text-align:center;
+    margin:0;
+    margin-right:5px;
+}
