@@ -8,6 +8,7 @@ include('bdd/pdo.php');
         <title>Social Sondage</title>
         <link rel="stylesheet" href="dist/css/bootstrap.min.css" />
         <link rel="stylesheet" href="css/style.css" />
+        <link rel="icon" type="image/x-icon" href="favicon.ico" />
     </head>
     <body>
         
