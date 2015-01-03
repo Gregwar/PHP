@@ -2,7 +2,7 @@
 
 <h2>Bienvenue</h2>
 <p>
-    Bienvenue sur <em>Sondages Mania</em>, ici, vous pourrez créer et participer
+    Bienvenue sur <em>Social Sondage</em>, ici, vous pourrez créer et participer
     à des sondages!
 </p>
 

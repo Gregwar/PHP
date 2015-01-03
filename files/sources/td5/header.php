@@ -5,13 +5,16 @@ include('bdd/pdo.php');
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>Poller</title>
+        <title>Social Sondage</title>
         <link rel="stylesheet" href="dist/css/bootstrap.min.css" />
         <link rel="stylesheet" href="css/style.css" />
     </head>
     <body>
         
-    <h1><img src="imgs/poll.png" /> Sondages <span class="mania">Mania</span></h1>
+    <h1>
+        <img src="imgs/poll.png" />
+        Social <span class="sondage">Sondage</span>
+    </h1>
     <nav class="navbar navbar-default">
 
         <!-- Collect the nav links, forms, and other content for toggling -->
