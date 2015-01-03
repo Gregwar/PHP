@@ -1,3 +1,6 @@
+.. image:: /img/poll.png
+    :class: right
+
 TD5
 ===
 
@@ -5,6 +8,19 @@ TD5
 
 .. important::
     `|archive| Télécharger l'archive td5.zip </files/td5.zip>`_
+
+Consignes
+---------
+
+.. warning::
+
+    Ce TD est **évalué**. Vous devrez le réaliser individuellement, et suivre les
+    consignes suivantes.
+
+    Vous devrez créer un dépôt personnel qui contiendra le code du TP, et **commiter**
+    vos modifications afin qu'il soit possible de voir le travail réalisé.
+
+    N'oubliez pas de **commiter votre base de données** si vous la modifiez.
 
 Prise en main
 -------------
@@ -18,9 +34,80 @@ la base de données et en changeant les paramètres dans ``bdd/pdo.php``.
 1) Correction de problèmes
 --------------------------
 
+.. image:: /img/black_cat.png
+    :class: right
+
 .. step::
     #-) Problèmes d'encodages
     ~~~~~~~~~~~~~~~~~~~~~~~~~
 
     La page d'accueil ne s'affiche pas correctement, mais présente des problèmes d'encodages.
     A quoi sont t-ils dus?
+
+.. step::
+    #-) SQL
+    ~~~~~~~
+
+    Les requêtes SQL ont un problème, lequel? Corrigez-le.
+
+.. step::
+    #) XSS
+    ~~~~~~
+
+    Le site contient de nombreuses failles XSS. Corrigez-les.
+
+.. step::
+    #) Mots de passes
+    ~~~~~~~~~~~~~~~~~
+
+    Les mots de passes sont stockés en clair. Corrigez ce problème.
+
+.. image:: /img/cleaning.png
+    :class: right
+    
+2) Passage à un framework
+-------------------------
+
+Le code présenté ici ne respecte pas une organisation propre. Nous allons le remanier afin de
+respecter une organisation MVC, même minimale.
+
+Si vous maîtrisez déjà un framework, vous êtes libres de l'utiliser.
+
+Autrement, vous pourrez vous inspirer du :doc:`TD4 <td4>` et utiliser Silex et Twig.
+
+Pour information, vous devrez:
+
+* Placer vos requêtes dans un modèle (qui peut être une classe)
+* Ecrire des contrôleurs avec des routes propres (par exemple avec Silex)
+* Porter les vues (par exemple sous Twig)
+
+.. image:: /img/tools.png
+    :class: right
+
+3) Améliorations
+----------------
+
+Maintenant que votre application est bien nettoyée, vous allez y apporter quelques améliorations.
+
+.. step::
+    #-) Page active
+    ~~~~~~~~~~~~~~~
+
+    Modifiez le menu de manière à ce que la page courante soit marquée comme active (vous pourrez
+    ajouter la classe ``active`` à l'élément ``<li>`` correspondant).
+
+.. step::
+    #-) Créateur du sondage
+    ~~~~~~~~~~~~~~~~~~~~~~~
+
+    Le créateur du sondage n'est pour l'instant pas enregistré. Modifiez la base de données pour le
+    stocker et affichez le.
+
+
+.. step::
+    #-) Réponses multiples
+    ~~~~~~~~~~~~~~~~~~~~~~
+
+    Pour le moment, il n'est possible que d'entrer 2 ou 3 réponses à un sondage. Modifiez l'application
+    pour qu'elle permette de saisir un nombre arbitraire de questions.
+
