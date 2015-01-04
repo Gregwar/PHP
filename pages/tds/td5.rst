@@ -17,10 +17,15 @@ Consignes
     Ce TD est **évalué**. Vous devrez le réaliser individuellement, et suivre les
     consignes suivantes.
 
-    Vous devrez créer un dépôt personnel qui contiendra le code du TP, et **commiter**
-    vos modifications afin qu'il soit possible de voir le travail réalisé.
+    Vous devrez créer un dépôt personnel qui contiendra le code du TP, dans lequel
+    vous travaillerez. Vous pouvez choisir soit GitHub soit Bitbucket, ainsi que
+    mercurial ou git. Vous le partagerez avec moi (compte *Gregwar* sur Bitbucket
+    et Github).
 
-    N'oubliez pas de **commiter votre base de données** si vous la modifiez.
+    Vous devez réaliser **exactement un commit** par question, afin qu'il soit possible
+    de voir l'évolution de votre travail.
+
+    N'oubliez pas **d'exporter votre base de données** si vous la modifiez.
 
 Prise en main
 -------------
@@ -42,7 +47,7 @@ la base de données et en changeant les paramètres dans ``bdd/pdo.php``.
     ~~~~~~~~~~~~~~~~~~~~~~~~~
 
     La page d'accueil ne s'affiche pas correctement, mais présente des problèmes d'encodages.
-    A quoi sont t-ils dus?
+    Corrigez-les.
 
 .. step::
     #-) SQL
@@ -100,8 +105,8 @@ Maintenant que votre application est bien nettoyée, vous allez y apporter quelq
     #-) Créateur du sondage
     ~~~~~~~~~~~~~~~~~~~~~~~
 
-    Le créateur du sondage n'est pour l'instant pas enregistré. Modifiez la base de données pour le
-    stocker et affichez le.
+    L'utilisateur qui créé le sondage n'est pour l'instant pas enregistré. Modifiez la base de données
+    pour qu'il soit enregistré et affiché dans la fiche du sondage.
 
 
 .. step::
