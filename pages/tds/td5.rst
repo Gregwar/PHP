@@ -82,7 +82,7 @@ Autrement, vous pourrez vous inspirer du :doc:`TD4 <td4>` et utiliser Silex et T
 
 Pour information, vous devrez:
 
-* Placer vos requêtes dans un modèle (qui peut être une classe)
+* Séparez vos requêtes du reste (dans une simple classe ou avec un ORM)
 * Ecrire des contrôleurs avec des routes propres (par exemple avec Silex)
 * Porter les vues (par exemple sous Twig)
 
