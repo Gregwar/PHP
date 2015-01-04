@@ -17,7 +17,7 @@ Consignes
     Ce TD est **évalué**. Vous devrez le réaliser individuellement, et suivre les
     consignes suivantes.
 
-    Vous devrez créer un dépôt personnel qui contiendra le code du TP, dans lequel
+    Vous devrez créer un dépôt personnel qui contiendra le code du TD, dans lequel
     vous travaillerez. Vous pouvez choisir soit GitHub soit Bitbucket, ainsi que
     mercurial ou git. Vous le partagerez avec moi (compte *Gregwar* sur Bitbucket
     et Github).
@@ -26,6 +26,8 @@ Consignes
     de voir l'évolution de votre travail.
 
     N'oubliez pas **d'exporter votre base de données** si vous la modifiez.
+
+    La date limite pour réaliser ce TD est le **Vendredi 16 Janvier 2015**.
 
 Prise en main
 -------------
