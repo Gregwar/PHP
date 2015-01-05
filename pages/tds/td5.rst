@@ -27,7 +27,7 @@ Consignes
 
     N'oubliez pas **d'exporter votre base de données** si vous la modifiez.
 
-    La date limite pour réaliser ce TD est le **Vendredi 16 Janvier 2015**.
+    La date limite pour réaliser ce TD est le **Vendredi 14 Janvier 2015**.
 
 Prise en main
 -------------
