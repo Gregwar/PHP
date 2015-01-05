@@ -58,13 +58,13 @@ la base de données et en changeant les paramètres dans ``bdd/pdo.php``.
     Les requêtes SQL ont un problème, lequel? Corrigez-le.
 
 .. step::
-    #) XSS
+    #-) XSS
     ~~~~~~
 
     Le site contient de nombreuses failles XSS. Corrigez-les.
 
 .. step::
-    #) Mots de passes
+    #-) Mots de passes
     ~~~~~~~~~~~~~~~~~
 
     Les mots de passes sont stockés en clair. Corrigez ce problème.
