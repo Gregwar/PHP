@@ -37,11 +37,9 @@ CREATE TABLE `answers` (
 -- Dumping data for table `answers`
 --
 
-LOCK TABLES `answers` WRITE;
 /*!40000 ALTER TABLE `answers` DISABLE KEYS */;
 INSERT INTO `answers` VALUES (1,8,1,2),(2,7,1,1),(3,7,2,2),(4,9,2,3),(5,9,1,1),(6,8,2,3);
 /*!40000 ALTER TABLE `answers` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `polls`
@@ -64,11 +62,9 @@ CREATE TABLE `polls` (
 -- Dumping data for table `polls`
 --
 
-LOCK TABLES `polls` WRITE;
 /*!40000 ALTER TABLE `polls` DISABLE KEYS */;
 INSERT INTO `polls` VALUES (1,'Pain au chocolat ou chocolatine?','Pain au chocolat','Chocolatine',''),(2,'Quelle est votre série préférée?','Breaking bad','24','Game of Thrones');
 /*!40000 ALTER TABLE `polls` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `users`
@@ -89,11 +85,9 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` VALUES (7,'alice','jambon'),(8,'bob','salami'),(9,'charlie','rosette');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
-UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
