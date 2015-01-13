@@ -28,7 +28,7 @@ if ($currentUser) {
         $userAnswered = true;
     } else {
         if ($_SERVER['REQUEST_METHOD']=='POST' && !empty($_POST['answer']) &&
-            $_POST['answer']=='1' || $_POST['answer']=='2' || $_POST['answer']=='3') {
+            ($_POST['answer']=='1' || $_POST['answer']=='2' || $_POST['answer']=='3')) {
                 $pdo->exec('INSERT INTO answers (user_id, poll_id, answer)
                     VALUES ("'.$currentUser['id'].'","'.$poll['id'].'","'.$_POST['answer'].'")');
                 $userAnswered = true;
