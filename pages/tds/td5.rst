@@ -116,5 +116,6 @@ Maintenant que votre application est bien nettoyée, vous allez y apporter quelq
     ~~~~~~~~~~~~~~~~~~~~~~
 
     Pour le moment, il n'est possible que d'entrer 2 ou 3 réponses à un sondage. Modifiez l'application
-    pour qu'elle permette de saisir un nombre arbitraire de questions.
+    pour qu'elle permette de saisir un nombre arbitraire de questions (c'est à dire qu'il est possible
+    de créer un sondage avec autant de réponses possibles qu'on le souhaite).
 
