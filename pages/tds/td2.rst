@@ -113,3 +113,31 @@ Exercice 3 : Sécurisation
 
 .. step::
     Implémentez ensuite une fonction de déconnexion.
+
+Exercice 4 : Captcha
+-------------------------
+
+Le but de cet exercice est d'implémenter un CAPTCHA, ou code visuel que l'utilisateur
+doit recopier pour confirmer qu'il n'est pas un robot.
+
+Le code qui permet de générer l'image vous est déja fourni à titre d'exemple dans le dossier
+``exercice4``.
+
+.. step::
+    **#-. Mise en place**
+
+    Créer un formulaire (non fonctionnel) comportant un champ texte et l'image générée, 
+    proposant ainsi à l'utilisateur de la recopier pour confirmer qu'il n'est pas un robot.
+
+.. step::
+    **#-. Phrases aléatoire**
+
+    Faites en sorte que le code soit généré aléatoirement
+
+.. step::
+    **#-. Validation**
+
+    Ecrivez maintenant le code qui confirme si le teste a été oui ou non passé avec succès.
+    Lorsque le formulaire est soumis, il faut vérifier coté serveur que le code qui a été
+    entré par l'utilisateur est bien celui qui a été préalablement affiché sur son image.
+
