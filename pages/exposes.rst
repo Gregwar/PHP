@@ -1,10 +1,10 @@
 Exposés
 =======
 
-Les exposés doivent durer environ 15 minutes. Vous avez la possibilité d'apporter
+Les exposés doivent durer environ 20 minutes, par groupe de 4. Vous avez la possibilité d'apporter
 vos slides.
 
-Des démos et exemples sont **vivement recommandés** pour chaque exposé.
+Des démos et exemples sont **vivement recommandées** pour chaque exposé.
 
 Voici la liste des sujets qu'il est possible de choisir, ainsi que quelques pistes
 **indicatives**:
