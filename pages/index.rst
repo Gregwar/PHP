@@ -29,15 +29,6 @@ Avez-vous déjà fait du PHP?
 .. slide:: darkSlide fullSlide slideOnly
 
 .. div:: importantText
-    PHP: UN OUTIL INDISPENSABLE?
-
-.. discover::
-    .. div:: importantText
-    PAS DU TOUT!
-
-.. slide:: darkSlide fullSlide slideOnly
-
-.. div:: importantText
     PHP EST UN CHOIX
 
 .. slide:: darkSlide fullSlide slideOnly 
