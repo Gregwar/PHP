@@ -409,7 +409,7 @@ respectivement à sortir d'une boucle ou à passer à l'élément suivant)::
 
     echo "x=$x\n"; // x=30
 
-    for ($i=0; $i=100; $i++) {
+    for ($i=0; $i<100; $i++) {
         if ($i == 50) {
             continue;
         }

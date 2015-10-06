@@ -164,7 +164,7 @@ Questions
 ~~~~~~~~~
 
 .. step::
-    Pour commencer, lisez le code source disponible dans le dossier **exercice2/** afin d'en comprendre son
+    Pour commencer, lisez le code source disponible dans le dossier **exercice4/** afin d'en comprendre son
     fonctionnement.
 
     **#~. Quel est l'interêt du tableau ``$actions`` ? Quelle(s) autre(s) méthode aurait pu être employée ?**
