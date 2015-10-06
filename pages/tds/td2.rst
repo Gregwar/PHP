@@ -59,7 +59,7 @@ qui contiendra toutes ces pages.
 
 .. step::
     Dans un premier temps, utilisez les variables GET pour que le contenu de la page soit modifié en fonction du paramètre passé
-    dans l'URL.
+    dans l'URL, tout en gardant une seule page PHP.
 
 .. step::
 
