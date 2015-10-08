@@ -20,8 +20,8 @@ Exercice 1 : un peu de conception
 
     Une plateforme d'hébergement et de distribution de fichiers souhaite pouvoir héberger
     des médias. Il en existe principalement trois sortes, des images, des musiques et des vidéos.
-    Ces trois sortes sont traités de manière différentes, mais pour chacun, on connaît un nom et il est
-    possible de les jouer à l'aide de la fonction ``play()``.
+    Ces trois sortes sont traitées de manière différente, mais pour chacune, on connaît un nom et il est
+    possible de les afficher à l'aide de la fonction ``print()``.
 
     Les musiques et les vidéos ont une durée dans le temps et peuvent être diffusées en streaming.
     Enfin, les utilisateurs peuvent constituer des playlists composées de plusieurs médias.
@@ -59,10 +59,10 @@ Exercice 1 : un peu de conception
         $p2->add($stairway);
         // Ajout de "P1" à "P2"
         $p2->add($p1);
+        // Affichage de matrix
+        $matrix->print();
         // Affichage de P2
         echo $p2;
-        // Lecture de matrix
-        $matrix->play();
 
 .. step::
 
@@ -75,13 +75,13 @@ Exercice 1 : un peu de conception
 
     .. code-block:: no-highlight
 
+        [Vidéo] Lecture de Matrix
+
         P2
         | Stairway to heaven (audio)
         |  P1
         |  | Matrix (vidéo)
         |  | Joconde (image)
-
-        [Vidéo] Lecture de Matrix
 
 Exercice 2 : une arène
 ---------------------

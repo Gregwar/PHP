@@ -526,11 +526,10 @@ Les cookies
     }
     else
     {
-        echo 'Tiens, un nouveau visage !';
-
         // Definit le cookie seen à 1, qui expire 
         // dans une heure (=3600 secondes)
         setcookie('seen', 1, time()+3600);
+        echo 'Tiens, un nouveau visage !';
     }
 
 .. slide::
@@ -724,12 +723,13 @@ Est t-il possible de lire un cookie depuis Javascript (coté client)?
 
 .. slide:: slideOnly
 
-Est t-il possible de lire une variable de session depuis Javascript (coté client)?
+Les données d'un formulaire seront "passées" dans quelle variable?
 
 .. poll::
 
-* Oui
-* Non
+* ``$_GET``
+* ``$_POST``
+* Ça dépend
 
 .. slide:: slideOnly
 
