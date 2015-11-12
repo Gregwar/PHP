@@ -30,7 +30,7 @@ $app->match('/films', function() use ($app) {
 
 // Fiche film
 $app->match('/film/{id}', function($id) use ($app) {
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if ($app['request']->getMethod() == 'POST') {
         if (isset($_POST['nom']) && isset($_POST['note']) && isset($_POST['critique'])) {
             // XXX: A faire
         }
