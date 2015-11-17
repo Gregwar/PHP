@@ -9,6 +9,9 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
     'twig.path' => __DIR__.'/views',
 ));
 
+// Fait remonter les erreurs
+$app['debug'] = true;
+
 $app['model'] = new Cinema\Model(
     'localhost',  // Hôte
     'cinema',    // Base de données
@@ -30,8 +33,10 @@ $app->match('/films', function() use ($app) {
 
 // Fiche film
 $app->match('/film/{id}', function($id) use ($app) {
-    if ($app['request']->getMethod() == 'POST') {
-        if (isset($_POST['nom']) && isset($_POST['note']) && isset($_POST['critique'])) {
+    $request = $app['request'];
+    if ($request->getMethod() == 'POST') {
+        $post = $request->request;
+        if ($post->has('nom') && $post->has('note') && $post->has('critique')) {
             // XXX: A faire
         }
     }
@@ -48,10 +53,5 @@ $app->match('/genres', function() use ($app) {
         'genres' => $app['model']->getGenres()
     ));
 })->bind('genres');
-
-// Fait remonter les erreurs
-$app->error(function($error) {
-    throw $error;
-});
 
 $app->run();
