@@ -18,10 +18,20 @@ class Model
                 $user,
                 $password
             );
-            $this->pdo->exec('SET CHARSET UTF8');
-        } catch (\PDOException $exception) {
-            die('Impossible de se connecter au serveur MySQL');
+        } catch (\PDOException $error) {
+            die('Unable to connect to database.');
         }
+        $this->pdo->exec('SET CHARSET UTF8');
+    }
+
+    protected function execute(\PDOStatement $query, array $variables = array())
+    {
+        if (!$query->execute($variables)) {
+            $errors = $query->errorInfo();
+            throw new ModelException($errors[2]);
+        }
+
+        return $query;
     }
 
     /**
@@ -42,8 +52,8 @@ class Model
     protected function getFilmSQL()
     {
         return
-            'SELECT films.image, films.id, films.nom, films.description, genres.nom as genre_nom FROM films '.
-                'INNER JOIN genres ON genres.id = films.genre_id ';
+            'SELECT films.image, films.id, films.nom, films.description, genres.nom as genre_nom FROM films 
+             INNER JOIN genres ON genres.id = films.genre_id ';
     }
 
     /**
@@ -53,7 +63,7 @@ class Model
     {
         $sql = $this->getFilmSQL();
 
-        return $this->pdo->query($sql);
+        return $this->execute($this->pdo->prepare($sql));
     }
 
     /**
@@ -67,7 +77,7 @@ class Model
             ;
 
         $query = $this->pdo->prepare($sql);
-        $query->execute(array($id));
+        $this->execute($query, array($id));
 
         return $this->fetchOne($query);
     }
@@ -92,6 +102,6 @@ class Model
             'GROUP BY genres.id'
             ;
 
-        return $this->pdo->query($sql);
+        return $this->execute($this->pdo->prepare($sql));
     }
 }
