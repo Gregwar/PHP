@@ -1,0 +1,19 @@
+{% set add_book_active = 1 %}
+{% extends 'layout.html.twig' %}
+
+{% block contents %}
+<form method="post" enctype="multipart/form-data">
+<strong>Titre:</strong><br/>
+<input class="form-control" type="text" name="title" required />
+<strong>Auteur:</strong><br/>
+<input class="form-control" type="text" name="author" />
+<strong>Résumé:</strong><br/>
+<textarea class="form-control" name="synopsis"></textarea>
+<strong>Nombre d'exemplaires:</strong><br/>
+<input class="form-control" type="number" name="copies" value="1" />
+<strong>Image:</strong><br/>
+<input type="file"  name="image" />
+<br/>
+<input class="btn btn-success" type="submit" value="Enregistrer" />
+</form>
+{% endblock %}

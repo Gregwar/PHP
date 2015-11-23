@@ -1,0 +1,19 @@
+{% set admin_active = 1 %}
+{% extends 'layout.html.twig' %}
+
+{% block contents %}
+{% if success %}
+<div class="alert alert-success loginsuccess">
+    Vous êtes maintenant identifiés!
+</div>
+{% endif %}
+
+<form method="post">
+    <b>Identifiant</b>: 
+    <input class="form-control" type="text" name="login" />
+    <b>Mot de passe</b>:
+    <input class="form-control" type="password" name="password" />
+    <br/>
+    <input type="submit" class="btn btn-success" value="Identification" />
+</form>
+{% endblock %}

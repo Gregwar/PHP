@@ -1,18 +1,32 @@
-body {
-    width:800px;
-    margin:auto;
-    font-size:16px;
-    text-align:justify;
-    margin-top:5px;
-}
-
-.sondage {
-   color:#9b3737; 
-}
 
 h1 {
-    font-family:impact;
-    text-align:center;
-    margin:0;
-    margin-right:5px;
+    color:#85440a;
+}
+
+.logo {
+    z-index:10;
+    position:absolute;
+    margin-left:-128px;
+}
+
+.book {
+    width:30%;
+    min-width:250px;
+    height:180px;
+    float:left;
+    border:2px solid #eee;
+    padding:5px;
+    margin:5px;
+    display:block;
+    color:#666;
+}
+
+.book img {
+    float:left;
+}
+
+.book .t {
+    font-size:150%;
+    font-weight:bold;
+    line-height:1.0;
 }
