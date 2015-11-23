@@ -13,13 +13,13 @@ class Tests extends WebTestCase
         $app = include(__DIR__.'/../app.php');
 
         // Creating a copy of the SQLite database
-        copy(__DIR__.'/../sql/db.sqlite', __DIR__.'/../sql/test.sqlite');
+        copy(__DIR__.'/../sql/library.db', __DIR__.'/../sql/test.db');
 
         // Changing the config
         $config = $app['config'];
         $config['database'] = [
             'engine' => 'sqlite',
-            'file' => __DIR__.'/../sql/test.sqlite'
+            'file' => __DIR__.'/../sql/test.db'
         ];
         $app['config'] = $config;
 
