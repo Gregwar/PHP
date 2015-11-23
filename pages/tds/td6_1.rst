@@ -58,12 +58,6 @@ Installation de Symfony 2
 
     Une application Symfony réside dans un *Bundle*, ou un "Paquet" en français. Avant de
     commencer à écrire votre code, vous devrez donc créer votre propre Bundle.
-
-    .. textOnly::
-        La version standard de Symfony est fournie avec un Bundle de démo (``AcmeDemoBundle``,
-        situé dans ``src/Acme/DemoBundle``). C'est ce dernier qui vous a accueilli. Afin de le
-        désactiver, éditez le fichier ``app/config/routing_dev.yml`` et enlevez la section
-        sections qui concerne ``Acme``.
         
     Créez maintenant votre Bundle, appellons le ``PizzaBundle`` et plaçons le sous le
     nom de vendeur ``Student``:
