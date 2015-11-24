@@ -53,7 +53,6 @@ DROP TABLE IF EXISTS `exemplaires`;
 CREATE TABLE `exemplaires` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `book_id` int(11) NOT NULL,
-  `etat` int(11) NOT NULL DEFAULT '10',
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`),
   KEY `book_id` (`book_id`)
@@ -105,4 +104,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-11-24 18:47:14
+-- Dump completed on 2015-11-24 18:53:19
