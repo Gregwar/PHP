@@ -166,11 +166,3 @@ le dossier ``design/``.
 
     Faites également pointer la page "Présentation" vers une second page que vous créerez, qui aura comme
     URL "/", ce sera la page d'accueil de votre site.
-
-    Pour cela, il vous faudra supprimer les routes par défaut du bundle de démo installé avec Symfony,
-    en supprimmant les lignes suivantes de ``app/config/routing_dev.yml``:
-
-    .. code-block:: yml
-        # AcmeDemoBundle routes (to be removed)
-        _acme_demo:
-            resource: "@AcmeDemoBundle/Resources/config/routing.yml"
