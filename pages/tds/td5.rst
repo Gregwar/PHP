@@ -121,7 +121,6 @@ Modifications
 
     * Le nom de la personne qui emprunte (texte)
     * Une date de fin
-    * L'exemplaire emprunté (choisi parmi un menu déroulant par exemple)
 
     La date de début doit être automatiquement affectée à aujourd'hui.
 
