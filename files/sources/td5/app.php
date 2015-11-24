@@ -25,9 +25,6 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
 // Sessions
 $app->register(new Silex\Provider\SessionServiceProvider());
 
-// Admin securer
-include_once('functions.php');
-
 // Loading controllers
 include('controllers.php');
 

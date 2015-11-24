@@ -33,7 +33,11 @@ $app->match('/logout', function() use ($app) {
     return $app->redirect($app['url_generator']->generate('admin'));
 })->bind('logout');
 
-$app->match('/addBook', secure(function() use ($app) {
+$app->match('/addBook', function() use ($app) {
+    if ($app['session']->has('admin')) {
+        return $app['twig']->render('shouldBeAdmin.html.twig');
+    }
+
     $request = $app['request'];
     if ($request->getMethod() == 'POST') {
         $post = $request->request;
@@ -60,5 +64,5 @@ $app->match('/addBook', secure(function() use ($app) {
     }
 
     return $app['twig']->render('addBook.html.twig');
-}))->bind('addBook');
+})->bind('addBook');
 
