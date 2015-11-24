@@ -35,15 +35,11 @@ Installation de Symfony 2
     .. code-block:: no-highlight
         chmod -R 777 app/cache/ app/logs/
 
-    Dans le cas ou vous ne travaillez pas sur votre propre machine, il faudra éventuellement modifier le 
-    fichier ``web/app_dev.php`` pour pouvoir y accéder. Editez le et enlevez la vérification sur l'IP.
+    Lancez la commande::
 
-    .. warning::
-        **Attention**, cette installation rendra par la suite votre application très vulnérable d'un point de vue de sa
-        sécurité, ce n'est pas un bon comportement en production.
+        php app/console server:run
 
-    Chargez la page ``web/app_dev.php`` dans un navigateur et vérifiez que vous obtenez bien la page
-    "Symfony - Welcome".
+    Et connectez vous à ``http://localhost:8000/``
 
 .. slide::
 
