@@ -13,7 +13,8 @@
 >
     <testsuites>
         <testsuite name="Testing">
-            <file>./tests/Tests.php</file>
+            <file>./tests/SiteTests.php</file>
+            <file>./tests/ModelTests.php</file>
         </testsuite>
     </testsuites>
 

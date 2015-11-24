@@ -1,34 +1,7 @@
 <?php
 
-use Silex\WebTestCase;
-
-class Tests extends WebTestCase
+class SiteTests extends BaseTests
 {
-    /**
-     * Creating the test application
-     */
-    public function createApplication()
-    {
-        // Getting the app
-        $app = include(__DIR__.'/../app.php');
-
-        // Creating a copy of the SQLite database
-        copy(__DIR__.'/../sql/library.db', __DIR__.'/../sql/test.db');
-
-        // Changing the config
-        $config = $app['config'];
-        $config['database'] = [
-            'engine' => 'sqlite',
-            'file' => __DIR__.'/../sql/test.db'
-        ];
-        $app['config'] = $config;
-
-        // Enabling sessions test
-        $app['session.test'] = true;
-
-        return $app;
-    }
-
     /**
      * Testing that accessing the secure page doesn't works, and then logging
      */
@@ -48,32 +21,17 @@ class Tests extends WebTestCase
 
         // Logging in as admin, success
         $crawler = $client->request('POST', '/admin', ['login' => 'admin', 'password' => 'password']);
-        $this->assertTrue($client->getResponse()->isOk());
         $this->assertCount(1, $crawler->filter('.loginsuccess'));
 
         // Now, we should get the page
         $crawler = $client->request('GET', '/addBook');
-        $this->assertTrue($client->getResponse()->isOk());
         $this->assertCount(0, $crawler->filter('.shouldbeadmin'));
-    }
 
-    /**
-     * Testing insertion of a book
-     */
-    public function testBookInsert()
-    {
-        // There is no book
-        $books = $this->app['model']->getBooks();
-        $this->assertEquals(0, count($books));
-
-        // Inserting one
-        $this->app['model']->insertBook('Test', 'Someone', 'A test book', 'image', 3);
-
-        // There is one book
-        $books = $this->app['model']->getBooks();
-        $this->assertEquals(1, count($books));
-
-        // TODO: Vérifier que 3 exemplaires ont été créés
+        // Disconnect
+        $crawler = $client->request('GET', '/logout');
+        $this->assertTrue($client->getResponse()->isRedirect());
+        $crawler = $client->request('GET', '/addBook');
+        $this->assertCount(1, $crawler->filter('.shouldbeadmin'));
     }
 
     /**
@@ -89,12 +47,13 @@ class Tests extends WebTestCase
         $this->assertEquals(0, count($books));
 
         // Inserting one using a POST request through the form
-        $client->request('POST', '/addBook', [
-            'title' => 'Test',
-            'author' => 'Someone',
-            'synopsis' => 'A test book',
-            'copies' => 3
-        ]);
+        $client->request('GET', '/addBook');
+        $form = $client->getCrawler()->filter('form')->form();
+        $form['title'] = 'Test';
+        $form['author'] = 'Someone';
+        $form['synopsis'] = 'A test book';
+        $form['copies'] = 3;
+        $client->submit($form);
 
         // There is one book
         $books = $this->app['model']->getBooks();
