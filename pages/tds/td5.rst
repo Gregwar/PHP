@@ -127,11 +127,8 @@ Modifications
 
     .. note::
 
-        Note: La colonne ``emprunt_id`` dans la table ``exemplaires`` vous permet de stocker l'emprunt courant
-        qui concerne un exemplaire. 
-        
-        Note 2: La date de fin est indicative, ce qui signifie que l'administrateur
-        devra manuellement préciser quand un emprunt se termine.
+        Note: La date de fin est indicative, ce qui signifie que l'administrateur
+        devra manuellement préciser quand un emprunt se termine (cf plus bas).
 
 .. step::
 
@@ -149,7 +146,7 @@ Modifications
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     Ajouter un bouton "retour" à coté d'un exemplaire qui n'apparaît que pour l'administrateur et 
-    qui marque l'exemplaire comme retourné (en mettant ``emprunt_id`` à ``NULL``).
+    qui marque l'exemplaire comme retourné (c'est à dire l'emprunt comme fini).
 
 .. image:: /img/gears.png
     :class: right
