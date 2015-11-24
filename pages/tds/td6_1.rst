@@ -55,13 +55,12 @@ Installation de Symfony 2
     Une application Symfony réside dans un *Bundle*, ou un "Paquet" en français. Avant de
     commencer à écrire votre code, vous devrez donc créer votre propre Bundle.
         
-    Créez maintenant votre Bundle, appellons le ``PizzaBundle`` et plaçons le sous le
-    nom de vendeur ``Student``:
+    Créez maintenant votre Bundle, appellons le ``PizzaBundle``.
 
     .. code-block:: no-highlight
         php app/console generate:bundle
         
-    Répondez alors ``Student/PizzaBundle`` à la première question qui vous sera posée, et
+    Répondez alors ``PizzaBundle`` à la première question qui vous sera posée, et
     laissez les autre valeurs par défaut. Utilisez le format ``annotation`` pour la configuration.
 
 .. slide::
@@ -74,7 +73,7 @@ Installation de Symfony 2
     Regardez le fichier ``app/config/routing.yml``, il contient théoriquement une nouvelle section
     qui signifie que votre Bundle sera utilisée par annotation pour le routage.
 
-    Le code de votre Bundle se situe désormais dans ``src/Student/PizzaBundle/``, regardez les
+    Le code de votre Bundle se situe désormais dans ``src/PizzaBundle/``, regardez les
     différents fichiers qu'il contient, notamment ``Controller/DefaultController.php`` et 
     ``Resources/views/Default/index.html.twig``.
 

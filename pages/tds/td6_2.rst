@@ -38,7 +38,7 @@ Entités
         
         php app/console doctrine:generate:entity
 
-    Il vous sera alors demandé de nommer votre entité, apellez là ``StudentPizzaBundle:Pizza``,
+    Il vous sera alors demandé de nommer votre entité, apellez là ``PizzaBundle:Pizza``,
     nous utiliserons ici aussi la configuration par annotations.
 
     Vous pourrez alors saisir les champs de manière interactive, ajouter un champ ``name`` de
@@ -72,7 +72,7 @@ Entités
     ~~~~~~~~~~~~~~~~~~
 
     Nous allons ajouter une entité ingrédient, de la même manière que précédemment, créez
-    l'entité ``StudentPizzaBundle:Ingredient`` ayant juste un champ ``name`` de type ``string``.
+    l'entité ``PizzaBundle:Ingredient`` ayant juste un champ ``name`` de type ``string``.
 
     Une deuxième entité ``Entity/Ingredient.php`` apparaîtra.
 
@@ -120,7 +120,7 @@ Entités
 
     .. code-block:: no-highlight
 
-        $ php app/console doctrine:generate:entities Student
+        $ php app/console doctrine:generate:entities PizzaBundle
 
     Réouvrez les fichiers, qu'observez vous?
 
@@ -187,7 +187,7 @@ Listage
 
         <?php
             
-            $pizzas = $em->getRepository('StudentPizzaBundle:Pizza')
+            $pizzas = $em->getRepository('PizzaBundle:Pizza')
                         ->findAll();
 
     Ainsi, vous pourrez passer les pizzas en paramètres à une vue comme dans la partie précédente et
