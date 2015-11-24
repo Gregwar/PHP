@@ -68,7 +68,7 @@ Modifications
 
     Il n'y a actuellement qu'un seul identifiant (``admin``/``password``) dans le fichier de
     configuration. Modifiez sa structure pour pouvoir y placer facilement plusieurs identifiants
-    valides pour devenir administrateur (comme `̀`admin1``/``password1`` et `̀`admin2``/``password2``).
+    valides pour devenir administrateur (comme ``admin1``/``password1`` et ``admin2``/``password2``).
 
 .. step::
 
