@@ -28,6 +28,7 @@ CREATE TABLE `emprunts` (
   `exemplaire` int(11) NOT NULL,
   `debut` datetime NOT NULL,
   `fin` datetime NOT NULL,
+  `fini` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `exemplaire` (`exemplaire`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -53,11 +54,9 @@ CREATE TABLE `exemplaires` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `book_id` int(11) NOT NULL,
   `etat` int(11) NOT NULL DEFAULT '10',
-  `emprunt_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`),
-  KEY `book_id` (`book_id`),
-  KEY `emprunt_id` (`emprunt_id`)
+  KEY `book_id` (`book_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -106,4 +105,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-11-23 23:40:48
+-- Dump completed on 2015-11-24 18:47:14

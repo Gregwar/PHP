@@ -34,7 +34,7 @@ $app->match('/logout', function() use ($app) {
 })->bind('logout');
 
 $app->match('/addBook', function() use ($app) {
-    if ($app['session']->has('admin')) {
+    if (!$app['session']->has('admin')) {
         return $app['twig']->render('shouldBeAdmin.html.twig');
     }
 
