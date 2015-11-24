@@ -86,6 +86,11 @@ Installation de Symfony 2
 Prise en main
 -------------
 
+.. |archive| image:: /img/archive.png
+
+.. important::
+    `|archive| Télécharger l'archive td6.zip </files/td6.zip>`_
+
 Nous allons maintenant créer une structure de site web. Afin de ne pas perdre de temps à réaliser des
 graphismes ou des feuilles de styles, une page d'exemple est fournie dans `td6 </files/td6.zip>`_, dans
 le dossier ``design/``.
