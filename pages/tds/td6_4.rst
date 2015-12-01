@@ -85,9 +85,6 @@ Stylisation
 
 .. step::
 
-    Notez que les champs ne sont pas stylisés par notre feuille de style, pour cela, il faudrait
-    leur ajouter la classe ``form-control`` de Bootstrap.
-
-    A l'aide de cette `page du manuel Symfony <http://symfony.com/doc/master/cookbook/form/form_customization.html>`_,
-    modifiez le rendu des champs du formulaire de manière à ajouter cette classe.
+    Notez que les champs ne sont pas stylisés par notre feuille de style, pour cela, vous pouvez utiliser
+    depuis Symfony 2.6 le thème bootstrap pour les formulaires. Activez-le dans votre application.
 
