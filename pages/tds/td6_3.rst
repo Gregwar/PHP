@@ -75,10 +75,10 @@ Création du système de sécurité
     ``logout``::
 
         login_check:
-            pattern: /login/check
+            path: /login/check
 
         logout:
-            pattern: /logout
+            path: /logout
 
     Modifiez maintenant l'action du formulaire d'identification afin qu'il pointe vers ``login_check``,
     vous devriez alors pouvoir vous identifier (vous pouvez vérifier que vous êtes identifiés dans la
