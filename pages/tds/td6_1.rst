@@ -37,7 +37,7 @@ Installation de Symfony 2
 
     Lancez la commande::
 
-        php app/console server:run
+        php bin/console server:run
 
     Et connectez vous à ``http://localhost:8000/``
 
@@ -58,7 +58,7 @@ Installation de Symfony 2
     Créez maintenant votre Bundle, appellons le ``PizzaBundle``.
 
     .. code-block:: no-highlight
-        php app/console generate:bundle
+        php bin/console generate:bundle
         
     Répondez alors ``PizzaBundle`` à la première question qui vous sera posée, et
     laissez les autre valeurs par défaut. Utilisez le format ``annotation`` pour la configuration.
@@ -76,9 +76,6 @@ Installation de Symfony 2
     Le code de votre Bundle se situe désormais dans ``src/PizzaBundle/``, regardez les
     différents fichiers qu'il contient, notamment ``Controller/DefaultController.php`` et 
     ``Resources/views/Default/index.html.twig``.
-
-    Chargez la page ``app_dev.php/hello/world``, constatez alors ce qui se passe. Vous pouvez
-    aussi essayer avec ``app_dev.php/hello/quelquechose``.
 
 .. slide::
 

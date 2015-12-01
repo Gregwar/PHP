@@ -20,7 +20,7 @@ Configuration
 
     .. code-block:: no-highlight
 
-        php app/console doctrine:schema:validate
+        php bin/console doctrine:schema:validate
 
     Cette commande sert à vérifier que votre base de données est en accord avec votre
     application, dans votre cas vous n'avez pas encore décrit de classes mappées avec
@@ -36,7 +36,7 @@ Entités
     Nous allons maintenant créer nos entités. Commençons simplement avec les pizzas.
     Pour cela, vous pouvez utiliser un outil proposé par Doctrine::
         
-        php app/console doctrine:generate:entity
+        php bin/console doctrine:generate:entity
 
     Il vous sera alors demandé de nommer votre entité, apellez là ``PizzaBundle:Pizza``,
     nous utiliserons ici aussi la configuration par annotations.
@@ -58,7 +58,7 @@ Entités
 
     .. code-block:: no-highlight
 
-        $ php app/console doctrine:schema:create 
+        $ php bin/console doctrine:schema:create 
         ATTENTION: This operation should not be executed in a production environment.
 
         Creating database schema...
@@ -81,7 +81,7 @@ Entités
 
     .. code-block:: no-highlight
 
-        $ php app/console doctrine:schema:update --dump-sql
+        $ php bin/console doctrine:schema:update --dump-sql
         CREATE TABLE Ingredient (id INT AUTO_INCREMENT NOT NULL, name VARCHAR(255) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB
 
     Ici, doctrine nous affiche la requête qui permet de mettre à jour la base pour qu'elle
@@ -90,7 +90,7 @@ Entités
 
     .. code-block:: no-highlight
 
-        $ php app/console doctrine:schema:update --force
+        $ php bin/console doctrine:schema:update --force
         Updating database schema...
         Database schema updated successfully! "1" queries were executed
 
@@ -120,7 +120,7 @@ Entités
 
     .. code-block:: no-highlight
 
-        $ php app/console doctrine:generate:entities PizzaBundle
+        $ php bin/console doctrine:generate:entities PizzaBundle
 
     Réouvrez les fichiers, qu'observez vous?
 
