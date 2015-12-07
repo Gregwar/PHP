@@ -21,7 +21,7 @@ Installation
     proposées par la documentation officielle:
 
     .. important::
-        `Installation de FOSUserBundle <https://github.com/FriendsOfSymfony/FOSUserBundle/blob/master/Resources/doc/index.md>`_
+        `Installation de FOSUserBundle <http://symfony.com/doc/current/bundles/FOSUserBundle/index.html>`_
 
     Pour cela, il y a 7 étapes à suivre, vous utiliserez évidemment **composer** pour l'installation du bundle
     ainsi que **Doctrine** pour la partie base de données.
