@@ -145,4 +145,5 @@ Ecriture de requête/code
     * Sa description
     * Son année
     * Son genre, parmi les genres de la base de données
-    * Les acteurs qui y jouent (dans la base de données), et les roles qu'ils y occupent
+     
+    Ne vous occupez pas des acteurs qui y jouent (dans la base de données), et les roles qu'ils y occupent
