@@ -58,7 +58,7 @@ Modifications
     ~~~~~~~~~~~~~~~
 
     Modifier le code pour que le lien "Administration" n'apparaisse que lorsque vous
-    êtes identifiés, et que les liens "Ajouter un livre" et "Déconnexion" n'apparaissent que
+    n'êtes  pas identifiés, et que les liens "Ajouter un livre" et "Déconnexion" n'apparaissent que
     lorsque vous êtes identifiés.
 
 .. step::
