@@ -1,6 +1,20 @@
 TD4
 ===
 
+.. warning::
+    **Pour les LP ACPI:**
+
+    Ce TD est **évalué**. Vous devrez le réaliser individuellement, et suivre les consignes suivantes,
+    la partie évaluée commence à partir du moment ou vous devez écrire du code.
+
+    Vous devrez créer un dépôt personnel qui contiendra le code du TD, dans lequel vous travaillerez. Vous pouvez choisir soit GitHub soit Bitbucket, ainsi que mercurial ou git. Vous le partagerez avec moi (compte Gregwar sur Bitbucket et Github).
+
+    Essayer de coller à un commit par question, afin de simplifier la correction le plus possible.
+
+    La date limite pour réaliser ce TD est le Vendredi 26 Février 2016.
+
+    Si vous avez le moindre problème, **ne restez pas bloqués**, contactez moi: **g.passault@gmail.com**.
+
 .. image:: /img/db.png
     :class: right
 

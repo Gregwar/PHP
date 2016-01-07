@@ -5,6 +5,8 @@ TD5
 ===
 
 .. warning::
+    **Pour les LP DAWIN:**
+
     Ce TD est **évalué**. Vous devrez le réaliser individuellement, et suivre les consignes suivantes.
 
     Vous devrez créer un dépôt personnel qui contiendra le code du TD, dans lequel vous travaillerez. Vous pouvez choisir soit GitHub soit Bitbucket, ainsi que mercurial ou git. Vous le partagerez avec moi (compte Gregwar sur Bitbucket et Github).
