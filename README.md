@@ -24,6 +24,16 @@ Puis, modifiez éventuellement la cible (`$targetDirectory`) dans `build.php`, e
 make
 ```
 
+Pour avoir le mode interactif, créez un fichier `password.php`:
+
+```php
+<?php
+// password.php
+return 'motdepasse';
+```
+
+Avant de lancer `make`.
+
 Licence
 -------
 
