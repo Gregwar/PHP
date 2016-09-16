@@ -18,7 +18,7 @@ class Fight
 
     public function __construct(BaseCreature $firstCreature, BaseCreature $secondCreature)
     {
-        $this->creatures = array($firstCreature, $secondCreature);
+        $this->creatures = [$firstCreature, $secondCreature];
         $this->turn = mt_rand(0, 1);
     }
 

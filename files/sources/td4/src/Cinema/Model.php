@@ -24,7 +24,7 @@ class Model
         $this->pdo->exec('SET CHARSET UTF8');
     }
 
-    protected function execute(\PDOStatement $query, array $variables = array())
+    protected function execute(\PDOStatement $query, array $variables = [])
     {
         if (!$query->execute($variables)) {
             $errors = $query->errorInfo();
@@ -77,7 +77,7 @@ class Model
             ;
 
         $query = $this->pdo->prepare($sql);
-        $this->execute($query, array($id));
+        $this->execute($query, [$id]);
 
         return $this->fetchOne($query);
     }
@@ -88,7 +88,7 @@ class Model
     public function getCasting($filmId)
     {
         // XXX: A faire
-        return array();
+        return [];
     }
 
     /**

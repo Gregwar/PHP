@@ -4,7 +4,7 @@ namespace Router;
 
 class Router
 {
-    protected $rules = array();
+    protected $rules = [];
 
     protected function addRule(Rule $rule)
     {
@@ -69,7 +69,7 @@ class Router
     /**
      * Génère l'URL correspondante
      */
-    public function generate($name, array $parameters = array())
+    public function generate($name, array $parameters = [])
     {
         foreach ($this->rules as $rule) {
             if ($rule->getName() == $name) {

@@ -14,7 +14,7 @@ abstract class BaseCreature
     /**
      * Attaques
      */
-    protected $attacks = array();
+    protected $attacks = [];
 
     /**
      * Surnom de la créature
@@ -24,7 +24,7 @@ abstract class BaseCreature
     public function __construct($nickname)
     {
         $this->nickname = $nickname;
-        $this->attacks = array(new Struggle);
+        $this->attacks = [new Struggle];
     }
 
     /**

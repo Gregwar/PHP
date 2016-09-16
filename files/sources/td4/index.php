@@ -5,9 +5,9 @@ $loader->add('', 'src');
 
 $app = new Silex\Application;
 $app->register(new Silex\Provider\UrlGeneratorServiceProvider());
-$app->register(new Silex\Provider\TwigServiceProvider(), array(
+$app->register(new Silex\Provider\TwigServiceProvider(), [
     'twig.path' => __DIR__.'/views',
-));
+]);
 
 // Fait remonter les erreurs
 $app['debug'] = true;
@@ -26,9 +26,9 @@ $app->match('/', function() use ($app) {
 
 // Liste des films
 $app->match('/films', function() use ($app) {
-    return $app['twig']->render('films.html.twig', array(
+    return $app['twig']->render('films.html.twig', [
         'films' => $app['model']->getFilms()
-    ));
+    ]);
 })->bind('films');
 
 // Fiche film
@@ -41,17 +41,17 @@ $app->match('/film/{id}', function($id) use ($app) {
         }
     }
 
-    return $app['twig']->render('film.html.twig', array(
+    return $app['twig']->render('film.html.twig', [
         'film' => $app['model']->getFilm($id),
         'casting' => $app['model']->getCasting($id),
-    ));
+    ]);
 })->bind('film');
 
 // Genres
 $app->match('/genres', function() use ($app) {
-    return $app['twig']->render('genres.html.twig', array(
+    return $app['twig']->render('genres.html.twig', [
         'genres' => $app['model']->getGenres()
-    ));
+    ]);
 })->bind('genres');
 
 $app->run();

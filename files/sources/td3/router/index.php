@@ -19,7 +19,7 @@ $router->register('home', '/', function() {
 
 // Page de salutation
 $router->register('hello', '/hello/*', function($name) {
-    render('hello', array('name' => $name));
+    render('hello', ['name' => $name]);
 });
 
 // Route par défaut dans le cas ou aucune autre n'a été trouvée

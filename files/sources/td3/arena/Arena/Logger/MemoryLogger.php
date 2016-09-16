@@ -7,7 +7,7 @@ namespace Arena\Logger;
  */
 class MemoryLogger implements Logger
 {
-    protected $entries = array();
+    protected $entries = [];
 
     /**
      * Ajoute une entrée au log
