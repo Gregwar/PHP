@@ -6,7 +6,7 @@
 $products = @include('products.php');
 
 if (!is_array($products)) {
-    $products = array();
+    $products = [];
 }
 
 /**
@@ -31,10 +31,10 @@ function storeAdd($name, $quantity)
     global $products;
 
     if (!isset($products[$name])) {
-        $products[$name] = array(
+        $products[$name] = [
             'price' => null,
             'quantity' => 0,
-        );
+        ];
     }
 
     $products[$name]['quantity'] += $quantity;

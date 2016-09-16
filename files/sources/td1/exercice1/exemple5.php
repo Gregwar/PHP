@@ -12,7 +12,7 @@ function show($team)
 
 // Pour utiliser le caractère ' dans une chaîne délimitée par ',
 // on utilisera le caractère d'échappement '
-$SG1 = array('Jack O\'Neil');
+$SG1 = ['Jack O\'Neil'];
 
 // La notation [] = permet d'ajouter un élément dans un tableau
 $SG1[] = 'Samantha Carter';

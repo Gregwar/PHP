@@ -1,19 +1,19 @@
 <?php
 
-$firstNames = array('Bob', 'Bill', 'Greg', 'Jack', 'John', 'Ryan', 'Jacob', 'Aaron');
-$lastNames = array('Martin', 'Smith', 'Clinton', 'Doe');
+$firstNames = ['Bob', 'Bill', 'Greg', 'Jack', 'John', 'Ryan', 'Jacob', 'Aaron'];
+$lastNames = ['Martin', 'Smith', 'Clinton', 'Doe'];
 
-$data = array();
+$data = [];
 
 for ($i=0; $i<1000; $i++) {
     $firstName = $firstNames[array_rand($firstNames)];
     $lastName = $lastNames[array_rand($lastNames)];
 
-    $data[] = array(
+    $data[] = [
         'first_name' => $firstName,
         'last_name' => $lastName,
         'age' => mt_rand(1, 80),
-    );
+    ];
 }
 
 echo '<?php return ';

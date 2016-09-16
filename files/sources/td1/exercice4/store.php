@@ -9,7 +9,7 @@ require_once(__DIR__.'/store_functions.php');
 /**
  *  Actions qu'il est possible d'effectuer
  */
-$actions = array(
+$actions = [
     'list' => function() {
         storeList();
     },
@@ -20,7 +20,7 @@ $actions = array(
             storeAdd($name, $quantity);
         }
     },
-);
+];
 
 /**
  * Récupère l'argument et apelle la fonction correspondante

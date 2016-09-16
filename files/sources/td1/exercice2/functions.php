@@ -18,7 +18,7 @@ function valeur_min($tab)
 {
 }
 
-if (valeur_min(array(5,23,8,19,28,3,55,-52,100,82,75,22)) == -52) {
+if (valeur_min([5,23,8,19,28,3,55,-52,100,82,75,22]) == -52) {
     echo "OK: valeur_min\n";
 }
 
@@ -29,8 +29,8 @@ function valeur_min_indice($tab)
 {
 }
 
-                // indices: 0 1  2 3  4  5 6  7   8   9  10 11
-if (valeur_min_indice(array(5,23,8,19,28,3,55,-52,100,82,75,22)) == 7) {
+           // indices: 0 1  2 3  4  5 6  7   8   9  10 11
+if (valeur_min_indice([5,23,8,19,28,3,55,-52,100,82,75,22]) == 7) {
     echo "OK: valeur_min_indice\n";
 }
 
@@ -41,7 +41,7 @@ function somme_tableau($tab)
 {
 }
 
-if (somme_tableau(array(12,23,4)) == 39) {
+if (somme_tableau([12,23,4]) == 39) {
     echo "OK: somme_tableau\n";
 }
 
@@ -52,6 +52,6 @@ function tri($tab)
 {
 }
 
-if (tri(array(8,5,2,9,3,55,2)) == array(2,2,3,5,8,9,55)) {
+if (tri([8,5,2,9,3,55,2]) == [2,2,3,5,8,9,55]) {
     echo "OK: tri\n";
 }
