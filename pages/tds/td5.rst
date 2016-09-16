@@ -4,19 +4,6 @@
 TD5
 ===
 
-.. warning::
-    **Pour les LP DAWIN:**
-
-    Ce TD est **évalué**. Vous devrez le réaliser individuellement, et suivre les consignes suivantes.
-
-    Vous devrez créer un dépôt personnel qui contiendra le code du TD, dans lequel vous travaillerez. Vous pouvez choisir soit GitHub soit Bitbucket, ainsi que mercurial ou git. Vous le partagerez avec moi (compte Gregwar sur Bitbucket et Github).
-
-    Essayer de coller à un commit par question, afin de simplifier la correction le plus possible.
-
-    La date limite pour réaliser ce TD est le Vendredi 15 Janvier 2016.
-
-    Si vous avez le moindre problème, **ne restez pas bloqués**, contactez moi: **g.passault@gmail.com**.
-
 Présentation
 ------------
 
