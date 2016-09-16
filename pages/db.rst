@@ -168,7 +168,7 @@ Préparation de requêtes
     $sql = 'SELECT * FROM users WHERE age > :age';
 
     $query = $pdo->prepare($sql);
-    $query->execute(array('age' => 50));
+    $query->execute(['age' => 50]);
 
     echo "Utilisateurs qui ont plus de 50 ans :\n";
 
@@ -198,7 +198,7 @@ Insertion
 
     // Insère 10 Jean Durand de 40 ans
     for ($i=0; $i<10; $i++) {
-        $insert->execute(array('Jean', 'Durand',  40));
+        $insert->execute(['Jean', 'Durand',  40]);
     }
 
 

@@ -556,7 +556,7 @@ Substitution
 
     $a = new A;
     f($a); // 1
-    $a = array(12);
+    $a = [12];
     f($a); // Erreur
 
 .. slide::
@@ -582,7 +582,7 @@ Type hinting
     // Si l'argument passé en paramètre n'est pas 
     // du type A, une erreur claire sera levée dès 
     // l'appel à la méthode
-    f(array());
+    f([]);
 
 .. discover::
     -----------

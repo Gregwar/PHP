@@ -241,20 +241,20 @@ Exemple basique
 Les tableaux
 ~~~~~~~~~~~~
 
-Les ``array()`` en **PHP** permettent de faire de nombreuses choses::
+Les ``array`` (``[]``) en **PHP** permettent de faire de nombreuses choses::
 
     <?php
-    // Le type array() en PHP est particulier, il
+    // Le type array en PHP est particulier, il
     // peut être utilisé pour stocker une série de
     // valeurs ordonées :
-    $nombres = array(4, 8, 15, 16, 23, 42);
+    $nombres = [4, 8, 15, 16, 23, 42];
 
     echo 'Il y a ' . count($nombres) . " nombres\n";
     // Il y a 6 nombres
 
     // Ou des associations clé/valeur
-    $couleurs = array('pomme' => 'verte',
-        'fraise' => 'rouge');
+    $couleurs = ['pomme' => 'verte',
+        'fraise' => 'rouge'];
 
     echo 'La pomme est ' . $couleurs['pomme'] . "\n";
     // La pomme est verte
@@ -280,11 +280,11 @@ Un tableau peut bien entendu contenir des sous-tableaux::
 
     // Les points A, B et C avec leurs
     // coordonnées
-    $points = array(
-        'A' => array(12.2, 3.1),
-        'B' => array(0, 32),
-        'C' => array(99, -1),
-    );
+    $points = [
+        'A' => [12.2, 3.1],
+        'B' => [0, 32],
+        'C' => [99, -1],
+    ];
 
 .. textOnly::
     Ce type peut donc être utilisé à de nombreuses fins et permet de mettre rapidement en place
@@ -433,7 +433,7 @@ Pour faciliter l'itération des tableaux, **PHP** propose la structure de contr�
 
     <?php
 
-    $competences = array('html', 'css', 'js');
+    $competences = ['html', 'css', 'js'];
 
     echo "Mes compétences:\n";
 
@@ -460,8 +460,8 @@ sur un tableau tout en modifiant la valeur de son contenu::
    
     <?php
 
-    $noms = array('eric cartman', 'stan march',
-        'kyle broflovski', 'kenny mccormick');
+    $noms = ['eric cartman', 'stan march',
+        'kyle broflovski', 'kenny mccormick'];
 
     // Affiche le contenu de la variable
     var_dump($noms);
@@ -485,11 +485,11 @@ la valeur en même temps::
 
     <?php
 
-    $sigles = array(
+    $sigles = [
         'PHP' => 'Hypertext Preprocessor',
         'JS' => 'JavaScript',
         'HTML' => 'HyperText Markup Language',
-    );
+    ];
 
     // Itère à travers les clés et valeurs
     foreach ($sigles as $sigle => $signification) {
@@ -707,7 +707,7 @@ Lors de l'inclusion d'un fichier, la fonction ``include`` (ou ``require``) va ch
 
 ::
 
-    $a = array(17, 42, 23 87, 12);
+    $a = [17, 42, 23 87, 12];
     // Que faut t-il mettre à la place
     // des ??? pour afficher 42?
     echo $a[???];
@@ -749,7 +749,7 @@ Lors de l'inclusion d'un fichier, la fonction ``include`` (ou ``require``) va ch
 
 ::
 
-        $tab = array(1, 2, 3);
+        $tab = [1, 2, 3];
         for ($i in $tab) {
             echo $i;
         }
@@ -764,10 +764,10 @@ Lors de l'inclusion d'un fichier, la fonction ``include`` (ou ``require``) va ch
 ::
     
         // Comment afficher ces noms?
-        $tab = array(
+        $tab = [
             'Jack' => 'Bauer',
             'Allison' => 'Taylor',
-        );
+        ];
         // A)
         foreach ($tab as $f => $l) echo $f.' '.$l;
         // B)
@@ -785,7 +785,7 @@ Lors de l'inclusion d'un fichier, la fonction ``include`` (ou ``require``) va ch
 
 ::
 
-    $tab = array();
+    $tab = [];
     $tab[3] = 8;
     $tab[1] = 3;
     $tab[8] = 12;
@@ -803,7 +803,7 @@ Lors de l'inclusion d'un fichier, la fonction ``include`` (ou ``require``) va ch
 
 ::
 
-    $tab = array();
+    $tab = [];
     for ($i=0; $i<100; $i++) {
         $tab[$i] = $i*$i;
     }

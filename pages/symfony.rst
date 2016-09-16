@@ -312,7 +312,7 @@ Dans Symfony2
          * @Template()
          */
          public function helloAction($name) {
-            return array('name' => $name);
+            return ['name' => $name];
          }
     }
 

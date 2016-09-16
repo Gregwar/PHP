@@ -272,8 +272,8 @@ Exemple de structure
 
     <?php
 
-    $volumes = array('La communauté de l\'anneau', 
-        'Les deux tours', 'Le retour du roi');
+    $volumes = ['La communauté de l\'anneau', 
+        'Les deux tours', 'Le retour du roi'];
 
     ?>
 

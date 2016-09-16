@@ -133,11 +133,11 @@ le dossier ``design/``.
              */
             public function pizzasAction()
             {
-                return array(
-                    'pizzas' => array(
+                return [
+                    'pizzas' => [
                         '4 fromages', 'Reine', 'Paysanne'
-                    )
-                );
+                    ]
+                ];
             }
 
     Testez votre action en vous rendant à la page ``/pizzas`` de votre application, vous

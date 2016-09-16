@@ -232,7 +232,7 @@ mais doit utiliser la préparation des requêtes::
     // Bon: reqûete préparée
     $sql='SELECT * FROM users WHERE age > :age'; 
     $query=$pdo->prepare($sql);
-    $query->execute(array('age' => $_GET['age']));
+    $query->execute(['age' => $_GET['age']]);
 
 * Voir le chapitre :doc:`Bonnes pratiques, partie injections SQL <practices#sqlinjection>`
 
@@ -252,13 +252,13 @@ de l'affichage des données::
             (firstname) VALUES (?)');
 
     // Mauvais
-    $insert->execute(array('firstname' =>
-        htmlspecialchars($_GET['user'])));
+    $insert->execute(['firstname' =>
+        htmlspecialchars($_GET['user'])]);
 
     // Bon, l'échappement doit avoir lieu 
     // plus tard au moment de l'affichage
-    $insert->execute(array('firstname' =>
-        $_GET['user']));
+    $insert->execute(['firstname' =>
+        $_GET['user']]);
 
 .. textOnly::
     En effet, l'échappement HTML correspond au rendu, et les données stockées dans la base doivent rester
