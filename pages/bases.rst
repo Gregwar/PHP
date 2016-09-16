@@ -815,6 +815,23 @@ Lors de l'inclusion d'un fichier, la fonction ``include`` (ou ``require``) va ch
 * Affiche ``10000``
 * Provoque une erreur
 
+.. slide:: slideOnly
+
+::
+
+    $tab = [
+        [12, 13], [2 => [3, [42], [3]], 42 => 3], -1
+    ];
+
+Quelle solution vaut ``42``?
+
+.. poll::
+
+* ``$tab[1][0][1][2]``
+* ``$tab[0][1][2][1]``
+* ``$tab[1][1][0]``
+* ``$tab[1][2][1][0]``
+
 .. TD
 
 .. slide::
