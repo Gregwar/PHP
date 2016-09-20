@@ -38,11 +38,10 @@ Avez-vous déjà fait du PHP?
         .. discover::
             .. image:: /img/troll.png
                 :class: right
-        TECHNOS RASOIRES
+        TECHNOS VENDABLES
 
         * ASP.net
         * JAVA J2EE
-        * WebDev
 
         .. discover::
             --------------------
@@ -62,7 +61,7 @@ Avez-vous déjà fait du PHP?
 
 .. discover::
     .. div:: importantText
-        PHP EST RASOIR
+        PHP EST VENDABLE
 
 .. discover::
     PHP EST COOL
