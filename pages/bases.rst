@@ -292,6 +292,51 @@ Un tableau peut bien entendu contenir des sous-tableaux::
 
 .. slide::
 
+.. slideOnly::
+    Les tableaux (suite)
+    ~~~~~~~~~~~~~~~~~~~~
+
+Il est possible d'utiliser ``isset()`` pour tester la présence d'une clé,
+``unset()`` pour enlever une clé::
+
+    <?php
+    // Création du tableau a
+    $a = ['x' => 123];
+
+    // Ajout
+    $a['y'] = 456;
+    
+    // Vérification
+    isset($a['x']); // Vrai
+    isset($a['z']); // Faux
+
+    // Suppression de y
+    unset($a['y']);
+
+.. slide::
+
+.. slideOnly::
+    Les tableaux (suite)
+    ~~~~~~~~~~~~~~~~~~~~
+
+De même pour les tableaux non associatifs::
+
+    <?php
+    // Création du tableau a
+    $a = [1, 2, 3];
+
+    // Ajout
+    $a[] = 4;
+    
+    // Taille
+    echo count($a)."\n";
+
+    // Suppression
+    array_shift($a);
+    array_pop($a);
+
+.. slide::
+
 Les structures de contrôles
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
