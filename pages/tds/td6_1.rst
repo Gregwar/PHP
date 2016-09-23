@@ -6,14 +6,14 @@ pizzas.
 
 .. slide::
 
-Installation de Symfony 2
--------------------------
+Installation de Symfony
+-----------------------
 
 .. step::
     Etape 1: Récupérer les fichiers
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         
-    La meilleure solution afin d'installer Symfony 2 est de passer par composer. Pour cela,
+    La meilleure solution afin d'installer Symfony est de passer par composer. Pour cela,
     installez tout d'abord composer quelque part et utilisez la commande ``create-project``:
 
     .. code-block:: no-highlight

@@ -97,7 +97,7 @@ Dans ce cours, nous étudierons:
       ce qu'il est possible de faire avec le langage lui-même
     * **Les concepts**, ou les principes de programmations, patrons de conceptions,
       ou encore les catégories d'outils 
-    * **Les outils**, comme Symfony2, Doctrine2, composer etc.
+    * **Les outils**, comme Symfony, Doctrine, composer etc.
 
 .. slide::
 

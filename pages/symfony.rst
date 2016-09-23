@@ -1,21 +1,21 @@
 .. slide:: middleSlide
 
-Symfony 2
-=========
+Symfony
+=======
 
 .. slide::
 
 Présentation
 ------------
 
-**Symfony 2** est un *framework* web, c'est à dire un outil très complet permettant
+**Symfony** est un *framework* web, c'est à dire un outil très complet permettant
 de réaliser des applications web.
 
 .. discover::
-    D'après son créateur **Fabien Potencier**, Symfony 2 est en fait plus un rassemblement
+    D'après son créateur **Fabien Potencier**, Symfony est en fait plus un rassemblement
     de bibliothèques et de composants tous fortement découplés assemblées et paramétrés pour fonctionner ensemble.
     
-    En effet, **Symfony 2** se base notamment sur:
+    En effet, **Symfony** se base notamment sur:
 
 .. discoverList::
     * *Doctrine* pour requêter la base de données
@@ -28,19 +28,19 @@ Installation
 ~~~~~~~~~~~~
 
 .. textOnly::
-    **Symfony 2** se base sur **composer** pour organiser ce rassemblement de composants.
+    **Symfony** se base sur **composer** pour organiser ce rassemblement de composants.
     
 .. textOnly::
     Cet outil déjà présenté précédemment dans ce cours permet de gérer les dépendances entre les
     différents composants.
 
-Il est possible de créer un projet **Symfony 2** à l'aide de la commande: 
+Il est possible de créer un projet **Symfony** à l'aide de la commande: 
 
 .. code-block:: no-highlight
     composer.phar create-project symfony/framework-standard-edition
 
 .. textOnly::
-    **Composer** va alors chercher toutes les dépendances nécéssaire et vous créer un projet **Symfony 2** vide
+    **Composer** va alors chercher toutes les dépendances nécéssaire et vous créer un projet **Symfony** vide
 
 .. slide::
 
@@ -65,7 +65,7 @@ Communauté
 Organisation
 ~~~~~~~~~~~~
     
-*GitHub* joue un rôle extrêmement important dans l'organisation du développement de **Symfony 2** et
+*GitHub* joue un rôle extrêmement important dans l'organisation du développement de **Symfony** et
 de ses composants.
 
 .. discover::
@@ -80,7 +80,7 @@ Bundles
 .. image:: /img/package.png
     :style: float:right
 
-Au centre d'une application **Symfony 2**, on trouve le *Kernel*, ou le noyau.
+Au centre d'une application **Symfony**, on trouve le *Kernel*, ou le noyau.
 
 .. discover::
     Auprès de ce noyau sont enregistrés des *Bundles*, (ou "paquets") qui sont en fait des composants.
@@ -199,7 +199,7 @@ Présentation
 .. image:: /img/twig.png
     :style: float:right
 
-**Symfony 2** est livré avec un très bon système de templates nommé *Twig*.
+**Symfony** est livré avec un très bon système de templates nommé *Twig*.
 
 .. textOnly::
     Ce système permet
