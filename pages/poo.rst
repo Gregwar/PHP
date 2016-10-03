@@ -45,17 +45,17 @@ Pourquoi faire de l'objet ?
 .. slide:: darkSlide fullSlide slideOnly
 
 .. div:: importantText
-    POLYMORPHISME?
-
-.. slide:: darkSlide fullSlide slideOnly
-
-.. div:: importantText
     HERITAGE?
 
 .. slide:: darkSlide fullSlide slideOnly
 
 .. div:: importantText
     CLASSE ABSTRAITE?
+
+.. slide:: darkSlide fullSlide slideOnly
+
+.. div:: importantText
+    POLYMORPHISME?
 
 .. slide:: darkSlide fullSlide slideOnly
 

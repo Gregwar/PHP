@@ -41,12 +41,12 @@ Exercice 1 : un peu de conception
 
         <?php
 
-        // Création d'une vidéo "Matrix"
-        $matrix = new Video('Matrix');
+        // Création d'une vidéo "Matrix" (1.5h)
+        $matrix = new Video('Matrix', 1.5*3600);
         // Création d'une photo "Joconde"
         $joconde = new Photo('Joconde');
-        // Création d'une musique "Stairway to heaven"
-        $stairway = new Music('Stairway to heaven');
+        // Création d'une musique "Stairway to heaven" (8 min)
+        $stairway = new Music('Stairway to heaven', 8*60);
         // Création d'une playlist "P1"
         $p1 = new Playlist('P1');
         // Ajout de "Matrix" à "P1"
@@ -59,8 +59,8 @@ Exercice 1 : un peu de conception
         $p2->add($stairway);
         // Ajout de "P1" à "P2"
         $p2->add($p1);
-        // Affichage de matrix
-        $matrix->print();
+        // Affichage de "Lecture de Matrix (durée: 5400s)"
+        $matrix->play();
         // Affichage de P2
         echo $p2;
 
