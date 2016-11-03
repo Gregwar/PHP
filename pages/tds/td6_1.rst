@@ -1,8 +1,7 @@
 TD6-1: Installation de Symfony
 ==============================
 
-Au cours de ce TP en plusieurs parties, nous allons créer une application de gestion de commande de
-pizzas.
+Au cours de ce TP en plusieurs parties, nous allons créer une application de gestion de commande de pizzas.
 
 .. slide::
 
