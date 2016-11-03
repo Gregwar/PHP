@@ -30,10 +30,10 @@ Installation de Symfony
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     Vous devrez donner les droits aux serveurs en écriture dans les dossiers ``app/cache`` et
-    ``app/logs``, par exemple:
+    ``var/logs``, par exemple:
 
     .. code-block:: no-highlight
-        chmod -R 777 app/cache/ app/logs/
+        chmod -R 777 var/cache/ var/logs/
 
     Lancez la commande::
 
