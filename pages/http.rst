@@ -411,7 +411,7 @@ Récupération des valeurs POST
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. textOnly::
-    Lors de la récéption d'une requête ``POST``, **PHP** mettra à votre disposition 
+    Lors de la récéption d'une requête ``POST``, **PHP** mettra à votre disposition
     le tableau superglobal ``$_POST`` qui contiendra les associations clé/valeurs postées
     par l'utilisateur:
 
