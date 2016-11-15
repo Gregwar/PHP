@@ -98,8 +98,8 @@ Utilisation dans la vue
     ``app.user`` dans Twig qui vous donnera un accès à l'utilisateur identifié dans
     l'application
 
-Contrôleur sécurirsé
---------------------
+Contrôleur sécurisé
+-------------------
 
 .. step::
 
