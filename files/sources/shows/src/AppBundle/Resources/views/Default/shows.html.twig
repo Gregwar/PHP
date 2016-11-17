@@ -1,0 +1,24 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+{% block menu_shows %}active{% endblock %}
+
+{% block contents %}
+    <section>
+    	<div class="container">
+    		<h3>Liste des séries</h3>
+            <div class="row">
+    		{% for show in shows %}
+            <a href="#" class="tvshow col-sm-6">
+                <img class="pull-left" src="{{ web_image('uploads/'~show.image).resize(100, 100).png }}" />
+                <h4>{{ show.name }}</h4>
+                {{ show.synopsis }}
+            </a>
+    		{% endfor %}
+            </div>
+
+    		{% if app.user %}
+    			<a href="{{ path('admin_add_show') }}">Ajouter une série</a>
+    		{% endif %}
+    	</div>
+    </section>
+{% endblock %}

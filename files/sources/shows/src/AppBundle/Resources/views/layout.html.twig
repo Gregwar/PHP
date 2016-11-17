@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <title>TVShows</title>
+		<link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" />
+		<link href="{{ asset('css/freelancer.min.css') }}" rel="stylesheet" />
+	</head>
+	<body>
+		    <!-- Navigation -->
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+        <div class="container">
+
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="#page-top">TVShows</a>
+            </div>
+
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-left">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="{% block menu_home %}{% endblock %}"> 
+                        <a href="{{ path('homepage') }}">Accueil</a>
+                    </li>
+                    <li class="{% block menu_shows %}{% endblock %}">
+                        <a href="{{ path('shows') }}">Les séries</a>
+                    </li>
+                    <li class="{% block menu_calendar %}{% endblock %}">
+                        <a href="{{ path('calendar') }}">Calendrier</a>
+                    </li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <form action="#" method="post">
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
+                            <input class="form-control" />
+                        </div>
+                        </form>
+                    </li>
+                </ul>                
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+	{% block contents %}{% endblock %}
+
+    <footer>
+        <div class="container text-center">
+        {% if app.user %}
+                <a href="{{ path('logout') }}">Déconnexion admin</a>
+        {% else %}
+                <a href="{{ path('login') }}">Connexion admin</a>
+        {% endif %}
+        </div>
+    </footer>
+	</body>
+</html>
