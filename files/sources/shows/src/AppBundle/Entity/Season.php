@@ -137,4 +137,9 @@ class Season
     {
         return $this->show;
     }
+
+    public function __toString()
+    {
+        return (string)$this->getNumber();
+    }
 }

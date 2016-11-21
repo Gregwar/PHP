@@ -33,6 +33,20 @@ class DefaultController extends Controller
     }
 
     /**
+     * @Route("/show/{id}", name="show")
+     * @Template()
+     */
+    public function showAction($id)
+    {
+        $em = $this->get('doctrine')->getManager();
+        $repo = $em->getRepository('AppBundle:TVShow');
+
+        return [
+            'show' => $repo->find($id)
+        ];        
+    }
+
+    /**
      * @Route("/calendar", name="calendar")
      * @Template()
      */

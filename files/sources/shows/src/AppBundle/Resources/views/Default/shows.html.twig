@@ -8,9 +8,9 @@
     		<h3>Liste des séries</h3>
             <div class="row">
     		{% for show in shows %}
-            <a href="#" class="tvshow col-sm-6">
+            <a href="{{ path('show', {id: show.id}) }}" class="tvshow col-sm-6">
                 <img class="pull-left" src="{{ web_image('uploads/'~show.image).resize(100, 100).png }}" />
-                <h4>{{ show.name }}</h4>
+                <h4>{{ show.name }} ({{ show.seasons|length }} saisons)</h4>
                 {{ show.synopsis }}
             </a>
     		{% endfor %}

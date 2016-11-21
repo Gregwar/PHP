@@ -8,6 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Forms\ShowType;
 use AppBundle\Entity\TVShow;
+use AppBundle\Entity\Season;
 
 /**
  * @Route("/admin")
@@ -28,6 +29,7 @@ class AdminController extends Controller
     	if ($form->isSubmitted() && $form->isValid()) {
     		$file = $show->getImage();
     		if ($file) {
+                // Handling file upload
     			$filename = md5(uniqid()).'.'.$file->guessExtension();
     			$webRoot = $this->get('kernel')->getRootDir().'/../web';
 
@@ -45,5 +47,35 @@ class AdminController extends Controller
         	'form' => $form->createView(),
         	'success' => $success
         ];
+    }
+
+    /**
+     * @Route("/addSeason/{id}", name="admin_add_season")
+     */
+    public function addSeasonAction($id)
+    {
+        $em = $this->get('doctrine')->getManager();
+        $repo = $em->getRepository('AppBundle:TVShow');
+
+        if ($show = $repo->find($id)) {
+            $season = new Season;
+            $season
+                ->setShow($show)
+                ->setNumber(count($show->getSeasons())+1)
+                ;
+            $em->persist($season);
+            $em->flush();
+        }
+
+        return $this->redirect($this->generateUrl('show', ['id' => $id]));
+    }
+
+    /**
+     * @Route("/addEpisode/{id}", name="admin_add_episode")
+     * @Template()
+     */
+    public function addEpisodeAction($id)
+    {
+        
     }
 }

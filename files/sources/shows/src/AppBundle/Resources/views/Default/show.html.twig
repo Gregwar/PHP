@@ -1,0 +1,32 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+{% block menu_shows %}active{% endblock %}
+
+{% block contents %}
+    <section>
+    	<div class="container">
+            <div class="col-xs-2">
+                <img class="pull-left" style="width:80%;margin:15px" src="{{ web_image('uploads/'~show.image).resize(200, 300).png }}" />
+            </div>
+            <div class="col-xs-10">
+    		<h3>{{ show }}</h3>
+                {{ show.synopsis }}
+                {% for season in show.seasons %}
+                    <h4>Saison {{ season }}</h4>
+                    {% if app.user %}
+                    <a href="{{ path('admin_add_episode', {id: season.id}) }}">Ajouter un épisode</a>
+                    {% endif %}
+                {% else %}
+                <div class="alert alert-danger">
+                    Aucune saison pour cette série
+                </div>
+                {% endfor %}
+                {% if app.user %}
+                <p>
+                    <a href="{{ path('admin_add_season', {id: show.id}) }}">Ajouter une saison</a>
+                </p>
+                {% endif %}
+        </div>
+    	</div>
+    </section>
+{% endblock %}

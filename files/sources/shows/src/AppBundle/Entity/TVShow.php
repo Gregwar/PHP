@@ -172,4 +172,9 @@ class TVShow
     {
         return $this->seasons;
     }
+
+    public function __toString()
+    {
+        return $this->getName();
+    }
 }
