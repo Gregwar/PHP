@@ -18,7 +18,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="#page-top">TVShows</a>
+                <a class="navbar-brand" href="{{ path('homepage') }}">TVShows</a>
             </div>
 
 
@@ -27,9 +27,6 @@
                 <ul class="nav navbar-nav navbar-left">
                     <li class="hidden">
                         <a href="#page-top"></a>
-                    </li>
-                    <li class="{% block menu_home %}{% endblock %}"> 
-                        <a href="{{ path('homepage') }}">Accueil</a>
                     </li>
                     <li class="{% block menu_shows %}{% endblock %}">
                         <a href="{{ path('shows') }}">Les séries</a>
@@ -48,7 +45,7 @@
                         </div>
                         </form>
                     </li>
-                </ul>                
+                </ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>

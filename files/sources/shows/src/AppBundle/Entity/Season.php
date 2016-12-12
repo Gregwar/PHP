@@ -36,6 +36,7 @@ class Season
 
     /**
      * @ORM\ManyToOne(targetEntity="TVShow", inversedBy="seasons")
+     * @ORM\OrderBy({"number" = "ASC"})
      */
     private $show;
 

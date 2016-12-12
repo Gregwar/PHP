@@ -150,4 +150,9 @@ class Episode
     {
         return $this->datetime;
     }
+
+    public function __toString()
+    {
+        return $this->getName();
+    }
 }

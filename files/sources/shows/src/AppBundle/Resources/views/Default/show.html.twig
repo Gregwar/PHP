@@ -13,8 +13,15 @@
                 {{ show.synopsis }}
                 {% for season in show.seasons %}
                     <h4>Saison {{ season }}</h4>
+                    {% for episode in season.episodes %}
+                        {{ episode.number }} - {{ episode }}
+                        {% if app.user %}
+                            <a href="{{ path('admin_delete_episode', {id: episode.id}) }}" class="alert-danger">Supprimer</a>
+                        {% endif %}
+                        <br />
+                    {% endfor %}
                     {% if app.user %}
-                    <a href="{{ path('admin_add_episode', {id: season.id}) }}">Ajouter un épisode</a>
+                        <a class="alert-success" href="{{ path('admin_add_episode', {id: season.id}) }}">Ajouter un épisode</a>
                     {% endif %}
                 {% else %}
                 <div class="alert alert-danger">
@@ -23,7 +30,7 @@
                 {% endfor %}
                 {% if app.user %}
                 <p>
-                    <a href="{{ path('admin_add_season', {id: show.id}) }}">Ajouter une saison</a>
+                    <a class="alert-success" href="{{ path('admin_add_season', {id: show.id}) }}">Ajouter une saison</a>
                 </p>
                 {% endif %}
         </div>

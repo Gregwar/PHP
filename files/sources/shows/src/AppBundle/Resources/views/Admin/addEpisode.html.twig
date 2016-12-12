@@ -1,0 +1,18 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+{% block menu_shows %}active{% endblock %}
+
+{% block contents %}
+    <section>
+    	<div class="container">
+    		<h3>Ajouter un épisode</h3>
+
+    		<form method="post" enctype="multipart/form-data">
+    			{{ form_widget(form) }}
+    			<div class="form-group">
+    				<input type="submit" value="Envoyer" class="form-control btn btn-primary" />
+    			</div>
+    		</form>
+    	</div>
+    </section>
+{% endblock %}
