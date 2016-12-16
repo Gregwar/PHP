@@ -1,8 +1,8 @@
 .. image:: /img/poll.png
     :class: right
 
-TD5
-===
+TD noté DAGPI
+=============
 
 Présentation
 ------------
@@ -13,7 +13,7 @@ Archive
 .. |archive| image:: /img/archive.png
 
 .. important::
-    `|archive| Télécharger l'archive td5.zip </files/td5.zip>`_
+    `|archive| Télécharger l'archive library.zip </files/library.zip>`_
     
 Dans ce TD, nous allons développer un système simplifié d'emprunt de livre pour une bibliothèque.
 Vous partirez d'une application de base, similaire au TD 4, et la modifierai en suivant les instructions.
@@ -30,10 +30,6 @@ contient les tables:
   être disponible en 5 exemplaire, chacun d'eux sera représenté en base pour pouvoir être emprunté)
 * ``emprunts``: un emprunt concerne un exemplaire qui ne sera donc plus disponible pendant une certaine
   durée.
-
-L'application est dotée de tests, faites les tourner en lançant ``phpunit`` (vous pouvez l'installer sur
-vos machines ou télécharger `phpunit.phar <https://phar.phpunit.de/phpunit.phar>`_). 3 tests et 12 assertions
-devraient être validés.
 
 .. image:: /img/books.png
     :class: right
@@ -74,14 +70,6 @@ Modifications
 
     Modifiez la fonction ``insertBook()`` du modèle afin qu'elle créé autant d'exemplaires que précisé
     par ``$copies``.
-
-.. step::
-
-    #-) Exemplaires: test
-    ~~~~~~~~~~~~~~~~~~~~~
-
-    Modifiez la fonction ``testBookInsert()`` des tests pour qu'elle vérifie que les exemplaires
-    d'un livre sont bien créé au moment de son insertion.
 
 .. step::
 
@@ -130,28 +118,9 @@ Modifications
 
 .. step::
 
-    #-) Affichage des livres empruntés
+    #-) Retour des livres
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     Ajouter un bouton "retour" à coté d'un exemplaire qui n'apparaît que pour l'administrateur et 
     qui marque l'exemplaire comme retourné (c'est à dire l'emprunt comme fini).
-
-.. image:: /img/gears.png
-    :class: right
-
-
-.. step::
-
-    #-) Test de l'emprunt
-    ~~~~~~~~~~~~~~~~~~~~~
-
-    Ecrivez dans ``SiteTests`` un test ``testEmprunt()`` qui:
-    
-    * Créé un livre disponible en 3 exemplaires, 
-    * Vérifie que le nombre d'exemplaires affichés disponibles est bien de 3
-    * En emprunte un en envoyant une requête sur votre formulaire d'emprunt, puis vérifie 
-      que le nombre d'exemplaires disponible est maintenant de 2.
-    * Enfin, invoque le lien qui déclenchera le retour et vérifiera que le compteur est bien
-      revenu à 3.
-
 

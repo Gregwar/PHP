@@ -634,14 +634,4 @@ Composer
         Writing lock file
         Generating autoload files
 
-.. slide::
-
-.. redirection-title:: tds/td5
-
-TD 5
-----
-
-.. toctree::
-    
-    tds/td5
 

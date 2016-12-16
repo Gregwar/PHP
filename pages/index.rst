@@ -126,10 +126,10 @@ consulter ici le guide de conception:
 Exposés
 -------
 
-:doc:`Les sujets des exposés sont disponibles ici <exposes>`
+* :doc:`Les sujets des exposés sont disponibles ici <exposes>`
 
 TD Noté
 -------
 
-:doc:`Le TD noté DAWIN <tds/td_dawin>`
-
+* :doc:`Le TD noté DAWIN <tds/td_dawin>`
+* :doc:`Le TD noté DAGPI <tds/td_dagpi>`
