@@ -15,8 +15,8 @@ Archive
 Consignes
 ~~~~~~~~~
 
-Ce travail est à rendre sous forme de **dépôt**
-git personnel (bitbucket, github ou le gitlab de l'université).
+Ce travail est à rendre sous forme de **dépôt**. Mon identifiant Bitbucket et
+Github est Gregwar.
 
 Ce travail est a réaliser **individuellement**. Cependant, vous êtes libres d'utiliser
 des bibliothèques et des bundle pour réaliser les questions. Je vous recommande
@@ -25,8 +25,8 @@ même d'ailleurs d'y penser!
 Vous avez jusqu'au **22 Janvier 2016** pour me le remettre.
 
 Remarquez également que je n'évalue pas la forme, ne vous embêtez donc pas à faire
-de la mise en page et du style, si les fonctionnalités sont là, vous aurez les
-points correspondants.
+de la mise en page et du style, si les fonctionnalités sont là (et qu'elles sont
+ergonomiquement utilisables), vous aurez les points correspondants.
 
 Installation
 ~~~~~~~~~~~~

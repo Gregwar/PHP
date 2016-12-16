@@ -7,6 +7,16 @@ TD noté DAGPI
 Présentation
 ------------
 
+Consignes
+~~~~~~~~~
+
+Ce travail est à rendre sous forme de **dépôt**. Mon identifiant Bitbucket et
+Github est Gregwar.
+
+Ce travail est a réaliser **individuellement**.
+
+Vous avez jusqu'au **29 Janvier 2016** pour me le remettre.
+
 Archive
 ~~~~~~~
 
