@@ -29,9 +29,9 @@ class Episode
     private $number;
 
     /**
-     * @ORM\Column(name="date", type="datetime")
+     * @ORM\Column(name="date", type="date", nullable=true)
      */
-    private $datetime;
+    private $date;
 
     /**
      * @var string
@@ -127,32 +127,33 @@ class Episode
         return $this->season;
     }
 
+
+    public function __toString()
+    {
+        return $this->getName();
+    }
+
     /**
-     * Set datetime
+     * Set date
      *
-     * @param \DateTime $datetime
+     * @param \DateTime $date
      *
      * @return Episode
      */
-    public function setDatetime($datetime)
+    public function setDate($date)
     {
-        $this->datetime = $datetime;
+        $this->date = $date;
 
         return $this;
     }
 
     /**
-     * Get datetime
+     * Get date
      *
      * @return \DateTime
      */
-    public function getDatetime()
+    public function getDate()
     {
-        return $this->datetime;
-    }
-
-    public function __toString()
-    {
-        return $this->getName();
+        return $this->date;
     }
 }

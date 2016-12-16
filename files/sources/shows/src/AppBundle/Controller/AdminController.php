@@ -11,6 +11,7 @@ use AppBundle\Forms\EpisodeType;
 use AppBundle\Entity\TVShow;
 use AppBundle\Entity\Season;
 use AppBundle\Entity\Episode;
+use aharen\OMDbAPI;
 
 /**
  * @Route("/admin")
@@ -121,6 +122,32 @@ class AdminController extends Controller
 
         return [
             'form' => $form->createView()
+        ];
+    }
+
+    /**
+     * @Route("/omdb", name="admin_omdb")
+     * @Template()
+     */
+    public function omdbAction(Request $request)
+    {
+        $form = $this->createFormBuilder()
+            ->add('keyword')
+            ->getForm()
+            ;
+
+        $result = [];
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $data = $form->getData();
+            $omdb = new OMDbAPI();
+            $result = $omdb->search($data['keyword']);
+            $result = $result->data->Search;
+        }
+
+        return [
+            'form' => $form->createView(),
+            'result' => $result
         ];
     }
 }

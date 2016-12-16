@@ -58,6 +58,8 @@
         <div class="container text-center">
         {% if app.user %}
                 <a href="{{ path('logout') }}">Déconnexion admin</a>
+                -
+                <a href="{{ path('admin_omdb') }}">Import OMDB</a>
         {% else %}
                 <a href="{{ path('login') }}">Connexion admin</a>
         {% endif %}

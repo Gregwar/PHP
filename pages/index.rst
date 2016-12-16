@@ -127,3 +127,9 @@ Exposés
 -------
 
 :doc:`Les sujets des exposés sont disponibles ici <exposes>`
+
+TD Noté
+-------
+
+:doc:`Le TD noté DAWIN <tds/td_dawin>`
+

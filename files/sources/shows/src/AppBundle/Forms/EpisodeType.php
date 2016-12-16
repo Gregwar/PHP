@@ -12,7 +12,7 @@ class EpisodeType extends AbstractType
     {
         $builder
             ->add('name', null, ['label' => 'Titre'])
-            ->add('datetime', null, ['label' => 'Diffusion'])
+            ->add('date', null, ['label' => 'Diffusion'])
             ;
     }
 
