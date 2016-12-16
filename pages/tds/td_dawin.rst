@@ -22,7 +22,7 @@ Ce travail est a réaliser **individuellement**. Cependant, vous êtes libres d'
 des bibliothèques et des bundle pour réaliser les questions. Je vous recommande
 même d'ailleurs d'y penser!
 
-Vous avez jusqu'au **22 Janvier 2016** pour me le remettre.
+Vous avez jusqu'au **22 Janvier 2017** pour me le remettre.
 
 Remarquez également que je n'évalue pas la forme, ne vous embêtez donc pas à faire
 de la mise en page et du style, si les fonctionnalités sont là (et qu'elles sont
