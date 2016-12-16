@@ -47,6 +47,10 @@ Et importez les données::
 
     php bin/console doctrine:database:import sql/shows.sql
 
+Vous pouvez désormais lancer le serveur pour commencer à travailler::
+
+    php bin/console server:run
+
 Voici à quoi devrait ressembler le résultat (page "séries"):
 
 .. center::
