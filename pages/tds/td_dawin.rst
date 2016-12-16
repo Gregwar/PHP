@@ -31,16 +31,17 @@ points correspondants.
 Installation
 ~~~~~~~~~~~~
 
-Premièrement, téléchargez et extrayez l'archive. Paramétrez ensuite votre connexion
-à la base de données (dans ``app/config/parameters.yml``).
+Premièrement, téléchargez et extrayez l'archive. 
 
 Installez ensuite les dépendances avec composer::
 
     php composer.phar install
 
-Puis, installez la base de données avec doctrine::
+Si vous ne l'avez pas fait au cours de l'installation interactive, paramétrez ensuite
+votre connexion à la base de données (dans ``app/config/parameters.yml``).
+Puis, créez vos tables::
 
-    php bin/console doctrine:database:create
+    php bin/console doctrine:schema:create
 
 Et importez les données::
 
