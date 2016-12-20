@@ -85,7 +85,8 @@ Questions
     #-) Recherche
     ~~~~~~~~~~~~~
 
-    Implémentez la recherche pour la rendre fonctionnelle.
+    Implémentez la recherche pour la rendre fonctionnelle. Cette dernière doit afficher les
+    résultats qui correspondent aux mots clés (titre, synopsis) dans la base de données.
 
 .. step::
     #-) Pagination des séries
@@ -106,7 +107,7 @@ Questions
     ~~~~~~~~~~~~~~~
 
     Lorsque vous êtes connectés en admin, il existe déjà une fonctionnalité nommé "import OMDB"
-    qui propose d'effectuer une recherche à l'aide de l'API OMDB et du `bundle OMDbAPI <https://github.com/aharen/OMDbAPI>`_.
+    qui propose d'effectuer une recherche à l'aide de l'API OMDB et du `bundle OMDbAPI <https://github.com/aharen/OMDbAPI>`_. Vous pouvez y accéder en cliquant sur le lien correspondant tout en bas de l'écran.
 
     Complétez cette fonctionnalité, de manière à ce qu'un clic sur la fiche d'une série ainsi
     trouvée permette de l'importer dans la base de données de votre application.
