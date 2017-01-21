@@ -10,6 +10,8 @@ Présentation
 Consignes
 ~~~~~~~~~
 
+**`----> Merci de renseigner votre dépôt ici !!! <http://gregwar.com/rendu/>`_**
+
 Ce travail est à rendre sous forme de **dépôt**. Mon identifiant Bitbucket et
 Github est Gregwar.
 
