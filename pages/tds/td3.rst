@@ -161,26 +161,6 @@ Quelques modifications
 
     N'hésitez pas à modifier l'organisation du code pour implémenter cette fonctionalité.
 
-Incorporation d'un logger
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. step::
-    Comme vous pourrez l'observer, les attaques sont actuellement muettes, nous aimerions pouvoir
-    logger ce qu'elles font afin d'afficher un message explicitant ce qui s'est passé. Pour cela, modifiez
-    le code de ``Fight`` pour qu'il puisse accepter un *logger* comme cela::
-
-        <?php
-
-        $logger = new MemoryLogger;
-        $fight->setLogger($logger);
-
-    Par la suite, chaque attaque pourra retourner une chaîne décrivant le mouvement (vous êtes libres
-    d'ajouter quelques règles) qui sera loggée par le fighter. Modifier alors la page en utilisant la 
-    méthode ``getEntries()`` sur le logger pour afficher l'ensemble des actions effectuées.
-
-    Attention, votre logger ne doit pas être sérialisé ! Il faudra pour cela utiliser la méthode magique
-    `__sleep() <http://php.net/__sleep>`_ de **PHP**
-
 Exercice 3 : le routeur
 -----------------------
 
