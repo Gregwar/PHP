@@ -583,6 +583,8 @@ USER INPUT
         $name = $_COOKIE['name'];
         // ...
 
+.. _sessions:
+
 .. slide::
 
 Les sessions
@@ -755,11 +757,21 @@ Ce code est-t-il correct?::
 
 .. slide::
 
-.. redirection-title:: tds/td2
+.. redirection-title:: tds/td2_1
 
-TD 2
-----
+TD 2 partie 1
+-------------
 
 .. toctree::
 
-    tds/td2
+    tds/td2_1
+
+.. redirection-title:: tds/td2_2
+
+TD 2 partie 2
+-------------
+
+.. toctree::
+
+    tds/td2_2
+

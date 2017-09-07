@@ -1,0 +1,158 @@
+TD2 partie 1
+============
+
+.. image:: /img/http.png
+    :class: right
+
+Dans ce TD, nous allons découvrir le fonctionnement de **HTTP**. Pour ce
+faire, nous n'utiliserons pas PHP!
+
+.. |archive| image:: /img/archive.png
+
+.. important::
+    `|archive| Télécharger l'archive td2_1.zip </files/td2_1.zip>`_
+
+
+.. step::
+
+    Un serveur HTTP minimaliste
+    ---------------------------
+
+    Dans l'archive, vous découvrirez un simple programme (en *C#*). Compilez
+    et exécutez-le. Sous Windows, vous pourrez créer une solution à l'aide de
+    *Visual Studio* (en créant un projet *C#* console), et sous Linux vous
+    pourrez utiliser *monodevelop*.
+
+    Exécutez-le et lancez votre navigateur, connectez-vous alors à `http://localhost:8080/ <http://localhost:8080/>`_.
+
+    Observez ce qu'il se passe, ainsi que les messages qui apparaissent dans la
+    console. 
+
+    Voici ce qui devrait apparaître:
+
+    .. spoiler::
+
+        .. code-block:: text
+
+            Waiting for a connection... Connected!
+
+            >>> Request:
+
+            GET /favicon.ico HTTP/1.1
+            Host: localhost:8080
+            User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:55.0) Gecko/20100101 Firefox/55.0
+            Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+            Accept-Language: fr,fr-FR;q=0.8,en-US;q=0.5,en;q=0.3
+            Accept-Encoding: gzip, deflate
+            Connection: keep-alive
+
+            >>> Response:
+
+            HTTP/1.1 200 OK
+            Content-type: text/html
+
+            <h1>Hello, time is 18:29:12!</h1>
+
+.. vi fix*
+
+.. step::
+
+    Exercice 1 : Des pages!
+    -----------------------
+
+    Lorque vous changez de page, en vous rendant par exemple sur `http://localhost:8080/test <http://localhost:8080/test>`_, la même réponse est fournie. Observez le code.
+
+    Modifiez alors le code de manière à pouvoir naviguer entre plusieurs pages.
+
+.. step::
+
+    Exercice 2 : Un formulaire
+    --------------------------
+
+    Sur l'une de vos pages, placez le code HTML suivant:
+
+    .. code-block:: html
+
+        <form method="get">
+            Nombre 1: <input type="text" name="n1" /><br />
+            Nombre 2: <input type="text" name="n2" /><br />
+            <input type="submit" value="Additioner!" />
+        </form>
+
+    Executez le code et observez dans la barre d'adresse, ainsi que dans la console
+    l'impact que les nombres que vous saisissez ont sur la requête.
+
+    Modifiez le code de façon à ce que la page en question affiche la somme des
+    deux nombres envoyés par le formulaire.
+
+.. step::
+
+    Exercice 3 : Une image
+    ----------------------
+
+    Essayez maintenant d'afficher une image à l'aide de votre application web.
+
+    Ne trichez pas! Votre image doit être hébergée sur votre application, et pas à
+    l'extérieur. Par exemple:
+
+    .. code-block:: html
+
+        <img src="http://localhost:8080/image.jpg" />
+
+    Devrait afficher une image de votre choix, à vous de bien écrire la réponse
+    de manière à ce que le navigateur la comprenne.
+
+
+.. step::
+
+    Exercice 4 : Formulaire en POST
+    -------------------------------
+
+    Changez la méthode du formulaire en POST:
+
+    .. code-block:: html
+
+        <form method="post">
+
+    Et observez ce qu'il se passe. 
+
+    .. warning::
+
+        **Attention**: le code d'origine répond à partir de la première ligne vide
+        reçue. Cependant, dans le cas d'une requête ``POST``, la requête contient
+        des données dont la longueur est précisée dans l'en-tête ``Content-Length``,
+        il faudra donc modifier ce comportement.
+
+    Modifiez ensuite votre code afin qu'il puisse répondre à la somme des deux
+    nombres en ``POST`` et non en ``GET``.
+
+.. step::
+
+    Exercice 5 : Définir puis lire un cookie
+    -------------------------------
+
+    En vous aidant de `ces informations <https://fr.wikipedia.org/wiki/Cookie_(informatique)#Cr.C3.A9ation_d.27un_cookie>`_, créez une réponse qui créera un cookie sur le navigateur client.
+
+    Faites alors en sorte de le lire. Vous pouvez par exemple créer une page qui affiche
+    un nombre qui sera incrémenté à chaque rafraichissement de cette manière.
+
+.. step::
+
+    Exercice 6 : Créer une session
+    -------------------------------
+
+    Souvenez vous que les sessions :doc:`utilisent les cookies </http#sessions>` pour fonctionner. 
+
+    En *C#*, vous pourrez vous aider d'un *dictionnaire* du type:
+
+    .. code-block:: csharp
+
+        var sessions = new Dictionary<string, int>();
+
+    Pour associer les clés de sessions (ici des chaînes de caractères) aux valeurs stockées
+    en session (ici des entiers).
+
+    Ainsi, reproduisez le fonctionnement de la question précédente, mais à l'aide
+    de sessions "faites maison" et sockées en mémoire dans le dictionnaire, au lieu
+    de valeurs directement stockées dans les cookies.
+

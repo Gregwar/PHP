@@ -1,5 +1,5 @@
-TD2
-===
+TD2 partie 2
+============
 
 .. image:: /img/http.png
     :class: right
@@ -10,7 +10,7 @@ de faire la "paserelle" entre les données **HTTP** et **PHP**.
 .. |archive| image:: /img/archive.png
 
 .. important::
-    `|archive| Télécharger l'archive td2.zip </files/td2.zip>`_
+    `|archive| Télécharger l'archive td2_2.zip </files/td2_2.zip>`_
 
 Installations
 -------------
