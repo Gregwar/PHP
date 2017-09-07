@@ -57,7 +57,7 @@ Exercice 1 : Des pages!
 
 .. step::
 
-    Lorque vous changez de page, en vous rendant par exemple sur `http://localhost:8080/test <http://localhost:8080/test>`_, la même réponse est fournie. Observez le code.
+    Lorque vous changez de page, en vous rendant par exemple sur `http://localhost:8080/test <http://localhost:8080/test>`_, la même réponse est fournie. Observez les différences dans la console.
 
     Modifiez alors le code de manière à pouvoir naviguer entre plusieurs pages.
 
