@@ -12,11 +12,10 @@ faire, nous n'utiliserons pas PHP!
 .. important::
     `|archive| Télécharger l'archive td2_1.zip </files/td2_1.zip>`_
 
+Un serveur HTTP minimaliste
+---------------------------
 
 .. step::
-
-    Un serveur HTTP minimaliste
-    ---------------------------
 
     Dans l'archive, vous découvrirez un simple programme (en *C#*). Compilez
     et exécutez-le. Sous Windows, vous pourrez créer une solution à l'aide de
@@ -53,21 +52,19 @@ faire, nous n'utiliserons pas PHP!
 
             <h1>Hello, time is 18:29:12!</h1>
 
-.. vi fix*
+Exercice 1 : Des pages!
+-----------------------
 
 .. step::
-
-    Exercice 1 : Des pages!
-    -----------------------
 
     Lorque vous changez de page, en vous rendant par exemple sur `http://localhost:8080/test <http://localhost:8080/test>`_, la même réponse est fournie. Observez le code.
 
     Modifiez alors le code de manière à pouvoir naviguer entre plusieurs pages.
 
-.. step::
+Exercice 2 : Un formulaire
+--------------------------
 
-    Exercice 2 : Un formulaire
-    --------------------------
+.. step::
 
     Sur l'une de vos pages, placez le code HTML suivant:
 
@@ -85,10 +82,10 @@ faire, nous n'utiliserons pas PHP!
     Modifiez le code de façon à ce que la page en question affiche la somme des
     deux nombres envoyés par le formulaire.
 
-.. step::
+Exercice 3 : Une image
+----------------------
 
-    Exercice 3 : Une image
-    ----------------------
+.. step::
 
     Essayez maintenant d'afficher une image à l'aide de votre application web.
 
@@ -103,10 +100,10 @@ faire, nous n'utiliserons pas PHP!
     de manière à ce que le navigateur la comprenne.
 
 
-.. step::
+Exercice 4 : Formulaire en POST
+-------------------------------
 
-    Exercice 4 : Formulaire en POST
-    -------------------------------
+.. step::
 
     Changez la méthode du formulaire en POST:
 
@@ -126,20 +123,20 @@ faire, nous n'utiliserons pas PHP!
     Modifiez ensuite votre code afin qu'il puisse répondre à la somme des deux
     nombres en ``POST`` et non en ``GET``.
 
-.. step::
+Exercice 5 : Définir puis lire un cookie
+-------------------------------
 
-    Exercice 5 : Définir puis lire un cookie
-    -------------------------------
+.. step::
 
     En vous aidant de `ces informations <https://fr.wikipedia.org/wiki/Cookie_(informatique)#Cr.C3.A9ation_d.27un_cookie>`_, créez une réponse qui créera un cookie sur le navigateur client.
 
     Faites alors en sorte de le lire. Vous pouvez par exemple créer une page qui affiche
     un nombre qui sera incrémenté à chaque rafraichissement de cette manière.
 
-.. step::
+Exercice 6 : Créer une session
+-------------------------------
 
-    Exercice 6 : Créer une session
-    -------------------------------
+.. step::
 
     Souvenez vous que les sessions :doc:`utilisent les cookies </http#sessions>` pour fonctionner. 
 
