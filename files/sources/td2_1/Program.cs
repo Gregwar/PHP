@@ -39,32 +39,43 @@ class Program
                 StreamWriter writer = new StreamWriter(stream);
 
                 Console.WriteLine("\n>>> Request:\n");
-               
+                bool HeadersReceived = false;
+
                 // Loop to receive all the data sent by the client.
-                while (client.Connected)
+                while (!HeadersReceived && client.Connected)
                 {
-                    string line = reader.ReadLine().Trim();
+                    string line = reader.ReadLine();
 
-                    // Translate data bytes to a ASCII string.
-                    Console.WriteLine("{0}", line);
-
-                    if (line == "")
+                    if (line != null)
                     {
-                        Console.WriteLine(">>> Response:\n");
+                        line = line.Trim();
 
-                        // Building the response
-                        string response = "";
-                        response += "HTTP/1.1 200 OK\r\n";
-                        response += "Content-type: text/html\r\n";
-                        response += "\r\n";
-                        response += "<h1>Hello, time is "+DateTime.Now.ToString("H:m:s")+"!</h1>";
+                        // Translate data bytes to a ASCII string.
+                        Console.WriteLine("{0}", line);
 
-                        // Sending the response and closing the client connection
-                        Console.Write(response);
-                        writer.Write(response);
-                        writer.Flush();
-                        client.Close();
+                        if (line == "")
+                        {
+                            HeadersReceived = true;
+                        }
                     }
+                }
+
+                // Responding
+                if (client.Connected)
+                {
+                    Console.WriteLine(">>> Response:\n");
+
+                    // Building the response
+                    string response = "";
+                    response += "HTTP/1.1 200 OK\r\n";
+                    response += "Content-type: text/html\r\n";
+                    response += "\r\n";
+                    response += "<h1>Hello, time is " + DateTime.Now.ToString("H:m:s") + "!</h1>";
+
+                    // Sending the response and closing the client connection
+                    Console.Write(response);
+                    writer.Write(response);
+                    writer.Flush();
                 }
 
                 // Shutdown and end connection
@@ -86,4 +97,3 @@ class Program
         Console.Read();
     }
 }
-
