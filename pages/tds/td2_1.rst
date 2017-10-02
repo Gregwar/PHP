@@ -22,10 +22,19 @@ Un serveur HTTP minimaliste
     *Visual Studio* (en créant un projet *C#* console), et sous Linux vous
     pourrez utiliser *monodevelop*.
 
+    .. note::
+
+        Pour lancer *monodevelop* au département, utilisez les commandes suivantes:
+
+        .. code-block:: text
+
+            unset GNOME_DESKTOP_SESSION_ID
+            monodevelop
+
     Exécutez-le et lancez votre navigateur, connectez-vous alors à `http://localhost:8080/ <http://localhost:8080/>`_.
 
     Observez ce qu'il se passe, ainsi que les messages qui apparaissent dans la
-    console. 
+    console.
 
     Voici ce qui devrait apparaître:
 
@@ -111,7 +120,7 @@ Exercice 4 : Formulaire en POST
 
         <form method="post">
 
-    Et observez ce qu'il se passe. 
+    Et observez ce qu'il se passe.
 
     .. warning::
 
@@ -138,7 +147,7 @@ Exercice 6 : Créer une session
 
 .. step::
 
-    Souvenez vous que les sessions :doc:`utilisent les cookies </http#sessions>` pour fonctionner. 
+    Souvenez vous que les sessions :doc:`utilisent les cookies </http#sessions>` pour fonctionner.
 
     En *C#*, vous pourrez vous aider d'un *dictionnaire* du type:
 
@@ -152,4 +161,3 @@ Exercice 6 : Créer une session
     Ainsi, reproduisez le fonctionnement de la question précédente, mais à l'aide
     de sessions "faites maison" et sockées en mémoire dans le dictionnaire, au lieu
     de valeurs directement stockées dans les cookies.
-
