@@ -141,3 +141,43 @@ Le code qui permet de générer l'image vous est déja fourni à titre d'exemple
     Lorsque le formulaire est soumis, il faut vérifier coté serveur que le code qui a été
     entré par l'utilisateur est bien celui qui a été préalablement affiché sur son image.
 
+Exercice 5 : Le retour des sessions
+-----------------------------------
+
+.. step::
+
+    Reprenez le code de l'exercice 3 et modifiez le pour ne PAS utiliser ``session_start()`` ni
+    ``$_SESSION``, en réimplémentant votre propre système de session.
+
+    **Quelques fonctions utiles:**
+
+    .. code-block:: php
+
+        // Lire et écrire dans un fichier
+        file_put_contents($file, $data); // Ecrire
+        $data = file_get_contents($file); // Lire
+    
+    .. code-block:: php
+
+        // Tester si un fichier $file existe
+        if (file_exists($file)) {
+        }
+    
+    .. code-block:: php
+
+        // Générer un identifiant aléatoire
+        $id = uniqid();
+    
+    .. code-block:: php
+
+        // Transformer un objet en chaîne de caractères
+        $data = serialize($something);
+
+        // Transformer une chaîne de caractère en un objet
+        $something = unserialize($data);
+    
+    .. code-block:: php
+
+        // Définir un cookie 'key' à '123' qui expirera quand le
+        // navigateur sera fermé
+        setcookie('key', '123', 0);
