@@ -3,8 +3,10 @@
 $loader = include('vendor/autoload.php');
 $loader->add('', 'src');
 
+use Symfony\Component\HttpFoundation\Request;
+
 $app = new Silex\Application;
-$app->register(new Silex\Provider\UrlGeneratorServiceProvider());
+$app->register(new Silex\Provider\AssetServiceProvider());
 $app->register(new Silex\Provider\TwigServiceProvider(), [
     'twig.path' => __DIR__.'/views',
 ]);
@@ -15,8 +17,8 @@ $app['debug'] = true;
 $app['model'] = new Cinema\Model(
     'localhost',  // Hôte
     'cinema',    // Base de données
-    'root',    // Utilisateur
-    'root'     // Mot de passe
+    'cinema',    // Utilisateur
+    'cinema'     // Mot de passe
 );
 
 // Page d'accueil
@@ -32,8 +34,7 @@ $app->match('/films', function() use ($app) {
 })->bind('films');
 
 // Fiche film
-$app->match('/film/{id}', function($id) use ($app) {
-    $request = $app['request'];
+$app->match('/fiche_film/{id}', function($id, Request $request) use ($app) {
     if ($request->getMethod() == 'POST') {
         $post = $request->request;
         if ($post->has('nom') && $post->has('note') && $post->has('critique')) {

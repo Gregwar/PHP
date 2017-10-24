@@ -1,6 +1,7 @@
 {
     "require": {
-        "silex/silex": "1.*",
-        "symfony/twig-bridge": "*"
+        "silex/silex": "2.*",
+        "symfony/twig-bridge": "*",
+        "symfony/asset" : "*"
     }
 }

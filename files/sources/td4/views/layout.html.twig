@@ -3,8 +3,8 @@
     <head>
         <meta charset="utf-8" />
         <title>Cinéma</title>
-        <link rel="stylesheet" type="text/css" href="{{ app.request.basePath }}/css/style.css" />
-        <link rel="shortcut icon" href="{{ app.request.basePath }}/css/favicon.ico" />
+        <link rel="stylesheet" type="text/css" href="{{ asset('/css/style.css') }}" />
+        <link rel="shortcut icon" href="{{ asset('/css/favicon.ico') }}" />
     </head>
     <body>
         <h1>Cinéma</h1>
@@ -12,7 +12,7 @@
             <a href="{{ path('home') }}">Accueil</a>
             <a href="{{ path('films') }}">Films</a>
             <a href="{{ path('genres') }}">Genres</a>
-        </div>        
+        </div>
 
         <div class="contents">
             {% block content %}{% endblock %}
