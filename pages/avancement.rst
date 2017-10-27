@@ -1,0 +1,17 @@
+Présentation de l'avancement PHP
+================================
+
+Le **Lundi 6 Novembre 2017**, les DAWIN formation initiale
+sont invités à présenter leur avancement sur la partie
+PHP de leur projet, à savoir:
+
+* La liste des fonctionnalités que vous comptez implémenter
+* Quel framework a été choisi pour le projet
+* Que contiendra leur base de données (+schéma si vous en
+  avez un)
+* Votre état d'avancement actuel dans le projet (ce qui
+  est déjà fait, en cours, ou pas encore commencé)
+* Vos éventuelles difficultés/problèmes (qui peuvent être
+  liés à la technique ou pas)
+
+

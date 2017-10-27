@@ -126,6 +126,7 @@ consulter ici le guide de conception:
 Exposés
 -------
 
+* :doc:`Présentations de l'avancement PHP <avancement>`
 * :doc:`Les sujets des exposés sont disponibles ici <exposes>`
 
 TD Noté
