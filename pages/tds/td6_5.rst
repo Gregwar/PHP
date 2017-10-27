@@ -6,6 +6,19 @@ nous allons créer un formulaire d'ajout de pizzas.
 
 Lecture recommandée: la `documentation officielle de Symfony.com sur les formulaires <http://symfony.com/doc/current/book/forms.html>`_
 
+Installation
+------------
+
+.. step::
+
+    Installez le composant formulaires::
+
+        composer req form
+
+    .. warning::
+        Il est possible que le composant ``form`` vous demande d'installer d'autres
+        composants pour fonctionner lui-même
+
 Création du formulaire
 ----------------------
 
@@ -14,7 +27,7 @@ Création du formulaire
     Notre formulaire sera géré par une classe::
 
         // Forms/PizzaType.php
-        namespace PizzaBundle\Forms;
+        namespace App\Forms;
 
         use Symfony\Component\Form\AbstractType;
         use Symfony\Component\Form\FormBuilderInterface;
@@ -40,7 +53,7 @@ Création du formulaire
             public function configureOptions(OptionsResolver $resolver)
             {
                 $resolver->setDefaults([
-                    'data_class' => 'PizzaBundle\Entity\Pizza',
+                    'data_class' => 'App\Entity\Pizza',
                 ]);
             }
         

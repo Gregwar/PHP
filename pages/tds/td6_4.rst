@@ -6,6 +6,23 @@ le site.
 
 Lecture recommandée: la `documentation officielle de Symfony.com sur la sécurité <http://symfony.com/doc/current/book/security.html>`_
 
+Installation
+------------
+
+.. step::
+
+    Commencez par installer le module de sécurité::
+
+        composer req security
+
+    Vous pouvez également installer le *profiler*, qui est un outil de débogage pratique
+    dans Symfony::
+
+        composer req profiler
+
+    Vous pouvez constater que la barre qui apparaîtra alors en bas de vos pages contient
+    l'utilisateur identifié (ou anon. pour "anonyme").
+
 Configuration
 -------------
 
@@ -13,8 +30,11 @@ Création du système de sécurité
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. step::
-    Premièrement, il vous faudra configurer le module de sécurité de Symfony. Pour cela,
-    éditez le fichier ``app/config/security.yml``.
+    Premièrement, nous allons activer le sytème de session. Pour ce faire, décommentez
+    la partie concernant les sessions dans ``app/config/packages/framework.yml``.
+
+    Ensuite, il vous faudra configurer le module de sécurité de Symfony. Pour cela,
+    éditez le fichier ``app/config/packages/security.yml``.
 
     Pour simplifier, nous allons utiliser des utilisateurs stockés en mémoire, c'est à dire directement
     dans le fichier de configuration de l'application. Voici un exemple:
@@ -70,7 +90,7 @@ Création du système de sécurité
     * Définit un filtrage d'accès sur les URLs commençant par ``/admin/``, il faudra le role
       ``ROLE_ADMIN`` pour y accéder
 
-    Créez ensuite des routes dans ``app/config/routing.yml`` pour les actions ``login_check`` et
+    Créez ensuite des routes dans ``app/config/routes.yaml`` pour les actions ``login_check`` et
     ``logout``::
 
         login_check:

@@ -77,6 +77,10 @@ Entités
 
             'App\App' => ['all' => true],
 
+        Vous devrez commenter cette ligne après avoir fini la génération. Cette
+        solution est un contournement en attendant que le code du générateur ait
+        été adapté à Symfony Flex.
+
 
     Ensuite, exécutez::
         
@@ -161,24 +165,32 @@ Entités
          */
         private $pizzas;
 
-    Fermez les fichier ``Ingredient.php`` et ``Pizza.php`` et utilisez la commande suivante:
+    Fermez les fichier ``Ingredient.php`` et ``Pizza.php``. Ajoutez maintenant des accesseurs
+    vers les ingrédients d'une pizza::
+        
+        public function getIngredients()
+        {
+            return $this->ingredients;
+        }
+        
+        public function addIngredient(Ingredient $ingredient)
+        {
+            $this->ingredients[] =  $ingredient;
+        }
+	
 
-    .. code-block:: no-highlight
+    Enfin, exécutez à nouveau ``doctrine:schema:update``, en regardant tout d'abord les modifications
+    qui seront apportées avec ``--dump-sql`` puis en les éxécutant avec ``--force``.
 
-        $ ./bin/console doctrine:generate:entities App
-
-    Réouvrez les fichiers, qu'observez vous?
-
-    Demandez maintenant à Doctrine la requête de mise à jour du schéma pour observer les changements.
-    Remarquez qu'il créera une nouvelle table, exécutez la requête.
-
+.. XXX: Gros cafouillage, ils déclarent une classe repo qui n'existe même pas...
+.. XXX: Ces accesseurs -ci-dessus- pourraient être générés quand doctrine:generate:entities
+.. aura été corrigé!
 .. vi fix: **
 
 Requêtage
 ---------
 
-Maintenant que nous avons mis les mains dans le terminal et dans Doctrine, nous allons revenir
-un peu à Symfony et requêter la base de données.
+Nous allons maintenant requêter la base de données.
 
 Insertion
 ~~~~~~~~~
@@ -232,7 +244,7 @@ Listage
 
         <?php
             
-            $pizzas = $em->getRepository('PizzaBundle:Pizza')
+            $pizzas = $em->getRepository('Pizza')
                         ->findAll();
 
     Ainsi, vous pourrez passer les pizzas en paramètres à une vue comme dans la partie précédente et
