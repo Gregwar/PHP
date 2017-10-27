@@ -14,4 +14,7 @@ PHP de leur projet, à savoir:
 * Vos éventuelles difficultés/problèmes (qui peuvent être
   liés à la technique ou pas)
 
+Vous passerez par groupe de projet au tableau devant le reste
+de la classe. Vous êtes libres de préparer des *slides* ou
+autre support à projeter.
 
