@@ -1,217 +1,147 @@
-TD6-2: La base de données
-=========================
+TD6-2: Utilisation de Twig
+===========================
 
-Dans cette partie du TD, nous allons créer la base de données associée à notre
-application web.
+.. |archive| image:: /img/archive.png
 
-Lecture recommandée: la `documentation officielle de Symfony.com sur Doctrine <http://symfony.com/doc/current/book/doctrine.html>`_
+.. important::
+    `|archive| Télécharger l'archive td6.zip </files/td6.zip>`_
 
-Configuration
--------------
+Nous allons maintenant créer une structure de site web. Afin de ne pas perdre de temps à réaliser des
+graphismes ou des feuilles de styles, une page d'exemple est fournie dans `td6 </files/td6.zip>`_, dans
+le dossier ``design/``.
 
-.. step::
-    Nous allons dans un premier temps configurer **Symfony** pour qu'il accède
-    à la base de données.
-
-    Pour cela, éditez le fichier ``app/config/parameters.yml`` et remplissez les
-    champs préfixés par ``database_``.
-
-    Vous pouvez par exemple vérifier en lançant une commande doctrine comme:
-
-    .. code-block:: no-highlight
-
-        php bin/console doctrine:schema:validate
-
-    Cette commande sert à vérifier que votre base de données est en accord avec votre
-    application, dans votre cas vous n'avez pas encore décrit de classes mappées avec
-    la base de données mais cela peut vous permettre de tester que la connexion fonctionne.
-
-Entités
--------
+Installation de Twig
+--------------------
 
 .. step::
-    Création
-    ~~~~~~~~
 
-    Nous allons maintenant créer nos entités. Commençons simplement avec les pizzas.
-    Pour cela, vous pouvez utiliser un outil proposé par Doctrine::
-        
-        php bin/console doctrine:generate:entity
 
-    Il vous sera alors demandé de nommer votre entité, apellez là ``PizzaBundle:Pizza``,
-    nous utiliserons ici aussi la configuration par annotations.
+    Tout d'abord, nous allons ajouter Twig à notre projet Symfony::
 
-    Vous pourrez alors saisir les champs de manière interactive, ajouter un champ ``name`` de
-    type ``string``, un champ ``description`` de type ``text``, un champ ``price`` de type
-    ``float``.
+        composer req twig
 
-    Regarder attentivement le fichier ``Entity/Pizza.php`` qui aura été généré dans votre bundle,
-    son contenu en terme de code est trivial, mais les annotations décrivent la correspondance
-    avec la base de données.
+Rendu Twig depuis le contrôleur
+-------------------------------
 
 .. step::
-    Génération de la base
-    ~~~~~~~~~~~~~~~~~~~~~
 
-    Maintenant que nous avons créé une entité, nous allons demander à Doctrine de créer la
-    base de données correspondante, pour cela, utilisez:
+    Les templates, ou "vues" de vote application se situent dans le dossier ``templates/``. Vous pouvez
+    faire hériter votre contrôleur de ``Symfony\Bundle\FrameworkBundle\Controller\Controller`` de la
+    façon suivante::
 
-    .. code-block:: no-highlight
+        use use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-        $ php bin/console doctrine:schema:create 
-        ATTENTION: This operation should not be executed in a production environment.
+        class DefaultController extends Controller
+        {
+                //...
 
-        Creating database schema...
-        Database schema created successfully!
+    Ainsi, votre contrôleur héritera d'un ensemble de fonction "raccourcie", comme ``render`` qui
+    vous permet d'effectuer le rendu d'une vue Twig::
 
-    Rendez-vous dans votre base de données, avec par exemple *phpMyAdmin* et constatez
-    que la table ``Pizza`` a été créée.
+        public function indexAction()
+        {
+            return $this->render("default/index.html.twig");
+        }
 
-.. step::
-    Ajout d'une entité
-    ~~~~~~~~~~~~~~~~~~
-
-    Nous allons ajouter une entité ingrédient, de la même manière que précédemment, créez
-    l'entité ``PizzaBundle:Ingredient`` ayant juste un champ ``name`` de type ``string``.
-
-    Une deuxième entité ``Entity/Ingredient.php`` apparaîtra.
-
-    Maintenant, nous pouvons demander à Doctrine de **mettre à jour** la base de données,
-    essayez:
-
-    .. code-block:: no-highlight
-
-        $ php bin/console doctrine:schema:update --dump-sql
-        CREATE TABLE Ingredient (id INT AUTO_INCREMENT NOT NULL, name VARCHAR(255) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB
-
-    Ici, doctrine nous affiche la requête qui permet de mettre à jour la base pour qu'elle
-    corresponde à nos entités. Vous pouvez également lui demandez d'exécuter les requêtes nécéssaire avec
-    ``--force``:
-
-    .. code-block:: no-highlight
-
-        $ php bin/console doctrine:schema:update --force
-        Updating database schema...
-        Database schema updated successfully! "1" queries were executed
+    Ainsi, si votre template est située dans ``templates/default/index.html.twig``, votre contrôleur
+    rendra alors cette dernière.
 
 .. step::
-    Mise en relation
-    ~~~~~~~~~~~~~~~~
 
-    Une pizza doit avoir plusieurs ingrédients, et un ingrédient doit pouvoir être dans plusieurs
-    pizzas. Pour mettre en relation ces deux entités, il faudrait normalement créer manuellement
-    une table intéremédiaire. Doctrine va également s'en charger pour nous!
+    Une petite astuce pour simplifeir le code est d'utiliser l'annotation ``@Template()``::
 
-    Pour cela, ajoutez le champ suivant dans l'entité ``Pizza``::
+        use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
-        /** 
-         * @ORM\ManyToMany(targetEntity="Ingredient", inversedBy="pizzas")
+        //...
+
+        /**
+         * @Route("/")
+         * @Template()
          */
-        private $ingredients;
-    
-    Et le champ suivant dans ``Ingredient``::
+         public function indexAction()
+         {
+             return [];
+         }
 
-        /** 
-         * @ORM\ManyToMany(targetEntity="Pizza", mappedBy="ingredients")
-         */
-        private $pizzas;
+    Notez qu'ici:
 
-    Fermez les fichier ``Ingredient.php`` et ``Pizza.php`` et utilisez la commande suivante:
+    * Le nom du fichier ``default/index.html.twig`` est "deviné" automatiquement par l'annotation,
+      car nous sommes dans le contrôleur ``DefaultController`` et sur la page ``indexAction``
+    * La valeur retournée par la fonctione (``[]``) correspond aux paramètres de la vue
 
-    .. code-block:: no-highlight
+Création du layout
+------------------
 
-        $ php bin/console doctrine:generate:entities PizzaBundle
+.. step::
 
-    Réouvrez les fichiers, qu'observez vous?
+    .. image:: /img/pizza.png
+        :style: float:right
 
-    Demandez maintenant à Doctrine la requête de mise à jour du schéma pour observer les changements.
-    Remarquez qu'il créera une nouvelle table, exécutez la requête.
+    Pour commencer, créez un layout principal ``layout.html.twig`` contenant la structure générale du
+    site. Placez la feuille de style et les images dans le dossier ``public/`` de Symfony et utilisez la
+    fonction ``asset()`` de Twig pour inclure ``style.css``. Pour ce faire, vous aurez besoin d'installer
+    le composant ``asset``::
+
+        composer req asset
+
+    Toutes vos templates hériteront plus tard ce ce ``layout.html.twig`` et surchargeront certain
+    de ses blocs.
+
+    Vous pourrez par exemple placer un
+    bloc ``contents`` à l'intérieur de votre page. Pour une documentation exhaustive, vous pouvez vous
+    référer à la `documentation "Templating" <http://symfony.com/doc/current/book/templating.html>`_ de
+    Symfony.
+
+    Faites hériter la page ``default/index.html.twig`` de ``layout.html.twig``.
+
+Une première page
+-----------------
+
+.. step::
+
+
+    Maintenant que votre structure est en place, créez une nouvelle action pour lister les pizzas
+    dans votre contrôleur. Bien entendu, nous n'allons pour le moment pas créer de base de
+    données.
+    Pour cela, vous pourrez ajouter une fonction de ce style avec ses annotations::
+
+        <?php
+
+            /**
+             * @Route("/pizzas", name="pizzas_list")
+             * @Template()
+             */
+            public function pizzasAction()
+            {
+                return [
+                    'pizzas' => [
+                        '4 fromages', 'Reine', 'Paysanne'
+                    ]
+                ];
+            }
+
+    Testez votre action en vous rendant à la page ``/pizzas`` de votre application, vous
+    devriez voir un message d'erreur vous indicant que la template correspondante n'existe pas. Créez
+    cette template en héritant du layout et surchargez le bloc du contenu pour afficher la liste des pizzas passées à la template.
 
 .. vi fix: **
-
-Requêtage
----------
-
-Maintenant que nous avons mis les mains dans le terminal et dans Doctrine, nous allons revenir
-un peu à Symfony et requêter la base de données.
-
-Insertion
-~~~~~~~~~
-
-.. step::
-    Nous allons créer des pizzas, pour ne pas parler tout de suite des formulaires, nous écrirons
-    une action qui inserera les pizzas.
-
-    Voici un exemple::
-
-        <?php
-            // ...
-            public function insertPizzasAction() {
-                $em = $this->get('doctrine')->getManager();
-
-                $mozarella = new Ingredient;
-                $mozarella->setName('Mozarella');
-                $parmesan = new Ingredient;
-                $parmesan->setName('Parmesan');
-                $quatreFromages = new Pizza;
-                $quatreFromages
-                    ->setName('4 fromages')
-                    ->setPrice(32.2)
-                    ->setDescription('Pour les fans de fromage')
-                    ;   
-                $quatreFromages->addIngredient($mozarella);
-                $quatreFromages->addIngredient($parmesan);
-                $em->persist($quatreFromages);
-                $em->persist($mozarella);
-                $em->persist($parmesan);
-                $em->flush();
-
-                return new Response('Pizzas créées');
-            }   
-
-
-    Remarquez l'utilisation des accesseurs (``setName`` et ``setDescription``) qui ont été générés
-    par Doctrine et que l'on peut apeller à la chaîne.
-
-    Documentez vous sur les fonctions ``persist()`` et ``flush()`` de Doctrine, à quoi servent t-elles?
-
-    Executez cette requêtes et allez voir dans la base de données pour vérifier la présence des nouvelles
-    lignes dans les tables.
-
-Listage
-~~~~~~~
+    
+Création du premier lien
+------------------------
 
 .. step::
 
-    Nous allons maintenant récupérer les pizzas pour les lister. Vous pourrez par exemple utiliser::
-
-        <?php
-            
-            $pizzas = $em->getRepository('PizzaBundle:Pizza')
-                        ->findAll();
-
-    Ainsi, vous pourrez passer les pizzas en paramètres à une vue comme dans la partie précédente et
-    en afficher la liste. Voici un exemple de code twig:
+    Modifiez le lien du bouton "Les pizzas" de manière à ce qu'il pointe vers la page que vous venez
+    de créer. Attention: ne mettez pas l'adresse de votre cible "en dur", mais utilisez la fonction twig
+    ``path``:
 
     .. code-block:: django
+        <a href="{{ path('pizzas_list') }}">Les pizzas</a>
 
-        <ul>
-        {% for pizza in pizzas %}
-            <li>{{ pizza.name }}</li>
-        {% endfor %}
-        </ul>
-
-    .. note::
-        Remarquez ici que ``pizza.name`` fera appel à ``$pizza->getName()``, Twig est assez intelligent
-        pour utiliser les accesseurs
-
-    Vous pourriez également écrire ``{{ pizza }}``, moyennant une surcharge de la méthode ``__toString()``
-    de la classe ``Pizza``
+Page d'accueil
+--------------
 
 .. step::
 
-    Affichez également entre parenthèse tous les ingrédients d'une pizza. Pour cela, c'est très simple,
-    vous pouvez accéder à l'entrée ``ingredients``, qui apellera elle-même la méthode ``getIngredients()``
-    qui retournera un tableau (un peu spécial car géré par Doctrine) contenant tous les ingrédients.
-
-    Utilisez le filtre `join <http://twig.sensiolabs.org/doc/filters/join.html>`_ de Twig pour cela.
+    Faites également pointer la page "Présentation" vers une second page que vous créerez, qui aura comme
+    URL "/", ce sera la page d'accueil de votre site.

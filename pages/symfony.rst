@@ -13,9 +13,10 @@ de réaliser des applications web.
 
 .. discover::
     D'après son créateur **Fabien Potencier**, Symfony est en fait plus un rassemblement
-    de bibliothèques et de composants tous fortement découplés assemblées et paramétrés pour fonctionner ensemble.
-    
-    En effet, **Symfony** se base notamment sur:
+    de bibliothèques et de composants tous fortement découplés assemblées et
+    paramétrés pour fonctionner ensemble.
+
+    En effet, **Symfony** propose d'intégrer des composants logiciels tels que:
 
 .. discoverList::
     * *Doctrine* pour requêter la base de données
@@ -29,18 +30,26 @@ Installation
 
 .. textOnly::
     **Symfony** se base sur **composer** pour organiser ce rassemblement de composants.
-    
+
 .. textOnly::
     Cet outil déjà présenté précédemment dans ce cours permet de gérer les dépendances entre les
     différents composants.
 
-Il est possible de créer un projet **Symfony** à l'aide de la commande: 
+Il est possible de créer un projet **Symfony** à l'aide de la commande:
 
 .. code-block:: no-highlight
-    composer.phar create-project symfony/framework-standard-edition
+    composer create-project symfony/skeleton my-project
 
 .. textOnly::
     **Composer** va alors chercher toutes les dépendances nécéssaire et vous créer un projet **Symfony** vide
+
+.. slide::
+
+Modularité
+~~~~~~~~~~
+
+Depuis Symfony "Flex", ce squelette de projet est relativement vide, et il
+faudra choisir d'installer manuellement les composants dont nous aurons besoin.
 
 .. slide::
 
@@ -64,7 +73,7 @@ Communauté
 
 Organisation
 ~~~~~~~~~~~~
-    
+
 *GitHub* joue un rôle extrêmement important dans l'organisation du développement de **Symfony** et
 de ses composants.
 
@@ -136,7 +145,7 @@ Cycle de vie
 Contrôleurs
 ~~~~~~~~~~~
 
-Les **contrôleurs** sont des fonctions généralement regroupées dans des classes par 
+Les **contrôleurs** sont des fonctions généralement regroupées dans des classes par
 "thème" qui génèrent une réponse à partir d'une requête:
 
 .. discover::
@@ -149,7 +158,7 @@ Les **contrôleurs** sont des fonctions généralement regroupées dans des clas
             }
         }
 
-        
+
 
 .. discover::
     Le **routage** est le fait d'écrire des règles pour associer des URLs à ces
@@ -163,7 +172,7 @@ Annotations
 .. textOnly::
     Afin de simplifier la configuration, **Symfony** vous propose d'utiliser massivement
     des **annotations**, il s'agit en fait de commentaires que vous pouvez ajouter au dessus
-    de classes ou méthodes qui vous permettent d'ajouter des informations. 
+    de classes ou méthodes qui vous permettent d'ajouter des informations.
 
     Par exemple, il est possible de configurer le routage de cette manière:
 
@@ -187,7 +196,7 @@ Annotations
 
     Pour plus d'informations sur le routage, rendez-vous sur la `documentation officielle <http://symfony.com/doc/current/book/routing.html>`_,
     ou dans le TD au cours duquel nous l'utiliserons.
- 
+
 .. slide::
 
 Les templates
@@ -236,7 +245,7 @@ Voici un exemple de template:
 .. textOnly::
     Comme vous le voyez, *Twig* permet d'écrire des documents directements en HTML, à l'exception de certain
     tags qui permettent d'y ajouter de la structure, à l'instar du **PHP**.
-    
+
     Dans cet exemple:
 
     * ``{% block contents %}`` est un bloc qui pourra être surchargé dans les templates filles
@@ -266,7 +275,7 @@ La template précédente peut être héritée comme cela:
     Le mot clé ``extends`` permet de décrire que cette page hérite de ``index.html.twig``, de la même
     manière que l'héritage des classes votre template se basera alors sur cette template mère et pourra redéfinir son
     comportement.
-    
+
     Les blocs peuvent alors être surchargés, c'est à dire modifié en les redéfinissant. Il est aussi possible d'utiliser
     le mot clé ``parent()`` pour faire appel à la template mère et utiliser son contenu, comme dans le cas du titre
     qui deviendra ici "Mon titre - Ma page"
@@ -279,7 +288,7 @@ Boucles, conditions
 Il est également possible d'effectuer des tests et des boucles avec Twig:
 
 .. code-block:: django
-    
+
     {% if not users|length %}
     <i>Aucun utilisateur</i>
     {% else %}
@@ -349,7 +358,7 @@ Principe
 .. textOnly::
 
     Les enregistrement de votre base de données seront mis en correspondance avec les
-    objets que vous manipulez. 
+    objets que vous manipulez.
 
     Ainsi, au lieu de penser à votre base de données, vous n'avez qu'à penser objet.
     Si vous souhaitez par exemple manipuler des produits, vous écrirez:
@@ -391,11 +400,11 @@ Principe
          */
         class Product
         {
-           /** 
+           /**
              * @ORM\Column(type="string")
              */
-            private $name; 
-        
+            private $name;
+
             // ...
         }
 

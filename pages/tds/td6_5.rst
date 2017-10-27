@@ -1,37 +1,89 @@
+TD6-5: Formulaires
+==================
 
-TD6-5: Utilisation de bundle
-============================
+Maintenant que nous avons :doc:`sécurisé l'espace admin <td6_3>`,
+nous allons créer un formulaire d'ajout de pizzas.
 
-.. image:: /img/package.png
-    :style: float:right
+Lecture recommandée: la `documentation officielle de Symfony.com sur les formulaires <http://symfony.com/doc/current/book/forms.html>`_
 
-Dans cette partie, nous allons utiliser une **bundle**, c'est à dire un
-paquet pour **Symfony**.
-
-Nous utiliserons un des **bundles** les plus connus: `FOSUserBundle <https://github.com/FriendsOfSymfony/FOSUserBundle/>`_,
-ce dernier permet de gérer les utilisateurs d'un site, de leur stockage en base de données
-aux formulaires d'inscription et d'édition de profil, en passant par les e-mails
-de confirmations etc.
-
-Installation
-------------
+Création du formulaire
+----------------------
 
 .. step::
-    Pour l'installation, vous allez **suivre scrupuleusement** les étapes 
-    proposées par la documentation officielle:
 
-    .. important::
-        `Installation de FOSUserBundle <http://symfony.com/doc/current/bundles/FOSUserBundle/index.html>`_
+    Notre formulaire sera géré par une classe::
 
-    Pour cela, il y a 7 étapes à suivre, vous utiliserez évidemment **composer** pour l'installation du bundle
-    ainsi que **Doctrine** pour la partie base de données.
+        // Forms/PizzaType.php
+        namespace PizzaBundle\Forms;
 
-Utilisation
------------
+        use Symfony\Component\Form\AbstractType;
+        use Symfony\Component\Form\FormBuilderInterface;
+        use Symfony\Component\OptionsResolver\OptionsResolver;
+
+        class PizzaType extends AbstractType
+        {
+            public function buildForm(FormBuilderInterface $builder, array $options)
+            {
+                $builder
+                    ->add('name')
+                    ->add('price')
+                    ->add('description')
+                    ->add('ingredients')
+                    ;
+            }
+
+            public function getName()
+            {
+                return 'pizza_form';
+            }
+            
+            public function configureOptions(OptionsResolver $resolver)
+            {
+                $resolver->setDefaults([
+                    'data_class' => 'PizzaBundle\Entity\Pizza',
+                ]);
+            }
+        
+        }
+
+    Ici, nous décrivons un type de formulaire qui correspond à la classe de l'entité ``Pizza``
+    de notre bundle.
+
+    Nous ajoutons alors nos champs, notez que nous ne précisons nullement leur type, il sera deviné
+    par **Symfony**.
+
+    A l'aide de la `documentation officielle <http://symfony.com/doc/current/book/forms.html>`_ et
+    de cette classe, créez un formulaire servant à créer une pizza dans l'espace administrateur.
 
 .. step::
-    Une fois le bundle installé, utilisez les nouvelles commandes **Symfony**
-    ``fos:user:create`` et ``fos:user:promote`` afin de créer votre utilisateur
-    administrateur et de lui ajouter le role ``ROLE_ADMIN``. Vous pouvez alors
-    essayer de vous identifier
+
+    Lorsque le formulaire est soumis et valide, insérez alors la ``Pizza`` ainsi créée dans la base
+    de données à l'aide de **Doctrine**.
+
+Questions
+---------
+
+Labels
+~~~~~~
+
+.. step::
+
+    Remarquez que les labels sont mis en place par défaut par **Symfony** en utilisant le nom du champ
+    concerné (qui est anglais ici). A l'aide de la `documentation <http://symfony.com/doc/current/book/forms.html>`_,
+    modifiez les.
+
+Champ supplémentaire
+~~~~~~~~~~~~~~~~~~~~
+
+.. step::
+
+    Une champ caché en plus apparaîtra dans votre formulaire "``...token``", de quoi s'agit t-il?
+
+Stylisation
+~~~~~~~~~~~
+
+.. step::
+
+    Notez que les champs ne sont pas stylisés par notre feuille de style, pour cela, vous pouvez utiliser
+    depuis Symfony 2.6 le thème bootstrap pour les formulaires. Activez-le dans votre application.
 

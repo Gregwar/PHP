@@ -1,90 +1,119 @@
-
-TD6-4: Formulaires
+TD6-4: La sécurité
 ==================
 
-Maintenant que nous avons :doc:`sécurisé l'espace admin <td6_3>`,
-nous allons créer un formulaire d'ajout de pizzas.
+Dans cette partie du TD, nous allons créer une zone sécurisée pour administrer
+le site.
 
-Lecture recommandée: la `documentation officielle de Symfony.com sur les formulaires <http://symfony.com/doc/current/book/forms.html>`_
+Lecture recommandée: la `documentation officielle de Symfony.com sur la sécurité <http://symfony.com/doc/current/book/security.html>`_
 
-Création du formulaire
-----------------------
+Configuration
+-------------
+
+Création du système de sécurité
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. step::
+    Premièrement, il vous faudra configurer le module de sécurité de Symfony. Pour cela,
+    éditez le fichier ``app/config/security.yml``.
+
+    Pour simplifier, nous allons utiliser des utilisateurs stockés en mémoire, c'est à dire directement
+    dans le fichier de configuration de l'application. Voici un exemple:
+
+    ::
+
+        security:
+            encoders:
+                Symfony\Component\Security\Core\User\User: plaintext
+
+            role_hierarchy:
+                ROLE_ADMIN:       ROLE_USER
+
+            providers:
+
+
+                in_memory:
+                    memory:
+                        users:
+                            admin: { password: something, roles: [ 'ROLE_ADMIN' ] }
+
+            firewalls:
+                dev:
+                    pattern:  ^/(_(profiler|wdt)|css|images|js)/
+                    security: false
+
+                main:
+                    pattern:    ^/
+                    form_login:
+                        check_path: login_check
+                        login_path: home
+                    logout:
+                        path:   logout
+                        target: home
+                    anonymous: ~
+
+            access_control:
+                - { path: ^/admin/, roles: ROLE_ADMIN }
+
+    Ce fichier:
+
+    * Définit l'encodage des mots de passes de ``Symfony\Component\Security\Core\User\User`` comme ``plaintext``,
+      c'est à dire texte brut sans hachage
+    * Exhibe une hiérarchie entre les rôles (un admin est un user)
+    * Définit plusieurs pare-feux (ou *firewalls*):
+        * ``dev``: ce pare-feu sert à laisser l'accès aux fichiers utiles pendant le développement
+        * ``login``: sert à désactiver la sécurité sur la page d'accueil que nous considérerons
+          comme page de login pour simplifier
+        * ``main``: pare-feu principal qui couvre tout le site, autorisant les utilisateurs
+          anonymes et décrivant la page de vérification de login comme étant ``login_check``,
+          celle de déconnexion ``logout`` et d'identification ``home`` (ces noms sont évidement
+          des noms de routes)
+    * Définit un filtrage d'accès sur les URLs commençant par ``/admin/``, il faudra le role
+      ``ROLE_ADMIN`` pour y accéder
+
+    Créez ensuite des routes dans ``app/config/routing.yml`` pour les actions ``login_check`` et
+    ``logout``::
+
+        login_check:
+            path: /login/check
+
+        logout:
+            path: /logout
+
+    Modifiez maintenant l'action du formulaire d'identification afin qu'il pointe vers ``login_check``,
+    vous devriez alors pouvoir vous identifier (vous pouvez vérifier que vous êtes identifiés dans la
+    barre de développement en bas de l'écran)
+
+Utilisation dans la vue
+~~~~~~~~~~~~~~~~~~~~~~~
 
 .. step::
 
-    Notre formulaire sera géré par une classe::
+    Désormais, nous allons modifier notre vue pour afficher:
 
-        // Forms/PizzaType.php
-        namespace PizzaBundle\Forms;
+    * Le lien de déconnexion lorsque l'utilisateur est identifié
+    * Le formulaire de login sinon
 
-        use Symfony\Component\Form\AbstractType;
-        use Symfony\Component\Form\FormBuilderInterface;
-        use Symfony\Component\OptionsResolver\OptionsResolver;
+    Pour cela, vous pouvez utiliser le chemin vers la page ``logout`` et la variable
+    ``app.user`` dans Twig qui vous donnera un accès à l'utilisateur identifié dans
+    l'application
 
-        class PizzaType extends AbstractType
-        {
-            public function buildForm(FormBuilderInterface $builder, array $options)
-            {
-                $builder
-                    ->add('name')
-                    ->add('price')
-                    ->add('description')
-                    ->add('ingredients')
-                    ;
-            }
-
-            public function getName()
-            {
-                return 'pizza_form';
-            }
-            
-            public function configureOptions(OptionsResolver $resolver)
-            {
-                $resolver->setDefaults([
-                    'data_class' => 'PizzaBundle\Entity\Pizza',
-                ]);
-            }
-        
-        }
-
-    Ici, nous décrivons un type de formulaire qui correspond à la classe de l'entité ``Pizza``
-    de notre bundle.
-
-    Nous ajoutons alors nos champs, notez que nous ne précisons nullement leur type, il sera deviné
-    par **Symfony**.
-
-    A l'aide de la `documentation officielle <http://symfony.com/doc/current/book/forms.html>`_ et
-    de cette classe, créez un formulaire servant à créer une pizza dans l'espace administrateur.
+Contrôleur sécurisé
+-------------------
 
 .. step::
 
-    Lorsque le formulaire est soumis et valide, insérez alors la ``Pizza`` ainsi créée dans la base
-    de données à l'aide de **Doctrine**.
+    Maintenant, écrivez un nouveau contrôleur, le ``AdminController`` qui servira à
+    gérer les pages réservées à l'administration du site.
 
-Questions
----------
-
-Labels
-~~~~~~
+    Vous pouvez pour cela vous inspirer du ``DefaultController`` existant.
 
 .. step::
 
-    Remarquez que les labels sont mis en place par défaut par **Symfony** en utilisant le nom du champ
-    concerné (qui est anglais ici). A l'aide de la `documentation <http://symfony.com/doc/current/book/forms.html>`_,
-    modifiez les.
-
-Champ supplémentaire
-~~~~~~~~~~~~~~~~~~~~
+    Utilisez ensuite l'annotation ``@Route("/admin/")`` sur la **classe** ``AdminController``,
+    cette dernière est un *préfixe*, elle signifie que toutes les routes que vous définierai
+    dans ce contrôleur seront préfixées par ``/admin/``.
 
 .. step::
 
-    Une champ caché en plus apparaîtra dans votre formulaire "``...token``", de quoi s'agit t-il?
-
-Stylisation
-~~~~~~~~~~~
-
-.. step::
-
-    Notez que les champs ne sont pas stylisés par notre feuille de style, pour cela, vous pouvez utiliser
-    depuis Symfony 2.6 le thème bootstrap pour les formulaires. Activez-le dans votre application.
-
+    Testez que tout fonctionne bien en écrivant votre première action dans le contrôleur admin,
+    et en essayant d'y accéder en étant identifié ou pas.

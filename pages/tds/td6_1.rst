@@ -9,156 +9,98 @@ Installation de Symfony
 -----------------------
 
 .. step::
-    Etape 1: Récupérer les fichiers
+    Etape 1: récupérer les fichiers
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        
+
     La meilleure solution afin d'installer Symfony est de passer par composer. Pour cela,
     installez tout d'abord composer quelque part et utilisez la commande ``create-project``:
 
     .. code-block:: no-highlight
-        composer.phar create-project symfony/framework-standard-edition pizza
-        
-    Composer va alors travailler un moment et vous déploiera le framework dans le dossier ``pizza/``.
-    Certaines questions seront aussi posées, laissez pour l'instant les paramètres par défaut.
+        composer create-project symfony/skeleton pizza
+
+    Composer va alors cloner le squelette du framework Symfony dans le dossier ``pizza/``.
 
 .. slide::
 
 .. step::
 
-    Etape 2: configurez les droits
+    Etape 2: lancement du serveur
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-    Vous devrez donner les droits aux serveurs en écriture dans les dossiers ``app/cache`` et
-    ``var/logs``, par exemple:
-
-    .. code-block:: no-highlight
-        chmod -R 777 var/cache/ var/logs/
 
     Lancez la commande::
 
-        php bin/console server:run
+        php -S localhost:8000 -t public
 
-    Et connectez vous à ``http://localhost:8000/``
+    Et connectez vous à ``http://localhost:8000/``, vous devriez voir la page d'erreur
+    ``404`` par défaut de Symfony:
 
 .. slide::
 
 .. center::
-    .. image:: /img/sfwelcome.png
-
-.. slide::
-
-.. step::
-    Etape 3: créer votre Bundle
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-    Une application Symfony réside dans un *Bundle*, ou un "Paquet" en français. Avant de
-    commencer à écrire votre code, vous devrez donc créer votre propre Bundle.
-        
-    Créez maintenant votre Bundle, appellons le ``PizzaBundle``.
-
-    .. code-block:: no-highlight
-        php bin/console generate:bundle
-        
-    Répondez alors ``PizzaBundle`` à la première question qui vous sera posée, et
-    laissez les autre valeurs par défaut. Utilisez le format ``annotation`` pour la configuration.
+    .. image:: /img/sf404.png
 
 .. slide::
 
 .. step::
 
-    Etape 4: Hello world
-    ~~~~~~~~~~~~~~~~~~~~
+    Symfony vient avec son propre outil en ligne de commande, vous pouvez l'exécuter
+    pour voir les commandes disponibles::
 
-    Regardez le fichier ``app/config/routing.yml``, il contient théoriquement une nouvelle section
-    qui signifie que votre Bundle sera utilisée par annotation pour le routage.
+        ./bin/console
 
-    Le code de votre Bundle se situe désormais dans ``src/PizzaBundle/``, regardez les
-    différents fichiers qu'il contient, notamment ``Controller/DefaultController.php`` et 
-    ``Resources/views/Default/index.html.twig``.
+    Nous allons installer notre premier composant Symfony: un meilleur serveur web
+    de développement. Pour cela, lancez simplement::
+
+        composer require symfony/web-server-bundle
+
+    Si vous exécutez à nouveau la console de Symfony, vous verrez qu'une nouvelle option
+    est maintenant disponible, ``server:run``, vous pouvez donc désormais lancer le
+    serveur de développement de cette façon::
+
+        ./bin/console server:run
 
 .. slide::
 
-Prise en main
--------------
-
-.. |archive| image:: /img/archive.png
-
-.. important::
-    `|archive| Télécharger l'archive td6.zip </files/td6.zip>`_
-
-Nous allons maintenant créer une structure de site web. Afin de ne pas perdre de temps à réaliser des
-graphismes ou des feuilles de styles, une page d'exemple est fournie dans `td6 </files/td6.zip>`_, dans
-le dossier ``design/``.
-
 .. step::
-    Création du layout
-    ~~~~~~~~~~~~~~~~~~
 
-    .. image:: /img/pizza.png
-        :style: float:right
+    Etape 3: créer votre Contrôleur
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    Les templates, ou "vues" de vote application se situent dans le dossier ``Resources/views`` de votre
-    bundle.
+    Votre application réside dans le dossier ``src/``. Par défaut, Symfony ne contient
+    aucun contrôleur. Créez le fichier ``src/Controller/DefaultController.php``:: 
 
-    Pour commencer, créez un layout principal ``layout.html.twig`` contenant la structure générale du
-    site. Placez la feuille de style et les images dans le dossier ``web/`` de Symfony et utilisez la
-    fonction ``asset()`` de Twig pour inclure ``style.css``.
+        // src/Controller/DefaultController.php
+        namespace App\Controller;
 
-    Toutes vos templates hériteront plus tard ce ce ``layout.html.twig`` et surchargeront certain
-    de ses blocs.
+        use Symfony\Component\HttpFoundation\Response;
+        use Symfony\Component\Routing\Annotation\Route;
 
-    Vous pourrez par exemple placer un
-    bloc ``contents`` à l'intérieur de votre page. Pour une documentation exhaustive, vous pouvez vous
-    référer à la `documentation "Templating" <http://symfony.com/doc/current/book/templating.html>`_ de
-    Symfony.
-
-    Faites hériter la page ``Default/index.html.twig`` de ``layout.html.twig``, voilà ce que vous devriez
-    obtenir:
-
-.. step::
-    Une première page
-    ~~~~~~~~~~~~~~~~~
-
-    Maintenant que votre structure est en place, créez une nouvelle action pour lister les pizzas
-    dans votre contrôleur. Bien entendu, nous n'allons pour le moment pas créer de base de 
-    données.
-    Pour cela, vous pourrez ajouter une fonction de ce style avec ses annotations::
-
-        <?php
-
+        class DefaultController
+        {
             /**
-             * @Route("/pizzas", name="pizzas_list")
-             * @Template()
+             * @Route("/")
              */
-            public function pizzasAction()
+            public function indexAction()
             {
-                return [
-                    'pizzas' => [
-                        '4 fromages', 'Reine', 'Paysanne'
-                    ]
-                ];
+                return new Response(
+                    '<html><body>Hello world!</body></html>'
+                );
             }
+        }
 
-    Testez votre action en vous rendant à la page ``/pizzas`` de votre application, vous
-    devriez voir un message d'erreur vous indicant que la template correspondante n'existe pas. Créez
-    cette template en héritant du layout et surchargez le bloc du contenu pour afficher la liste des pizzas passées à la template.
-
-.. vi fix: **
+.. slide::
 
 .. step::
-    Création du premier lien
-    ~~~~~~~~~~~~~~~~~~~~~~~~
-        
-    Modifiez le lien du bouton "Les pizzas" de manière à ce qu'il pointe vers la page que vous venez
-    de créer. Attention: ne mettez pas l'adresse de votre cible "en dur", mais utilisez la fonction twig
-    ``path``:
 
-    .. code-block:: django
-        <a href="{{ path('pizzas_list') }}">Les pizzas</a>
+    Etape 4: Route
+    ~~~~~~~~~~~~~~~~~~~~
+    
+    Dans le fichier ``config/routes.yaml``, vous trouverez une règle permettant d'importer
+    les *annotations* depuis vos contrôleurs. Cependant, il faut d'abord installer le module
+    qui lit les annotations::
 
-.. step::
-    Page d'accueil
-    ~~~~~~~~~~~~~~
+        composer req annotations
 
-    Faites également pointer la page "Présentation" vers une second page que vous créerez, qui aura comme
-    URL "/", ce sera la page d'accueil de votre site.
+    Ensuite, décommentez les dernières lignes du fichier ``routes.yaml``, et chargez votre
+    première page!
+

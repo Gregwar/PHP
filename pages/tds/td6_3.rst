@@ -1,120 +1,262 @@
+TD6-3: La base de données
+=========================
 
-TD6-3: La sécurité
-==================
+Dans cette partie du TD, nous allons créer la base de données associée à notre
+application web.
 
-Dans cette partie du TD, nous allons créer une zone sécurisée pour administrer
-le site.
+Lecture recommandée: la `documentation officielle de Symfony.com sur Doctrine <http://symfony.com/doc/current/book/doctrine.html>`_
 
-Lecture recommandée: la `documentation officielle de Symfony.com sur la sécurité <http://symfony.com/doc/current/book/security.html>`_
+Installation
+------------
+
+.. step::
+
+    Installez Doctrine::
+
+        composer req doctrine
 
 Configuration
 -------------
 
-Création du système de sécurité
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. step::
+    Nous allons dans un premier temps configurer **Symfony** pour qu'il accède
+    à la base de données.
+
+    Pour cela, éditez le fichier ``.env`` et modifiez la valeur de la variable
+    ``DATABASE_URL``. Cette dernière ressemblera à ceci::
+
+        DATABASE_URL="mysql://127.0.0.1:3306/database?charset=utf8mb4&serverVersion=5.7&user=pizza&password=pizza"
+
+    Ici, il faut éventuellement adapter:
+
+    * L'adresse du serveur
+    * Le nom de la base de données
+    * L'identifiant et le mot de passe
+
+    Vous pouvez par exemple vérifier en lançant une commande doctrine comme:
+
+    .. code-block:: no-highlight
+
+        ./bin/console doctrine:schema:validate
+
+    Cette commande sert à vérifier que votre base de données est en accord avec votre
+    application, dans votre cas vous n'avez pas encore décrit de classes mappées avec
+    la base de données mais cela peut vous permettre de tester que la connexion fonctionne.
+
+Entités
+-------
+
+.. XXX: Symfony should provide a good generator (now this is 3rd party bundle)
 
 .. step::
-    Premièrement, il vous faudra configurer le module de sécurité de Symfony. Pour cela,
-    éditez le fichier ``app/config/security.yml``.
+    Création
+    ~~~~~~~~
 
-    Pour simplifier, nous allons utiliser des utilisateurs stockés en mémoire, c'est à dire directement
-    dans le fichier de configuration de l'application. Voici un exemple:
+    Nous allons maintenant créer nos entités. Commençons simplement avec les pizzas.
+    Pour cela, nous allons utiliser un paquet qui nous aidera à la génération:
 
-    ::
+        composer req sensio/generator-bundle
 
-        security:
-            encoders:
-                Symfony\Component\Security\Core\User\User: plaintext
+    .. warning::
 
-            role_hierarchy:
-                ROLE_ADMIN:       ROLE_USER
+        A l'heure de ce TD, le bundle de génération assisté n'a pas encore été bien
+        transporté sur Symfony Flex, il faut effectuer quelques étapes pour pouvoir
+        continuer. Créez le fichier ``src/App.php`` contenant::
 
-            providers:
+            <?php
+
+            namespace App;
+
+            use Symfony\Component\HttpKernel\Bundle\Bundle;
+
+            class App extends Bundle
+            {
+            }
+
+        Et modifiez ``config/bundles.php`` pour y ajouter::
+
+            'App\App' => ['all' => true],
 
 
-                in_memory:
-                    memory:
-                        users:
-                            admin: { password: something, roles: [ 'ROLE_ADMIN' ] }
+    Ensuite, exécutez::
+        
+        ./bin/console generate:doctrine:entity
 
-            firewalls:
-                dev:
-                    pattern:  ^/(_(profiler|wdt)|css|images|js)/
-                    security: false
+    Il vous sera alors demandé de nommer votre entité, apellez là ``App:Pizza``,
+    nous utiliserons ici aussi la configuration par annotations.
 
-                main:
-                    pattern:    ^/
-                    form_login:
-                        check_path: login_check
-                        login_path: home
-                    logout:
-                        path:   logout
-                        target: home
-                    anonymous: ~
+    Vous pourrez alors saisir les champs de manière interactive, ajouter un champ ``name`` de
+    type ``string``, un champ ``description`` de type ``text``, un champ ``price`` de type
+    ``float``.
 
-            access_control:
-                - { path: ^/admin/, roles: ROLE_ADMIN }
-
-    Ce fichier:
-
-    * Définit l'encodage des mots de passes de ``Symfony\Component\Security\Core\User\User`` comme ``plaintext``,
-      c'est à dire texte brut sans hachage
-    * Exhibe une hiérarchie entre les rôles (un admin est un user)
-    * Définit plusieurs pare-feux (ou *firewalls*):
-        * ``dev``: ce pare-feu sert à laisser l'accès aux fichiers utiles pendant le développement
-        * ``login``: sert à désactiver la sécurité sur la page d'accueil que nous considérerons
-          comme page de login pour simplifier
-        * ``main``: pare-feu principal qui couvre tout le site, autorisant les utilisateurs
-          anonymes et décrivant la page de vérification de login comme étant ``login_check``,
-          celle de déconnexion ``logout`` et d'identification ``home`` (ces noms sont évidement
-          des noms de routes)
-    * Définit un filtrage d'accès sur les URLs commençant par ``/admin/``, il faudra le role
-      ``ROLE_ADMIN`` pour y accéder
-
-    Créez ensuite des routes dans ``app/config/routing.yml`` pour les actions ``login_check`` et
-    ``logout``::
-
-        login_check:
-            path: /login/check
-
-        logout:
-            path: /logout
-
-    Modifiez maintenant l'action du formulaire d'identification afin qu'il pointe vers ``login_check``,
-    vous devriez alors pouvoir vous identifier (vous pouvez vérifier que vous êtes identifiés dans la
-    barre de développement en bas de l'écran)
-
-Utilisation dans la vue
-~~~~~~~~~~~~~~~~~~~~~~~
+    Regarder attentivement le fichier ``Entity/Pizza.php`` qui aura été généré dans vos sources,
+    son contenu en terme de code est trivial, mais les annotations décrivent la correspondance
+    avec la base de données.
 
 .. step::
 
-    Désormais, nous allons modifier notre vue pour afficher:
+    Génération de la base
+    ~~~~~~~~~~~~~~~~~~~~~
 
-    * Le lien de déconnexion lorsque l'utilisateur est identifié
-    * Le formulaire de login sinon
+    Maintenant que nous avons créé une entité, nous allons demander à Doctrine de créer la
+    base de données correspondante, pour cela, utilisez:
 
-    Pour cela, vous pouvez utiliser le chemin vers la page ``logout`` et la variable
-    ``app.user`` dans Twig qui vous donnera un accès à l'utilisateur identifié dans
-    l'application
+    .. code-block:: no-highlight
 
-Contrôleur sécurisé
--------------------
+        $ ./bin/console doctrine:schema:create 
+        ATTENTION: This operation should not be executed in a production environment.
+
+        Creating database schema...
+        Database schema created successfully!
+
+    Rendez-vous dans votre base de données, avec par exemple *phpMyAdmin* et constatez
+    que la table ``Pizza`` a été créée.
+
+.. step::
+    Ajout d'une entité
+    ~~~~~~~~~~~~~~~~~~
+
+    Nous allons ajouter une entité ingrédient, de la même manière que précédemment, créez
+    l'entité ``App:Ingredient`` ayant juste un champ ``name`` de type ``string``.
+
+    Une deuxième entité ``Entity/Ingredient.php`` apparaîtra.
+
+    Maintenant, nous pouvons demander à Doctrine de **mettre à jour** la base de données,
+    essayez:
+
+    .. code-block:: no-highlight
+
+        $ php bin/console doctrine:schema:update --dump-sql
+        CREATE TABLE Ingredient (id INT AUTO_INCREMENT NOT NULL, name VARCHAR(255) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB
+
+    Ici, doctrine nous affiche la requête qui permet de mettre à jour la base pour qu'elle
+    corresponde à nos entités. Vous pouvez également lui demandez d'exécuter les requêtes nécéssaire avec
+    ``--force``:
+
+    .. code-block:: no-highlight
+
+        $ php bin/console doctrine:schema:update --force
+        Updating database schema...
+        Database schema updated successfully! "1" queries were executed
+
+.. step::
+    Mise en relation
+    ~~~~~~~~~~~~~~~~
+
+    Une pizza doit avoir plusieurs ingrédients, et un ingrédient doit pouvoir être dans plusieurs
+    pizzas. Pour mettre en relation ces deux entités, il faudrait normalement créer manuellement
+    une table intéremédiaire. Doctrine va également s'en charger pour nous!
+
+    Pour cela, ajoutez le champ suivant dans l'entité ``Pizza``::
+
+        /** 
+         * @ORM\ManyToMany(targetEntity="Ingredient", inversedBy="pizzas")
+         */
+        private $ingredients;
+    
+    Et le champ suivant dans ``Ingredient``::
+
+        /** 
+         * @ORM\ManyToMany(targetEntity="Pizza", mappedBy="ingredients")
+         */
+        private $pizzas;
+
+    Fermez les fichier ``Ingredient.php`` et ``Pizza.php`` et utilisez la commande suivante:
+
+    .. code-block:: no-highlight
+
+        $ ./bin/console doctrine:generate:entities App
+
+    Réouvrez les fichiers, qu'observez vous?
+
+    Demandez maintenant à Doctrine la requête de mise à jour du schéma pour observer les changements.
+    Remarquez qu'il créera une nouvelle table, exécutez la requête.
+
+.. vi fix: **
+
+Requêtage
+---------
+
+Maintenant que nous avons mis les mains dans le terminal et dans Doctrine, nous allons revenir
+un peu à Symfony et requêter la base de données.
+
+Insertion
+~~~~~~~~~
+
+.. step::
+    Nous allons créer des pizzas, pour ne pas parler tout de suite des formulaires, nous écrirons
+    une action qui inserera les pizzas.
+
+    Voici un exemple::
+
+        <?php
+            // ...
+            public function insertPizzasAction() {
+                $em = $this->get('doctrine')->getManager();
+
+                $mozarella = new Ingredient;
+                $mozarella->setName('Mozarella');
+                $parmesan = new Ingredient;
+                $parmesan->setName('Parmesan');
+                $quatreFromages = new Pizza;
+                $quatreFromages
+                    ->setName('4 fromages')
+                    ->setPrice(32.2)
+                    ->setDescription('Pour les fans de fromage')
+                    ;   
+                $quatreFromages->addIngredient($mozarella);
+                $quatreFromages->addIngredient($parmesan);
+                $em->persist($quatreFromages);
+                $em->persist($mozarella);
+                $em->persist($parmesan);
+                $em->flush();
+
+                return new Response('Pizzas créées');
+            }   
+
+
+    Remarquez l'utilisation des accesseurs (``setName`` et ``setDescription``) qui ont été générés
+    par Doctrine et que l'on peut apeller à la chaîne.
+
+    Documentez vous sur les fonctions ``persist()`` et ``flush()`` de Doctrine, à quoi servent t-elles?
+
+    Executez cette requêtes et allez voir dans la base de données pour vérifier la présence des nouvelles
+    lignes dans les tables.
+
+Listage
+~~~~~~~
 
 .. step::
 
-    Maintenant, écrivez un nouveau contrôleur, le ``AdminController`` qui servira à
-    gérer les pages réservées à l'administration du site.
+    Nous allons maintenant récupérer les pizzas pour les lister. Vous pourrez par exemple utiliser::
 
-    Vous pouvez pour cela vous inspirer du ``DefaultController`` existant.
+        <?php
+            
+            $pizzas = $em->getRepository('PizzaBundle:Pizza')
+                        ->findAll();
+
+    Ainsi, vous pourrez passer les pizzas en paramètres à une vue comme dans la partie précédente et
+    en afficher la liste. Voici un exemple de code twig:
+
+    .. code-block:: django
+
+        <ul>
+        {% for pizza in pizzas %}
+            <li>{{ pizza.name }}</li>
+        {% endfor %}
+        </ul>
+
+    .. note::
+        Remarquez ici que ``pizza.name`` fera appel à ``$pizza->getName()``, Twig est assez intelligent
+        pour utiliser les accesseurs
+
+    Vous pourriez également écrire ``{{ pizza }}``, moyennant une surcharge de la méthode ``__toString()``
+    de la classe ``Pizza``
 
 .. step::
 
-    Utilisez ensuite l'annotation ``@Route("/admin/")`` sur la **classe** ``AdminController``,
-    cette dernière est un *préfixe*, elle signifie que toutes les routes que vous définierai
-    dans ce contrôleur seront préfixées par ``/admin/``.
+    Affichez également entre parenthèse tous les ingrédients d'une pizza. Pour cela, c'est très simple,
+    vous pouvez accéder à l'entrée ``ingredients``, qui apellera elle-même la méthode ``getIngredients()``
+    qui retournera un tableau (un peu spécial car géré par Doctrine) contenant tous les ingrédients.
 
-.. step::
-
-    Testez que tout fonctionne bien en écrivant votre première action dans le contrôleur admin,
-    et en essayant d'y accéder en étant identifié ou pas.
+    Utilisez le filtre `join <http://twig.sensiolabs.org/doc/filters/join.html>`_ de Twig pour cela.
