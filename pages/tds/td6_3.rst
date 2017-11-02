@@ -53,40 +53,15 @@ Entités
     ~~~~~~~~
 
     Nous allons maintenant créer nos entités. Commençons simplement avec les pizzas.
-    Pour cela, nous allons utiliser un paquet qui nous aidera à la génération:
+    Pour cela, nous allons utiliser un paquet qui nous aidera à la génération::
 
-        composer req sensio/generator-bundle
-
-    .. warning::
-
-        A l'heure de ce TD, le bundle de génération assisté n'a pas encore été bien
-        transporté sur Symfony Flex, il faut effectuer quelques étapes pour pouvoir
-        continuer. Créez le fichier ``src/App.php`` contenant::
-
-            <?php
-
-            namespace App;
-
-            use Symfony\Component\HttpKernel\Bundle\Bundle;
-
-            class App extends Bundle
-            {
-            }
-
-        Et modifiez ``config/bundles.php`` pour y ajouter::
-
-            'App\App' => ['all' => true],
-
-        Vous devrez commenter cette ligne après avoir fini la génération. Cette
-        solution est un contournement en attendant que le code du générateur ait
-        été adapté à Symfony Flex.
-
+        composer req sadikoff/flex-generator-bundle
 
     Ensuite, exécutez::
         
         ./bin/console generate:doctrine:entity
 
-    Il vous sera alors demandé de nommer votre entité, apellez là ``App:Pizza``,
+    Il vous sera alors demandé de nommer votre entité, apellez là ``Pizza``,
     nous utiliserons ici aussi la configuration par annotations.
 
     Vous pourrez alors saisir les champs de manière interactive, ajouter un champ ``name`` de

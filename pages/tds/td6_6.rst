@@ -16,14 +16,28 @@ Installation
 ------------
 
 .. step::
-    Pour l'installation, vous allez **suivre scrupuleusement** les étapes 
-    proposées par la documentation officielle:
+    Placez le contenu suivant dans ``config/packages/fos.yaml``::
+
+        framework:
+            templating: { engines: [twig] }
+        
+        fos_user:
+            db_driver: orm
+            firewall_name: main
+            user_class: FOS\UserBundle\Model\User
+            from_email: {address: "fosub@localhost", sender_name: FOSUB}
+            use_flash_notifications: false
+
+
+    Installez ensuite le bundle::
+
+        composer req friendsofsymfony/user-bundle
+
+    Suivez enfin les étapes de la documentation officielle:
 
     .. important::
         `Installation de FOSUserBundle <http://symfony.com/doc/current/bundles/FOSUserBundle/index.html>`_
 
-    Pour cela, il y a 7 étapes à suivre, vous utiliserez évidemment **composer** pour l'installation du bundle
-    ainsi que **Doctrine** pour la partie base de données.
 
 Utilisation
 -----------

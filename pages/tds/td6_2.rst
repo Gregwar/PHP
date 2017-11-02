@@ -50,6 +50,10 @@ Rendu Twig depuis le contrôleur
 
     Une petite astuce pour simplifeir le code est d'utiliser l'annotation ``@Template()``::
 
+        composer req sensio/framework-extra-bundle
+
+    Puis::
+
         use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
         //...
