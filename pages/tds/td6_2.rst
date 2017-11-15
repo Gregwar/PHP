@@ -29,7 +29,7 @@ Rendu Twig depuis le contrôleur
     faire hériter votre contrôleur de ``Symfony\Bundle\FrameworkBundle\Controller\Controller`` de la
     façon suivante::
 
-        use use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+        use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
         class DefaultController extends Controller
         {
