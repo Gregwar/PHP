@@ -12,6 +12,9 @@ Support et auteur
 .. important::
     Grégoire Passault 
     *g.passault@gmail.com*
+
+     Marty Lamoureux
+     *marty@lamoureux-mail.fr*
  
     `http://gregwar.com/php/ <http://gregwar.com/php/>`_
 
