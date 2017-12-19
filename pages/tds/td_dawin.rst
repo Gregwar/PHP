@@ -4,114 +4,152 @@ TD noté DAWIN
 Présentation
 ------------
 
-Archive
-~~~~~~~
+Consignes et rendu
+~~~~~~~~~~~~~~~~~~
 
-.. |archive| image:: /img/archive.png
+.. warning::
+    Ce travail est à produire **individuellement**, il doit se réaliser sur le `GitLab du département <https://gitlab-ce.iut.u-bordeaux.fr/>`_ dans un **dépôt privé**
 
-.. important::
-    `|archive| Télécharger l'archive shows.zip </files/shows.zip>`_
+    Pour ce faire, vous effectuerez un **fork** du dépôt suivant:
 
-Consignes
-~~~~~~~~~
+    - `https://gitlab-ce.iut.u-bordeaux.fr/gpassault/td_dawin_2018 <https://gitlab-ce.iut.u-bordeaux.fr/gpassault/td_dawin_2018>`_
 
-**`----> Merci de renseigner votre dépôt ici !!! <http://gregwar.com/rendu/>`_**
+    **N'oubliez pas de donner les droits à votre intervenant (Grégoire Passault ou Marty Lamoureux)**
 
-Ce travail est à rendre sous forme de **dépôt**. Mon identifiant Bitbucket et
-Github est Gregwar.
+    Vous devez impérativement renseigner votre dépôt à l'aide d'une remise sur `le Moodle du cours <https://moodle1.u-bordeaux.fr/course/view.php?id=3634>`_
 
-Ce travail est a réaliser **individuellement**. Cependant, vous êtes libres d'utiliser
-des bibliothèques et des bundle pour réaliser les questions. Je vous recommande
-même d'ailleurs d'y penser!
+    La date limite de remise est le **15 Janvier 2018** inclu, ce qui signifie que vos dépôts seront clonés et ne seront plus mis à jour
 
-Vous avez jusqu'au **22 Janvier 2017** pour me le remettre.
+.. div:: alert alert-danger
 
-Remarquez également que je n'évalue pas la forme, ne vous embêtez donc pas à faire
-de la mise en page et du style, si les fonctionnalités sont là (et qu'elles sont
-ergonomiquement utilisables), vous aurez les points correspondants.
+    **Information**: nous exécutons des scripts automatiques pour détecter le plagiat de code, si vous nous rendez des devoirs similaires, nous le détecterons et reviendrons à la fois vers le `plagieur et le plagié <http://www.studyrama.com/vie-etudiante/se-defendre-vos-droits/triche-et-plagiat-a-l-universite/plagier-c-est-frauder-et-risquer-des-sanctions-74063>`_.
 
-Installation
-~~~~~~~~~~~~
+Consignes et rendu
+~~~~~~~~~~~~~~~~~~
 
-Premièrement, téléchargez et extrayez l'archive. 
+Nous allons créer une application capable de parcourir des produits et de les évaluer. Pour ce faire, nous allons nous baser sur:
 
-Installez ensuite les dépendances avec composer::
+- Le framework **Symfony**, dans sa version 3.4
+- `L'API de Open Food Facts <https://fr.openfoodfacts.org/data>`_ comme source de données pour les produits
+- Le `FOSUserBundle <https://github.com/FriendsOfSymfony/FOSUserBundle>`_ pour la gestion des utilisateurs
 
-    php composer.phar install
+.. step::
 
-Si vous ne l'avez pas fait au cours de l'installation interactive, paramétrez ensuite
-votre connexion à la base de données (dans ``app/config/parameters.yml``).
-Puis, créez vos tables::
+    Prise en main
+    ---------
 
-    php bin/console doctrine:schema:create
+    Commencez par faire votre *fork* du dépôt original et par le cloner. N'oubliez pas d'installer les dépendances à l'aide de `composer <http://getcomposer.org>`_~::
 
-Et importez les données::
+        composer install
 
-    php bin/console doctrine:database:import sql/shows.sql
+    Modifiez alors le fichier ``app/config/parameters.yml`` pour qu'il contienne les paramètres de connexion valide à un serveur MySQL (vous pouvez par exemple utiliser celle du TD4 au département) et créez les tables::
 
-Vous pouvez désormais lancer le serveur pour commencer à travailler::
+        php bin/console doctrine:schema:create
 
-    php bin/console server:run
+    Lancez alors le serveur web et testez::
 
-Voici à quoi devrait ressembler le résultat (page "séries"):
+        php bin/console server:run
 
-.. center::
-    .. image:: /img/shows.png
-        :width: 800
-
-Pour vous connecter en tant qu'administrateur, vous pouvez cliquer sur le lien
-"Connexion admin" tout en bas de chaque page (``admin``/``pass``).
-
-Questions
+Travail à réaliser
 ---------
 
 .. step::
-    #-) Ajout de la date
-    ~~~~~~~~~~~~~~~~~~~~
 
-    Vous constaterez que les dates de diffusion des épisodes sont stockés en base
-    mais jamais affichées. Modifiez le code pour qu'elles soient affichées dans la
-    fiche d'une série.
+    #-) Ajout des entités
+    ~~~~~~~~~~~~~~~~~~~~~
+
+    L'application de base marche, mais n'offre presque aucune fonctionnalités mis à part l'inscription et la connexion des utilisateurs à l'aide du *FOSUserBundle*. Nous allons ajouter des entités de manière à avoir:
+
+    - Plus d'informations sur les utilisateurs
+    - Des produits
+    - Les évaluations
+
+    Pour nous, un **produit** sera représenté par son *code barre*, son *nombre de consultations* et sa *date de dernière vue* sur notre site.
+
+    En plus des informations actuelles, nous demanderons aux **utilisateurs** de fournir leur *nom*, leur *date de naissance* ainsi que leur *sexe*.
+
+    Enfin, les **évaluations** comportent une *note* et un *commentaire*. Une évaluation correspond à un produit ainsi qu'à un utilisateur.
+
+    Voici un aperçu des entités:
+
+    .. center::
+        .. image:: /img/open_food_facts.png
+
+    .. note::
+        Note: la relation d'héritage entre notre produit et celui d'Open Food Facts est ici virtuelle. En fait, nous ne stockerons que le code barre dans notre base et utiliserons l'API d'**Open Food Facts** pour afficher les autres champs!
+
+    Vous pourrez vous aider de la commande interactive::
+
+        php bin/console doctrine:generate:entity
+
+    Pour créer les entités, et vous aider de la `documentation officielle <https://symfony.com/doc/3.4/doctrine.html>`_ pour gérer les relations.
 
 .. step::
-    #-) Suppression des saisons
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    Il n'est actuellement pas possible de supprimer une saison (seulement des épisodes,
-    lorsque vous êtes identifiés en tant qu'administrateur).
-    Modifiez le code pour le permettre. Attention, supprimer une saison doit également
-    supprimer les épisodes correspondants.
+    #-) Ajout des champs utilisateur à l'inscription
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+    En vous aidant de cette `page de documentation <http://symfony.com/doc/2.0/bundles/FOSUserBundle/overriding_forms.html>`_, faites en sorte que nouveaux champs (*nom*, *date de naissance* et *sexe*) apparaissent dans le formulaire d'inscription.
 
 .. step::
-    #-) Recherche
-    ~~~~~~~~~~~~~
 
-    Implémentez la recherche pour la rendre fonctionnelle. Cette dernière doit afficher les
-    résultats qui correspondent aux mots clés (titre, synopsis) dans la base de données.
-
-.. step::
-    #-) Pagination des séries
-    ~~~~~~~~~~~~~~~~~~~~~~~~~
-
-    La liste des séries est assez longue, implémentez une pagination de manière à pouvoir
-    séparer cet affichage en plusieurs pages (par exemple 6 séries par page)
-
-.. step::
-    #-) Prochaines parutions
+    #-) Recherche de produit
     ~~~~~~~~~~~~~~~~~~~~~~~~
 
-    Implémentez la page "Calendrier" pour afficher la liste des prochaines diffusions (de
-    la plus proche à la plus éloignée à partir d'aujourd'hui)
+    Le formulaire de recherche de produit n'est pour l'instant pas actif. Utilisez `l'API d'Open Food Facts <https://fr.openfoodfacts.org/data>`_ pour que lorsqu'on recherche un produit par code barre, la page produit affiche pré-remplir.
+
+    Voici un exemple de code qui affiche le nom du produit ``3029330003533``::
+
+        <?php
+
+        $url = 'https://fr.openfoodfacts.org/api/v0/produit/3029330003533.json';
+        $data = json_decode(file_get_contents($url), true);
+
+        echo $data['product']['product_name']."\n";
 
 .. step::
-    #-) Import OMDB
+
+    #-) Création des produits en base
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Lorsqu'un produit est recherché par code barre et qu'il n'existe pas déjà en base. Dans ce cas, créez-le.
+
+    Si il existe déjà, incrémentez la valeur du nombre de consultations et mettez à jour la date de dernière vue à la date actuelle.
+
+    Affichez le nombre de consultation sur la fiche produit.
+
+.. step::
+
+    #-) Récemment consultés
+    ~~~~~~~~~~~~~~~~~~~~~~~
+
+    Modifiez le code de la page d'accueil afin que la rubrique "Récemment consultés" affiche les 8 derniers produits consultés sur le site (en utilisant la date de dernière vue).
+
+    Affichez également la photo et le nom du produit concernés.
+
+    .. note::
+
+        Essayez de factoriser le plus possible le code permettant de récupérer les données depuis **Open Food Facts** (éviter les copier/coller).
+
+.. step::
+
+    #-) Evaluations
     ~~~~~~~~~~~~~~~
 
-    Lorsque vous êtes connectés en admin, il existe déjà une fonctionnalité nommé "import OMDB"
-    qui propose d'effectuer une recherche à l'aide de l'API OMDB et du `bundle OMDbAPI <https://github.com/aharen/OMDbAPI>`_. Vous pouvez y accéder en cliquant sur le lien correspondant tout en bas de l'écran.
+    En vous inspirant éventuellement du fonctionnement du formulaire de recherche et évidemment de la `documentation officielle <https://symfony.com/doc/3.4/forms.html>`_, ajoutez un formulaire en bas de la fiche d'un produit permettant à un utilisateur d'écrire une évaluation notée (entre 0 et 5) du produit.
 
-    Complétez cette fonctionnalité, de manière à ce qu'un clic sur la fiche d'une série ainsi
-    trouvée permette de l'importer dans la base de données de votre application.
+    Si l'utilisateur a déjà laissé une note pour ce produit, le formulaire ne doit plus apparaître.
 
+.. step::
 
+    #-) Note d'un produit
+    ~~~~~~~~~~~~~~~~~~~~~
+
+    Sur la fiche d'un produit, affichez sa note entre 0 et 5. Vous placerez le code qui permet d'obtenir la note d'un produit dans le `*repository* de l'entité *produit* <https://symfony.com/doc/3.4/doctrine/repository.html>`_.
+
+.. step::
+
+    #-) Meilleurs produits
+    ~~~~~~~~~~~~~~~~~~~~~
+
+    Enfin, modifiez le code de la page d'accueil afin que les 8 meilleurs produits soient bien affichés. De la même manière que la question précédente, vous écrirez pour cela la requête dans le *repository* de *produit*.
