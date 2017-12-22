@@ -135,5 +135,4 @@ Exposés
 TD Noté
 -------
 
-* :doc:`Le TD noté DAWIN <tds/td_dawin>`
-* :doc:`Le TD noté DAGPI <tds/td_dagpi>`
+* :doc:`Le TD noté DAWIN 2018 <tds/td_dawin>`
