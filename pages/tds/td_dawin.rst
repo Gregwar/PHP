@@ -14,7 +14,7 @@ Consignes et rendu
 
     - `https://gitlab-ce.iut.u-bordeaux.fr/gpassault/td_dawin_2018 <https://gitlab-ce.iut.u-bordeaux.fr/gpassault/td_dawin_2018>`_
 
-    **N'oubliez pas de donner les droits à votre intervenant (Grégoire Passault ou Marty Lamoureux)**
+    **N'oubliez pas de donner les droits à Grégoire Passault**
 
     Vous devez impérativement renseigner votre dépôt à l'aide d'une remise sur `le Moodle du cours <https://moodle1.u-bordeaux.fr/course/view.php?id=3634>`_
 
