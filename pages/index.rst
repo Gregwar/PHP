@@ -10,12 +10,12 @@ Support et auteur
 ~~~~~~~~~~~~~~~~~
 
 .. important::
-    Grégoire Passault 
+    Grégoire Passault
     *g.passault@gmail.com*
 
-    Marty Lamoureux 
+    Marty Lamoureux
     *marty@lamoureux-mail.fr*
- 
+
     `http://gregwar.com/php/ <http://gregwar.com/php/>`_
 
 .. slide:: slideOnly
@@ -34,7 +34,7 @@ Avez-vous déjà fait du PHP?
 .. div:: importantText
     PHP EST UN CHOIX
 
-.. slide:: darkSlide fullSlide slideOnly 
+.. slide:: darkSlide fullSlide slideOnly
 
 .. discover::
     .. div:: inSlide
@@ -60,7 +60,7 @@ Avez-vous déjà fait du PHP?
 
             PHP
 
-.. slide:: darkSlide fullSlide slideOnly 
+.. slide:: darkSlide fullSlide slideOnly
 
 .. discover::
     .. div:: importantText
@@ -69,7 +69,7 @@ Avez-vous déjà fait du PHP?
 .. discover::
     PHP EST COOL
 
-.. slide:: darkSlide fullSlide slideOnly 
+.. slide:: darkSlide fullSlide slideOnly
 
 .. div:: importantText
     PHP Powa!
@@ -99,7 +99,7 @@ Dans ce cours, nous étudierons:
     * **Les principes techniques** du langage PHP, c'est à dire savoir tout
       ce qu'il est possible de faire avec le langage lui-même
     * **Les concepts**, ou les principes de programmations, patrons de conceptions,
-      ou encore les catégories d'outils 
+      ou encore les catégories d'outils
     * **Les outils**, comme Symfony, Doctrine, composer etc.
 
 .. slide::
@@ -135,4 +135,4 @@ Exposés
 TD Noté
 -------
 
-* :doc:`Le TD noté DAWIN 2018 <tds/td_dawin>`
+* :doc:`Le TD noté DAWIN Formation Initiale 2018 <tds/td_dawin>`
