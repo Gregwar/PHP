@@ -205,7 +205,7 @@ Exemple basique
 
     <?php
     // Les variables sont préfixées par $
-    // $a n'est pas typé
+    // Il n'y a pas de typage explicite de $a
     $a = 12; // entier
     $a = 'hello'; // chaîne
 
@@ -221,7 +221,7 @@ Exemple basique
 
 
 .. textOnly::
-    Les variables se préfixent par le symbole ``$`` et ne sont pas typées, comme
+    Les variables se préfixent par le symbole ``$`` et ne sont pas typées explicitement, comme
     ci-dessus, ``$a`` peut contenir aussi bien un entier qu'une chaîne. Son type
     change en pleine exécution.
 
