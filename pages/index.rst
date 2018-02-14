@@ -136,3 +136,4 @@ TD Noté
 -------
 
 * :doc:`Le TD noté DAWIN Formation Initiale 2018 <tds/td_dawin>`
+* :doc:`Le TD noté DAWIN Formation en Alternance 2018 <tds/td_dawin_alt>`
