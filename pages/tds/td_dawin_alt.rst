@@ -159,7 +159,7 @@ Travail à réaliser
     #-) Référencer ses repas
     ~~~~~~~~~~~~~~~~~~~~~
 
-    Dans le cadre de notre application, nous voudons pouvoir évaluer les apports énergétiques de chacun de nos repas. Ajoutez une section "Mes repas", avec la possibilité d'ajouter un repas pour un jour donné, et avec un type (Petit-déjeuner, Déjeuner, Encas, Dîner). Cela ajoute donc un modèle (et tout ce qui va avec !) "Repas".
+    Dans le cadre de notre application, nous voulons pouvoir évaluer les apports énergétiques de chacun de nos repas. Ajoutez une section "Mes repas", avec la possibilité d'ajouter un repas pour un jour donné, et avec un type (Petit-déjeuner, Déjeuner, Encas, Dîner). Cela ajoute donc un modèle (et tout ce qui va avec !) "Repas".
 
 .. step::
 
