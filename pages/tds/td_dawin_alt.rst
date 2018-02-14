@@ -159,18 +159,18 @@ Travail à réaliser
     #-) Référencer ses repas
     ~~~~~~~~~~~~~~~~~~~~~
 
-    Dans le cadre de notre application, nous pourrions avoir besoin d'évaluer les apports énergétiques de chacun de nos repas.  Faites une interface tout d'abord pour gérer ses repas. On pourrait imaginer une section "Mes repas", et la possibilité d'ajouter un repas selon le jour, et le type de repas (Petit-déjeuner, Déjeuner, Encas, Dîner). Cela ajoute donc un modèle (et tout ce qui va avec !) "Repas".
+    Dans le cadre de notre application, nous voudons pouvoir évaluer les apports énergétiques de chacun de nos repas. Ajoutez une section "Mes repas", avec la possibilité d'ajouter un repas pour un jour donné, et avec un type (Petit-déjeuner, Déjeuner, Encas, Dîner). Cela ajoute donc un modèle (et tout ce qui va avec !) "Repas".
 
 .. step::
 
     #-) Aliments consommés
     ~~~~~~~~~~~~~~~~~~~~~
 
-    Désormais, nous devons pouvoir ajouter les aliments consommés à chaque repas. Pour cela, il faut pouvoir lier plusieurs produits à mon repas.
+    Désormais, nous devons pouvoir ajouter les aliments consommés à chaque repas. Pour cela, il faut pouvoir lier plusieurs produits à un repas.
 
 .. step::
 
     #-) Aliments consommés
     ~~~~~~~~~~~~~~~~~~~~~
 
-    Maintenant que j'ai ma liste d'aliments consommés sur chaque repas, je dois pouvoir récupérer (via l'API OpenFoodFacts) l'énergie de chaque aliment. (Attention aux unités des valeurs récupérées dans l'API !!). Il faut afficher cette valeur par aliment, et afficher la valeur totale d'énergie consommée par repas.
+    Maintenant que vous associez un ensemble d'aliments consommés à un repas, récupérez (via l'API OpenFoodFacts) l'énergie de chaque aliment. Attention aux unités des valeurs récupérées dans l'API !!. Affichez cette valeur par aliment, et affichez la valeur totale d'énergie consommée dans le repas.
