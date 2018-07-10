@@ -3,15 +3,15 @@
     <head>
         <meta charset="utf-8" />
         <title>Cinéma</title>
-        <link rel="stylesheet" type="text/css" href="{{ asset('/css/style.css') }}" />
-        <link rel="shortcut icon" href="{{ asset('/css/favicon.ico') }}" />
+        <link rel="stylesheet" type="text/css" href="{{ base_url() }}/css/style.css" />
+        <link rel="shortcut icon" href="{{ base_url() }}/css/favicon.ico" />
     </head>
     <body>
         <h1>Cinéma</h1>
         <div class="menu">
-            <a href="{{ path('home') }}">Accueil</a>
-            <a href="{{ path('films') }}">Films</a>
-            <a href="{{ path('genres') }}">Genres</a>
+            <a href="{{ path_for('home') }}">Accueil</a>
+            <a href="{{ path_for('films') }}">Films</a>
+            <a href="{{ path_for('genres') }}">Genres</a>
         </div>
 
         <div class="contents">

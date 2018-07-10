@@ -1,7 +1,9 @@
 {
     "require": {
-        "silex/silex": "2.*",
-        "symfony/twig-bridge": "*",
-        "symfony/asset" : "*"
+        "php": ">=5.5.0",
+        "slim/slim": "^3.1",
+        "slim/php-view": "^2.0",
+        "monolog/monolog": "^1.17",
+        "slim/twig-view": "^2.4"
     }
 }

@@ -34,7 +34,7 @@ Film non trouvé!
     <em>A venir</em>
     <div class="ajout">
         <h2>Ajouter votre critique</h2>
-        <form method="post" />
+        <form method="post" action="{{ path_for('film_critique', {id: film.id}) }}" />
             Nom: <br/><input type="text" name="nom" /><br />
             Note: <br/><input size="3" type="number" name="note" />/5<Br/>    
             Critique: <br/>
