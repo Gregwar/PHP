@@ -36,8 +36,26 @@ Présentation
 
 .. slide::
 
-Personnalités
-~~~~~~~~~~~~~
+Histoire
+~~~~~~~~
+
+**Le web en 1993 (C)**
+
+.. center::
+    .. image:: img/web_in_c.png
+
+.. slide:: 
+
+**PHP 1**
+
+.. center::
+    .. image:: img/php_1994.png
+
+.. textOnly::
+    PHP (à l'origine Personal Home Pages) est inventé pour rendre l'écriture de pages web plus facile, le langage
+    ressemble alors plus à un langage de templates
+
+.. slide::
 
 **Rasmus Lerdorf (@rasmus)**
 
@@ -49,6 +67,8 @@ Personnalités
     pragmatique. 
 
     *«I've never thought of PHP as more than a simple tool to solve problems.»*
+
+.. slide::
 
 .. slide::
 
@@ -108,7 +128,7 @@ L'ensemble de la documentation et des fichiers binaires de **PHP** peuvent
 Sous linux, vous trouverez l'interpreteur **PHP** dans les dépôts **apt** :
 
 .. code-block:: no-highlight
-    php5-cli - command-line interpreter for the php5 scripting language
+    php-cli - command-line interpreter for the php5 scripting language
 
 Sous windows, vous trouverez les binaires à l'adresse suivante: 
 `http://windows.php.net/download/ <http://windows.php.net/download/>`_

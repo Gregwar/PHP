@@ -63,8 +63,8 @@ Exercice 1: Prise en main
 Exercice 2: Les bases
 ---------------------
 
-Comme :doc:`vu en cours </bases#arrays>`,  le tableau (``array()`` ou encore ``[]`` dans les
-dernières versions) représente la structure de données la plus importante en **PHP**.
+Comme :doc:`vu en cours </bases#arrays>`,  le tableau (``array()`` ou encore ``[]``) 
+représente la structure de données la plus importante en **PHP**.
 
 Il est important de maîtriser parfaitement la création et la manipulation de ces tableaux avant
 de pouvoir aller plus loin.
