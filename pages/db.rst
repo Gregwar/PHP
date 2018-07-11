@@ -299,11 +299,13 @@ Utilisation
 
 .. slide::
 
-.. redirection-title:: tds/td4
+.. redirection-title:: tds/td4_1
 
 TD 4
 ----
 
 .. toctree::
 
-    tds/td4
+    tds/td4_1
+    tds/td4_2
+    tds/td4_3

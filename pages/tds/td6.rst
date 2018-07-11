@@ -1,8 +1,8 @@
 TD6
 ===
 
-Découverte de Symfony2
-----------------------
+Symfony
+-------
 
 .. note::
 

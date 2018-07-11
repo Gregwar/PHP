@@ -1,0 +1,102 @@
+
+* {
+    padding:0;
+    margin:0;
+}
+
+body {
+    width:950px;
+    margin:auto;
+    margin-top:20px;
+    font-family:Arial, sans-serif;
+    color:#333;
+    font-size:17px;
+}
+
+h1 {
+    background-image:url('cinema64.png');
+    height:64px;
+    background-repeat:no-repeat;
+    background-position:0px -5px;
+    padding-left:64px;
+    font-size:55px;
+}
+
+h1, h2 {
+    color:#ca372e;
+}
+
+h3, h4 {
+    color:#666;
+    font-weight:normal;
+}
+
+.menu a {
+    display:block;
+    float:left;
+    background-color:#eee;
+    padding:5px;
+    font-size:20px;
+    width:100px;
+    text-align:center;
+    margin-right:10px;
+    border-radius:10px;
+    color:#666;
+    text-decoration:none;
+    border:2px solid white;
+}
+
+.menu a:hover {
+    color:black;
+    background-color:#ffeccd;
+    border:2px solid black;
+}
+
+.menu {
+    width:100%;
+    float:left;
+}
+
+.contents {
+    margin-top:10px;
+    float:left;
+    width:100%;
+}
+
+a {
+    color:#666;
+}
+
+a:hover {
+    color:black;
+}
+
+.film, .acteur {
+    float:left;
+    height:128px;
+    width:300px;
+}
+
+.film img, .fiche img, .acteur img {
+    float:left;
+    margin:5px;
+}
+
+.fiche .description {
+    font-style:italic;
+}
+
+.commentaires, .casting {
+    clear:both;
+}
+
+hr {
+    border:0;
+    height:0;
+    border-bottom:1px dashed #ddd;
+    margin:10px;
+}
+
+input, textarea {
+    width:400px;
+}
