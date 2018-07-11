@@ -17,8 +17,8 @@ TD4-1: SQL et PDO
 
     Commencez par récupérer la base de données à partir de l'archive ci-dessus et par l'importer dans une base de données
 
-Rappels SQL
------------
+Rappels de requêtage SQL
+------------------------
 
 Avant de commencer à utiliser le PDO avec PHP, nous allons effectuer des requêtes SQL "brutes" sur une base d'exemple.
 
@@ -86,4 +86,54 @@ Dans cette partie, vous pourrez tester les requêtes dans **phpMyAdmin**. N'oubl
 Utilisation du PDO
 ------------------
 
-Coming soon
+.. step::
+
+    Connexion
+    ~~~~~~~~~
+
+    Ecrivez un fichier PHP qui créé la connexion avec la base de données, par exemple::
+
+        <?php
+        // pdo.php
+        try {
+            return new PDO(
+                'mysql:dbname=user;host=127.0.0.1',
+                'user', 
+                'pass'
+            );
+        } catch (PDOException $exception) {
+            echo 'Erreur: '.$exception->getMessage()
+                ."\n";
+            exit(1);
+        }
+    
+.. step::
+
+    Lister les utilisateurs
+    ~~~~~~~~~~~~~~~~~~~~~~~
+
+    Vous pouvez maintenant importer le pdo et tester une requête simple, telle le listing des utilisateurs::
+
+        <?php
+        // users.php
+
+        $pdo = include('pdo.php');
+
+        // Utiliser le $pdo pour lister les utilisateurs (cf le cours)
+
+.. step::
+
+    Affichage des tickets d'un utilisateurs
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Faites en sorte que chaque utilisateur soit clickable et mène à une autre page, par exemple ``tickets.php``,
+    qui affiche l'ensemble des tickets de l'utilisateurs.
+
+    Pour chaque ticket, on affichera le détail, c'est à dire le nom du produit, la quantité ainsi que le prix.
+
+.. step::
+
+    Regroupement par catégories
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Modifiez ``tickets.php`` afin que les produits soient regroupés par catégories
