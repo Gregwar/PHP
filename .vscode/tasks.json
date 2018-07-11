@@ -21,7 +21,8 @@
             "command": "cd ../php;php -S localhost:8000",
             "presentation": {
                 "reveal": "never"
-            }
+            },
+            "problemMatcher": []
         }
     ]
 }
