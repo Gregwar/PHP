@@ -6,9 +6,12 @@ $loader->add('', 'src');
 use Slim\Http\Request;
 use Slim\Http\Response;
 
+// Création d'une application, microframework Slim (https://www.slimframework.com/)
 $app = new \Slim\App([
     'settings' => [
         'displayErrorDetails' => true,
+
+        // Paramètres de connexion à la base de données
         'db' => [
             'hostname' => 'localhost',
             'user' => 'cinema',
@@ -18,7 +21,7 @@ $app = new \Slim\App([
     ]
 ]);
 
-// Enregistrement de Twig
+// Enregistrement de Twig (https://www.slimframework.com/docs/v3/features/templates.html#the-slimtwig-view-component)
 $container = $app->getContainer();
 
 $container['view'] = function ($container) {
@@ -33,7 +36,7 @@ $container['view'] = function ($container) {
     return $view;
 };
 
-// Enregistrement de la base de données
+// Enregistrement de la base de données (https://www.slimframework.com/docs/v3/tutorial/first-app.html)
 $container['model'] = function($app) {
     $db = $app['settings']['db'];
     return new Cinema\Model($db['hostname'], $db['database'], $db['user'], $db['password']);
@@ -61,7 +64,8 @@ $app->get('/fiche_film/{id}', function(Request $request, Response $response, arr
     ]);
 })->setName('film');
 
-$app->post('/fiche_film/{id}', function(Request $request, Response $response,array $args) {
+// Gestion de la soumission d'une critique
+$app->post('/film_critique/{id}', function(Request $request, Response $response,array $args) {
     $post = $request->getParsedBody();
     
     throw new \Exception("A faire dans le TD!");
