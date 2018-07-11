@@ -37,13 +37,13 @@ Compréhension
     #-. Le routeur
     ~~~~~~~~~~~~~
 
-    Observez le fonctionnement des appels à ``match()``.
+    Observez le fonctionnement des appels à ``$app->get()`` et à ``$app->post()``.
 
-    Le routeur du framework `Silex <http://silex.sensiolabs.org/>`_ a été réutilisé ici.
+    Le routeur du framework `Slim <https://www.slimframework.com/>`_ a été réutilisé ici.
     Il permet de simplifier le routage des requêtes,
-    ainsi que la génération des url à l'aide de la méthode ``path()``.
+    ainsi que la génération des url à l'aide de la méthode ``path_for()``.
 
-    Vous pouvez `consulter cette page <http://silex.sensiolabs.org/doc/usage.html>`_ pour
+    Vous pouvez `consulter cette page <https://www.slimframework.com/docs/v3/tutorial/first-app.html>`_ pour
     plus d'informations.
 
 
@@ -60,7 +60,7 @@ Compréhension
     ~~~~~~~~~~~~~~~~~~~~~~~~
     
     Ici, `Twig <http://twig.sensiolabs.org/>`_ est utilisé pour le rendu des templates.
-    Observez comment ``layout.html.twig`` est définit et comment son block ``content``
+    Observez comment ``layout.html.twig`` est défini et comment son block ``content``
     est surchargé dans les pages filles telles que ``film.html.twig``.
 
     Regardez de plus près l'utilisation de la méthode ``render()``, quel est le rôle des
@@ -107,7 +107,7 @@ Ecriture de requête/code
     #-. Formulaire d'ajout de critique
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    Les films peuvent être critiqué, complétez le code de gestion de l'URL ``/film/{id}`` de manière
+    Les films peuvent être critiqué, complétez le code de manière
     à enregistrer les critiques valides dans la base de données, n'oubliez pas de passer par le modèle.
 
 .. step::

@@ -104,8 +104,8 @@ Dans ce cours, nous étudierons:
 
 .. slide::
 
-Cours
------
+Sommaire
+--------
 
 .. toctree::
 
