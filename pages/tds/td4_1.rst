@@ -37,6 +37,9 @@ Elle contient les informations suivantes:
 
 Dans cette partie, vous pourrez tester les requêtes dans **phpMyAdmin**. N'oubliez pas de les conserver dans des fichiers texte par exemple.
 
+.. image:: /img/store.png
+    :class: right
+
 .. step::
 
     Récupération des produits et de leur catégorie
