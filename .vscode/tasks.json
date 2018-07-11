@@ -12,7 +12,14 @@
                 "isDefault": true
             },
             "presentation": {
-                "focus": true,
+                "reveal": "never"
+            }
+        },
+        {
+            "label": "start server",
+            "type": "shell",
+            "command": "cd ../php;php -S localhost:8000",
+            "presentation": {
                 "reveal": "never"
             }
         }
