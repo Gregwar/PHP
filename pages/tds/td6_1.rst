@@ -16,7 +16,7 @@ Installation de Symfony
     installez tout d'abord composer quelque part et utilisez la commande ``create-project``:
 
     .. code-block:: no-highlight
-        composer create-project symfony/skeleton pizza "3.4.*" -s dev 
+        composer create-project symfony/skeleton pizza
 
     Composer va alors cloner le squelette du framework Symfony dans le dossier ``pizza/``.
 
@@ -31,13 +31,12 @@ Installation de Symfony
 
         php -S localhost:8000 -t public
 
-    Et connectez vous à ``http://localhost:8000/``, vous devriez voir la page d'erreur
-    ``404`` par défaut de Symfony:
+    Et connectez vous à ``http://localhost:8000/``, vous devriez voir la page par défaut de Symfony:
 
 .. slide::
 
 .. center::
-    .. image:: /img/sf404.png
+    .. image:: /img/sf4_default.png
 
 .. slide::
 
@@ -63,44 +62,35 @@ Installation de Symfony
 
 .. step::
 
-    Etape 3: créer votre Contrôleur
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Etape 3: installation du *maker bundle*
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    Votre application réside dans le dossier ``src/``. Par défaut, Symfony ne contient
-    aucun contrôleur. Créez le fichier ``src/Controller/DefaultController.php``:: 
+    Installez le maker bundle, les annotations ainsi que twig::
 
-        // src/Controller/DefaultController.php
-        namespace App\Controller;
+        composer req maker-bundle annotations
 
-        use Symfony\Component\HttpFoundation\Response;
-        use Symfony\Component\Routing\Annotation\Route;
-
-        class DefaultController
-        {
-            /**
-             * @Route("/")
-             */
-            public function indexAction()
-            {
-                return new Response(
-                    '<html><body>Hello world!</body></html>'
-                );
-            }
-        }
+    Qui vous permettra par la suite de créer facilement des contrôleurs, des entités etc.
 
 .. slide::
 
 .. step::
 
-    Etape 4: Route
-    ~~~~~~~~~~~~~~~~~~~~
+    Etape 4: créer votre Contrôleur
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Votre application réside dans le dossier ``src/``. Par défaut, Symfony ne contient
+    aucun contrôleur. Créez votre premier contrôleur à l'aide du maker bundle::
+
+        php bin/console make:controller
+
+    Vous pourrez par exemple le nommer ``DefaultController``
+
+.. slide::
+
+.. step::
+
+    Voilà!
+    ~~~~~~
     
-    Dans le fichier ``config/routes.yaml``, vous trouverez une règle permettant d'importer
-    les *annotations* depuis vos contrôleurs. Cependant, il faut d'abord installer le module
-    qui lit les annotations::
-
-        composer req annotations
-
-    Ensuite, décommentez les dernières lignes du fichier ``routes.yaml``, et chargez votre
-    première page!
+    Vous avez désormais un contrôleur capable de servir une page (JSON)
 
