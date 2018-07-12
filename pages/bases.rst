@@ -66,9 +66,9 @@ Histoire
     Il est le créateur de **PHP**. Son approche du développement est très
     pragmatique. 
 
-    *«I've never thought of PHP as more than a simple tool to solve problems.»*
+.. important::
 
-.. slide::
+    *«I've never thought of PHP as more than a simple tool to solve problems.»*
 
 .. slide::
 
