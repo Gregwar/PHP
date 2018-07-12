@@ -1,6 +1,6 @@
 .. slide:: middleSlide
 
-Bonnes pratiques & sécurité
+Bonnes pratiques, sécurité
 ===========================
 
 .. slide::
