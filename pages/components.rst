@@ -88,13 +88,138 @@ Le routeur permet de:
 * Invoquer des actions différentes selon la méthode
 * Appliquer des règles de sécurité au moment du routage (par exemple restreindre ``/admin/*``)
 
-
 .. slide::
 
 Moteur de template
 ~~~~~~~~~~~~~~~~~~
 
-.. XXX: A écrire
+Problème
+--------
+
+Il est tout à fait possible d'écrire des pages en utilisant **PHP** comme moteur de template, rappellons que c'était
+d'ailleurs son but premier!
+
+Cependant, on peut lui faire quelques reproches:
+
+* La syntaxe, un peu lourde (``<?php``...)
+* Le fait de devoir échapper systématiquement les variables (cf failles :doc:`XSS <practices#xss>`)
+* L'absence d'héritage (nous allons expliquer de quoi il s'agit)
+
+.. slide::
+
+Présentation
+------------
+
+.. image:: /img/twig.png
+    :style: float:right
+
+Un exemple de moteur de template est *Twig*.
+
+.. textOnly::
+    Ce système permet
+    de simplifier de donner une grande puissance à l'écriture des vues, c'est à dire du contenu des pages HTML
+    qui seront rendues.
+
+.. discover::
+    *Twig* supporte l'héritage, l'échappement par défaut et de nombreuses astuces syntaxiques
+    pour simplifier l'écriture des *templates*.
+
+.. slide::
+
+Utilisation
+-----------
+
+Voici un exemple de template:
+
+.. code-block:: django
+
+    <html>
+        <head>
+            <title>
+            {% block title %}Mon titre{% endblock %}
+            </title>
+        </head>
+        <body>
+            <h1>{{ block('title') }}</h1>
+            {% block content %}
+            Bonjour {{ name }} !
+            {% endblock %}
+        </body>
+    </html>
+
+.. textOnly::
+    Comme vous le voyez, *Twig* permet d'écrire des documents directements en HTML, à l'exception de certain
+    tags qui permettent d'y ajouter de la structure, à l'instar du **PHP**.
+
+    Dans cet exemple:
+
+    * ``{% block contents %}`` est un bloc qui pourra être surchargé dans les templates filles
+    * ``{% block('title') %}`` sert à ré-afficher le contenu du block title précédement utilisé
+    * ``{{ name }}`` correspond à l'affichage d'une variable
+
+.. slide::
+
+Héritage
+--------
+
+La template précédente peut être héritée comme cela:
+
+.. code-block:: django
+
+    {% extends 'index.html.twig' %}
+
+    {% block title %}
+        {{ parent() }} - Ma page
+    {% endblock %}
+
+    {% block contents %}
+        Bienvenue sur cette page!
+    {% endblock %}
+
+.. textOnly::
+    Le mot clé ``extends`` permet de décrire que cette page hérite de ``index.html.twig``, de la même
+    manière que l'héritage des classes votre template se basera alors sur cette template mère et pourra redéfinir son
+    comportement.
+
+    Les blocs peuvent alors être surchargés, c'est à dire modifié en les redéfinissant. Il est aussi possible d'utiliser
+    le mot clé ``parent()`` pour faire appel à la template mère et utiliser son contenu, comme dans le cas du titre
+    qui deviendra ici "Mon titre - Ma page"
+
+.. slide::
+
+Boucles, conditions
+-------------------
+
+Il est également possible d'effectuer des tests et des boucles avec Twig:
+
+.. code-block:: django
+
+    {% if not users|length %}
+    <i>Aucun utilisateur</i>
+    {% else %}
+    <ul>
+        {% for user in users %}
+            <li>{{ user.name }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+.. discover::
+    Pour une documentation plus exhaustive, vous pouvez consulter la
+    `documentation officielle de Twig <http://twig.sensiolabs.org/documentation>`_.
+
+.. slide::
+
+Avantages
+---------
+
+Un moteur de template permet donc:
+
+* Une rédaction simplifiée des vues
+* Moins de porosité entre le rôle du contrôleur et de la vue
+* Une sécurisation avec l'échappement par défautd des variables
+* Des fonctionnalités supplémentaires que du PHP "brut" telles que l'héritage
+* La résolution des propriétés (``user.name`` peut être ``$user['name']`` ou ``$user->getName()``)
 
 .. slide::
 

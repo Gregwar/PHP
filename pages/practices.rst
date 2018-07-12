@@ -335,6 +335,8 @@ Inclusion
     DON'T DO 
     THAT!
 
+.. _xss:
+
 .. slide::
 
 Failles XSS
@@ -347,12 +349,12 @@ Failles XSS
 
     <html>
     <?php
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        echo 'Ton nom est: '.$_POST['nom'];
+    if (isset($_GET['nom'])) {
+        echo 'Ton nom est: '.$_GET['nom'];
     }
     ?>
     <form method="post">
-        <input type="text" name="nom" /><br />
+        <input type="text" name="get" /><br />
         <input type="submit" />
     </form>
     </html>
@@ -369,6 +371,14 @@ Failles XSS
     :method:`htmlspecialchars`. Cette opération est fastidieuse
     et risquée, car le moindre oubli pourrait ouvrir une brèche sur l'application ainsi créée. Pour palier à cela,
     certains moteurs de templates offrent la possibilité d'échapper tout par défaut.
+
+.. discover::
+
+    Un exemple d'exploitation:
+
+    .. code-block:: text
+
+        http://truc.com/page.php?nom=<script>alert(1);</script>
 
 .. slide:: redSlide fullSlide slideOnly
 
