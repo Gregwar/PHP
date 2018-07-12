@@ -64,7 +64,7 @@ Import de la base de données
 Ecriture de requêtes
 ------------------------
 
-.. image:: /img/movie.png
+.. image:: /img/doctrine.png
     :class: right
 
 .. step::
