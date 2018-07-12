@@ -1,7 +1,7 @@
 .. slide:: middleSlide
 
-Bonnes pratiques
-================
+Bonnes pratiques & sécurité
+===========================
 
 .. slide::
 
@@ -56,29 +56,6 @@ Encodage des caractères
 
         .. code-block:: no-highlight
             Content-type: text/html; charset=utf-8
-
-.. slide::
-
-.. _escape:
-
-Echappement
-~~~~~~~~~~~
-
-.. image:: /img/magicQuotes.gif
-    :style: float:right
-
-.. textOnly::
-    Pendant longtemps, **PHP** contenais une option très controversée nommée
-    les *magic quotes*. Ce système échappait automatiquement les données qui parvenaient
-    à l'application web concernée (en ajoutant des \ devant les " par exemple).
-    
-    Mécanisme souvent à l'origine de problèmes qui se traduisent par l'apparition de \
-    involontaires, ce système se voulait protecteur contre les failles liées notamment aux
-    injections SQL. Aujourd'hui, il est obselète et désactivé par défaut, il est fortement
-    conseillé de le désactiver (``php.ini``):
-
-.. code-block:: ini
-    magic_quotes_gpc = Off
 
 .. slide::
 
@@ -587,51 +564,3 @@ du PHP brut. Ils permettent notamment:
         {% else %}
             No user have been found.
         {% endfor %} 
-
-.. slide::
-
-Composer
-~~~~~~~~
-
-.. textOnly::
-    Composer est un outil de gestion des dépendances en **PHP**, il vous permet de spécifier de quel(s)
-    autre(s) projet(s) votre projet dépend, et ainsi de créer des "paquets", un peu comme ``apt`` par
-    exemple. Il peut être obtenu ici: `Télécharger composer <http://getcomposer.org/download/>`_.
-    
-    Vous pouvez alors spécifier les dépendances de votre application dans un fichier au format ``JSON``,
-    comme par exemple:
-
-.. code-block:: no-highlight
-
-    {
-        "require": {
-            "twig/twig": "1.*",
-            "gregwar/image": "dev-master"
-        }
-    }
-
-.. textOnly::
-    Ainsi, composer installera pour vous les deux bibliothèques et générera un fichier ``autoload.php``
-    que vous pourrez directement utiliser pour profiter des composants:
-
-.. discover::
-
-    .. slideOnly::
-        -------------------
-
-    .. code-block:: no-highlight
-
-        $ composer.phar install
-
-        Loading composer repositories with package information
-        Installing dependencies
-          - Installing gregwar/image (dev-master 38bfba2)
-            Cloning 38bfba2fa6bea50317e29b469f2a2a8068eec3ba
-
-          - Installing twig/twig (v1.11.1)
-            Downloading: 100%
-
-        Writing lock file
-        Generating autoload files
-
-

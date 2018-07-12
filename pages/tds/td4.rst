@@ -1,5 +1,5 @@
-TD4-1: SQL et PDO
-=================
+TD4
+===
 
 .. image:: /img/db.png
     :class: right
