@@ -94,8 +94,7 @@ Le routeur permet de:
 Moteur de template
 ~~~~~~~~~~~~~~~~~~
 
-.. XXX: A continuer
-
+.. XXX: A écrire
 
 .. slide::
 
@@ -205,12 +204,30 @@ Composer
 
 .. slide::
 
+.. slideOnly::
+    packagist.org
+    -------------
+
+.. important::
+    L'ensemble des paquets peut aujourd'hui être parcouru sur `packagist.org <http://packagist.org>`_, c'est donc un
+    excellent endroit pour rechercher des bibliothèques ou composants!
+
+.. slide::
+
 .. redirection-title:: tds/td5_1
 
-TD 5
+TD 5-1
 ~~~~
 
 .. toctree::
 
     tds/td5_1
+
+.. redirection-title:: tds/td5_2
+
+TD 5-2
+~~~~
+
+.. toctree::
+
     tds/td5_2
