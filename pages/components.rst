@@ -3,7 +3,8 @@
 Composants de framework
 =======================
 
-Dans cette partie, nous présenterons les composants essentiels qui constituent un framework.
+.. textOnly::
+    Dans cette partie, nous présenterons les composants essentiels qui constituent un framework.
 
 .. slide::
 
@@ -120,13 +121,13 @@ De cette façon, les noms **externes** visibles de tous (``/hello/Bob``) sont di
 Avantages
 ---------
 
-Le routeur permet de:
+.. discoverList::
 
-* Ne pas avoir une page PHP par page effective, ni de règles complexes de réécriture d'URLs
-* Capturer les paramètres d'URL (ex: ``/product/{id}``)
-* Pouvoir changer facilement les URLs des pages, sans devoir les changer partout ailleurs
-* Invoquer des actions différentes selon la méthode
-* Appliquer des règles de sécurité au moment du routage (par exemple restreindre ``/admin/*``)
+    * Ne pas avoir une page PHP par page effective, ni de règles complexes de réécriture d'URLs
+    * Capturer les paramètres d'URL (ex: ``/product/{id}``)
+    * Pouvoir changer facilement les URLs des pages, sans devoir les changer partout ailleurs
+    * Invoquer des actions différentes selon la méthode
+    * Appliquer des règles de sécurité au moment du routage (par exemple restreindre ``/admin/*``)
 
 .. slide::
 
@@ -152,6 +153,7 @@ Présentation
 
 .. image:: /img/twig.png
     :style: float:right
+    :width: 250
 
 Un exemple de moteur de template est *Twig*.
 
@@ -253,13 +255,12 @@ Il est également possible d'effectuer des tests et des boucles avec Twig:
 Avantages
 ---------
 
-Un moteur de template permet donc:
-
-* Une rédaction simplifiée des vues
-* Moins de porosité entre le rôle du contrôleur et de la vue
-* Une sécurisation avec l'échappement par défautd des variables
-* Des fonctionnalités supplémentaires que du PHP "brut" telles que l'héritage
-* La résolution des propriétés (``user.name`` peut être ``$user['name']`` ou ``$user->getName()``)
+.. discoverList::
+    * Une rédaction simplifiée des vues
+    * Moins de porosité entre le rôle du contrôleur et de la vue
+    * Une sécurisation avec l'échappement par défautd des variables
+    * Des fonctionnalités supplémentaires que du PHP "brut" telles que l'héritage
+    * La résolution des propriétés (``user.name`` peut être ``$user['name']`` ou ``$user->getName()``)
 
 .. slide::
 
@@ -271,7 +272,7 @@ Présentation
 
 .. center::
     .. image:: /img/orm.jpg
-        :width: 650
+        :width: 500
 
 .. textOnly::
     Un **ORM**, pour Object Relational Mapping, désigne le fait de réaliser un *mapping*,
@@ -299,22 +300,136 @@ Correspondance
 
 *Cette correspondance ressort si l'on compare un schéma entité association (MCD) avec un schéma UML.*
 
-.. XXX: Ajouter un exemple?
+.. slide::
+
+Exemple: Doctrine2
+-----------------
+
+.. textOnly::
+
+    Les enregistrement de votre base de données seront mis en correspondance avec les
+    objets que vous manipulez.
+
+    Ainsi, au lieu de penser à votre base de données, vous n'avez qu'à penser objet.
+    Si vous souhaitez par exemple manipuler des produits, vous écrirez:
+
+::
+
+    <?php
+
+    class Product
+    {
+        private $id;
+        private $price;
+        private $name;
+    }
+
+.. textOnly::
+
+    Ceci est une classe simple qui définit votre objet, vous pourriez l'écrire et
+    l'utiliser dans n'importe quel contexte, c'est "simplement" une classe.
+
+    Le principe maintenant n'est pas d'agir au niveau du fonctionnement de cette classe,
+    mais de fournir des informations à **Doctrine2** pour qu'il puisse savoir comment
+    persister et récupérer des produits dans la base de données, c'est ce que l'on appelle
+    le *mapping*, ou mapage.
+
+    Il est par exemple possible dans **Symfony2** de réaliser ce mappage à l'aide d'annotations:
+
+.. discover::
+
+    .. slideOnly::
+        ----------------------
+
+    ::
+
+        <?php
+
+        /**
+         * @ORM\Entity()
+         */
+        class Product
+        {
+           /**
+             * @ORM\Column(type="string")
+             */
+            private $name;
+
+            // ...
+        }
+
+.. fix for vi: **
+
+.. textOnly::
+
+    Ici, le commentaire au dessus du texte est en fait lu et utilisé par **Doctrine2** pour
+    savoir comment faire correspondre l'atribut ``$name`` avec la base de données.
+
+    Il est alors possible d'utiliser le manager pour accéder à la base de données de manière
+    transparente:
 
 .. slide::
 
-Utilisation
------------
+::
 
-.. image:: /img/orm.png
-    :class: right
+    <?php
+    // Insertion
+    $car = new Product;
+    $car->setName('Voiture');
+    $car->setPrice(10000);
+    $manager->persist($car);
+    $manager->flush();
 
-.. textOnly::
-    L'**ORM** se base sur la notion d'entité, qui sont des classes mappées avec la base
-    de données (correspondance avec les tables).
+    // Récupération par ID
+    $car = $manager->find(1);
 
-.. discover::
-    Les avantages sont notamment:
+    // Mise à jour
+    $car->setPrice(9500);
+    $manager->flush();
+
+    // Suppression
+    $manager->remove($car);
+    $manager->flush();
+
+.. slide::
+
+L'ORM permet également de gérer les *relations* entre les tables et donc entre les objets:
+
+::
+
+    <?php
+    // Insertion
+    $bob = new User;
+    $bob->setName('Bob');
+    $car = new Product;
+    $car->setName('Voiture');
+    $car->setPrice(10000);
+    $car->setOwner($bob);
+    $manager->persist($car);
+    $manager->persist($bob);
+    $manager->flush();
+
+    // Récupération par ID
+    $car = $manager->find(1);
+    echo $car->getOwner()->getName(); // Bob
+
+.. slide::
+
+.. slideOnly::
+    Principe
+    --------
+
+En clair, les entités persistés sont des **classes normales** excepté qu'elles sont mise en
+correspondance avec la base de données
+
+N'hésitez pas à lire la `documentation officielle <http://symfony.com/doc/current/book/doctrine.html>`_,
+nous étudierons plus en détail **Doctrine2** au cours du TD.
+
+
+.. slide::
+
+Avantages
+---------
 
 .. discoverList::
     * La persistence des objets
