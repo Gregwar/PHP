@@ -13,6 +13,46 @@ Routeur
 Principe
 --------
 
+Jusqu'ici, voici comment nous avons procédé:
+
+.. center::
+    .. image:: img/router_1.png
+
+.. textOnly::
+
+    Ici, le travail implicite de routage est effectué par le serveur, car les scripts PHP sont des ressources différentes.
+
+    Le problème avec cette approche:
+
+    * Dans chaque fichier ``.php``, il faudra ré-inclure les différentes parties du code (*boilerplate*), ce qui rendra l'application peu maintenable
+    * Les noms des pages apparaîtront dans la barre d'URL, ce qui n'est pas forcément adaptées au référencement et ne permet pas de flexibilité sur le nommage des adresses
+
+.. slide::
+
+Une solution à ce problème est d'utilisé le mécanisme de réécriture d'URL du serveur web:
+
+.. center::
+    .. image:: img/router_2.png
+
+.. textOnly::
+
+    Cette solution nous permet d'obtenir des URLs arbitraires, mais implique de maintenir un fichier de réécriture d'URLs, qui est de plus spécifique au serveur web utilisé.
+
+    De plus, elle ne résoud pas le problème des multiples fichiers PHP.
+
+.. slide::
+
+Lorsqu'on utilise un framework, la réécriture d'URL est utilisée mais vers une page frontale unique:
+
+.. center::
+    .. image:: img/router_3.png
+
+.. textOnly::
+
+    De cette façon, le routage est réalisé en PHP au sein de l'application.
+
+.. slide::
+
 Le problème du routage correspond à l'association entre les adresses (URL) et le contrôleur (le morceau de code
 **PHP**) qui va être invoqué.
 
@@ -258,6 +298,8 @@ Correspondance
 +-------------------------+-------------------------+
 
 *Cette correspondance ressort si l'on compare un schéma entité association (MCD) avec un schéma UML.*
+
+.. XXX: Ajouter un exemple?
 
 .. slide::
 
