@@ -20,6 +20,13 @@ Installation de Twig
 
         composer req twig
 
+.. step::
+
+    Vous pouvez ensuite re générer votre contrôleur par défaut::
+
+        rm src/Controller/DefaultController.php
+        php bin/console make:controller
+
 Rendu Twig depuis le contrôleur
 -------------------------------
 
@@ -45,33 +52,6 @@ Rendu Twig depuis le contrôleur
 
     Ainsi, si votre template est située dans ``templates/default/index.html.twig``, votre contrôleur
     rendra alors cette dernière.
-
-.. step::
-
-    Une petite astuce pour simplifeir le code est d'utiliser l'annotation ``@Template()``::
-
-        composer req sensio/framework-extra-bundle
-
-    Puis::
-
-        use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
-
-        //...
-
-        /**
-         * @Route("/")
-         * @Template()
-         */
-         public function indexAction()
-         {
-             return [];
-         }
-
-    Notez qu'ici:
-
-    * Le nom du fichier ``default/index.html.twig`` est "deviné" automatiquement par l'annotation,
-      car nous sommes dans le contrôleur ``DefaultController`` et sur la page ``indexAction``
-    * La valeur retournée par la fonctione (``[]``) correspond aux paramètres de la vue
 
 Création du layout
 ------------------
@@ -113,15 +93,14 @@ Une première page
 
             /**
              * @Route("/pizzas", name="pizzas_list")
-             * @Template()
              */
             public function pizzasAction()
             {
-                return [
+                return $this->render('default/pizzas.html.twig', [
                     'pizzas' => [
                         '4 fromages', 'Reine', 'Paysanne'
                     ]
-                ];
+                ]);
             }
 
     Testez votre action en vous rendant à la page ``/pizzas`` de votre application, vous

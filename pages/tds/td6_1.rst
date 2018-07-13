@@ -50,13 +50,13 @@ Installation de Symfony
     Nous allons installer notre premier composant Symfony: un meilleur serveur web
     de développement. Pour cela, lancez simplement::
 
-        composer require symfony/web-server-bundle
+        composer require server
 
     Si vous exécutez à nouveau la console de Symfony, vous verrez qu'une nouvelle option
     est maintenant disponible, ``server:run``, vous pouvez donc désormais lancer le
     serveur de développement de cette façon::
 
-        ./bin/console server:run
+        ./bin/console server:start
 
 .. slide::
 
@@ -67,7 +67,7 @@ Installation de Symfony
 
     Installez le maker bundle, les annotations ainsi que twig::
 
-        composer req maker-bundle annotations
+        composer req maker annotations
 
     Qui vous permettra par la suite de créer facilement des contrôleurs, des entités etc.
 
@@ -92,5 +92,5 @@ Installation de Symfony
     Voilà!
     ~~~~~~
     
-    Vous avez désormais un contrôleur capable de servir une page (JSON)
+    Vous avez désormais un contrôleur capable de servir une page (JSON, car vous n'avez pas encore de système de rendu de templates), si vous vous rendez à l'adresse `/default <http://localhost:8000/default>`_, vous pouvez l'exécuter.
 
