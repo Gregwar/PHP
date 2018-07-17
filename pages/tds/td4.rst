@@ -7,143 +7,133 @@ TD4
 .. |archive| image:: /img/archive.png
 
 .. important::
-    `|archive| Télécharger l'archive td4.zip </files/td4.zip>`_
-
-Compréhension
--------------
-
-.. step::
-    Commencez par installer et tester l'application. Vous devrez tout d'abord installer la base
-    de données disponible dans le fichier ``sql/database.sql``, puis modifier le fichier
-    ``index.php`` pour que les paramètres de connexion soient corrects.
-
-    Pour installer l'application, utilisez soit composer::
-
-        composer.phar install
-
-    Ou alors décompressez le dossier ``vendor`` qui est fourni dans ``vendor.tgz``.
-
-.. step::
-    #-. L'autoloader
-    ~~~~~~~~~~~~~~~~
-
-    L'autoloader utilisé ici est celui de composer. A quoi sert la ligne suivante?
-
-    ::
-
-        $loader->add('', 'src');
-
-.. step::
-    #-. Le routeur
-    ~~~~~~~~~~~~~
-
-    Observez le fonctionnement des appels à ``match()``.
-
-    Le routeur du framework `Silex <http://silex.sensiolabs.org/>`_ a été réutilisé ici.
-    Il permet de simplifier le routage des requêtes,
-    ainsi que la génération des url à l'aide de la méthode ``path()``.
-
-    Vous pouvez `consulter cette page <http://silex.sensiolabs.org/doc/usage.html>`_ pour
-    plus d'informations.
+    `|archive| Télécharger l'archive td4_1.zip </files/td4_2.zip>`_
 
 
 .. step::
-    #-. Modèle
-    ~~~~~~~~~~
 
-    Intéressez vous au code de la classe ``Cinema\Model``, à quoi sert t-elle? Pourquoi
-    regrouper ces méthodes dans une classe?
+    Installation
+    -----------
 
-.. step::
+    Commencez par récupérer la base de données à partir de l'archive ci-dessus et par l'importer dans une base de données
 
-    #-. Système de templates
-    ~~~~~~~~~~~~~~~~~~~~~~~~
-    
-    Ici, `Twig <http://twig.sensiolabs.org/>`_ est utilisé pour le rendu des templates.
-    Observez comment ``layout.html.twig`` est définit et comment son block ``content``
-    est surchargé dans les pages filles telles que ``film.html.twig``.
-
-    Regardez de plus près l'utilisation de la méthode ``render()``, quel est le rôle des
-    variables qui lui sont passées ?
-
-(Rétro) Conception
-------------------
-
-.. step::
-    A partir de la base de données fournies, dessinez le schéma entité-association de
-    la base de données fournie.
-
-    .. note::
-        Notes:
-
-        * Attention aux cardinalités
-        * Le nombre de table n'est pas forcément égal au nombre d'entités
-
-Ecriture de requête/code
+Rappels de requêtage SQL
 ------------------------
 
-.. image:: /img/movie.png
+Avant de commencer à utiliser le PDO avec PHP, nous allons effectuer des requêtes SQL "brutes" sur une base d'exemple.
+
+Voici un diagramme représentant la base de données:
+
+.. center::
+    .. image:: /img/bdd_store.png
+
+Elle contient les informations suivantes:
+
+* ``categories`` les catégories de produits représentées par leur nom ``name``
+* ``products`` les produits ayant un nom ``name``, un prix ``price`` et faisant partie d'une unique catégorie
+* ``users`` les utilisateurs ayant un prénom ``firstname`` et un nom ``lastname``
+* ``tickets`` qui correspond au passage en caisse d'un utilisateur à une ``date`` donnée
+* ``tickets_entry`` faisant correspondre un ticket avec les produits et les quantités ``quantity`` achetés par le client
+
+Dans cette partie, vous pourrez tester les requêtes dans **phpMyAdmin**. N'oubliez pas de les conserver dans des fichiers texte par exemple.
+
+.. image:: /img/store.png
     :class: right
 
 .. step::
-    #-. Casting d'un film
+
+    Récupération des produits et de leur catégorie
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Ecrivez une requête permettant de récupérer l'ensemble des produits avec leur catégorie
+
+.. step::
+
+    Catégories et nombre de produits
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Ecrivez une requête permettant de récupérer l'ensemble des catégories ainsi que le nombre de produits de cette catégorie
+
+.. step::
+
+    Affichage des tickets
     ~~~~~~~~~~~~~~~~~~~~~
 
-    En écrivant le code de la méthode ``getCasting()`` du modèle, écrivez une requête récupérant
-    les acteurs jouant dans un film (prénom, nom et image).
+    Affichez l'ensemble des tickets, comprenant le nom de l'utilisateur et le prix correspondant au ticket (la somme des prix des produits multipliés par la quantité sur le ticket)
 
-    .. note::
-        Conseil: vous pouvez utiliser un otuil tel que **phpMyAdmin** pour réaliser vos requêtes
-        et les essayer sur un exemple avant de les placer dans le code et de les rendre dynamique
+.. step::
 
-    ::
+    Meilleurs clients
+    ~~~~~~~~~~~~~~~~~
+
+    Affichez l'ensemble des utilisateurs, et l'argent qu'ils ont dépensé en tout par ordre décroissant
+
+.. step::
+
+    Argent par jour
+    ~~~~~~~~~~~~~~~
+
+    Afficher l'ensemble des jours, et en face la somme d'argent encaissé à cette date
+
+
+.. step::
+
+    Achats spéciaux
+    ~~~~~~~~~~~~~~~
+
+    Ecrivez une requête qui retourne l'ensemble des utilisateurs n'ayant jamais acheté une machine à café
+
+Utilisation du PDO
+------------------
+
+.. step::
+
+    Connexion
+    ~~~~~~~~~
+
+    Ecrivez un fichier PHP qui créé la connexion avec la base de données, par exemple::
 
         <?php
-        // Attention, vous DEVEZ préparer vos requêtes
-        // Ne faites SURTOUT PAS ce genre de choses:
-        $sql = 'SELECT * FROM users WHERE name='.$name; // MAUVAIS
- 
+        // pdo.php
+        try {
+            return new PDO(
+                'mysql:dbname=user;host=127.0.0.1',
+                'user', 
+                'pass'
+            );
+        } catch (PDOException $exception) {
+            echo 'Erreur: '.$exception->getMessage()
+                ."\n";
+            exit(1);
+        }
+    
 .. step::
-    #-. Formulaire d'ajout de critique
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    Les films peuvent être critiqué, complétez le code de gestion de l'URL ``/film/{id}`` de manière
-    à enregistrer les critiques valides dans la base de données, n'oubliez pas de passer par le modèle.
-
-.. step::
-    #-. Rendu des critiques
+    Lister les utilisateurs
     ~~~~~~~~~~~~~~~~~~~~~~~
 
-    Modifier de nouveau le code pour que les critiques soient récupérées de la base de données
-    puis affichées dans la page sous le film.
+    Vous pouvez maintenant importer le pdo et tester une requête simple, telle le listing des utilisateurs::
+
+        <?php
+        // users.php
+
+        $pdo = include('pdo.php');
+
+        // Utiliser le $pdo pour lister les utilisateurs (cf le cours)
 
 .. step::
-    #-. Classement des films
-    ~~~~~~~~~~~~~~~~~~~~~~~~
 
-    Ajouter au menu "Meilleurs films" et créez une page affichant le classement des films les mieux notés,
-    c'est à dire ayant la meilleure note moyenne.
+    Affichage des tickets d'un utilisateurs
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. step::
+    Faites en sorte que chaque utilisateur soit clickable et mène à une autre page, par exemple ``tickets.php``,
+    qui affiche l'ensemble des tickets de l'utilisateurs.
 
-    #-. Affichage des films par genre
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-    Remarquez qu'il est possible de consulter le nombre de films par genre, mais pas de voir la 
-    liste des films d'un genre.
-
-    Rendez cliquable la ligne de chaque genre sur la page ``/genres`` et faites apparaître
-    la liste des films étant dans le genre concerné.
+    Pour chaque ticket, on affichera le détail, c'est à dire le nom du produit, la quantité ainsi que le prix.
 
 .. step::
-    #-. Formulaire d'ajout de film
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    Créez une page "Ajout de film" servant à ajouter un film à la base. Il doit être possible de définir:
+    Regroupement par catégories
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    * Le nom du film
-    * Sa description
-    * Son année
-    * Son genre, parmi les genres de la base de données
-     
-    Ne vous occupez pas des acteurs qui y jouent (dans la base de données), et les roles qu'ils y occupent
+    Modifiez ``tickets.php`` afin que les produits soient regroupés par catégories

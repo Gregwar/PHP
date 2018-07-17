@@ -52,14 +52,9 @@ Entités
     Création
     ~~~~~~~~
 
-    Nous allons maintenant créer nos entités. Commençons simplement avec les pizzas.
-    Pour cela, nous allons utiliser un paquet qui nous aidera à la génération::
-
-        composer req sadikoff/flex-generator-bundle
-
-    Ensuite, exécutez::
+    Nous allons maintenant créer nos entités. Pour cela, nous allons utiliser le maker bundle::
         
-        ./bin/console generate:doctrine:entity
+        ./bin/console make:entity
 
     Il vous sera alors demandé de nommer votre entité, apellez là ``Pizza``,
     nous utiliserons ici aussi la configuration par annotations.
@@ -126,41 +121,14 @@ Entités
     pizzas. Pour mettre en relation ces deux entités, il faudrait normalement créer manuellement
     une table intéremédiaire. Doctrine va également s'en charger pour nous!
 
-    Pour cela, ajoutez le champ suivant dans l'entité ``Pizza``::
+    Pour cela, modifiez l'entité pizza à l'aide du maker bundle::
 
-        /** 
-         * @ORM\ManyToMany(targetEntity="Ingredient", inversedBy="pizzas")
-         */
-        private $ingredients;
-    
-    Et le champ suivant dans ``Ingredient``::
+        ./bin/console make:entity
 
-        /** 
-         * @ORM\ManyToMany(targetEntity="Pizza", mappedBy="ingredients")
-         */
-        private $pizzas;
-
-    Fermez les fichier ``Ingredient.php`` et ``Pizza.php``. Ajoutez maintenant des accesseurs
-    vers les ingrédients d'une pizza::
-        
-        public function getIngredients()
-        {
-            return $this->ingredients;
-        }
-        
-        public function addIngredient(Ingredient $ingredient)
-        {
-            $this->ingredients[] =  $ingredient;
-        }
-	
+    Entrez ``Pizza``, pour y ajouter l'entrée ``ingredients``, et saisissez le type ``ManyToMany``. Ensuite, indiquez que la classe est en relation avec ``Ingredient``.
 
     Enfin, exécutez à nouveau ``doctrine:schema:update``, en regardant tout d'abord les modifications
     qui seront apportées avec ``--dump-sql`` puis en les éxécutant avec ``--force``.
-
-.. XXX: Gros cafouillage, ils déclarent une classe repo qui n'existe même pas...
-.. XXX: Ces accesseurs -ci-dessus- pourraient être générés quand doctrine:generate:entities
-.. aura été corrigé!
-.. vi fix: **
 
 Requêtage
 ---------
@@ -204,8 +172,6 @@ Insertion
 
     Remarquez l'utilisation des accesseurs (``setName`` et ``setDescription``) qui ont été générés
     par Doctrine et que l'on peut apeller à la chaîne.
-
-    Documentez vous sur les fonctions ``persist()`` et ``flush()`` de Doctrine, à quoi servent t-elles?
 
     Executez cette requêtes et allez voir dans la base de données pour vérifier la présence des nouvelles
     lignes dans les tables.

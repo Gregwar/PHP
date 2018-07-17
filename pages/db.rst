@@ -239,66 +239,6 @@ Les transactions
 
 .. slide::
 
-Les ORM
--------
-
-Présentation
-~~~~~~~~~~~~
-
-.. center::
-    .. image:: /img/orm.jpg
-        :width: 650
-
-.. textOnly::
-    Un **ORM**, pour Object Relational Mapping, désigne le fait de réaliser un *mapping*,
-    ou une association entre le monde relationnel (tables, lignes, champs ...) et le monde objet
-    (classes, instances, attributs ...).
-
-    Ce mapping est généralement fait à l'aide de fichiers de configuration ou d'annotations.
-
-.. slide::
-
-Correspondance
-~~~~~~~~~~~~~~
-
-+-------------------------+-------------------------+
-| **Relationnel**         | **Objet**               |
-+-------------------------+-------------------------+
-| Table                   | Classe (ou entité)      |
-+-------------------------+-------------------------+
-| Ligne                   | Instance                |
-+-------------------------+-------------------------+
-| Colonne                 | Attribut                |
-+-------------------------+-------------------------+
-| Clé étrangère           | Référence               |
-+-------------------------+-------------------------+
-
-*Cette correspondance ressort si l'on compare un schéma entité association (MCD) avec un schéma UML.*
-
-.. slide::
-
-Utilisation
-~~~~~~~~~~~
-
-.. image:: /img/orm.png
-    :class: right
-
-.. textOnly::
-    L'**ORM** se base sur la notion d'entité, qui sont des classes mappées avec la base
-    de données (correspondance avec les tables).
-
-.. discover::
-    Les avantages sont notamment:
-
-.. discoverList::
-    * La persistence des objets
-    * Le requêtage, parfois à travers une couche d'abstraction supplémentaire
-    * La notion de transaction est préservée
-    * La création et la mise à jour de la structure de la base de données à partir de la définition des entités
-    * Possibilité de faire abstraction du système de gestion de base de données sous-jacent
-
-.. slide::
-
 .. redirection-title:: tds/td4
 
 TD 4

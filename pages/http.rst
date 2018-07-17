@@ -759,7 +759,7 @@ Ce code est-t-il correct?::
 
 .. redirection-title:: tds/td2_1
 
-TD 2 partie 1
+TD 2-1
 -------------
 
 .. toctree::
@@ -768,7 +768,7 @@ TD 2 partie 1
 
 .. redirection-title:: tds/td2_2
 
-TD 2 partie 2
+TD 2-2
 -------------
 
 .. toctree::

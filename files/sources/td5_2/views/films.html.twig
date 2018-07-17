@@ -1,0 +1,19 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <h2>Films</h2>
+    <p>
+    {% if films %}
+        {% for film in films %}
+        <div class="film">
+            <img width="64" src="{{ film.image }}" />
+            <h3>{{ film.nom }}</h3>
+            <em>Genre: {{ film.genre_nom }}</em><br />
+            <a href="{{ path_for('film', {id: film.id}) }}">Fiche film &raquo;</a>
+        </div>
+        {% endfor %}
+    {% else %}
+        Il n'y a aucun film!
+    {% endif %}
+    </p>
+{% endblock %}

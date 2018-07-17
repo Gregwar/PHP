@@ -104,8 +104,8 @@ Dans ce cours, nous étudierons:
 
 .. slide::
 
-Cours
------
+Sommaire
+--------
 
 .. toctree::
 
@@ -113,6 +113,7 @@ Cours
     http
     poo
     db
+    components
     practices
     symfony
 
@@ -124,12 +125,12 @@ Guide
 Afin de tenter de cadrer le développement des projets, vous pouvez
 consulter ici le guide de conception:
 
-* :doc:`guidelines`
-
 Exposés
 -------
 
-* :doc:`Présentations de l'avancement PHP <avancement>`
+.. Il faudra sans doute le remettre dans l'année
+..  * :doc:`Présentations de l'avancement PHP <avancement>`
+
 * :doc:`Les sujets des exposés sont disponibles ici <exposes>`
 
 TD Noté

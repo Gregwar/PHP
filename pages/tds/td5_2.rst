@@ -1,0 +1,132 @@
+TD5-2: ORM Doctrine
+===================
+
+.. image:: /img/db.png
+    :class: right
+
+.. |archive| image:: /img/archive.png
+
+.. important::
+    `|archive| Télécharger l'archive td5_1.zip </files/td5_1.zip>`_
+
+Compréhension
+-------------
+
+.. step::
+    L'application que vous avez téléchargée ressemble au :doc:`TD 5.1 </tds/td5_1>`, à l'exception
+    qu'elle intègre Doctrine pour ses requêtes.
+
+    Installez les dépendances, toujours à l'aide de composer::
+
+        composer.phar install
+
+    N'oubliez pas de modifier le fichier ``app.php`` afin d'avoir la bonne configuration pour la connexion
+    à la base de données.
+
+.. step::
+    #-. Modèle
+    ~~~~~~~~~~
+
+    Observez les différences dans le fichier ``Cinema\Model`` avec le TD précédent.
+
+Import de la base de données
+----------------------------
+
+.. step::
+    Afin de pouvoir utiliser Doctrine, nous devrons créer les classes correspondant à notre base de données dans
+    notre code. Les tables étant déjà existantes en base, il est possible de demander à Doctrine de les créer
+    automatiquement, en utilisant son mode console.
+
+    Lancez la commande suivante:
+
+    .. code-block:: text
+
+        php vendor/bin/doctrine orm:convert-mapping --from-database annotation src --namespace=Entity\\
+
+    Ici, nous demandons à Doctrine d'importer les données:
+
+    * ``--from-database`` signifie que les données proviennent directement de la base SQL
+    * ``annotation`` utilisera le système d'annotations pour le mapping
+    * ``src`` est le dossier cible
+    * ``--namespace=Entity\\`` signifie que nous plaçerons les entités dans l'espace de nom `Entity`
+
+    Observez les fichiers qui ont ainsi été créé dans le dossier ``src/Entity`` à partir de la base de données
+
+.. step::
+
+    Remarquez que les attributs de ces classes sont privés, il est possible pour cela de demander à Doctrine de
+    générer des accesseurs:
+
+    .. code-block:: text
+
+        php vendor/bin/doctrine orm:generate-entities src/
+
+Ecriture de requêtes
+------------------------
+
+.. image:: /img/doctrine.png
+    :class: right
+
+.. step::
+
+    #-. Genres
+    ~~~~~~~~~~
+
+    Il y a déjà plusieurs requêtes à l'intérieur de la classe ``Cinema\Model``, dont celle qui permet
+    de récupérer l'ensemble des genres.
+
+    Cependant, remarquez que les films d'un genre ne sont pas récupérés.
+
+    En fait, la relation entre la table ``films`` et ``genres`` a bien été importée par Doctrine (cf ``src/Entity/Films.php``), mais pas la relation inverse.
+
+    Il est possible d'ajouter la relation inverse dans ``Genres.php`` qui permettra de récupérer l'ensemble des films
+    d'un genre, et donc d'afficher le nombre de films de chaque genre dans la page tel que le code est fourni.
+
+    Aidez vous de la `documentation officielle <https://www.doctrine-project.org/projects/doctrine-orm/en/2.6/reference/association-mapping.html>`_ pour faire cela.
+
+    N'oubliez pas de lancer à nouveau la génération des accesseurs (cf ci-dessus) après avoir modifié le mapping.
+
+.. step::
+    #-. Casting d'un film
+    ~~~~~~~~~~~~~~~~~~~~~
+
+    En ajoutant également une inversion de relation entre les films et les roles, et en modifiant la manière dont le
+    casting est affiché dans ``film.html.twig``, faites fonctionner le casting avec Doctrine.
+
+    **Astuce: vous n'aurez PAS besoin d'écrire de requête SQL ou DQL pour suivre cette relation**
+ 
+.. step::
+    #-. Formulaire d'ajout de critique
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Faites fonctionner le formulaire d'ajout de critique.
+
+    Vous pourrez vou référer à cette `page de la documentation <https://www.doctrine-project.org/projects/doctrine-orm/en/latest/tutorials/getting-started.html>`_.
+
+.. step::
+    #-. Rendu des critiques
+    ~~~~~~~~~~~~~~~~~~~~~~~
+
+    Modifier de nouveau le code pour que les critiques soient récupérées de la base de données
+    puis affichées dans la page sous le film.
+
+.. step::
+    #-. Classement des films
+    ~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Ajouter au menu "Meilleurs films" et créez une page affichant le classement des films les mieux notés,
+    c'est à dire ayant la meilleure note moyenne.
+
+    Vous pouvez pour cela utiliser le `DQL <https://www.doctrine-project.org/projects/doctrine-orm/en/latest/reference/dql-doctrine-query-language.html#doctrine-query-language>`_, qui est le langage de requêtage de Doctrine qui permet d'écrire des requêtes
+    indépendamment de la base de données sous-jacente.
+
+.. step::
+
+    #-. Affichage des films par genre
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Remarquez qu'il est possible de consulter le nombre de films par genre, mais pas de voir la 
+    liste des films d'un genre.
+
+    Rendez cliquable la ligne de chaque genre sur la page ``/genres`` et faites apparaître
+    la liste des films étant dans le genre concerné.
