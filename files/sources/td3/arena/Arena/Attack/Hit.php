@@ -17,7 +17,7 @@ class Hit implements Attack
     /**
      * Nom de l'attaque
      */
-    public function getName()
+    public function getName(): string
     {
         return 'Frappe';
     }

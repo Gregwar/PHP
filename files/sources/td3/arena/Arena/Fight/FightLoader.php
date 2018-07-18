@@ -6,7 +6,7 @@ class FightLoader
 {
     protected $key;
 
-    public function __construct($key)
+    public function __construct(string $key)
     {
         $this->key = $key;
     }
@@ -14,9 +14,9 @@ class FightLoader
     /**
      * Charge le combat sérialisé
      */
-    public function loadFight()
+    public function loadFight(): ?Fight
     {
-        $fight = false;
+        $fight = null;
 
         if (isset($_SESSION[$this->key])) {
             $fight = unserialize($_SESSION[$this->key]);
@@ -28,7 +28,7 @@ class FightLoader
     /**
      * Enregistre le combat serialisé
      */
-    public function saveFight($fight)
+    public function saveFight(Fight $fight)
     {
         $_SESSION[$this->key] = serialize($fight);
     }

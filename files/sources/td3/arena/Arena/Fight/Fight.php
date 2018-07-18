@@ -25,7 +25,7 @@ class Fight
     /**
      * Retourne la creature dont c'est le tour
      */
-    public function getCreature()
+    public function getCreature(): BaseCreature
     {
         return $this->creatures[$this->turn];
     }
@@ -33,7 +33,7 @@ class Fight
     /**
      * Obtient la cible (créature dont ça n'est pas le tour)
      */
-    public function getTarget()
+    public function getTarget(): BaseCreature
     {
         return $this->creatures[($this->turn + 1) % 2];
     }
@@ -66,12 +66,12 @@ class Fight
     /**
      * Qui est gagnant de ce combat ?
      */
-    public function getWinner()
+    public function getWinner(): ?BaseCreature
     {
         if ($this->getCreature()->isDead()) {
             return $this->getTarget();
         }
-        
+
         if ($this->getTarget()->isDead()) {
             return $this->getCreature();
         }

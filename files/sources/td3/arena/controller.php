@@ -10,7 +10,7 @@ use Arena\Fight\FightLoader;
 /**
  * Initialisation du combat
  */
-function createFight()
+function createFight(): Fight
 {
     $legolas = new Elf('Legolas');
     $saruman = new Wizard('Saruman');

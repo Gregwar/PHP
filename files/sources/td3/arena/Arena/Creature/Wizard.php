@@ -15,7 +15,7 @@ class Wizard extends BaseCreature
         $this->attacks[] = new Heal;
     }
 
-    public function getName()
+    public function getName(): string
     {
         return 'Sorcier';
     }
