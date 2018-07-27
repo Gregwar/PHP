@@ -30,7 +30,7 @@ Jusqu'ici, voici comment nous avons procédé:
 
 .. slide::
 
-Une solution à ce problème est d'utilisé le mécanisme de réécriture d'URL du serveur web:
+Une solution pour avoir de belles URLs est d'utiliser le mécanisme de réécriture d'URL du serveur web:
 
 .. center::
     .. image:: img/router_2.png
