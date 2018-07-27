@@ -15,7 +15,7 @@ class Elf extends BaseCreature
         $this->attacks[] = new Arrow;
     }
 
-    public function getName()
+    public function getName(): string
     {
         return 'Elfe';
     }

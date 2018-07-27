@@ -604,6 +604,111 @@ Type hinting
 
 .. slide::
 
+Valeur nullables
+~~~~~~~~~~~~~~~~
+
+Une valeur peut être nullable avec le préfixe ``?``::
+
+    <?php
+
+    function setBookTitle(Book $book, ?string $title) {
+        if ($title !== null) {
+            $book->setTitle($title);
+        } else {
+            $book->setTitle('Unknown');
+        }
+    }
+
+    setBookTitle($book, null);
+
+.. textOnly::
+
+    Sans le ``?`` devant ``?string``, ce code ne fonctionnerait pas car la valeur ``null`` ne serait
+    pas acceptée.
+
+.. slide::
+
+Fonctions variadiques
+~~~~~~~~~~~~~~~~~~~~~
+
+Il est possible d'utiliser la notation ``...`` pour écrire des fonctions variadiques::
+
+    <?php
+
+    function setBookAuthors(Book $book, string ...$authors) {
+        foreach ($authors as $author) {
+            $book->addAuthor($author);
+        }
+    }
+
+    setBookAuthors($book, 'Alice', 'Bob');
+
+.. textOnly::
+    
+    Dans ce cas, la variable sera en fait un tableau contenant les éléments du type précisé
+    dans le hinting (ici des chaînes de caractères).
+
+.. slide::
+
+Types de retours
+~~~~~~~~~~~~~~~~
+
+Il est possible de préciser le type de retour d'une fonction par type hinting::
+
+    <?php
+
+    function createBook(): Book {
+        $book = new Book;
+        $book->setTitle('Hello world');
+
+        return $book;
+    }
+
+.. textOnly::
+
+    Cette valeur peut être aussi combinée avec ``?`` si la valeur de retour peut aussi être ``null``.
+
+.. slide::
+
+Retour de ``self``
+~~~~~~~~~~~~~~~~~~
+
+Une classe retournant sa propre instance peut le préciser avec ``self``::
+
+    <?php
+
+    class Book {
+        public function setTitle(string $title): self
+        {
+            $this->title = $title;
+
+            return $this;
+        }
+    }
+
+.. discover::
+
+    .. textOnly::
+
+        Cette pratique est courante pour pratiquer le chaînage de méthodes:
+
+    .. code-block::
+
+        <?php
+
+        $book = new Book;
+        $book
+            ->setTitle('Hello world')
+            ->setAuthors('Alice', 'Bob')
+            ;
+
+.. textOnly::
+
+    Lorsqu'une fonction de classe ne retourne aucune valeur (typiquement un *setter*), retourner 
+    ``$this`` permet de la chaîner avec une autre méthode dans le même appel.
+
+.. slide::
+
 Espaces de nom
 ~~~~~~~~~~~~~~
 

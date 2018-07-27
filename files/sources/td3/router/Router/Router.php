@@ -14,7 +14,7 @@ class Router
     /** 
      * Enregistre une page
      */
-    public function register($name, $pattern, \Closure $callback)
+    public function register(string $name, string $pattern, \Closure $callback)
     {
         $this->addRule(new Rule($name, $pattern, $callback));
     }
@@ -30,7 +30,7 @@ class Router
     /**
      * Effectue le routage
      */
-    public function route($path = null)
+    public function route(?string $path = null)
     {
         if ($path === null) {
 	    if (isset($_SERVER['PATH_INFO'])) {
@@ -55,7 +55,7 @@ class Router
     /**
      * Génère une URL absolue pour un fichier statique
      */
-    public function generateStatic($path)
+    public function generateStatic($path): string
     {
         $root = dirname($_SERVER['SCRIPT_NAME']);
 
@@ -69,7 +69,7 @@ class Router
     /**
      * Génère l'URL correspondante
      */
-    public function generate($name, array $parameters = [])
+    public function generate($name, array $parameters = []): string
     {
         foreach ($this->rules as $rule) {
             if ($rule->getName() == $name) {

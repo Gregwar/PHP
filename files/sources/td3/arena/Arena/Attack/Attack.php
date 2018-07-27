@@ -14,5 +14,5 @@ interface Attack
     /**
      * Obtenir le nom de l'attaque
      */
-    public function getName();
+    public function getName(): string;
 }

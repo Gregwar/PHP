@@ -17,7 +17,7 @@ class Tackle implements Attack
     /**
      * Nom de l'attaque
      */
-    public function getName()
+    public function getName(): string
     {
         return 'Charge';
     }

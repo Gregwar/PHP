@@ -4,7 +4,7 @@ include('Router/autoload.php');
 $router = new Router\Router;
 
 // Rendu d'une page
-function render($page, $variables)
+function render(string $page, array $variables = [])
 {
     global $router;
     extract($variables);

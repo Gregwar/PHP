@@ -54,7 +54,7 @@ abstract class BaseCreature
     /**
      * Obtient la vie courante
      */
-    public function getLife()
+    public function getLife(): int
     {
         return $this->life;
     }
@@ -62,12 +62,12 @@ abstract class BaseCreature
     /**
      * Nom de la créature
      */
-    public abstract function getName();
+    public abstract function getName(): string;
 
     /**
      * Attaques réalisables
      */
-    public function getAttacks()
+    public function getAttacks(): array
     {
         return $this->attacks;
     }
