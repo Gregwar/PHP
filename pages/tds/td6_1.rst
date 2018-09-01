@@ -16,7 +16,7 @@ Installation de Symfony
     installez tout d'abord composer quelque part et utilisez la commande ``create-project``:
 
     .. code-block:: no-highlight
-        composer create-project symfony/skeleton pizza
+        composer create-project symfony/website-skeleton symfony
 
     Composer va alors cloner le squelette du framework Symfony dans le dossier ``pizza/``.
 
