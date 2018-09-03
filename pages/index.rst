@@ -36,45 +36,9 @@ Avez-vous déjà fait du PHP?
 
 .. slide:: darkSlide fullSlide slideOnly
 
-.. discover::
-    .. div:: inSlide
-        .. discover::
-            .. image:: /img/troll.png
-                :class: right
-        TECHNOS VENDABLES
-
-        * ASP.net
-        * JAVA J2EE
-
-        .. discover::
-            --------------------
-
-            TECHNOS COOLS
-
-            * Ruby On Rails
-            * Django (Python)
-            * node.js (JavaScript)
-
-        .. discover::
-            --------------------
-
-            PHP
-
-.. slide:: darkSlide fullSlide slideOnly
-
-.. discover::
-    .. div:: importantText
-        PHP EST VENDABLE
-
-.. discover::
-    PHP EST COOL
-
-.. slide:: darkSlide fullSlide slideOnly
-
 .. div:: importantText
     PHP Powa!
 
-.. discover::
     .. code-block::
         <?php echo "Let's go!"; ?>
 
@@ -87,6 +51,11 @@ Avez-vous déjà fait du PHP?
 
 .. center::
     .. image:: /img/stats.png
+
+.. slide:: fullSlide slideOnly
+
+.. center::
+    .. image:: /img/trends.png
 
 .. slide::
 
