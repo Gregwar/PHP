@@ -9,7 +9,7 @@ Préparation
 .. important::
     `|archive| Télécharger l'archive td3.zip </files/td3.zip>`_
 
-Vous aurez besoin de déployer son contenu sur un espace web disposant de l'intérpréteur
+Vous aurez besoin de déployer son contenu sur un espace web disposant de l'interpréteur
 **PHP**. 
 
 Exercice 1 : un peu de conception

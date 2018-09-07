@@ -40,14 +40,14 @@ Exercice 1: Prise en main
 .. step::
     **#-. La ligne de commande**
 
-    L'intérpréteur **PHP** peut être utilisé en ligne de commande, ce qui vous permettra de prendre le langage
+    L'interpréteur **PHP** peut être utilisé en ligne de commande, ce qui vous permettra de prendre le langage
     en main et de faire des tests. Créez un fichier ``hello.php`` et placez-y le contenu suivant::
 
             <?php
             // hello.php
             echo "Hello world !\n";
 
-    Pour éxécutez votre code, lancez dans un terminal::
+    Pour exécutez votre code, lancez dans un terminal::
 
         php hello.php
 
@@ -170,7 +170,7 @@ Questions
     **#~. Quel est l'interêt du tableau ``$actions`` ? Quelle(s) autre(s) méthode aurait pu être employée ?**
 
     .. spoiler::
-        Ce tableau permet de faire la correspondance entre les actions données au script et les fonction à apeller.
+        Ce tableau permet de faire la correspondance entre les actions données au script et les fonction à appeller.
         Grâce aux fonctions anonymes (depuis **PHP 5.3**), cette correspondance peut se faire directement en insérant
         les fonctions dans le tableau en tant qu'éléments. Un ``switch/case`` aurait pu être employé ici, mais la
         maniabilité n'aurait pas été la même, en effet, l'usage est ainsi capable d'afficher la liste des fonctions disponibles.
@@ -200,14 +200,14 @@ Questions
         obtenir un tableau depuis une telle chaîne.
 
     **#~. Observez de plus près l'appel à ``call_user_func_array``,
-    Est t-il possible de faire ce genre de chose dans un langage fortement typé tel que le C ou Java ? Pourquoi ?**
+    Est-il possible de faire ce genre de chose dans un langage fortement typé tel que le C ou Java ? Pourquoi ?**
 
     .. spoiler::
         Non. Cette fonction est un exemple de ce qu'il est possible de faire à l'aide d'un langage de haut niveau et
         interprété tel que le **PHP**.
 
     **#~. Essayez d'ajouter un produit à l'aide de la commande ``php store.php add nom_du_produit quantité``. Comment la liste
-    des produits est t-elle sauvegardée ?**
+    des produits est-elle sauvegardée ?**
 
     .. spoiler::
         La liste des produits est sauvegardée dans ``products.php``, elle est écrite à l'aide de ``file_put_contents()``

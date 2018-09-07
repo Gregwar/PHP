@@ -16,7 +16,7 @@ Voici la liste des sujets qu'il est possible de choisir, ainsi que quelques pist
 * Quels différences principales y'a t-il entre eux?
 * Quelles fonctionnalités peut t-on attendre d'un framework? (Quelques exemples?)
 * Y'a t-il des interactions entre ces frameworks (bibliothèques ou communautés en commun)?
-* Sur les offres d'emploi, est t-il parfois demandé de maîtriser tel ou tel framework?
+* Sur les offres d'emploi, est-il parfois demandé de maîtriser tel ou tel framework?
 
 #=) Les CMS
 -----------
@@ -24,7 +24,7 @@ Voici la liste des sujets qu'il est possible de choisir, ainsi que quelques pist
 * Quels sont les principaux CMS en PHP?
 * Pourquoi sont t-ils utilisés?
 * Quels différences principales y'a t-il entre eux?
-* Sur les offres d'emploi, est t-il parfois demandé de maîtriser tel ou tel CMS?
+* Sur les offres d'emploi, est-il parfois demandé de maîtriser tel ou tel CMS?
 * Certains de ces CMS se basent t-il sur des frameworks?
 
 #=) Les recommandations standard (PSR)
@@ -72,7 +72,7 @@ Voici la liste des sujets qu'il est possible de choisir, ainsi que quelques pist
 ---------------------------------
 
 * Qu'est-ce que Twig?
-* S'est t-il inspiré d'autre technologies?
+* S'est-il inspiré d'autre technologies?
 * Quelles sont ses fonctionnalités?
 * Quels sont les avantages/inconvénients?
 

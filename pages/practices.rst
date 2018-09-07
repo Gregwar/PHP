@@ -411,7 +411,7 @@ Failles CSRF
 .. textOnly::
     Et si, à l'instar de l'attaquant XSS, quelqu'un vous envoyait un e-mail ou vous faisait cliquer sur un lien
     pointant vers ``destroy.php``? Vous détruiriez votre compte
-    sans même vous en aperçevoir. C'est ce que l'on apelle une faille CSRF (Cross Site ReFerencing). Les formulaires
+    sans même vous en aperçevoir. C'est ce que l'on appelle une faille CSRF (Cross Site ReFerencing). Les formulaires
     soumis à l'aide de POST peuvent également être victime de ces attaques.
 
     Pour éviter cela, il est nécessaire de générer un jeton CSRF et de le stocker dans la session, puis de le

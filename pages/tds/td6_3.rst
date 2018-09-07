@@ -56,7 +56,7 @@ Entités
         
         ./bin/console make:entity
 
-    Il vous sera alors demandé de nommer votre entité, apellez là ``Pizza``,
+    Il vous sera alors demandé de nommer votre entité, appellez là ``Pizza``,
     nous utiliserons ici aussi la configuration par annotations.
 
     Vous pourrez alors saisir les champs de manière interactive, ajouter un champ ``name`` de
@@ -128,7 +128,7 @@ Entités
     Entrez ``Pizza``, pour y ajouter l'entrée ``ingredients``, et saisissez le type ``ManyToMany``. Ensuite, indiquez que la classe est en relation avec ``Ingredient``.
 
     Enfin, exécutez à nouveau ``doctrine:schema:update``, en regardant tout d'abord les modifications
-    qui seront apportées avec ``--dump-sql`` puis en les éxécutant avec ``--force``.
+    qui seront apportées avec ``--dump-sql`` puis en les exécutant avec ``--force``.
 
 Requêtage
 ---------
@@ -171,7 +171,7 @@ Insertion
 
 
     Remarquez l'utilisation des accesseurs (``setName`` et ``setDescription``) qui ont été générés
-    par Doctrine et que l'on peut apeller à la chaîne.
+    par Doctrine et que l'on peut appeler à la chaîne.
 
     Executez cette requêtes et allez voir dans la base de données pour vérifier la présence des nouvelles
     lignes dans les tables.
@@ -209,7 +209,7 @@ Listage
 .. step::
 
     Affichez également entre parenthèse tous les ingrédients d'une pizza. Pour cela, c'est très simple,
-    vous pouvez accéder à l'entrée ``ingredients``, qui apellera elle-même la méthode ``getIngredients()``
+    vous pouvez accéder à l'entrée ``ingredients``, qui appellera elle-même la méthode ``getIngredients()``
     qui retournera un tableau (un peu spécial car géré par Doctrine) contenant tous les ingrédients.
 
     Utilisez le filtre `join <http://twig.sensiolabs.org/doc/filters/join.html>`_ de Twig pour cela.

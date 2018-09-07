@@ -163,7 +163,7 @@ Présentation
 
 .. textOnly::
     De la même manière que vous avez exécuté **PHP** en ligne de commande, le "binding" **CGI**
-    permettra d'éxécuter **PHP** au moment ou une resource est demmandée par un client. Ainsi, le code
+    permettra d'exécuter **PHP** au moment ou une resource est demmandée par un client. Ainsi, le code
     que vous aurez écrit sera exécuté et pourra accéder lui même à un ensemble de resource pour rendre
     le contenu de la page dynamique, c'est à dire différent selon l'utilisateur, la base de données etc.
 
@@ -177,13 +177,13 @@ Résumé
 ~~~~~~
 
 La "passerelle" **CGI** va alors exécuter un programme ou un script **sur le serveur** en
-lui passant les données liées à la requêtes.
+lui passant les données liées à la requête.
 
 Ce programme pourra alors intéragir avec les en-têtes **HTTP** qui seront envoyées en réponse
 ainsi que sur le contenu de la réponse.
 
 .. discover::
-    Dans le cas de **PHP**, l'intérpréteur sera executé sur le script demandé.
+    Dans le cas de **PHP**, l'interpréteur sera executé sur le script demandé.
 
 .. slide::
 
@@ -240,7 +240,7 @@ le script suivant::
         .. code-block:: no-highlight
             php -S localhost:8080
 
-    Cette commande lançera un serveur web avec **PHP** depuis le dossier courant sur le
+    Cette commande lancera un serveur web avec **PHP** depuis le dossier courant sur le
     port 8080. Il suffira donc d'ouvrir un navigateur à l'adresse ``http://localhost:8080``
     pour accéder aux pages.
 
@@ -313,7 +313,7 @@ Données GET
 ~~~~~~~~~~~
 
 .. textOnly::
-    Les données "GET" sont des paramètres passées à la page. Il s'agit d'une manière de 
+    Les données "GET" sont des paramètres passés à la page. Il s'agit d'une manière de 
     transmettre une petite quantité d'informations directement dans une **URL**:
 
 .. important::
@@ -338,7 +338,7 @@ Données GET
     }
     */
 
-``x=42&y=1337`` est ce que l'on apelle une *Query String*
+``x=42&y=1337`` est ce que l'on appelle une *Query String*
 
 .. slide::
 
@@ -376,7 +376,7 @@ GET vs POST
 ~~~~~~~~~~~
 
 .. textOnly::
-    L'attribut ``method`` de la balise ``<form>`` peut être définit à
+    L'attribut ``method`` de la balise ``<form>`` peut être défini à
     ``get`` ou à ``post``. Ce choix détermine la manière dont les données du formulaire
     vont être transmise au serveur, dans le cas de ``get``, les paramètres seront passés dans
     l'**URL** comme vu précédemment:
@@ -411,7 +411,7 @@ Récupération des valeurs POST
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. textOnly::
-    Lors de la récéption d'une requête ``POST``, **PHP** mettra à votre disposition
+    Lors de la réception d'une requête ``POST``, **PHP** mettra à votre disposition
     le tableau superglobal ``$_POST`` qui contiendra les associations clé/valeurs postées
     par l'utilisateur:
 
@@ -500,7 +500,7 @@ Attention à header()
 .. warning::
     **Attention:** lorsque vous envoyez des données, le serveur commence à répondre au client
     et lui transmet "au fur et à mesure" la réponse. Ce qui signifie que la méthode ``header()``
-    provoquera une erreur si vous l'apellez après avoir envoyé un élément de données au client.
+    provoquera une erreur si vous l'appelez après avoir envoyé un élément de données au client.
 
 .. slide::
 
@@ -508,12 +508,12 @@ Les cookies
 ~~~~~~~~~~~
 
 .. textOnly::
-    Les cookies sont des clé/valeurs stockés par le **client HTTP**. Lors de la réponse d'un serveur,
+    Les cookies sont des clé/valeurs stockées par le **client HTTP**. Lors de la réponse d'un serveur,
     un certain nombre de définitions de cookies peuvent avoir lieu à l'aide de l'en-tête ``Set-cookie``.
     Ces valeurs sont fournies plus tard par le client à chaque requête avec l'en-tête ``Cookie``.
 
     Les cookies peuvent <span class="textOnly">donc</span> être définis grâce à l'en-tête ``Set-cookie``,
-    mais **PHP** mets à notre disposition la fonction :method:`setcookie`
+    mais **PHP** met à notre disposition la fonction :method:`setcookie`
     moins brute:
 
 ::
@@ -552,7 +552,7 @@ Attention aux cookies
 ~~~~~~~~~~~~~~~~~~~~~
 
 .. warning::
-    **Attention 1:** comme ``header()``, ``setcookie()`` doit être effectué avant
+    **Attention 1:** comme ``header()``, ``setcookie()`` doit être appelée avant
     tout envoi de données.
 
 .. discover::
@@ -592,7 +592,7 @@ Les sessions
 
 .. textOnly::
     Imaginez que vous deviez créer un système d'identification pour sécuriser l'accès à un site web,
-    les cookies pourraient être utilisés mais les données ne peuvent pas être stockés "en clair", étant donné
+    les cookies pourraient être utilisés mais les données ne peuvent pas être stockées "en clair", étant donné
     que l'utilisateur a parfaitement accès à leur contenu.
 
 .. slideOnly::
@@ -716,7 +716,7 @@ sessions ?
 
 .. slide:: slideOnly
 
-Est t-il possible de lire un cookie depuis Javascript (coté client)?
+Est-il possible de lire un cookie depuis Javascript (coté client)?
 
 .. poll::
 
@@ -735,7 +735,7 @@ Les données d'un formulaire seront "passées" dans quelle variable?
 
 .. slide:: slideOnly
 
-Est t-il possible de changer les en-têtes de la réponse HTTP depuis du code PHP?
+Est-il possible de changer les en-têtes de la réponse HTTP depuis du code PHP?
 
 .. poll::
 

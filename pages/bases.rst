@@ -32,7 +32,7 @@ Présentation
     * Multi paradigmes (impératif, objet, fonctionnel etc.)
     * Libre et gratuit
     * Très répandu sur le marché
-    * Doté d'un grand jeu d'extension et de bibliothèques
+    * Doté d'un grand jeu d'extensions et de bibliothèques
 
 .. slide::
 
@@ -119,7 +119,7 @@ faire de web en particulier.
 
 .. slide::
 
-Installation de l'intérpreteur
+Installation de l'interpréteur
 ----------------------------------
 
 L'ensemble de la documentation et des fichiers binaires de **PHP** peuvent
@@ -188,7 +188,7 @@ dans votre terminal:
     des tests, à l'aide de la commande ``php -a``.
 
 .. textOnly::
-    Utiliser l'intérpréteur peut être très utile, il peut vous servir à faire des
+    Utiliser l'interpréteur peut être très utile, il peut vous servir à faire des
     tests simplement en écrivant des scripts directement. A terme, vous pourrez également
     utiliser **PHP** comme langage de script, ce qui peut vous faire gagner du
     temps pour manipuler des fichiers, automatiser des tâches etc.
@@ -206,7 +206,7 @@ dans votre terminal:
     Utilisation (suite)
     ~~~~~~~~~~~~~~~~~~~
 
-    Utiliser l'intérpréteur peut servir à :
+    Utiliser l'interpréteur peut servir à :
 
     * Faire des tests (pratique pour découvrir le langage)
     * Utiliser PHP comme langage de script
@@ -230,7 +230,7 @@ Exemple basique
     $a = 'hello'; // chaîne
 
     // On peut tester l'existence d'une
-    // variable à l'éxécution
+    // variable à l'exécution
     if (isset($a)) {
         echo $a . "\n"; // hello
     }
@@ -245,10 +245,10 @@ Exemple basique
     ci-dessus, ``$a`` peut contenir aussi bien un entier qu'une chaîne. Son type
     change en pleine exécution.
 
-    Du fait que **PHP** soit intérprété, les variables, fonctions ou classes ne sont
-    connues qu'au moment de l'éxécution (pas de phase de compilation).
+    Du fait que **PHP** soit interprété, les variables, fonctions ou classes ne sont
+    connues qu'au moment de l'exécution (pas de phase de compilation).
         
-    Il est de ce fait possible de tester l'éxistence d'une variable au moment de l'éxécution
+    Il est de ce fait possible de tester l'existence d'une variable au moment de l'exécution
     à l'aide de la fonction ``isset();``
         
     L'opérateur de concaténation est le ``.``, le ``+`` étant réservé
@@ -451,7 +451,7 @@ Le switch/case
     }
 
 .. textOnly::
-    Notons que sans le mot clé ``break`` le code continue de s'éxécuter entre deux
+    Notons que sans le mot clé ``break`` le code continue de s'exécuter entre deux
     cases (comme dans les cas ``1`` et ``2`` ci-dessus).
 
 .. slide::
@@ -617,13 +617,13 @@ Voici un exemple plus avancé qui utilise deux concepts introduits dans **PHP 5.
 
 .. textOnly::
     Ici, une fonction **anonyme** est utilisée, elle est passée en paramètre à la fonction
-    ``ifIsEven`` qui peut l'apeller comme une fonction normale via ``$callback()``.
-    Ce système est extrèmement utile dans le cas de programmation événementielle par exemple, on pourra
+    ``ifIsEven`` qui peut l'appeler comme une fonction normale via ``$callback()``.
+    Ce système est extrêmement utile dans le cas de programmation événementielle par exemple, on pourra
     manipuler des références de fonctions comme des variables "normales", et les placer dans des tableaux
     ou des attributs de classe.
         
     De plus, le type du paramètre ``$callback`` est précisé à **PHP**, c'est ce que l'on
-    apelle le **type hinting**, ou indication de type. Ainsi, l'intérpréteur provoquera une erreur dans
+    appelle le **type hinting**, ou indication de type. Ainsi, l'interpréteur provoquera une erreur dans
     le cas ou le paramètre serait du mauvais type, ce qui peut permettre d'éviter les erreurs. Le type utilisé
     est ``Closure`` et correspond au type des fonctions anonymes.
 
@@ -681,7 +681,7 @@ et ``require()``::
 
     **PHP** étant interprété, il est possible d'inclure des fichiers dont le nom est connu de manière dynamique,
     en faisant attention à la provenance du dit fichier. En effet, le fichier inclus sera évalué par l'interpréteur et 
-    peut exécuter du code sur la machine qui l'éxécute.
+    peut exécuter du code sur la machine qui l'exécute.
 
 .. slide::
 
