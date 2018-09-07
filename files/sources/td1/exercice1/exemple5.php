@@ -24,7 +24,7 @@ array_push($SG1, 'Teal\'C', 'Daniel Jackson');
 // var_dump($var) pour afficher le contenu d'une variable explicitement
 show($SG1);
 
-// Pour supprimer un élément, il faut apeller unset() sur l'entrée
+// Pour supprimer un élément, il faut appeler unset() sur l'entrée
 // dans le tableau
 $key = array_search('Daniel Jackson', $SG1);
 unset($SG1[$key]);

@@ -23,7 +23,7 @@ $actions = [
 ];
 
 /**
- * Récupère l'argument et apelle la fonction correspondante
+ * Récupère l'argument et appelle la fonction correspondante
  */
 array_shift($argv);
 
