@@ -108,6 +108,11 @@ Exercice 3 : Une image
     Devrait afficher une image de votre choix, à vous de bien écrire la réponse
     de manière à ce que le navigateur la comprenne.
 
+    .. note::
+
+        Vous pourrez utiliser ``File.ReadAllBytes()``, et écrire les octets directement
+        dans le *stream* à l'aide de ``stream.Write()``.
+
 
 Exercice 4 : Formulaire en POST
 -------------------------------
