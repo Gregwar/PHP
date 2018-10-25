@@ -7,7 +7,7 @@ TD4
 .. |archive| image:: /img/archive.png
 
 .. important::
-    `|archive| Télécharger l'archive td4_1.zip </files/td4_2.zip>`_
+    `|archive| Télécharger l'archive td4.zip </files/td4.zip>`_
 
 
 .. step::
