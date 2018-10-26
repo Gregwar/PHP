@@ -126,14 +126,25 @@ Utilisation du PDO
     Affichage des tickets d'un utilisateurs
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    Faites en sorte que chaque utilisateur soit clickable et mène à une autre page, par exemple ``tickets.php``,
+    Faites en sorte que chaque utilisateur soit cliquable et mène à une autre page, par exemple ``tickets.php``,
     qui affiche l'ensemble des tickets de l'utilisateurs.
 
-    Pour chaque ticket, on affichera le détail, c'est à dire le nom du produit, la quantité ainsi que le prix.
+    Pour chaque ticket, qui sont à leurs tours cliquables, on affichera le détail,
+    c'est à dire le nom du produit, la quantité ainsi que le prix.
 
 .. step::
 
     Regroupement par catégories
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    Modifiez ``tickets.php`` afin que les produits soient regroupés par catégories
+    Modifiez le rendu d'un ticket afin que les produits soient regroupés par
+    catégories.
+
+.. step::
+
+    Produits
+    ~~~~~~~~
+
+    Ajoutez une page ``produits.php`` qui liste les produits disponibles. Pour chaque
+    produit, on pourra en cliquant dessus accéder à une autre page qui liste les
+    tickets les plus récents contenant ce produit.
