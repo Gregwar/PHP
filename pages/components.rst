@@ -258,7 +258,7 @@ Avantages
 .. discoverList::
     * Une rédaction simplifiée des vues
     * Moins de porosité entre le rôle du contrôleur et de la vue
-    * Une sécurisation avec l'échappement par défautd des variables
+    * Une sécurisation avec l'échappement par défaut des variables
     * Des fonctionnalités supplémentaires que du PHP "brut" telles que l'héritage
     * La résolution des propriétés (``user.name`` peut être ``$user['name']`` ou ``$user->getName()``)
 
@@ -381,7 +381,8 @@ Exemple: Doctrine2
     $manager->flush();
 
     // Récupération par ID
-    $car = $manager->find(1);
+    $car = $manager->getRepository(Product::class)
+                ->find(1);
 
     // Mise à jour
     $car->setPrice(9500);
@@ -410,7 +411,8 @@ L'ORM permet également de gérer les *relations* entre les tables et donc entre
     $manager->flush();
 
     // Récupération par ID
-    $car = $manager->find(1);
+    $car = $manager->getRepository(Product::class)
+        ->find(1);
     echo $car->getOwner()->getName(); // Bob
 
 .. slide::
