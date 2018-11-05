@@ -100,10 +100,17 @@ Ecriture de requête/code
         // Attention, vous DEVEZ préparer vos requêtes
         // Ne faites SURTOUT PAS ce genre de choses:
         $sql = 'SELECT * FROM users WHERE name='.$name; // MAUVAIS
+
+.. step::
+    #-. Formulaire d'ajout de critique (1)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Remarquez que le formulaire soumet sur la mauvaise page,
+    utilisez ``path_for()`` pour le corriger.
  
 .. step::
-    #-. Formulaire d'ajout de critique
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    #-. Formulaire d'ajout de critique (2)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     Les films peuvent être critiqué, complétez le code de manière
     à enregistrer les critiques valides dans la base de données, n'oubliez pas de passer par le modèle.
