@@ -65,7 +65,7 @@ $app->get('/fiche_film/{id}', function(Request $request, Response $response, arr
 })->setName('film');
 
 // Gestion de la soumission d'une critique
-$app->post('/film_critique/{id}', function(Request $request, Response $response,array $args) {
+$app->post('/fiche_film/{id}', function(Request $request, Response $response,array $args) {
     $post = $request->getParsedBody();
     
     throw new \Exception("A faire dans le TD!");
