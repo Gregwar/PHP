@@ -20,39 +20,6 @@ Installation de Twig
 
         composer req twig
 
-.. step::
-
-    Vous pouvez ensuite re générer votre contrôleur par défaut::
-
-        rm src/Controller/DefaultController.php
-        php bin/console make:controller
-
-Rendu Twig depuis le contrôleur
--------------------------------
-
-.. step::
-
-    Les templates, ou "vues" de vote application se situent dans le dossier ``templates/``. Vous pouvez
-    faire hériter votre contrôleur de ``Symfony\Bundle\FrameworkBundle\Controller\Controller`` de la
-    façon suivante::
-
-        use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-
-        class DefaultController extends Controller
-        {
-                //...
-
-    Ainsi, votre contrôleur héritera d'un ensemble de fonction "raccourcie", comme ``render`` qui
-    vous permet d'effectuer le rendu d'une vue Twig::
-
-        public function indexAction()
-        {
-            return $this->render("default/index.html.twig");
-        }
-
-    Ainsi, si votre template est située dans ``templates/default/index.html.twig``, votre contrôleur
-    rendra alors cette dernière.
-
 Création du layout
 ------------------
 
