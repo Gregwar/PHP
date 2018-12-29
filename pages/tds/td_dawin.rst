@@ -19,7 +19,7 @@ Consignes et rendu
     .. code-block:: text
 
         git clone https://github.com/Gregwar/poll-2019.git
-        cd poll-2018
+        cd poll-2019
         git remote rm origin
         git remote add origin git@bitbucket.org:mon-login-bitbucket/mon-depot-prive.git
         git push --set-upstream origin master
