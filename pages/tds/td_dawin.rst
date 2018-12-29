@@ -11,14 +11,14 @@ Consignes et rendu
     Ce travail est à produire **individuellement**, vous devrez pour cela créer un dépôt git
     **privé**.
 
-    Le code de base est présent sur ce `dépôt GitHub <https://github.com/Gregwar/poll-2018>`_.
+    Le code de base est présent sur ce `dépôt GitHub <https://github.com/Gregwar/poll-2019>`_.
 
     Vous pouvez donc par exemple créer un dépôt (**privé**!) BitBucket ou GitHub, puis faire
     par exemple:
 
     .. code-block:: text
 
-        git clone https://github.com/Gregwar/poll-2018.git
+        git clone https://github.com/Gregwar/poll-2019.git
         cd poll-2018
         git remote rm origin
         git remote add origin git@bitbucket.org:mon-login-bitbucket/mon-depot-prive.git
