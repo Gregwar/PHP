@@ -113,8 +113,8 @@ Travail à réaliser
     .. center::
         .. image:: /img/poll2018-poll.png
 
-    Pour le moment, il n'est pas possible de voter car la page d'un sondage est essentiellement
-    une maquette. 
+    Pour le moment, il n'est pas possible de voter car la page d'un sondage propose un formulaire
+    qui n'est pas traité. 
 
     * Ajoutez une entité ``PollVote`` qui permet d'associer un utilisateur, un sondage et l'option
       pour laquelle il a voté
