@@ -116,7 +116,7 @@ Travail à réaliser
     Pour le moment, il n'est pas possible de voter car la page d'un sondage est essentiellement
     une maquette. 
 
-    * Ajouter une entité ``PollVote`` qui permet d'associer un utilisateur, un sondage et l'option
+    * Ajoutez une entité ``PollVote`` qui permet d'associer un utilisateur, un sondage et l'option
       pour laquelle il a voté
     * Modifiez le code de l'action ``show()`` du ``PollController`` de manière à enregistrer le
       vote de l'utilisateur dans la base lorsqu'il soumet le formulaire.
