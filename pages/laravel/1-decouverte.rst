@@ -609,4 +609,4 @@ TD 7
 
 .. toctree::
 
-    tds/td7
+    ../tds/td7
