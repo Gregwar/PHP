@@ -18,7 +18,7 @@ de réaliser des applications web.
     Il a été créé par **Taylor Otwell** (`@taylorotwell <https://twitter.com/taylorotwell>`_).
 
 .. discover::
-    La version actuelle est la version 5.7. Deux mises à jour sont publiées par an, en Février et en Août.
+    La version actuelle est la version 5.8. Deux mises à jour sont publiées par an, en Février et en Août.
 
 .. discover::
     Laravel en soit n'est rien d'autre qu'un *"conteneur d'inversion de contrôle"*, sur lequel nous allons revenir un peu plus tard, mais le framework fournit tout un ensemble de "briques" qui permettent de construire son site.
