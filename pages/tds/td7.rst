@@ -107,3 +107,29 @@ Vous aurez besoin de :
 * Créer les migrations pour votre table ``séries``
 * Créer votre modèle ``Serie``
 * Ecrire les routes d'actions dans votre contrôleurs, avec les vues pour chaque.
+
+.. step::
+
+Une fois que vous avez votre gestion de séries, ajoutez de la même façon la gestion des saisons.
+
+Chaque saison appartient à une série (donc une série possède plusieurs saisons).
+
+Utilisez les `relations Eloquent <https://laravel.com/docs/5.7/eloquent-relationships>`_ pour cela.
+
+.. step::
+
+Faites de même pour les épisodes d'une saison.
+
+.. step::
+
+Modifiez votre modèle ``Episode`` pour préciser quel épisode a été vu ou non.
+
+.. step::
+
+Faites en sorte d'afficher sur la liste des saisons d'une série : 
+
+* Le nombre d'épisodes vus
+* Le nombre d'épisode total
+* Le pourcentage de complétion (100% : saison vue entièrement)
+
+Pour vous simplifier la tâche vous pouvez utiliser `des accesseurs <https://laravel.com/docs/5.7/eloquent-mutators#defining-an-accessor>`_ dans votre modèle `Season`, et les utiliser dans votre vue.
