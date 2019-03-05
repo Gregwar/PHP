@@ -603,7 +603,21 @@ Supprimer une entité :
     $post = Post::find($id);
     $post->delete();
 
-    
+.. slide::
+
+Middleware
+----------
+
+Il s'agit de classes qui permettent de traiter la requête avant qu'elle arrive au contrôleur et/ou de traiter la réponse avant qu'elle soit renvoyée au client.
+
+.. discover::
+
+    .. center::
+        .. image:: /img/laravel_middlewares.png
+
+
+.. slide::
+
 TD 7
 ----
 

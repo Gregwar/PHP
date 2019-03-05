@@ -131,7 +131,8 @@ Voyons plus en détail le dossier ``app/`` :
         └── User.php
 
 .. discoverList::
-    * ``Console/`` : Classes liés à l'utilisation de notre application en CLI (Artisan)
+    * ``app/Console/`` : Classes liés à l'utilisation de notre application en CLI (Artisan)
+    * ``app/Http/`` : Classes liés à l'utilisation de notre application sur navigateurs
 
 .. slide::
 Principe d'environnement
