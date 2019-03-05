@@ -8,7 +8,7 @@ use Gregwar\Slidey\Slidey;
 /**
  * Dossier dans lequel sera construit le site
  */
-$targetDirectory = '../php/';
+$targetDirectory = './build';
 
 $slidey = new Slidey;
 
