@@ -176,3 +176,4 @@ Cours
 .. toctree::
 
     laravel/1-decouverte
+    laravel/2-plus-loin
