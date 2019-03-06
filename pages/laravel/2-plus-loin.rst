@@ -50,7 +50,7 @@ Relation One-To-Many
         }
     }
 
-    $post->comments->save($comment);
+    $post->comments()->save($comment);
 
 .. slide::
 
@@ -66,8 +66,8 @@ Relation Many-To-One
         }
     }
 
-    $comment->post->associate($post);
-    $comment->post->dussociate();
+    $comment->post()->associate($post);
+    $comment->post()->dissociate();
 
 .. slide::
 
@@ -89,8 +89,8 @@ Le nom de cette table pivot respecte une convention de nommage : il s'agit des n
 
     // Table pivot : category_post
 
-    $post->categories->attach($category);
-    $post->categories->detach($category);
+    $post->categorie()->attach($category);
+    $post->categories()->detach($category);
 
 
 
