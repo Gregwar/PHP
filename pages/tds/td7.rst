@@ -103,9 +103,9 @@ Commencer par réaliser la vue pour gérer vos séries.
 Vous aurez besoin de :
 
 * Créer les routes nécessaires
-* Créer le contrôleur ``SeriesController``
 * Créer les migrations pour votre table ``séries``
 * Créer votre modèle ``Serie``
+* Créer le contrôleur ``SeriesController``
 * Ecrire les routes d'actions dans votre contrôleurs, avec les vues pour chaque.
 
 .. step::
