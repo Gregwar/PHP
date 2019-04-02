@@ -18,8 +18,8 @@ Consignes et rendu
 
     **Information**: nous exécutons des scripts automatiques pour détecter le plagiat de code, si vous nous rendez des devoirs similaires, nous le détecterons et reviendrons à la fois vers le `plagieur et le plagié <http://www.studyrama.com/vie-etudiante/se-defendre-vos-droits/triche-et-plagiat-a-l-universite/plagier-c-est-frauder-et-risquer-des-sanctions-74063>`_.
 
-Consignes et rendu
-~~~~~~~~~~~~~~~~~~
+Travail à effectuer
+~~~~~~~~~~~~~~~~~~~
 
 Vous devez réaliser une application Laravel pour pouvoir mesurer la consommation en calories (kcal) des repas de vos utilisateurs.
 
