@@ -136,3 +136,14 @@ TD 6
 .. toctree::
 
     tds/td6
+
+.. slide::
+
+.. redirection-title:: tds/td7
+
+TD 7
+----
+
+.. toctree::
+
+    tds/td7

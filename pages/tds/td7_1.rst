@@ -1,0 +1,92 @@
+TD7-1: La base de données
+==================
+
+Dans ce TD, nous utiliserons une base de données contenant des séries, voici ici la structure de la base
+de données:
+
+.. |archive| image:: /img/archive.png
+.. |schema| image:: /img/schema.png
+
+.. important::
+    `|archive| Télécharger l'archive td7.zip </files/td7.zip>`_ 
+    `|schema| Voir le schéma de la base </img/db.png>`_
+
+Cette base de données est fournie dans le fichier ``schema.sql`` de l'archive ci-dessus.
+
+Mapping de la base
+~~~~~~~~~~~~~~~~~~
+
+Import SQL
+----------
+
+.. step::
+
+    Importez la base de données dans votre base MySQL
+
+Créez un nouveau projet Symfony
+-------------------------------
+
+.. step::
+
+    Créez un nouveau projet Symfony pour le TD en cours. N'oubliez pas de paramétrer votre fichier
+    ``.env`` afin de préciser le ``DATABASE_URL`` permettant de communiquer avec la base de données.
+
+Importer la base de données
+---------------------------
+
+.. step::
+
+    Ici, nous allons demander à Doctrine d'importer les données de la base de données et de créer les entitées
+    (code PHP) correspondant pour que le mapping fonctionne:
+
+    .. code-block:: text
+
+        ./bin/console doctrine:mapping:import App\\Entity annotation --path=src/Entity 
+
+    Observez le code des entités ainsi créées dans ``src/Entity``.
+
+Génération des accesseurs
+------------------------
+
+.. step::
+
+    Remarquez qu'il n'y a pas d'accesseurs (``getName()`` ...) dans les entités. Il est possible de demander
+    à Doctrine de les générer:
+
+    .. code-block:: text
+
+        ./bin/console make:entity --regenerate
+
+    Observez la modification sur le code.
+
+Création d'un contrôleur automatique (CRUD)
+-------------------------------------------
+
+.. step::
+
+    Afin d'afficher les séries de la table ``series``, nous allons utiliser la génération automatique CRUD
+    de Symfony:
+
+    .. code-block:: text
+
+        ./bin/console make:crud
+
+    Accédez ensuite à ``/series`` et observez le résultat.
+
+Retouches
+~~~~~~~~~
+
+Affichage des images
+--------------------
+
+.. step::
+
+    Les images (poster) des séries sont stockées directement dans la base. Modifiez le code de manière à ce
+    qu'elles soient visible dans la page.
+
+Pagination
+----------
+
+.. step::
+
+    Modifiez le code de manière à paginer l'affichage des séries.

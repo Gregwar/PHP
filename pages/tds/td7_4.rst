@@ -1,0 +1,80 @@
+TD7-3: API REST JSON
+====================
+
+.. image:: /img/json.png
+    :class: right
+
+
+Maintenant que l'identification via le token est possible, nous allons faire en sorte que notre
+API puisse être utilisée via des requêtes JSON.
+
+Liste des séries
+----------------
+
+.. step::
+
+    Implémentez une action, par exemple ``/series/listJson``, qui retourne la liste des séries au format
+    JSON. Un exemple de réponse:
+
+    .. code-block:: json
+
+        {
+          "status": "ok",
+          "response": {
+            "series": [
+              {
+                "name": "Attack on Titan",
+                "imdb": "tt2560140",
+                "plot": "[...]",
+                "year_start": "2013"
+              },
+              {
+                "name": "Friends",
+                "imdb": "tt0108778",
+                "plot": "[...]",
+                "year_start": "1994",
+                "year_end": "2004"
+              }
+            ]
+          }
+        }
+
+Interrogation via du code
+-------------------------
+
+.. step::
+
+    Nous allons maintenant créer une page PHP qui interrogera notre API. Voici comment elle
+    pourrait commencer.
+
+    Pour ce faire, vous pourrez utiliser ``file_get_contents()``, en interrogeant votre application
+    Symfony en lui fournissant le jeton d'API.
+
+    Affichez la liste des séries obtenues dans la page PHP résultante.
+
+Paramètres de requête d'API
+---------------------------
+
+.. step::
+
+    Faites en sorte que votre API ne retourne que 10 résultats, et indique si il y en a d'autre de
+    disponibles.
+
+    Aussi, ajoutez un paramètre permettant lors de la requête à l'API d'obtenir les résultats de la page
+    donnée, et faites en sorte de pouvoir naviguer entre les pages de résultat.
+
+Gestion d'erreur
+----------------
+
+.. step::
+
+    Lorsque l'on fournit un mauvais jeton, on devrait obtenir une réponse exploitable du genre:
+
+    .. code-block:: json
+
+        {
+            "status": "error"
+        }
+
+    Modifiez le code pour que ça soit le cas, et adaptez aussi le code de la page cliente pour qu'elle
+    affiche un message d'erreur si le jeton utilisé n'est pas valide.

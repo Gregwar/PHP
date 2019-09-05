@@ -1,0 +1,47 @@
+TD7-3: API REST
+=============================
+
+.. image:: /img/cloud_server.png
+    :class: right
+
+Nous avons construit une application web à partir d'une base de données existante, et permi
+aux utilisateurs de s'inscrire et de se connecter.
+
+Désormais, notre objectif sera de permettre aux utilisateurs d'interroger une API REST, c'est à dire
+d'obtenir les informations sur nos séries en JSON.
+
+Le premier problème est l'authentification.
+
+Génération du jeton
+~~~~~~~~~~~~~~~~~~~
+
+.. step::
+
+    Au moment de l'inscription d'un utilisateur, générez un jeton (``user_id``) aléatoire qui permettra
+    par la suite de l'identifier.
+
+Ajout d'une authentification par jeton
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. step::
+
+    Dans le principe, une API REST est sans état. Cela signifie qu'il n'y a **pas** de session avec le serveur.
+    Autrement dit, il n'est pas possible de s'identifier de manière classique.
+
+    Une solution à ce problème est de demander aux personnes qui souhaitent interroger l'API de fournir un
+    jeton dans **chaque requête** au lieu de s'identifier par session.
+
+    Voici un exemple de requête:
+
+    .. code-block:: text
+
+        http://localhost:8000/hello?api_token=[token]
+
+    Ici, ``[token]`` serait la valeur stockée dans le ``user_id`` et permettrait alors de l'identifier. La page
+    hello pourrait simplement afficher ``"Hello [name]"`` où ``[name]`` serait le nom de l'utilisateur
+
+    Pour ce faire, lisez la `documentation officielle de Symfony sur le sujet <https://symfony.com/doc/current/security/guard_authentication.html>`_.
+
+
+
+

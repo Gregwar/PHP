@@ -1,0 +1,76 @@
+TD7-2: authentification
+=============================
+
+.. image:: /img/key.png
+    :class: right
+
+Inscription d'un utilisateur
+-----------------------
+
+.. step::
+
+    Créez un formulaire d'inscription. Vous pourrez partir d'un ``make:crud`` comme au TD précédent
+    et adapter le code pour utiliser l'insertion d'un utilisateur en tant qu'inscription.
+
+Identification
+--------------
+
+Implémenter ``UserInterface``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. step::
+
+    Premièrement, il faut que nos utilisateurs implémentent l'interface ``UserInterface`` de
+    Symfony (``use Symfony\Component\Security\Core\User\UserInterface;``)
+
+    Pour cela, ajoutez le code suivant (les méthodes manquantes) dans ``User``:
+
+    .. code-block:: php
+
+        public function getSalt() { return ''; }
+        public function getUsername() { return $this->getemail(); }
+        public function getRoles() { return ['ROLE_USER']; }
+        public function eraseCredentials() { }
+
+Configurer la sécurité
+~~~~~~~~~~~~~~~~~~~~~~
+.. step::
+
+    Vous pouvez configurer la sécurité comme cela:
+
+    .. code-block:: yaml
+
+        security:
+            providers:
+                app_user_provider:
+                    entity:
+                        class: App\Entity\User
+                        property: email
+            firewalls:
+                dev:
+                    pattern: ^/(_(profiler|wdt)|css|images|js)/
+                    security: false
+                main:
+                    anonymous: true
+
+            access_control:
+                # - { path: ^/admin, roles: ROLE_ADMIN }
+                # - { path: ^/profile, roles: ROLE_USER }
+
+    Ici, ``class`` désigne la classe utilisateur que nous utilisons, avec sa propriété ``email`` qui permet
+    de l'identifier.
+
+Créer un formulaire d'identification
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. step::
+
+    Il est possible de générer automatiquement le contrôleur de sécurité à l'aide de la commande:
+
+    .. code-block:: bash
+
+        ./bin/console make:auth
+
+    Il faudra compléter deux méthodes dans votre authentificateur pour que cela fonctionne, rendez vous ensuite
+    sur ``/login`` et ``/logout``, et l'identification devrait fonctionner!
+
