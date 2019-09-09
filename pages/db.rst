@@ -8,7 +8,7 @@ Bases de données
 Introduction
 ------------
 
-.. image:: /img/db.png
+.. image:: /img/bd.png
     :style: float:right
 
 Les bases de données représentent un point clé de l'organisation d'une application
