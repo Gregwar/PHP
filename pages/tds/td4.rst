@@ -1,7 +1,7 @@
 TD4
 ===
 
-.. image:: /img/db.png
+.. image:: /img/bd.png
     :class: right
 
 .. |archive| image:: /img/archive.png
