@@ -90,3 +90,31 @@ Pagination
 .. step::
 
     Modifiez le code de manière à paginer l'affichage des séries.
+
+
+.. image:: /img/terrible_orm.png
+    :class: right
+
+Performances de l'ORM
+~~~~~~~~~~~~~~~~~~~~~
+
+Ajout des genres
+----------------
+
+.. step::
+
+    Dans le tableau des séries, ajouter la liste des genres de la série séparés par une virgule.
+
+Optimisation
+------------
+
+.. step::
+
+    Vérifiez le nombre de requêtes effectuées par la page dans le *profiler*. Modifiez le code
+    de manière à n'avoir qu'une seule requête.
+
+..    $series = $repo->createQueryBuilder('s')
+..            ->select('s, g')
+..            ->join('s.genre', 'g')
+..            ->getQuery()
+..            ->getResult();
