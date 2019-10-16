@@ -32,6 +32,9 @@ Programmation orientée objet
 
 .. slide::
 
+Présentation
+------------
+
 Classes et instanciation
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
