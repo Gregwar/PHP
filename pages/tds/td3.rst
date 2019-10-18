@@ -12,32 +12,24 @@ Préparation
 Vous aurez besoin de déployer son contenu sur un espace web disposant de l'interpréteur
 **PHP**. 
 
-Exercice 1 : un peu de conception
+Exercice 1 : écriture de classes
 --------------------------------
 
 .. image:: /img/cubes.png
     :class: right
 
-    Une plateforme d'hébergement et de distribution de fichiers souhaite pouvoir héberger
-    des médias. Il en existe principalement trois sortes, des images, des musiques et des vidéos.
-    Ces trois sortes sont traitées de manière différente, mais pour chacune, on connaît un nom et il est
-    possible de les afficher à l'aide de la fonction ``print()``.
-
-    Les musiques et les vidéos ont une durée dans le temps et peuvent être diffusées en streaming.
-    Enfin, les utilisateurs peuvent constituer des playlists composées de plusieurs médias.
-    Les playlists sont hiérarchiques, c'est à dire qu'une playlist peut être ajoutée à une autre playlist.
 
 .. step::
-    Conception
-    ~~~~~~~~~~
+    Diagramme et test
+    ~~~~~~~~~
 
-    Dessinez un schéma (type UML) d'architecture de classes qui pourrait être utilisée ici
+    Voici un diagramme de classes (UML):
 
-.. step::
-    Lecture du test
-    ~~~~~~~~~~~~~~~
+    .. center::
 
-    Lisez le code suivant, vous devrez alors écrire les classes correspondantes afin de le faire fonctionnel tel quel::
+        .. image:: /img/td3-diagram.png
+
+    Ainsi qu'un code permettant de tester les classes écrites::
 
         <?php
 
@@ -62,7 +54,7 @@ Exercice 1 : un peu de conception
         // Affichage de "Lecture de Matrix (durée: 5400s)"
         $matrix->play();
         // Affichage de P2
-        echo $p2;
+        $p2->showPlaylist();
 
 .. step::
 

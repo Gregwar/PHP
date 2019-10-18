@@ -5,38 +5,6 @@
 Programmation orientée objet
 ============================
 
-.. slide::
-
-Présentation
-------------
-
-Pourquoi faire de l'objet ?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. image:: /img/boxes.png
-    :class: right
-
-.. textOnly::
-    L'objet est un paradigme de programmation très répandu et qui a fait ses preuves dans de
-    nombreux projets. Son utilisation n'apporte pas de fonctionnalités au langage, c'est à dire
-    que tout ce que l'on peut faire en utilisant la pogramation orientée objet peut être fait
-    sans, cependant l'objet apporte beaucoup de choses en **simplicité de compréhension**,
-    **maintenance**, **factorisation et découpage de code**, **travail collaboratif**
-    ou encore en **conception**. Toutes ces qualité font de l'objet un mécanisme indispensable
-    à maîtriser pour tout développeur **PHP**.
-
-.. slideOnly::
-    .. discoverList::
-        * Simplicité de compréhension
-        * Maintenance
-        * Factorisation et découpage de code
-        * Travail collaboratif
-        * Conception
-
-.. textOnly::
-    Presque toutes les bibliothèques et frameworks que vous serez amenés à utiliser se basent 
-    sur le paradigme objet.
-
 .. slide:: darkSlide fullSlide slideOnly
 
 .. div:: importantText
@@ -63,6 +31,9 @@ Pourquoi faire de l'objet ?
     SURCHARGE?
 
 .. slide::
+
+Présentation
+------------
 
 Classes et instanciation
 ~~~~~~~~~~~~~~~~~~~~~~~~
