@@ -238,10 +238,10 @@ le script suivant::
 
     .. discover::
         .. code-block:: no-highlight
-            php -S localhost:8080
+            php -S 127.0.0.1:8080
 
     Cette commande lancera un serveur web avec **PHP** depuis le dossier courant sur le
-    port 8080. Il suffira donc d'ouvrir un navigateur à l'adresse ``http://localhost:8080``
+    port 8080. Il suffira donc d'ouvrir un navigateur à l'adresse ``http://127.0.0.1:8080``
     pour accéder aux pages.
 
 .. slide:: fullSlide darkSlide slideOnly codeLeft
@@ -253,11 +253,11 @@ le script suivant::
 
     $ cat index.php
     <?php echo "Hello world!\n"; ?>
-    $ php -S localhost:8080
+    $ php -S 127.0.0.1:8080
 
 .. code-block:: no-highlight
 
-    $ firefox http://localhost:8080/
+    $ firefox http://127.0.0.1:8080/
 
 .. slide::
 

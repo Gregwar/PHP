@@ -32,10 +32,10 @@ depuis sa version ``5.4``, pour cela, placez vous dans le dossier que vous souha
 
 .. code-block:: no-highlight
 
-    $ php -S localhost:8080
+    $ php -S 127.0.0.1:8080
 
 Un serveur web se lancera alors en écoutant sur le port ``8080``, vous pourrez donc vous connecter
-à la page ``http://localhost:8080/`` et vous accéderez à votre application web.
+à la page ``http://127.0.0.1:8080/`` et vous accéderez à votre application web.
 
 Sous windows, vous pouvez utiliser le `script php-server.bat </files/php-server.bat>`_, placez le dans le dossier
 des sources et exécutez le.

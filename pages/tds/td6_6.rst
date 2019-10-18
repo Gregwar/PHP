@@ -25,7 +25,7 @@ Installation
             db_driver: orm
             firewall_name: main
             user_class: FOS\UserBundle\Model\User
-            from_email: {address: "fosub@localhost", sender_name: FOSUB}
+            from_email: {address: "fosub@127.0.0.1", sender_name: FOSUB}
             use_flash_notifications: false
 
 

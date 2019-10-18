@@ -29,9 +29,9 @@ Installation de Symfony
 
     Lancez la commande::
 
-        php -S localhost:8000 -t public
+        php -S 127.0.0.1:8000 -t public
 
-    Et connectez vous à ``http://localhost:8000/``, vous devriez voir la page par défaut de Symfony:
+    Et connectez vous à ``http://127.0.0.1:8000/``, vous devriez voir la page par défaut de Symfony:
 
 .. slide::
 
@@ -92,5 +92,5 @@ Installation de Symfony
     Voilà!
     ~~~~~~
     
-    Vous avez désormais un contrôleur capable de servir une page (JSON, car vous n'avez pas encore de système de rendu de templates), si vous vous rendez à l'adresse `/default <http://localhost:8000/default>`_, vous pouvez l'exécuter.
+    Vous avez désormais un contrôleur capable de servir une page (JSON, car vous n'avez pas encore de système de rendu de templates), si vous vous rendez à l'adresse `/default <http://127.0.0.1:8000/default>`_, vous pouvez l'exécuter.
 
