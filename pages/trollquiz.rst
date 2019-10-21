@@ -149,12 +149,12 @@ Principes du TrollQuiz
 
 .. poll::
 
-    * ``xxyy``
-    * ``x``
-    * ``xxyx``
-    * ``xyyx``
-    * ``xyyy``
-    * ``x``
+    * ``yxyy``
+    * ``y``
+    * ``yxyx``
+    * ``yyyx``
+    * ``yyyy``
+    * ``y``
     * Je ne sais pas
 
 .. slide::
