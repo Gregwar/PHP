@@ -132,6 +132,15 @@ Quelques modifications
     :class: right
 
 .. step::
+    **#~. Mort simultanée**
+
+    Après une attaque qui fait des dégats aux deux créatures (telle que *Lutte*),
+    il est possible que les deux créatures meurent en même temps.
+
+    Dans ce cas, faites en sorte que le message "Mort simultanée" apparaisse, au
+    lieu de "*Créature* a gagné".
+
+.. step::
     **#~. Ajout d'une créature**
 
     En vous inspirant des créatures déjà existantes, ajoutez une créature ``Vampire``
