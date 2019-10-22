@@ -9,7 +9,7 @@ de données:
 
 .. important::
     `|archive| Télécharger l'archive td7.zip </files/td7.zip>`_ 
-    `|schema| Voir le schéma de la base </img/db.png>`_
+    `|schema| Voir le schéma de la base </img/db-shows.png>`_
 
 Cette base de données est fournie dans le fichier ``schema.sql`` de l'archive ci-dessus.
 
