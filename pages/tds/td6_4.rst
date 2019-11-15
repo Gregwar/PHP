@@ -41,7 +41,9 @@ Création du système de sécurité
     Pour générer la page et la vue du formulaire d'inscription. Regardez le code
     généré.
 
-    Créez ensuite une route dans ``config/routes.yaml`` pour ``app_logout``::
+    Créez ensuite une route dans ``config/routes.yaml`` pour ``app_logout``:
+
+    .. code-block:: yaml
 
         app_logout:
             path: /logout
