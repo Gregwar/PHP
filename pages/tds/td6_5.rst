@@ -24,7 +24,7 @@ Création du formulaire
 
 .. step::
 
-    Pour créer un formulaire: lancez:
+    Pour créer un formulaire: lancez::
 
         ./bin/console make:form
 
