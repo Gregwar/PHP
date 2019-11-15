@@ -213,3 +213,15 @@ Listage
     qui retournera un tableau (un peu spécial car géré par Doctrine) contenant tous les ingrédients.
 
     Utilisez le filtre `join <http://twig.sensiolabs.org/doc/filters/join.html>`_ de Twig pour cela.
+
+Génération CRUD
+---------------
+
+.. step::
+
+    Lancez la commande::
+
+        ./bin/console make:crud
+
+    Et demandez à Symfony de générer le CRUD pour l'entité Pizza. Consultez les pages
+    générés (``/pizzas``).
