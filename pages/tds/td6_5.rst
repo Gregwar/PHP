@@ -24,7 +24,11 @@ Création du formulaire
 
 .. step::
 
-    Notre formulaire sera géré par une classe::
+    Pour créer un formulaire: lancez:
+
+        ./bin/console make:form
+
+    Ce qui générera une classe du type::
 
         // Forms/PizzaType.php
         namespace App\Forms;
