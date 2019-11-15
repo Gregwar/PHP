@@ -61,7 +61,7 @@ Une première page
             /**
              * @Route("/pizzas", name="pizzas_list")
              */
-            public function pizzass()
+            public function pizzas()
             {
                 return $this->render('default/pizzas.html.twig', [
                     'pizzas' => [
