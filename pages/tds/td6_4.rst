@@ -11,17 +11,9 @@ Installation
 
 .. step::
 
-    Commencez par installer le module de sécurité::
+    Commencez par vous assurer de la présence du module ``security``::
 
         composer req security
-
-    Vous pouvez également installer le *profiler*, qui est un outil de débogage pratique
-    dans Symfony::
-
-        composer req profiler
-
-    Vous pouvez constater que la barre qui apparaîtra alors en bas de vos pages contient
-    l'utilisateur identifié (ou anon. pour "anonyme").
 
 Configuration
 -------------
@@ -30,78 +22,29 @@ Création du système de sécurité
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. step::
-    Premièrement, nous allons activer le sytème de session. Pour ce faire, décommentez
-    la partie concernant les sessions dans ``app/config/packages/framework.yml``.
+    Nous allons executer deux commandes, la première va créer l'entité `User`, qui
+    correspond à un utilisateur dans la base::
 
-    Ensuite, il vous faudra configurer le module de sécurité de Symfony. Pour cela,
-    éditez le fichier ``app/config/packages/security.yml``.
+        ./bin/console make:user
 
-    Pour simplifier, nous allons utiliser des utilisateurs stockés en mémoire, c'est à dire directement
-    dans le fichier de configuration de l'application. Voici un exemple:
+    La seconde va créer un système d'authentification pour cet utilisateur::
 
-    ::
+        ./bin/console make::auth
 
-        security:
-            encoders:
-                Symfony\Component\Security\Core\User\User: plaintext
+    Observez les fichiers ``config/packages/security.yaml`` et ``src/Security/AppAuthenticator.php`` (dont vous
+    avez choisi le noms) qui ont été générés.
 
-            role_hierarchy:
-                ROLE_ADMIN:       ROLE_USER
+    Enfin, utilisez::
 
-            providers:
+        ./bin/console make:registration
 
+    Pour générer la page et la vue du formulaire d'inscription. Regardez le code
+    généré.
 
-                in_memory:
-                    memory:
-                        users:
-                            admin: { password: something, roles: [ 'ROLE_ADMIN' ] }
+    Créez ensuite une route dans ``config/routes.yaml`` pour ``app_logout``::
 
-            firewalls:
-                dev:
-                    pattern:  ^/(_(profiler|wdt)|css|images|js)/
-                    security: false
-
-                main:
-                    pattern:    ^/
-                    form_login:
-                        check_path: login_check
-                        login_path: home
-                    logout:
-                        path:   logout
-                        target: home
-                    anonymous: ~
-
-            access_control:
-                - { path: ^/admin/, roles: ROLE_ADMIN }
-
-    Ce fichier:
-
-    * Définit l'encodage des mots de passes de ``Symfony\Component\Security\Core\User\User`` comme ``plaintext``,
-      c'est à dire texte brut sans hachage
-    * Exhibe une hiérarchie entre les rôles (un admin est un user)
-    * Définit plusieurs pare-feux (ou *firewalls*):
-        * ``dev``: ce pare-feu sert à laisser l'accès aux fichiers utiles pendant le développement
-        * ``login``: sert à désactiver la sécurité sur la page d'accueil que nous considérerons
-          comme page de login pour simplifier
-        * ``main``: pare-feu principal qui couvre tout le site, autorisant les utilisateurs
-          anonymes et décrivant la page de vérification de login comme étant ``login_check``,
-          celle de déconnexion ``logout`` et d'identification ``home`` (ces noms sont évidement
-          des noms de routes)
-    * Définit un filtrage d'accès sur les URLs commençant par ``/admin/``, il faudra le role
-      ``ROLE_ADMIN`` pour y accéder
-
-    Créez ensuite des routes dans ``app/config/routes.yaml`` pour les actions ``login_check`` et
-    ``logout``::
-
-        login_check:
-            path: /login/check
-
-        logout:
+        app_logout:
             path: /logout
-
-    Modifiez maintenant l'action du formulaire d'identification afin qu'il pointe vers ``login_check``,
-    vous devriez alors pouvoir vous identifier (vous pouvez vérifier que vous êtes identifiés dans la
-    barre de développement en bas de l'écran)
 
 Utilisation dans la vue
 ~~~~~~~~~~~~~~~~~~~~~~~
