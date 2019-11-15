@@ -1,4 +1,4 @@
-TD6-7: A vous de jouer
+TD6-6: A vous de jouer
 ======================
 
 .. note::
