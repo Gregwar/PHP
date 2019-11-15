@@ -185,7 +185,7 @@ Listage
 
         <?php
             
-            $pizzas = $em->getRepository('Pizza')
+            $pizzas = $em->getRepository(Pizza::class)
                         ->findAll();
 
     Ainsi, vous pourrez passer les pizzas en paramètres à une vue comme dans la partie précédente et
