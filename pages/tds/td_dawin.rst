@@ -72,16 +72,11 @@ Sécurisation
 ~~~~~~~~~~~~
 
 .. step::
-    La page "formations" n'est utile qu'à l'administrateur pour modifier les formations
-    dans la base.
+    Le site ne comporte actuellement aucune règle de sécurité. Faites en sorte que:
 
-    Modifiez le code de manière à ce qu'un utilisateur non administrateur ne puisse pas
-    accéder à cette dernière.
-
-.. step::
-
-    La page "entreprises" doit être accessible à tous, mais ne doit pas permettre à n'importe
-    quel utilisateur d'éditer
+    * La partie "formation" soit réservé à l'administrateur (back)
+    * La page "entreprise" soit réservée aux utilisateurs enregistrés
+    * Les fonctionnalités d'édition et de suppression de la partie entreprise soient réservées à l'administrateur
 
 .. step::
 
