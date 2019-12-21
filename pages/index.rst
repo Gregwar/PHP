@@ -99,7 +99,7 @@ Exposés
 TD Noté
 -------
 
-* :doc:`Le TD noté DAWIN Formation Initiale 2020 <tds/td_dawin>`
+* :doc:`Le TD noté DAWIN Formation Initiale 2020 <tds/td_dawin_2020>`
 
 Inutile et inintéréssant
 ------------------------
