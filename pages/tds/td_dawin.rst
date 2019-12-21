@@ -13,8 +13,7 @@ Consignes et rendu
 
     Le code de base est présent sur ce `dépôt GitHub <https://github.com/Gregwar/td-dawin-2020>`_.
 
-    Vous pouvez donc par exemple créer un dépôt (**privé**!) BitBucket ou GitHub, puis faire
-    par exemple:
+    Créez un dépôt (**privé**!) BitBucket ou GitHub, puis faire par exemple:
 
     .. code-block:: text
 
@@ -26,7 +25,7 @@ Consignes et rendu
 
     N'oubliez pas de partager ce dépôt privé avec moi (login ``gregwar`` sur BitBucket ou GitHub)
 
-    Vous devez impérativement renseigner votre dépôt à l'aide d'une remise sur `le Moodle du cours <https://moodle1.u-bordeaux.fr/course/view.php?id=3634>`_
+    Vous devez impérativement renseigner votre dépôt à l'aide d'une remise sur `le Moodle du cours <https://moodle1.u-bordeaux.fr/course/view.php?id=3634>`_ dans l'espace de remise
 
     La date limite de remise est le **18 Janvier 2020** inclu, ce qui signifie que vos dépôts seront clonés et ne seront plus mis à jour
 
@@ -43,11 +42,12 @@ forum des stages.
     Prise en main et installation
     -----------------------------
 
-    N'oubliez pas d'installer les dépendances à l'aide de `composer <http://getcomposer.org>`_~::
+    Installez les dépendances à l'aide de `composer <http://getcomposer.org>`_~::
 
         composer install
 
-    Modifiez alors le fichier ``.env`` pour qu'il contienne les paramètres de connexion valide à un serveur MySQL (vous pouvez par exemple utiliser celle du TD4 au département) et créez les tables::
+    Modifiez alors le fichier ``.env`` pour qu'il contienne les paramètres de connexion valide à un serveur MySQL
+    et créez les tables::
 
         php bin/console doctrine:schema:create
 
@@ -58,7 +58,7 @@ forum des stages.
     .. note::
 
         Vous aurez besoin d'un compte admin, et d'un compte non-admin. Pour cela, vous pouvez vous inscrire deux fois,
-        et mettre le booléen `admin` à 1 dans la base de données, ou utiliser simplement la commande::
+        et modifier les roles d'un des utilisateurs à l'aide de la commande::
 
             php /bin/console app:make-admin e-mail@de-ladmin.com
 
@@ -97,7 +97,8 @@ Connexion d'un utilisateur à une formation
 
 .. step::
 
-    Ajoutez un champ "training" dans l'entité utilisateur (vous pouvez utilisez encore une fois ``make:entity``),
+    Ajoutez un champ ``training`` (formation) dans l'entité utilisateur (vous pouvez
+    utilisez encore une fois ``make:entity``),
     qui sera une relation adéquate avec l'entité ``Training``.
 
 .. step::
@@ -107,12 +108,14 @@ Connexion d'un utilisateur à une formation
 
 .. step::
 
-    Création des créneaux
+    Création des créneaux lors de la création d'entreprise
     ~~~~~~~~~~~~~~~~~~~~~
 
-    On souhaite pouvoir associer des crénaux (*slot*) à chaque entreprise. Un créneau est une heure
+    On souhaite pouvoir associer des crénaux à chaque entreprise. Un créneau est une heure
     à laquelle il est possible de rencontrer l'entreprise pendant le forum des stages (pour la prise de
     rendez-vous).
+
+    L'entité ``Slot`` (créneau) est déjà fournie dans le code de base.
 
     Lorsque l'on créé une entreprise, on lui associe des créneaux libres à partir des paramètres (heure
     de début, heure de fin, et durée de chaque créneau. Voici un exemple de résultat attendu pour
@@ -121,8 +124,12 @@ Connexion d'un utilisateur à une formation
     .. center::
         .. image:: /img/2020-slots.png    
 
-    Implémentez la création des créneaux libres (dans ``createSlots`` dans ``CompanyController``).
-    Les créneaux devraient s'afficher dans la page détails (déjà implémenté).
+    Implémentez la création des créneaux libres (dans ``CompanyController::createSlots``).
+
+    .. note::
+
+        **Note**: L'entité ``Slot`` qui représente les crénaux existe déjà dans le code fournie, et
+        l'affichage des crénaux est déjà implémenté.
 
 .. step::
 
@@ -130,9 +137,10 @@ Connexion d'un utilisateur à une formation
     ~~~~~~~~~~~~~~~~~~~~~~~
 
     Les entreprises participantes ne sont pas intéressées par des étudiants de toutes les formations.
+    (Par exemple, certains recruteurs veulent exclusivement des étudiants DAWIN, ou des DUT etc.).
 
     Ajoutez une connexion entre les entreprises et les formations, de manière à ce qu'il soit possible
-    de séléctionner (avec des cases à cocher) dans le formulaire d'édition des entreprises la liste
+    de séléctionner (avec des cases à cocher) dans le formulaire de création/édition des entreprises la liste
     des formations qui l'intéressent.
 
     Ajoutez cette liste dans la page "détails" de l'entreprise.
@@ -142,16 +150,17 @@ Connexion d'un utilisateur à une formation
     Aide visuelle
     ~~~~~~~~~~~~~
 
-    Lorsqu'un utilisateur regarde la liste des entreprises, passez en opacité 0.5 les entreprises qui
-    ne sont pas intéressées par la formation pour laquelle il s'est enregistré.
+    Lorsqu'un utilisateur regarde la liste des entreprises, montrez visuellement les entreprises qui
+    ne sont pas intéressées par la formation pour laquelle il s'est enregistré (on peut par exemple
+    les mettre en ``opacity:0.5``).
 
-Étudiant intéressé
+Blocage d'un crénau par un étudiant
 ~~~~~~~~~~~~~~~~~~
 
 .. step::
 
     Un étudiant peut déclarer son intérêt pour une entreprise via l'application, pour cela il
-    clique sur un créneau libre, qui lui est alors assigné (via le champ ``student`` de 
+    clique sur un créneau libre, qui lui est alors assigné (via le champ ``student`` de
     ``Slot``).
 
     .. note::

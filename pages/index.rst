@@ -99,8 +99,7 @@ Exposés
 TD Noté
 -------
 
-* :doc:`Le TD noté DAWIN Formation Initiale 2019 <tds/td_dawin>`
-* :doc:`Le TD noté DAWIN Formation en Alternance 2018 <tds/td_dawin_alt>`
+* :doc:`Le TD noté DAWIN Formation Initiale 2020 <tds/td_dawin>`
 
 Inutile et inintéréssant
 ------------------------
