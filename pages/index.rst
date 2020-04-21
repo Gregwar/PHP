@@ -11,12 +11,10 @@ Support et auteur
 
 .. important::
     Grégoire Passault
-    *g.passault@gmail.com*
+    *gregoire.passault@u-bordeaux.fr*
 
     Marty Lamoureux
-    *marty@lamoureux-mail.fr*
-
-    `http://gregwar.com/php/ <http://gregwar.com/php/>`_
+    *marty.lamoureux@u-bordeaux.fr*
 
 .. slide:: slideOnly
 
@@ -115,27 +113,3 @@ Sommaire
     db
     components
     practices
-    symfony
-    laravel
-
-.. slide::
-
-Guide
------
-
-Afin de tenter de cadrer le développement des projets, vous pouvez
-consulter ici le guide de conception:
-
-Exposés
--------
-
-.. Il faudra sans doute le remettre dans l'année
-..  * :doc:`Présentations de l'avancement PHP <avancement>`
-
-* :doc:`Les sujets des exposés sont disponibles ici <exposes>`
-
-TD Noté
--------
-
-* :doc:`Le TD noté DAWIN Formation Initiale 2018 <tds/td_dawin>`
-* :doc:`Le TD noté DAWIN Formation en Alternance 2018 <tds/td_dawin_alt>`

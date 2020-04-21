@@ -759,16 +759,8 @@ Ce code est-t-il correct?::
 
 .. redirection-title:: tds/td2_1
 
-TD 2-1
--------------
 
-.. toctree::
-
-    tds/td2_1
-
-.. redirection-title:: tds/td2_2
-
-TD 2-2
+TD 2
 -------------
 
 .. toctree::
