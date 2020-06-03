@@ -482,7 +482,7 @@ Les en-têtes
 Utilité des en-têtes
 ~~~~~~~~~~~~~~~~~~~~
 
-Les en-têtes peuvent servir à de nombreuses choses, généralement, on les utilise pour :
+Les en-têtes peuvent servir à de nombreuses choses, généralement, on les utilise pour~:
 
 .. discoverList::
     * Modifier le type du fichier envoyé (``Content-type``)

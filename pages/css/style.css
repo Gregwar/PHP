@@ -2,11 +2,13 @@
     padding-top:10px;
     line-height:1.0;
     font-family:EdmondSansBold;
-    font-size:120px;
     text-align:center !important;
-    display:table-cell;
     vertical-align:middle;
     height:500px;
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    font-size:180%;
 }
 
 .slide.darkSlide {
@@ -20,38 +22,20 @@
 }
 
 .inSlide {
-    font-size:50px;
-    width:850px;
+    max-width:800px;
     margin:auto;
     text-align:left;
-}
-
-.slide.darkSlide pre > code {
-    font-size:50px;
 }
 
 .slide.codeLeft pre > code {
+    max-width:800px;
     text-align:left;
-    width:850px;
     margin:auto;
-    font-size:40px;
-}
-
-.slide.codeLeftTiny pre > code {
-    font-size:30px;
-}
-
-.importantText {
-    padding-top:120px;
 }
 
 .darkSlide pre, .darkSlide code {
     margin:20px;
     padding:0;
-}
-
-.darkSlide code {
-    font-size:35px;
 }
 
 .center {
