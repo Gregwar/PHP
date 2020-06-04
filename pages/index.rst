@@ -47,12 +47,12 @@ Avez-vous déjà fait du PHP?
 .. div:: importantText
     ONE MORE THING
 
-.. slide:: fullSlide 
+.. slide:: fullSlide slideOnly
 
 .. center::
     .. image:: /img/stats.png
 
-.. slide:: fullSlide
+.. slide:: fullSlide slideOnly
 
 .. center::
     .. image:: /img/trends.png
