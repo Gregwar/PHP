@@ -1,7 +1,7 @@
 TD2-1
 ============
 
-.. image:: /img/http.png
+.. image:: /img/python.png
     :class: right
 
 Dans ce TD, nous allons découvrir le fonctionnement de **HTTP**. Pour ce
@@ -17,21 +17,14 @@ Un serveur HTTP minimaliste
 
 .. step::
 
-    Dans l'archive, vous découvrirez un simple programme (en *C#*). Compilez
-    et exécutez-le. Sous Windows, vous pourrez créer une solution à l'aide de
-    *Visual Studio* (en créant un projet *C#* console), et sous Linux vous
-    pourrez utiliser *monodevelop*.
+    Dans l'archive, vous découvrirez un simple programme (en *Python*). Exécutez le en
+    lançant:
 
-    .. note::
+    .. code-block:: bash
 
-        Pour lancer *monodevelop* au département, utilisez les commandes suivantes:
+        python server.py
 
-        .. code-block:: text
-
-            unset GNOME_DESKTOP_SESSION_ID
-            monodevelop
-
-    Exécutez-le et lancez votre navigateur, connectez-vous alors à `http://127.0.0.1:8080/ <http://127.0.0.1:8080/>`_.
+    Lancez votre navigateur, et connectez-vous à `http://127.0.0.1:8080/ <http://127.0.0.1:8080/>`_.
 
     Observez ce qu'il se passe, ainsi que les messages qui apparaissent dans la
     console.
@@ -44,22 +37,23 @@ Un serveur HTTP minimaliste
 
             Waiting for a connection... Connected!
 
-            >>> Request:
-
+            > Request: 
             GET / HTTP/1.1
             Host: 127.0.0.1:8080
-            User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:55.0) Gecko/20100101 Firefox/55.0
-            Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
-            Accept-Language: fr,fr-FR;q=0.8,en-US;q=0.5,en;q=0.3
+            User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:76.0) Gecko/20100101 Firefox/76.0
+            Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+            Accept-Language: fr-FR
             Accept-Encoding: gzip, deflate
             Connection: keep-alive
+            Cookie: PHPSESSID=obcai59k3e6smouvkjb1ek6af0
+            Upgrade-Insecure-Requests: 1
+            Cache-Control: max-age=0
 
-            >>> Response:
-
+            > Response: 
             HTTP/1.1 200 OK
             Content-type: text/html
 
-            <h1>Hello, time is 18:29:12!</h1>
+            18:42:37
 
 Exercice 1 : Des pages!
 -----------------------
@@ -91,6 +85,9 @@ Exercice 2 : Un formulaire
     Modifiez le code de façon à ce que la page en question affiche la somme des
     deux nombres envoyés par le formulaire.
 
+    Essayez de coder de manière générique, par exemple en remplissant les valeurs dans un
+    dictionnaire *Python* (Ici on aurait par exemple ``{"n1": "123", "n2": "456"}``)
+
 Exercice 3 : Une image
 ----------------------
 
@@ -110,8 +107,13 @@ Exercice 3 : Une image
 
     .. note::
 
-        Vous pourrez utiliser ``File.ReadAllBytes()``, et écrire les octets directement
-        dans le *stream* à l'aide de ``stream.Write()``.
+        En Python, il est possible de lire un fichier binaire de cette manière:
+
+        .. code-block:: python
+
+            img = open('fichier', 'rb')
+            data = img.read()
+            img.close()
 
 
 Exercice 4 : Formulaire en POST
@@ -154,14 +156,14 @@ Exercice 6 : Créer une session
 
     Souvenez vous que les sessions :doc:`utilisent les cookies </http#sessions>` pour fonctionner.
 
-    En *C#*, vous pourrez vous aider d'un *dictionnaire* du type:
+    En *Python*, vous pourrez vous aider d'un *dictionnaire* du type:
 
     .. code-block:: csharp
 
-        var sessions = new Dictionary<string, int>();
+        sessions = {}
 
     Pour associer les clés de sessions (ici des chaînes de caractères) aux valeurs stockées
-    en session (ici des entiers).
+    en session (par exemple un entier).
 
     Ainsi, reproduisez le fonctionnement de la question précédente, mais à l'aide
     de sessions "faites maison" et sockées en mémoire dans le dictionnaire, au lieu
