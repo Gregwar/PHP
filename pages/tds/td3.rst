@@ -16,7 +16,7 @@ Exercice 1 : écriture de classes
 --------------------------------
 
 .. image:: /img/cubes.png
-    :class: right
+    :class: right-illustration
 
 
 .. step::
@@ -79,7 +79,7 @@ Exercice 2 : une arène
 ---------------------
 
 .. image:: /img/sword.png
-    :class: right
+    :class: right-illustration
 
 Lisez et déployez le code du dossier ``arena/``.
 
@@ -129,7 +129,7 @@ Quelques modifications
     actions réalisables.
 
 .. image:: /img/vampire.png
-    :class: right
+    :class: right-illustration
 
 .. step::
     **#~. Mort simultanée**
@@ -166,7 +166,7 @@ Exercice 3 : le routeur
 -----------------------
 
 .. image:: /img/routes.png
-    :class: right
+    :class: right-illustration
 
 Un routeur est un composant clé dans une application web, car il est responsable de l'attribution
 des requêtes à une certaine méthode (ou contrôlleur). Lisez le code contenu dans le dossier ``router/``.

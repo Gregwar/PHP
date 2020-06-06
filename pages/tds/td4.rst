@@ -1,8 +1,8 @@
-TD4
+nD4
 ===
 
 .. image:: /img/bd.png
-    :class: right
+    :class: right-illustration
 
 .. |archive| image:: /img/archive.png
 
@@ -38,7 +38,7 @@ Elle contient les informations suivantes:
 Dans cette partie, vous pourrez tester les requêtes dans **phpMyAdmin**. N'oubliez pas de les conserver dans des fichiers texte par exemple.
 
 .. image:: /img/store.png
-    :class: right
+    :class: right-illustration
 
 .. step::
 

@@ -2,7 +2,7 @@ TD5-2: ORM Doctrine
 ===================
 
 .. image:: /img/db.png
-    :class: right
+    :class: right-illustration
 
 .. |archive| image:: /img/archive.png
 
@@ -65,7 +65,7 @@ Ecriture de requêtes
 ------------------------
 
 .. image:: /img/doctrine.png
-    :class: right
+    :class: right-illustration
 
 .. step::
 

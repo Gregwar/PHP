@@ -2,7 +2,7 @@ TD5-1: Microframework et PDO
 ============================
 
 .. image:: /img/db.png
-    :class: right
+    :class: right-illustration
 
 .. |archive| image:: /img/archive.png
 
@@ -81,7 +81,7 @@ Ecriture de requête/code
 ------------------------
 
 .. image:: /img/movie.png
-    :class: right
+    :class: right-illustration
 
 .. step::
     #-. Casting d'un film

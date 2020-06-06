@@ -2,7 +2,7 @@ TD2-1
 ============
 
 .. image:: /img/python.png
-    :class: right
+    :class: right-illustration
 
 Dans ce TD, nous allons découvrir le fonctionnement de **HTTP**. Pour ce
 faire, nous n'utiliserons pas PHP!

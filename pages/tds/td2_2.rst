@@ -2,7 +2,7 @@ TD2-2
 ============
 
 .. image:: /img/http.png
-    :class: right
+    :class: right-illustration
 
 Dans ce TD, nous allons travailler avec **PHP** et un serveur web qui nous permettra
 de faire la "paserelle" entre les données **HTTP** et **PHP**.

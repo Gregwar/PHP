@@ -13,7 +13,7 @@ Symfony
     `book officiel de symfony.com <http://symfony.com/doc/current/book/index.html>`_
 
 .. image:: /img/sf.png
-    :style: float:right
+    :class: right-illustration
 
 Ce TD est composé de plusieurs parties **dépendantes**, suivez bien
 les instructions progressivement:

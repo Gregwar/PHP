@@ -26,7 +26,7 @@ Création du layout
 .. step::
 
     .. image:: /img/pizza.png
-        :style: float:right
+        :class: right-illustration
 
     Pour commencer, créez un layout principal ``layout.html.twig`` contenant la structure générale du
     site. Placez la feuille de style et les images dans le dossier ``public/`` de Symfony et utilisez la
