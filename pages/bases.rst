@@ -12,7 +12,7 @@ Présentation
 ~~~~~~~~~~~~
 
 .. image:: /img/php.png
-    :class: right
+    :class: right max-33
 
 .. textOnly::
     **PHP** est l'acronyme récursif de **PHP: Hypertext Preprocessor**, datant
