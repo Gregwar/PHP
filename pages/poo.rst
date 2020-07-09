@@ -124,19 +124,19 @@ L'héritage s'écrit avec ``extends``::
 
     <?php
 
-    class A
+    class User
     {
-        public $a = 12;
+        public $name = 'Bob';
     }
 
-    class B extends A
+    class UserWithAge extends User
     {
-        public $b = 34;
+        public $age = 34;
     }
 
-    $b = new B;
-    echo $b->a, "\n"; // 12
-    echo $b->b, "\n"; // 34
+    $bob = new UserWithAge;
+    echo $bob->name, "\n"; // Bob
+    echo $bob->age, "\n"; // 34
 
 
 .. slide::
@@ -359,17 +359,17 @@ Remarques
 
     <?php
 
-    class A
+    class Printer
     {
-        public function f($x = 42)
+        public function showNumber($x = 42)
         {
             echo "x = $x\n";
         }
     }
 
-    $a = new A;
-    $a->f(); // x = 42
-    $a->f(67); // x = 67
+    $printer = new Printer;
+    $printer->showNumber(); // x = 42
+    $printer->showNumber(67); // x = 67
 
 .. slide::
 
@@ -388,19 +388,19 @@ Références
 
     <?php
 
-    class A
+    class Car
     {
-        public $attr = 1;
+        public $speed = 50;
     }
 
-    function func($a)
+    function func($car)
     {
-        $a->attr = 2;
+        $a->speed = 90;
     }
 
-    $a = new A;
-    func($a);
-    echo $a->attr."\n"; // 2
+    $car = new Car;
+    func($car);
+    echo $car->attr."\n"; // 90
 
 
 .. slide::
@@ -415,21 +415,21 @@ Attention aux références
 ::
 
     <?php
-
-    class A
+    class Car
     {
-        public $attr = 1;
+        public $speed = 50;
     }
 
-    $a = new A;
-    $b = $a;
-    $b->attr = 2;
-    echo $a->attr."\n"; // 2
-    $b = null;
-    echo gettype($a)."\n"; // object
-    $c = &$a;
-    $c = null;
-    echo gettype($a)."\n"; // null
+    $car = new Car;
+    $car2 = $car;
+    $car2->speed = 90;
+    echo $car->attr."\n"; // 90
+    $car2 = null;
+    echo gettype($car)."\n"; // object
+
+    $car3 = &$car;
+    $car3 = null;
+    echo gettype($car)."\n"; // null
 
 .. textOnly::
     Dans ce cas, la ligne ``$b = $a`` fait en sorte que la variable ``$b`` référence
@@ -453,17 +453,17 @@ Clonage
 
     <?php
 
-    class A
+    class Car
     {
-        public $attr = 1;
+        public $speed = 50;
     }
 
-    $a = new A;
-    $a->attr = 5;
-    $b = clone $a;
-    $b->attr = 6;
-    echo $a->attr."\n"; // 5
-    echo $b->attr."\n"; // 6
+    $car = new Car;
+    $car->speed = 70;
+    $car2 = clone $car;
+    $car2->speed = 90;
+    echo $car->speed."\n"; // 70
+    echo $car2->speed."\n"; // 90
 
 .. slide::
 
@@ -515,20 +515,20 @@ Substitution
 
     <?php
 
-    class A
+    class User
     {
-        public $attr = 1;
+        public $name = 'Jack';
     }
 
-    function f($a)
+    function showName($user)
     {
-        echo $a->attr."\n";
+        echo $user->name."\n";
     }
 
-    $a = new A;
-    f($a); // 1
-    $a = [12];
-    f($a); // Erreur
+    $user = new User;
+    showName($user); // Jack
+    $user = ['Bob'];
+    showName($user); // Erreur
 
 .. slide::
 
@@ -538,22 +538,22 @@ Type hinting
 ~~~~~~~~~~~~
 
 .. textOnly::
-    Depuis **PHP 5.3**, un mécanisme permet d'éviter ce genre d'erreur fréquente (passage
+    Un mécanisme permet d'éviter ce genre d'erreur fréquente (passage
     d'argument du mauvais type), il s'agit du *type hinting* (ou indication de type):
 
 ::
 
     <?php
 
-    function f(A $a)
+    function showName(User $user)
     {
-        echo $a->attr."\n";
+        echo $user->name."\n";
     }
 
     // Si l'argument passé en paramètre n'est pas 
-    // du type A, une erreur claire sera levée dès 
+    // du type User, une erreur claire sera levée dès 
     // l'appel à la méthode
-    f([]);
+    showName([]);
 
 .. discover::
     -----------
@@ -561,10 +561,8 @@ Type hinting
     .. code-block:: no-highlight
 
         PHP Catchable fatal error: 
-        Argument 1 passed to f() must be an
-        instance of A, array given, called in
-        hint.php on line 11 and defined in
-        hint.php on line 3
+        Argument 1 passed to showName() must be an instance of User, array given, called in
+        hint.php on line 11 and defined in hint.php on line 3
 
 .. textOnly::
     Le type indiqué dans les paramètres de la fonction peut être le type de la classe mère ou
@@ -686,7 +684,7 @@ Espaces de nom
 .. textOnly::
     Souvent, la création de classes et d'interface engendre un problème de nommage, car il 
     peut devenir difficile d'éviter les problèmes de collisions de noms (deux classes ayant le
-    même nom). Depuis **PHP 5.3**, il est possible d'utiliser des espaces de nom (ou 
+    même nom). Il est possible d'utiliser des espaces de nom (ou
     ``namespace``) pour éviter ce problème.
 
 Par exemple, si le fichier ``alice/image.php`` contient::
@@ -951,8 +949,7 @@ AUTOLOADING
     // autoload.php
     spl_autoload_register(function($cName) {
         if (strpos($cName, 'Bob')===0) {
-            $file = str_replace('\\', '/', 
-                                    $cName);
+            $file = str_replace('\\', '/', $cName);
             include(__DIR__.'/'.$file.'.php');
         }
     });
