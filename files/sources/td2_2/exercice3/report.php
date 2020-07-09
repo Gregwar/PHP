@@ -6,17 +6,17 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <h1>Connexion</h1>
+        <h1>Rapport</h1>
 
         <?php include('menu.php'); ?>
 
         <p>
-            Bienvenue. Afin d'accéder aux pages protégées de ce site, merci de vous identifier, à l'aide
-            du formulaire ci-dessous:
+            Le tueur dépose sur ses scènes de crime des maquettes représentant très fidèlement 
+les lieux ainsi que le corps
         </p>
 
         <p>
-            <span style="background-color:yellow">TODO</span>
+            La <a href="photo.php#P-01">photo P-01</a> est une de ses oeuvres.
         </p>
     </body>
 </html>

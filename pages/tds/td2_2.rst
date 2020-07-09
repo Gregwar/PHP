@@ -129,10 +129,16 @@ Les formulaires représentent une très grande partie du développement d'un sit
 Exercice 3 : Sécurisation
 -------------------------
 
+.. |lock| image:: /img/lock_small.png
+    :width: 20
+
 .. step::
-    Le dossier ``exercice3/`` contient une page web dont l'accès devrait être sécurisé. A l'aide d'un formulaire et
-    des sessions **PHP**, sécurisez l'accès à la page pour que les utilisateurs présents dans le fichier ``users.php``
-    puissent s'idientifier avec leurs mots de passe. Pour inclure ``users.php``, vous pourrez utiliser la notation::
+    Le dossier ``exercice3/`` contient une page web dont l'accès devrait être sécurisé. En effet, les pages marquées du
+    cadenas |lock| dans le menu ne devraient pas être accessibles sans être identifié au préalable.
+    
+    A l'aide d'un formulaire et des sessions **PHP**, sécurisez l'accès à la page pour que les utilisateurs
+    présents dans le fichier ``users.php`` puissent s'idientifier avec leurs mots de passe. Pour inclure ``users.php``,
+    vous pourrez utiliser la notation::
 
         <?php
 
@@ -140,8 +146,19 @@ Exercice 3 : Sécurisation
         // inclus contient un "return"
         $users = include('users.php');
 
+    Une tentative d'accès à une page sans être identifié provoquera l'affichage d'un message d'erreur.
+
 .. step::
     Implémentez ensuite une fonction de déconnexion.
+
+.. step::
+    Au lieu d'afficher un message d'erreur lorsque l'utilisateur tente d'accéder à une page sans être identifié,
+    redirigez le vers le formulaire d'identification, et souvenez vous de quelle page il venait.
+
+    De cette manière, si il s'identifie, il sera redirigé vers la page qu'il essayait de consulter.
+
+    .. note::
+        Indication: vous pouvez réaliser une implémentation générique à l'aide du contenu de ``$_SERVER``
 
 Exercice 4 : Captcha
 -------------------------

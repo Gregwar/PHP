@@ -1,0 +1,24 @@
+* {
+    font-family: sans-serif;
+}
+
+body {
+    max-width:800px;
+    margin:auto;
+}
+
+a {
+    color:#c00;
+}
+
+.menu a {
+    background-color:#eee;
+    border-radius:5px;
+    padding:3px;
+    margin:2px;
+    text-decoration:none;
+}
+
+.menu a:hover {
+    color:#300;
+}
