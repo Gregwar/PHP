@@ -97,6 +97,35 @@ Les formulaires représentent une très grande partie du développement d'un sit
     requête ``POST``. C'est pour cela qu'il **faut impérativement** vérifier coté serveur que l'adresse fournie est
     bien formée, vous pourrez utiliser la fonction **PHP** `filter_var() <http://php.net/filter_var>`_.
 
+.. step::
+    **#-. Menu déroulant**
+
+    Ajoutez un champs "Genre" sous forme de menu déroulant (Homme, Femme).
+    Le genre sera affiché dans le message après traitement.
+
+.. step::
+
+    **#-. Cases à cocher**
+
+    Ajoutez des cases à cocher permettant à l'utilisateur de séléctionner les langages de programmation qu'il connaît.
+    Par exemple:
+
+    .. center::
+        .. image:: /img/checkboxes.png
+
+    Les langages seront affichés dans le message après traitement.
+
+.. step::
+
+    **#-. Pré-remplissage**
+
+    Si l'utilisateur veut modifier ses choix (par exemple si il a fait une erreur, ou que le serveur déclenche une
+    erreur de validation parce que son e-mail n'est pas correct etc.), constatez que le formulaire redevient vide
+    après un envoi.
+
+    Faites en sorte qu'il soit re-rempli avec les choix de l'utilisateur.
+
+
 Exercice 3 : Sécurisation
 -------------------------
 
