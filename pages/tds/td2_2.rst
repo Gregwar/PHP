@@ -115,6 +115,10 @@ Les formulaires représentent une très grande partie du développement d'un sit
 
     Les langages seront affichés dans le message après traitement.
 
+    .. note::
+        Si vous utilisez ``languages[]`` dans l'attribut ``name`` des cases à cocher, vous obtiendrez un tableau, bien
+        plus pratique que de créer une case avec un nom différent par langage!
+
 .. step::
 
     **#-. Pré-remplissage**
