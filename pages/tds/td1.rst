@@ -103,7 +103,7 @@ dont vous devez écrire le code:
     Cette fonction trie les éléments du tableau passé en paramètre et les retourne. Elle ne doit pas
     utiliser les fonctions de tri de PHP, mais doit en revanche utiliser ``valeur_min_indice($tab)``.
 
-    *Note: Comme vous vous en doutez, il s'agit d'un exercice, la fonction ainsi produite ne sera 
+    *Note: Comme vous vous en doutez, il s'agit d'un exercice, la fonction ainsi produite ne sera
     pas très efficace.*
 
 Exercice 3: Manipulations de tableaux
@@ -114,18 +114,13 @@ Génération d'un jeu de données
 
 .. step::
 
-    Tout d'abord, utilisez le script ``generate.php`` (dans ``exercice3/``) pour
-    générer des données::
+    Le fichier ``data.php`` contient un grand tableau contenant des personnes
+    (nom, prénom et age).
 
-        php generate.php > data.php
-
-    Vous pourrez alors utiliser ces données dans vos scripts en les incluant::
+    Vous pouvez charger ces données dans un script de cette façon::
 
         <?php
         $data = @include('data.php');
-
-    Les données sont constituées d'un grand tableau contenant des personnes (nom, prénom
-    et age).
 
 .. step::
     #-. Affichage des données

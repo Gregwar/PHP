@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Code utilisé pour générer data.php
+ */
+
 $firstNames = ['Bob', 'Bill', 'Greg', 'Jack', 'John', 'Ryan', 'Jacob', 'Aaron'];
 $lastNames = ['Martin', 'Smith', 'Clinton', 'Doe'];
 

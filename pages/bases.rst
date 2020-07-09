@@ -595,7 +595,7 @@ Fonctions
 Fonctions (exemple plus avancé)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Voici un exemple plus avancé qui utilise deux concepts introduits dans **PHP 5.3**::
+Voici un autre exemple::
 
     <?php
 
@@ -632,7 +632,6 @@ Voici un exemple plus avancé qui utilise deux concepts introduits dans **PHP 5.
 ::
 
     <?php
-    // PHP 5.4
     $actions = [ 
         'sayHello' => function() {
             echo "Hello!\n";
@@ -665,14 +664,21 @@ et ``require()``::
      * Incluera le contenu de security.php
      * provoque une erreur fatale en cas d'erreur
      */
-    require_once('security.php');
+    require('security.php');
 
     /**
      * Incluera le contenu du fichier 
      * math.php, ne provoque qu'un warning
      * en cas d'erreur
      */
-    include_once('math.php');
+    include('math.php');
+
+.. discover::
+
+    .. note::
+
+        Il est également possible d'utiliser les versions ``once`` des fonctions (``include_once``
+        et ``require_once``) qui vérifient si le fichier a déjà été chargé.
 
 
 .. textOnly::
