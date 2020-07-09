@@ -36,7 +36,7 @@ Serveur HTTP
     De l'autre coté, des serveurs **HTTP** (ou serveurs web) sont à l'écoute
     permanente de requêtes et répondent à leurs clients.
     
-    On nommera par exemple **Apache**, **Nginx** ou **Lighttpd**
+    On nommera par exemple **Apache**, **Nginx** ou **Caddy**
 
 .. discover::
     .. center::
@@ -46,7 +46,7 @@ Serveur HTTP
         .. image:: /img/nginx.gif
             :width: 250
 
-        .. image:: /img/lighttpd.png
+        .. image:: /img/caddy.png
             :width: 250
 
 .. slide::
@@ -196,12 +196,6 @@ Fonctionnement
 En général, les scripts php sont identifiés par leur extension ``.php``. Lorsque
 le serveur web se voit demander un fichier de ce type, il exécute l'interpréteur au lieu de
 transmettre son contenu vers le client.
-
-Dans le cas d'Apache, le paquet ``libapache2-mod-php5`` contient la passerelle
-Apache/PHP::
-
-    libapache2-mod-php5 - server-side, HTML-embedded scripting language (Apache 2 module)
-
 
 .. slide::
 
@@ -451,7 +445,7 @@ Les en-têtes
     (data)
 
 .. textOnly::
-    En **PHP**, il est possible de les modifier à l'aide de la fonction 
+    En **PHP**, il est possible de les modifier à l'aide de la fonction
     :method:`header`. Exemple
     typique, lorsque vous désirez transmettre des données qui doivent être comprise par le client comme étant
     d'un autre type que celui définit par défaut (``text/html``), comme par exemple une image:
@@ -512,9 +506,8 @@ Les cookies
     un certain nombre de définitions de cookies peuvent avoir lieu à l'aide de l'en-tête ``Set-cookie``.
     Ces valeurs sont fournies plus tard par le client à chaque requête avec l'en-tête ``Cookie``.
 
-    Les cookies peuvent <span class="textOnly">donc</span> être définis grâce à l'en-tête ``Set-cookie``,
-    mais **PHP** met à notre disposition la fonction :method:`setcookie`
-    moins brute:
+    Les cookies peuvent donc être définis grâce à l'en-tête ``Set-cookie``,
+    mais **PHP** met à notre disposition la fonction :method:`setcookie`:
 
 ::
 
