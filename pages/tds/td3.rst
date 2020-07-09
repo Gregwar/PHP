@@ -69,11 +69,24 @@ Exercice 1 : écriture de classes
 
         [Vidéo] Lecture de Matrix
 
-        P2
-        | Stairway to heaven (audio)
-        |  P1
-        |  | Matrix (vidéo)
-        |  | Joconde (image)
+        P2:
+        * Stairway to heaven (audio)
+        * P1 (playlist)
+        * Matrix (vidéo)
+        * Joconde (image)
+
+    .. code-block:: php
+
+        <?php
+
+        function recursivePrint(array $data, string $prefix = '')
+        {
+            foreach ($data as $name => $entries) {
+                echo $prefix.'* '.$name;
+
+                recursivePrint($entries, $prefix.' ');
+            }
+        }
 
 Exercice 2 : une arène
 ---------------------
@@ -104,7 +117,7 @@ Tout d'abord, testez et lisez le code source.
 
     Remarquez que les fichiers des classes (comme ``Arena\Creature\Elf.php``)
     ne sont jamais inclus nulle part explicitement.
-    En lisant le code et en regardant notamment la documentation de 
+    En lisant le code et en regardant notamment la documentation de
     `spl_autoload_register <http://fr2.php.net/manual/fr/function.spl-autoload-register.php>`_,
     découvrez comment l'inclusion est faite.
 

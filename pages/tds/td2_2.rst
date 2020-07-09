@@ -12,14 +12,14 @@ de faire la "paserelle" entre les données **HTTP** et **PHP**.
 .. important::
     `|archive| Télécharger l'archive td2_2.zip </files/td2_2.zip>`_
 
-Installations
--------------
+Installation
+------------
 
 Utiliser un serveur
 ~~~~~~~~~~~~~~~~~~~
 
 Avant de commencer, vous pouvez installer un serveur sur une machine personelle. Sous Debian/Ubuntu,
-vous pouvez installer les paquets ``apache2``  et ``libapache2-mod-php5``.
+vous pouvez installer les paquets ``apache2``  et ``libapache2-mod-php7``.
 
 Sous Windows, il est préférable d'utiliser un outil tel que **WAMP**, que vous pourrez trouver
 sur le site `wampserver.com <http://www.wampserver.com/>`_.
@@ -27,8 +27,8 @@ sur le site `wampserver.com <http://www.wampserver.com/>`_.
 Serveur intégré
 ~~~~~~~~~~~~~~~
 
-Une autre option beaucoup plus élégante et pratique est d'utiliser le serveur web intégré à **PHP**
-depuis sa version ``5.4``, pour cela, placez vous dans le dossier que vous souhaitez et tapez:
+Une autre option beaucoup plus élégante et pratique est d'utiliser le serveur web intégré à **PHP**,
+pour cela, placez vous dans le dossier que vous souhaitez et tapez:
 
 .. code-block:: no-highlight
 
@@ -37,7 +37,7 @@ depuis sa version ``5.4``, pour cela, placez vous dans le dossier que vous souha
 Un serveur web se lancera alors en écoutant sur le port ``8080``, vous pourrez donc vous connecter
 à la page ``http://127.0.0.1:8080/`` et vous accéderez à votre application web.
 
-Sous windows, vous pouvez utiliser le `script php-server.bat </files/php-server.bat>`_, placez le dans le dossier
+Sous Windows, vous pouvez utiliser le `script php-server.bat </files/php-server.bat>`_, placez le dans le dossier
 des sources et exécutez le.
 
 Exercice 1 : Les commodités de PHP

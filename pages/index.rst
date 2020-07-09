@@ -88,13 +88,13 @@ Sommaire
 
 .. slide::
 
-Exposés
--------
+.. Exposés
+.. -------
 
 .. Il faudra sans doute le remettre dans l'année
 ..  * :doc:`Présentations de l'avancement PHP <avancement>`
 
-* :doc:`Les sujets des exposés sont disponibles ici <exposes>`
+.. * :doc:`Les sujets des exposés sont disponibles ici <exposes>`
 
 TD Noté
 -------

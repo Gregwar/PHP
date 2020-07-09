@@ -189,10 +189,10 @@ Classes abstraites
 
     abstract class Message
     {
-        abstract public function getName();
-        abstract public function getBody();
+        abstract public function getName(): string;
+        abstract public function getBody(): string;
 
-        public function display() {
+        public function display(): void {
             echo 'From: '.$this->getName()."\n";
             echo 'Contents: '.$this->getBody()."\n";
         }
@@ -213,19 +213,20 @@ Méthodes et classes finales
 
     <?php
 
-    class A
+    class Quadruped
     {
-        public final function f()
+        public final function legs(): int
         {
-            return 42;
+            return 4;
         }
     }
 
-    class B extends A
+    class Cat extends Quadruped
     {
-        public function f()
+        // Erreur, on ne peut pas surcharger cette fonction
+        public function legs(): int
         {
-            return 30; // Erreur
+            return 3;
         }
     }
 
@@ -395,12 +396,12 @@ Références
 
     function func($car)
     {
-        $a->speed = 90;
+        $car->speed = 90;
     }
 
     $car = new Car;
     func($car);
-    echo $car->attr."\n"; // 90
+    echo $car->speed."\n"; // 90
 
 
 .. slide::
@@ -423,7 +424,7 @@ Attention aux références
     $car = new Car;
     $car2 = $car;
     $car2->speed = 90;
-    echo $car->attr."\n"; // 90
+    echo $car->speed."\n"; // 90
     $car2 = null;
     echo gettype($car)."\n"; // object
 
@@ -432,12 +433,12 @@ Attention aux références
     echo gettype($car)."\n"; // null
 
 .. textOnly::
-    Dans ce cas, la ligne ``$b = $a`` fait en sorte que la variable ``$b`` référence
-    le même objet que ``$a``. Ainsi la modification de l'attribut sur ``$b->attr`` est aussi
-    visible sur ``$a->attr``. En revanche, la variable ``$b`` est bien **différente**
-    de ``$a``, c'est pourquoi l'affecter à ``null`` ne change nullement la valeur de ``$a``;
-    En revanche, l'utilisation de l'opérateur de référence ``&`` pour créer la variable ``$c``
-    fait en sorte que ``$c`` soit un **alias** de ``$a``, il référencera alors non pas seulement
+    Dans ce cas, la ligne ``$car2 = $car`` fait en sorte que la variable ``$car2`` référence
+    le même objet que ``$car``. Ainsi la modification de l'attribut sur ``$car2->speed`` est aussi
+    visible sur ``$car->speed``. En revanche, la variable ``$car2`` est bien **différente**
+    de ``$car``, c'est pourquoi l'affecter à ``null`` ne change nullement la valeur de ``$car``;
+    En revanche, l'utilisation de l'opérateur de référence ``&`` pour créer la variable ``$car3``
+    fait en sorte que ``$car3`` soit un **alias** de ``$car``, il référencera alors non pas seulement
     le même objet mais aussi la **même variable**.
 
 .. slide::
@@ -654,6 +655,39 @@ Une classe retournant sa propre instance peut le préciser avec ``self``::
             return $this;
         }
     }
+
+.. slide::
+
+Pas de retour (``void``)
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Une fonction peut indiquer qu'elle ne retourne rien à l'aide de ``void``::
+
+    <?php
+
+    class Book {
+        public function turnPage(): void
+        {
+            $this->page = min($this->page+1, $this->pages);
+        }
+    }
+
+.. slide::
+
+Typage des propriétés
+~~~~~~~~~~~~~~~~~~~~~
+
+À partir de PHP 7.4, les propriétés d'une classe peuvent être typés::
+
+    <?php
+
+    class Book {
+        public string $title;
+    }
+
+    $book = new Book;
+    $book->title = 4; // Erreur
+
 
 .. discover::
 
