@@ -53,8 +53,6 @@ Exercice 1 : écriture de classes
         $p2->add($p1);
         // Affichage de "Lecture de Matrix (durée: 5400s)"
         $matrix->play();
-        // Affichage de P2
-        $p2->showPlaylist();
 
 .. step::
 
@@ -69,24 +67,44 @@ Exercice 1 : écriture de classes
 
         [Vidéo] Lecture de Matrix
 
+.. step::
+
+    Affichage des playlists
+    ~~~~~~~~~~~~~~~~~~~~~~~
+
+    L'objectif de cette partie est de produire ce type de résultat:
+
+    .. code-block:: text
+
         P2:
         * Stairway to heaven (audio)
         * P1 (playlist)
-        * Matrix (vidéo)
-        * Joconde (image)
+          * Matrix (vidéo)
+          * Joconde (image)
+
+    Pour cela, vous utiliserez cette fonction:
 
     .. code-block:: php
 
         <?php
 
-        function recursivePrint(array $data, string $prefix = '')
+        function printData(array $data, string $prefix = ''): void
         {
-            foreach ($data as $name => $entries) {
-                echo $prefix.'* '.$name;
+            foreach ($data as $entry) {
+                echo $prefix.'* '.$entry['name']."\n";
 
-                recursivePrint($entries, $prefix.' ');
+                if (isset($entry['children'])) {
+                    printData($entry['children'], $prefix.'  ');
+                }
             }
         }
+
+    Commencez par comprendre le format de données (le ``$data``) qu'elle utilise, et créez
+    une fonction dans votre classe ``Playlist`` permettant de réaliser l'affichage de
+    cette manière::
+
+        <?php
+        printData($playlist->getData());
 
 Exercice 2 : une arène
 ---------------------
