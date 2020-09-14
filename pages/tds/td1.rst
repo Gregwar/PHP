@@ -120,7 +120,7 @@ Génération d'un jeu de données
     Vous pouvez charger ces données dans un script de cette façon::
 
         <?php
-        $data = @include('data.php');
+        $data = require('data.php');
 
 .. step::
     #-. Affichage des données
