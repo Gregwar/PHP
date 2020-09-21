@@ -148,6 +148,104 @@ reçues:
 
 .. slide::
 
+Utilité des en-têtes
+~~~~~~~~~~~~~~~~~~~~
+
+Les en-têtes peuvent servir à de nombreuses choses, généralement, on les utilise pour~:
+
+.. discoverList::
+    * Modifier le type du fichier envoyé (``Content-type``)
+    * Rediriger le client (``Location``)
+    * Faire télécharger le fichier au client (``Content-Disposition``)
+    * Contrôler l'expiration (``Expires``)
+    * Changer le code de réponse
+    * etc.
+
+.. slide::
+
+Passage de paramètres
+~~~~~~~~~~~~~~~~~~~~~
+
+Données GET
+~~~~~~~~~~~
+
+.. textOnly::
+    Les données "GET" sont des paramètres passés à la page. Il s'agit d'une manière de 
+    transmettre une petite quantité d'informations directement dans une **URL**:
+
+.. important::
+    http://monsite.com/page.php?``x=42&y=1337``
+
+``x=42&y=1337`` est ce que l'on appelle une *Query String*
+
+
+.. slide::
+
+Les formulaires
+~~~~~~~~~~~~~~~
+
+.. textOnly::
+    Les formulaires représentent à eux seuls une partie très importante du développement d'un site
+    web. De manière générale, ils constituent la plus grosse partie de l'intéraction entre l'utilisateur
+    et les données stockées sur le serveur.
+
+.. textOnly::
+    Afin de proposer un formulaire à ses utilisateurs, il faut d'abord leur envoyer le formulaire
+    lui même, ce dernier peut être représenté facilement en HTML:
+
+.. code-block:: html5
+
+    <form method="post">
+        Votre prénom :
+        <input type="text" name="firstname" /><br />
+        Votre nom : 
+        <input type="text" name="lastname" /><br />
+
+        <input type="submit" value="Envoyer" />
+    </form>
+
+.. center::
+
+    .. image:: /img/form.jpg
+        :width: 900
+
+.. slide::
+
+GET vs POST
+~~~~~~~~~~~
+
+.. textOnly::
+    L'attribut ``method`` de la balise ``<form>`` peut être défini à
+    ``get`` ou à ``post``. Ce choix détermine la manière dont les données du formulaire
+    vont être transmise au serveur, dans le cas de ``get``, les paramètres seront passés dans
+    l'**URL** comme vu précédemment:
+
+.. code-block:: no-highlight
+
+    > GET /form.html?firstname=Marty&lastname=McFly HTTP/1.1
+    > ...
+    >
+
+.. textOnly::
+    Dans le cas de ``post``, les donnée seront alors transmises dans la partie "données"
+    de la requête. Cette méthode est largement préférable pour l'écriture de formulaires:
+
+.. slideOnly::
+    --------------------------
+
+.. code-block:: no-highlight
+
+    > POST /form.html HTTP/1.1
+    > Content-Type: application/x-www-form-urlencoded
+    > Content-Length: 30
+    > 
+    > firstname=Marty&lastname=McFly
+
+.. textOnly::
+    Comme vous le constatez, la méthode **HTTP** utilisée est alors ``POST``
+
+.. slide::
+
 CGI
 ---
 
@@ -227,7 +325,7 @@ le script suivant::
     Serveur embarqué
     ~~~~~~~~~~~~~~~~
 
-    Depuis **PHP 5.4**, l'outil ``php`` en ligne de commande est proposé avec un serveur embarqué
+    L'outil ``php`` en ligne de commande est proposé avec un serveur embarqué
     qui vous permettra de lancer simplement un serveur web depuis n'importe quel dossier.
 
     .. discover::
@@ -241,7 +339,7 @@ le script suivant::
 .. slide:: fullSlide darkSlide slideOnly codeLeft
 
 .. div:: importantText
-    PHP >= 5.4
+    Serveur intégré
 
 ::
 
@@ -307,14 +405,7 @@ Données GET
 ~~~~~~~~~~~
 
 .. textOnly::
-    Les données "GET" sont des paramètres passés à la page. Il s'agit d'une manière de 
-    transmettre une petite quantité d'informations directement dans une **URL**:
-
-.. important::
-    http://monsite.com/page.php?``x=42&y=1337``
-
-.. textOnly::
-    Depuis le code source **PHP**, ces variables seront accessibles directement dans le
+    En PHP **PHP**, les variables GET seront accessibles directement dans le
     tableau ``$_GET`` :
 
 ::
@@ -331,73 +422,6 @@ Données GET
       string(4) "1337"
     }
     */
-
-``x=42&y=1337`` est ce que l'on appelle une *Query String*
-
-.. slide::
-
-Les formulaires
-~~~~~~~~~~~~~~~
-
-.. textOnly::
-    Les formulaires représentent à eux seuls une partie très importante du développement d'un site
-    web. De manière générale, ils constituent la plus grosse partie de l'intéraction entre l'utilisateur
-    et les données stockées sur le serveur.
-
-.. textOnly::
-    Afin de proposer un formulaire à ses utilisateurs, il faut d'abord leur envoyer le formulaire
-    lui même, ce dernier peut être représenté facilement en HTML:
-
-.. code-block:: html5
-
-    <form method="post">
-        Votre prénom :
-        <input type="text" name="firstname" /><br />
-        Votre nom : 
-        <input type="text" name="lastname" /><br />
-
-        <input type="submit" value="Envoyer" />
-    </form>
-
-.. center::
-
-    .. image:: /img/form.jpg
-        :width: 900
-
-.. slide::
-
-GET vs POST
-~~~~~~~~~~~
-
-.. textOnly::
-    L'attribut ``method`` de la balise ``<form>`` peut être défini à
-    ``get`` ou à ``post``. Ce choix détermine la manière dont les données du formulaire
-    vont être transmise au serveur, dans le cas de ``get``, les paramètres seront passés dans
-    l'**URL** comme vu précédemment:
-
-.. code-block:: no-highlight
-
-    > GET /form.html?firstname=Marty&lastname=McFly HTTP/1.1
-    > ...
-    >
-
-.. textOnly::
-    Dans le cas de ``post``, les donnée seront alors transmises dans la partie "données"
-    de la requête. Cette méthode est largement préférable pour l'écriture de formulaires:
-
-.. slideOnly::
-    --------------------------
-
-.. code-block:: no-highlight
-
-    > POST /form.html HTTP/1.1
-    > Content-Type: application/x-www-form-urlencoded
-    > Content-Length: 30
-    > 
-    > firstname=Marty&lastname=McFly
-
-.. textOnly::
-    Comme vous le constatez, la méthode **HTTP** utilisée est alors ``POST``
 
 .. slide::
 
@@ -470,21 +494,6 @@ Les en-têtes
         // Envoie l'image au client et libère ses resources
         imagejpeg($i);
         imagedestroy($i);    
-
-.. slide::
-
-Utilité des en-têtes
-~~~~~~~~~~~~~~~~~~~~
-
-Les en-têtes peuvent servir à de nombreuses choses, généralement, on les utilise pour~:
-
-.. discoverList::
-    * Modifier le type du fichier envoyé (``Content-type``)
-    * Rediriger le client (``Location``)
-    * Faire télécharger le fichier au client (``Content-Disposition``)
-    * Contrôler l'expiration (``Expires``)
-    * Changer le code de réponse
-    * etc.
 
 .. slide::
 
