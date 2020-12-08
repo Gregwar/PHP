@@ -114,7 +114,7 @@ Ecriture de requêtes
     #-. Classement des films
     ~~~~~~~~~~~~~~~~~~~~~~~~
 
-    Ajouter au menu "Meilleurs films" et créez une page affichant le classement des films les mieux notés,
+    Ajouter un menu "Meilleurs films" et créez une page affichant le classement des films les mieux notés,
     c'est à dire ayant la meilleure note moyenne.
 
     Vous pouvez pour cela utiliser le `DQL <https://www.doctrine-project.org/projects/doctrine-orm/en/latest/reference/dql-doctrine-query-language.html#doctrine-query-language>`_, qui est le langage de requêtage de Doctrine qui permet d'écrire des requêtes
@@ -125,7 +125,7 @@ Ecriture de requêtes
     #-. Affichage des films par genre
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    Remarquez qu'il est possible de consulter le nombre de films par genre, mais pas de voir la 
+    Remarquez qu'il est possible de consulter le nombre de films par genre, mais pas de voir la
     liste des films d'un genre.
 
     Rendez cliquable la ligne de chaque genre sur la page ``/genres`` et faites apparaître
