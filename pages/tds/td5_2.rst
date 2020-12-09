@@ -69,6 +69,14 @@ Import de la base de données
 
         php vendor/bin/doctrine orm:generate-entities src/
 
+    .. warning::
+        
+        Sous Windows:
+
+        .. code-block:: text
+
+            vendor\bin\doctrine orm:generate-entities src/
+
 Ecriture de requêtes
 ------------------------
 
