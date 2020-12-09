@@ -43,6 +43,14 @@ Import de la base de données
 
         php vendor/bin/doctrine orm:convert-mapping --from-database annotation src --namespace=Entity\\
 
+    .. warning::
+
+        Sous Windows, la syntaxe est un peu différente:
+
+        .. code-block:: text
+
+            vendor\bin\doctrine orm:convert-mapping --from-database annotation src --namespace=Entity\
+
     Ici, nous demandons à Doctrine d'importer les données:
 
     * ``--from-database`` signifie que les données proviennent directement de la base SQL
