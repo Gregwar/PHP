@@ -147,7 +147,7 @@ Insertion
         <?php
             // ...
             public function insertPizzasAction() {
-                $em = $this->get('doctrine')->getManager();
+                $em = $this->getDoctrine()->getManager();
 
                 $mozarella = new Ingredient;
                 $mozarella->setName('Mozarella');
