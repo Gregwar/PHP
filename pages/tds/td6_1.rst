@@ -47,16 +47,9 @@ Installation de Symfony
 
         ./bin/console
 
-    Nous allons installer notre premier composant Symfony: un meilleur serveur web
-    de développement. Pour cela, lancez simplement::
+    Nous allons maintenant lancer le serveur web de développement de Symfony:
 
-        composer require server
-
-    Si vous exécutez à nouveau la console de Symfony, vous verrez qu'une nouvelle option
-    est maintenant disponible, ``server:run``, vous pouvez donc désormais lancer le
-    serveur de développement de cette façon::
-
-        ./bin/console server:start
+        symfony serve
 
 .. slide::
 
