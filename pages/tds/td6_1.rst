@@ -9,14 +9,14 @@ Installation de Symfony
 -----------------------
 
 .. step::
-    Etape 1: récupérer les fichiers
+    Etape 1: créer un projet Symfony
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    La meilleure solution afin d'installer Symfony est de passer par composer. Pour cela,
-    installez tout d'abord composer quelque part et utilisez la commande ``create-project``:
+    Installez l'exécutable Symfony `https://symfony.com/download <https://symfony.com/download>`_
 
-    .. code-block:: no-highlight
-        composer create-project symfony/website-skeleton symfony
+    Et mettez en place votre projet symfony::
+
+        symfony new --full pizza
 
     Composer va alors cloner le squelette du framework Symfony dans le dossier ``pizza/``.
 
