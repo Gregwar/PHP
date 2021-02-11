@@ -27,29 +27,11 @@ Installation de Symfony
     Etape 2: lancement du serveur
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    Lancez la commande::
-
-        php -S 127.0.0.1:8000 -t public
-
-    Et connectez vous à ``http://127.0.0.1:8000/``, vous devriez voir la page par défaut de Symfony:
-
-.. slide::
-
-.. center::
-    .. image:: /img/sf4_default.png
-
-.. slide::
-
-.. step::
-
-    Symfony vient avec son propre outil en ligne de commande, vous pouvez l'exécuter
-    pour voir les commandes disponibles::
-
-        ./bin/console
-
-    Nous allons maintenant lancer le serveur web de développement de Symfony:
+    Nous allons maintenant lancer le serveur web de développement de Symfony::
 
         symfony serve
+    
+    Et connectez vous à ``http://127.0.0.1:8000/``, vous devriez voir la page par défaut de Symfony:
 
 .. slide::
 
