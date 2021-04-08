@@ -188,5 +188,5 @@ Optimisations (bonus)
 ~~~~~~~~~~~~~~~~~~~~~
 
 Constatez que le nombre de requêtes de l'application n'est pas réellement optimisé (il est possible de
-voir cette information dans la base de développement). Essayez de minimiser le nombre de requêtes envoyées
+voir cette information dans la barre de développement). Essayez de minimiser le nombre de requêtes envoyées
 à la base de données.
