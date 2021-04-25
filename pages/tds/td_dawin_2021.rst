@@ -166,6 +166,9 @@ Sur la page "instances", lorsqu'un objet est réservé, ajouter deux boutons:
 .. step::
     * Un bouton "annuler", qui dé-réserve l'objet
 
+.. step::
+    * Un bouton "retourner", qui retourne l'objet (l'utilisateur n'est plus emprunteur)
+
 Suivi des objets
 ~~~~~~~~~~~~~~~~
 
