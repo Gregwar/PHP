@@ -374,8 +374,8 @@ Remarques
 
 .. slide::
 
-Problèmes fréquents
--------------------
+Particularités
+--------------
 
 Références
 ~~~~~~~~~~
@@ -503,6 +503,136 @@ Clonage personnalisé
     echo $b->instance."\n"; // 2
 
 .. slide::
+
+Sérialisation
+~~~~~~~~~~~~~
+
+.. textOnly::
+    Contrairement aux types "basiques" (nombres, chaînes, tableaux...), les objets peuvent
+    s'avérer complexes à représenter sous forme de chaîne de caractère pour être sauvegardé dans
+    un fichier, un cookie ou encore une variable de session par exemple. Pour cela, vous pouvez
+    utiliser la **sérialisation**. Les fonctions **PHP** :method:`serialize()`
+    et :method:`unserialize()`
+    permettent de représenter un objet sous forme de chaîne de caractères et, inversement,
+    d'obtenir un objet à partir d'une chaîne sérialisée:
+
+::
+
+    <?php
+
+    class A
+    {
+        public $attr = 0;
+    }
+
+    if (file_exists('a.txt')) {
+        $a = unserialize(
+            file_get_contents('a.txt')
+        );
+    } else {
+        $a = new A;
+    }
+
+    $a->attr++;
+    echo $a->attr."\n";
+
+    file_put_contents('a.txt', serialize($a));
+
+.. slide:: darkSlide fullSlide slideOnly codeLeft
+    
+::
+
+    <?php
+    class A { 
+        public $a;
+        public $x = 1;
+    }
+
+    $a = new A;
+    $a->a = $a;
+    $a->x = 2;
+
+    $b = unserialize(serialize($a));
+    $b->x = 3;
+
+    echo $b->a->x, "\n"; // ???
+
+.. textOnly::
+
+    Notez que la sérialisation peut aussi gérer les références, par exemple:
+
+    ::
+
+        <?php
+        class A { 
+            public $a;
+            public $x = 1;
+        }
+
+        $a = new A;
+        $a->a = $a;
+        $a->x = 2;
+
+        $b = unserialize(serialize($a));
+        $b->x = 3;
+
+        echo $b->a->x, "\n"; // ?
+
+    Ce code affichera bien ``3``, car la référence (qui est même une référence de l'objet
+    vers lui-même) est aussi inclu dans la sérialisation.
+
+.. slide::
+
+Les méthodes magiques
+~~~~~~~~~~~~~~~~~~~~~
+
+.. textOnly::
+    Il existe en **PHP** des `méthodes magiques <http://fr.php.net/manual/en/language.oop5.magic.php>`_.
+    Ces dernières peuvent par exemple permettre de
+    surcharger l'accès à un attribut ou une méthode même s'il/elle n'existe pas:
+
+
++-----------------------------+----------------------------------------------------+
+| **Nom**                     | **Utilité**                                        |
++-----------------------------+----------------------------------------------------+
+| ``__toString()``            | Appelée lorsque l'on tente de convertir un objet en|
+|                             | chaîne de caractère                                |
++-----------------------------+----------------------------------------------------+
+| ``__get($name)``            | Apellée lors de l'accès en lecture à un attribut   |
+|                             | non-existant                                       |
++-----------------------------+----------------------------------------------------+
+| ``__set($name, $value)``    | Apellée lors de l'accès en écriture à un attribut  |
+|                             | non-existant                                       |
++-----------------------------+----------------------------------------------------+
+| ``__call($method, $args)``  | Appelée lors d'un appel à une méthode non existante|
++-----------------------------+----------------------------------------------------+
+
+.. slide::
+
+Arguments nommés (PHP 8 +)
+~~~~~~~~~~~~~~~~
+
+.. textOnly::
+
+    Depuis PHP 8, il est possible de nommer des arguments optionnels que l'on souhaite définir:
+
+.. code-block:: php
+
+    <?php
+
+    function registerUser(User $user, 
+                          bool $send_email = false,
+                          bool $validate_account = false)
+    {
+        // ...
+    }
+
+    registerUser($user, validate_account: true);
+
+.. slide::
+
+Typage
+------
 
 Substitution
 ~~~~~~~~~~~~
@@ -656,6 +786,22 @@ Une classe retournant sa propre instance peut le préciser avec ``self``::
         }
     }
 
+.. discover::
+
+    .. textOnly::
+
+        Cette pratique est courante pour pratiquer le chaînage de méthodes:
+
+    .. code-block::
+
+        <?php
+
+        $book = new Book;
+        $book
+            ->setTitle('Hello world')
+            ->setAuthors('Alice', 'Bob')
+            ;
+
 .. slide::
 
 Pas de retour (``void``)
@@ -674,7 +820,7 @@ Une fonction peut indiquer qu'elle ne retourne rien à l'aide de ``void``::
 
 .. slide::
 
-Typage des propriétés
+Typage des propriétés (PHP 7.4 +)
 ~~~~~~~~~~~~~~~~~~~~~
 
 À partir de PHP 7.4, les propriétés d'une classe peuvent être typés::
@@ -689,31 +835,97 @@ Typage des propriétés
     $book->title = 4; // Erreur
 
 
-.. discover::
-
-    .. textOnly::
-
-        Cette pratique est courante pour pratiquer le chaînage de méthodes:
-
-    .. code-block::
-
-        <?php
-
-        $book = new Book;
-        $book
-            ->setTitle('Hello world')
-            ->setAuthors('Alice', 'Bob')
-            ;
 
 .. textOnly::
 
     Lorsqu'une fonction de classe ne retourne aucune valeur (typiquement un *setter*), retourner 
     ``$this`` permet de la chaîner avec une autre méthode dans le même appel.
 
+
+.. slide::
+
+Test d'instance
+~~~~~~~~~~~~~~~
+
+.. textOnly::
+    Il est possible de tester qu'un objet est bien l'instance d'une classe en PHP à
+    l'aide du mot clé ``instanceof``:
+
+::
+
+    <?php
+
+    interface P {};
+    class A {};
+    class B extends A {};
+    class Q implements P {};
+
+    $a = new A;
+    $b = new B;
+    $q = new Q;
+
+    var_dump($a instanceof A); // true
+    var_dump($b instanceof A); // true
+    var_dump($a instanceof B); // false
+    var_dump($q instanceof A); // false
+    var_dump($q instanceof P); // true
+
+.. textOnly::
+    Notez que si l'objet testé est l'instance d'une classe fille de la classe passée,
+    ``instanceof`` retournera vrai, comme par exemple pour l'expression ``$b instanceof A``
+    ci-dessus.
+
+    Ce système fonctionne également pour tester si un objet implémente une interface,
+    comme avec ``$q instanceof P`` ci-dessus.
+
+.. slide::
+
+Nom de classe
+~~~~~~~~~~~~~
+
+.. textOnly::
+    Il est possible d'obtenir le nom d'une classe (chaine de caractère) à l'aide de l'opérateur ``::class``:
+
+.. code-block:: php
+
+    <?php
+
+    use Web\Controller\DefaultController;
+
+    $name = DefaultController::class;
+    // Web\Controller\DefaultController
+
+.. slide::
+
+Constantes
+~~~~~~~~~~
+
+.. textOnly::
+    Il est possible de déclarer des constantes à l'aide du mot clé ``const`` (et pas de ``$`` devant le nom).
+    Ces valeurs peuvent être encapsulées dans une classe:
+
+.. code-block:: php
+
+    <?php
+
+    class Registration
+    {
+        public const steps = [ 
+            'details', 'address',
+            'payment_information',
+            'email_confirmation'
+        ];  
+    }
+
+    foreach (Registration::steps as $step) {
+        echo "* $step\n";
+    }
+
+
 .. slide::
 
 Espaces de nom
-~~~~~~~~~~~~~~
+--------------
 
 .. textOnly::
     Souvent, la création de classes et d'interface engendre un problème de nommage, car il 
@@ -800,147 +1012,6 @@ Multiples classes de même nom
 
         $a = new AliceImage;
         $b = new BobImage;
-
-.. slide::
-
-Pour aller plus loin
---------------------
-
-Test d'instance
-~~~~~~~~~~~~~~~
-
-.. textOnly::
-    Il est possible de tester qu'un objet est bien l'instance d'une classe en PHP à
-    l'aide du mot clé ``instanceof``:
-
-::
-
-    <?php
-
-    interface P {};
-    class A {};
-    class B extends A {};
-    class Q implements P {};
-
-    $a = new A;
-    $b = new B;
-    $q = new Q;
-
-    var_dump($a instanceof A); // true
-    var_dump($b instanceof A); // true
-    var_dump($a instanceof B); // false
-    var_dump($q instanceof A); // false
-    var_dump($q instanceof P); // true
-
-.. textOnly::
-    Notez que si l'objet testé est l'instance d'une classe fille de la classe passée,
-    ``instanceof`` retournera vrai, comme par exemple pour l'expression ``$b instanceof A``
-    ci-dessus.
-
-    Ce système fonctionne également pour tester si un objet implémente une interface,
-    comme avec ``$q instanceof P`` ci-dessus.
-
-.. slide::
-
-Sérialisation
-~~~~~~~~~~~~~
-
-.. textOnly::
-    Contrairement aux types "basiques" (nombres, chaînes, tableaux...), les objets peuvent
-    s'avérer complexes à représenter sous forme de chaîne de caractère pour être sauvegardé dans
-    un fichier, un cookie ou encore une variable de session par exemple. Pour cela, vous pouvez
-    utiliser la **sérialisation**. Les fonctions **PHP** :method:`serialize()`
-    et :method:`unserialize()`
-    permettent de représenter un objet sous forme de chaîne de caractères et, inversement,
-    d'obtenir un objet à partir d'une chaîne sérialisée:
-
-::
-
-    <?php
-
-    class A
-    {
-        public $attr = 0;
-    }
-
-    if (file_exists('a.txt')) {
-        $a = unserialize(
-            file_get_contents('a.txt')
-        );
-    } else {
-        $a = new A;
-    }
-
-    $a->attr++;
-    echo $a->attr."\n";
-
-    file_put_contents('a.txt', serialize($a));
-
-.. slide:: darkSlide fullSlide slideOnly codeLeft
-    
-::
-
-    <?php
-    class A { 
-        public $a;
-        public $x = 1;
-    }
-
-    $a = new A;
-    $a->a = $a;
-    $a->x = 2;
-
-    $b = unserialize(serialize($a));
-    $b->x = 3;
-
-    echo $b->a->x, "\n"; // ???
-
-.. textOnly::
-
-    Notez que la sérialisation peut aussi gérer les références, par exemple:
-
-    ::
-
-        <?php
-        class A { 
-            public $a;
-            public $x = 1;
-        }
-
-        $a = new A;
-        $a->a = $a;
-        $a->x = 2;
-
-        $b = unserialize(serialize($a));
-        $b->x = 3;
-
-        echo $b->a->x, "\n"; // ?
-
-    Ce code affichera bien ``3``, car la référence (qui est même une référence de l'objet
-    vers lui-même) est aussi inclu dans la sérialisation.
-
-.. slide::
-
-Les méthodes magiques
-~~~~~~~~~~~~~~~~~~~~~
-
-.. textOnly::
-    Il existe en **PHP** des `méthodes magiques <http://fr.php.net/manual/en/language.oop5.magic.php>`_.
-    Ces dernières peuvent par exemple permettre de
-    surcharger l'accès à un attribut ou une méthode même s'il/elle n'existe pas:
-
-
-+-----------------------------+----------------------------------------------------+
-| **Nom**                     | **Utilité**                                        |
-+-----------------------------+----------------------------------------------------+
-| ``__get($name)``            | Apellée lors de l'accès en lecture à un attribut   |
-|                             | non-existant                                       |
-+-----------------------------+----------------------------------------------------+
-| ``__set($name, $value)``    | Apellée lors de l'accès en écriture à un attribut  |
-|                             | non-existant                                       |
-+-----------------------------+----------------------------------------------------+
-| ``__call($method, $args)``  | Appelée lors d'un appel à une méthode non existante|
-+-----------------------------+----------------------------------------------------+
 
 .. slide::
 
