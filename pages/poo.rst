@@ -607,27 +607,6 @@ Les méthodes magiques
 | ``__call($method, $args)``  | Appelée lors d'un appel à une méthode non existante|
 +-----------------------------+----------------------------------------------------+
 
-.. slide::
-
-Arguments nommés (PHP 8 +)
-~~~~~~~~~~~~~~~~
-
-.. textOnly::
-
-    Depuis PHP 8, il est possible de nommer des arguments optionnels que l'on souhaite définir:
-
-.. code-block:: php
-
-    <?php
-
-    function registerUser(User $user, 
-                          bool $send_email = false,
-                          bool $validate_account = false)
-    {
-        // ...
-    }
-
-    registerUser($user, validate_account: true);
 
 .. slide::
 
@@ -818,6 +797,29 @@ Une fonction peut indiquer qu'elle ne retourne rien à l'aide de ``void``::
         }
     }
 
+
+.. slide::
+
+Arguments nommés (PHP 8 +)
+~~~~~~~~~~~~~~~~
+
+.. textOnly::
+
+    Depuis PHP 8, il est possible de nommer des arguments optionnels que l'on souhaite définir:
+
+.. code-block:: php
+
+    <?php
+
+    function registerUser(User $user, 
+                          bool $send_email = false,
+                          bool $validate_account = false)
+    {
+        // ...
+    }
+
+    registerUser($user, validate_account: true);
+
 .. slide::
 
 Typage des propriétés (PHP 7.4 +)
@@ -832,7 +834,7 @@ Typage des propriétés (PHP 7.4 +)
     }
 
     $book = new Book;
-    $book->title = 4; // Erreur
+    $book->title = []; // Erreur
 
 
 
@@ -877,23 +879,6 @@ Test d'instance
 
     Ce système fonctionne également pour tester si un objet implémente une interface,
     comme avec ``$q instanceof P`` ci-dessus.
-
-.. slide::
-
-Nom de classe
-~~~~~~~~~~~~~
-
-.. textOnly::
-    Il est possible d'obtenir le nom d'une classe (chaine de caractère) à l'aide de l'opérateur ``::class``:
-
-.. code-block:: php
-
-    <?php
-
-    use Web\Controller\DefaultController;
-
-    $name = DefaultController::class;
-    // Web\Controller\DefaultController
 
 .. slide::
 
@@ -951,6 +936,15 @@ Par exemple, si le fichier ``alice/image.php`` contient::
 
         include('alice/image.php');
 
+        $image = new Alice\Image;
+
+.. discover::
+    Ou encore:
+
+        <?php
+
+        include('alice/image.php');
+        
         use Alice\Image;
 
         $image = new Image;
@@ -1012,6 +1006,24 @@ Multiples classes de même nom
 
         $a = new AliceImage;
         $b = new BobImage;
+
+
+.. slide::
+
+Nom de classe
+~~~~~~~~~~~~~
+
+.. textOnly::
+    Il est possible d'obtenir le nom d'une classe (chaine de caractère) à l'aide de l'opérateur ``::class``:
+
+.. code-block:: php
+
+    <?php
+
+    use Web\Controller\DefaultController;
+
+    $name = DefaultController::class;
+    // Web\Controller\DefaultController
 
 .. slide::
 
