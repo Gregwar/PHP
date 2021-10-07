@@ -76,11 +76,11 @@ Exercice 1 : écriture de classes
 
     .. code-block:: text
 
-        P2:
-        * Stairway to heaven (audio)
-        * P1 (playlist)
-          * Matrix (vidéo)
-          * Joconde (image)
+        * P2
+        * Stairway to heaven
+        * P1
+            * Matrix
+            * Joconde
 
     Pour cela, vous utiliserez cette fonction:
 
