@@ -13,7 +13,7 @@ Création du formulaire
 
     Pour créer un formulaire: lancez::
 
-        ./bin/console make:form
+        symfony console make:form
 
     Ce qui générera une classe du type::
 

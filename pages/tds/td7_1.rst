@@ -41,7 +41,7 @@ Importer la base de données
 
     .. code-block:: text
 
-        ./bin/console doctrine:mapping:import App\\Entity annotation --path=src/Entity 
+        symfony console doctrine:mapping:import App\\Entity annotation --path=src/Entity 
 
     Observez le code des entités ainsi créées dans ``src/Entity``.
 
@@ -55,7 +55,7 @@ Génération des accesseurs
 
     .. code-block:: text
 
-        ./bin/console make:entity --regenerate
+        symfony console make:entity --regenerate
 
     Observez la modification sur le code.
 
@@ -69,7 +69,7 @@ Création d'un contrôleur automatique (CRUD)
 
     .. code-block:: text
 
-        ./bin/console make:crud
+        symfony console make:crud
 
     Accédez ensuite à ``/series`` et observez le résultat.
 

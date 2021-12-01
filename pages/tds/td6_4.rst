@@ -16,18 +16,18 @@ Création du système de sécurité
     Nous allons executer deux commandes, la première va créer l'entité `User`, qui
     correspond à un utilisateur dans la base::
 
-        ./bin/console make:user
+        symfony console make:user
 
     La seconde va créer un système d'authentification pour cet utilisateur::
 
-        ./bin/console make::auth
+        symfony console make:auth
 
     Observez les fichiers ``config/packages/security.yaml`` et ``src/Security/AppAuthenticator.php`` (dont vous
     avez choisi le noms) qui ont été générés.
 
     Enfin, utilisez::
 
-        ./bin/console make:registration
+        symfony console make:registration
 
     Pour générer la page et la vue du formulaire d'inscription. Regardez le code
     généré.
