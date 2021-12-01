@@ -6,15 +6,6 @@ le site.
 
 Lecture recommandée: la `documentation officielle de Symfony.com sur la sécurité <http://symfony.com/doc/current/book/security.html>`_
 
-Installation
-------------
-
-.. step::
-
-    Commencez par vous assurer de la présence du module ``security``::
-
-        composer req security
-
 Configuration
 -------------
 
