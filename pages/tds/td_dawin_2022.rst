@@ -41,11 +41,11 @@ La base de code est une application **Symfony** qui permet aux utilisateurs de c
     Modifiez alors le fichier ``.env`` pour qu'il contienne les paramètres de connexion valide à un serveur MySQL
     et créez les tables::
 
-        php bin/console doctrine:schema:create
+        symfony console doctrine:schema:create
 
     Nous allons maintenant insérer des données dans la base, pour cela::
 
-        php bin/console doctrine:fixtures:load
+        symfony console doctrine:fixtures:load
 
     .. note::
 
