@@ -17,9 +17,9 @@ Compréhension
     de données disponible dans le fichier ``sql/database.sql``, puis modifier le fichier
     ``index.php`` pour que les paramètres de connexion soient corrects.
 
-    Pour installer l'application, utilisez soit composer::
+    Pour installer l'application, utilisez ``composer``::
 
-        composer.phar install
+        composer install
 
 .. step::
     #-. L'autoloader

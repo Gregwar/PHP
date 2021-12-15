@@ -85,6 +85,7 @@ Sommaire
     components
     practices
     symfony
+    laravel
 
 .. slide::
 

@@ -24,16 +24,6 @@ class Model
         $this->pdo->exec('SET CHARSET UTF8');
     }
 
-    protected function execute(\PDOStatement $query, array $variables = [])
-    {
-        if (!$query->execute($variables)) {
-            $errors = $query->errorInfo();
-            throw new ModelException($errors[2]);
-        }
-
-        return $query;
-    }
-
     /**
      * Récupère un résultat exactement
      */
@@ -63,7 +53,7 @@ class Model
     {
         $sql = $this->getFilmSQL();
 
-        return $this->execute($this->pdo->prepare($sql));
+        return $this->pdo->query($sql);
     }
 
     /**
@@ -77,7 +67,7 @@ class Model
             ;
 
         $query = $this->pdo->prepare($sql);
-        $this->execute($query, [$id]);
+        $query->execute([$id]);
 
         return $this->fetchOne($query);
     }
@@ -102,6 +92,6 @@ class Model
             'GROUP BY genres.id'
             ;
 
-        return $this->execute($this->pdo->prepare($sql));
+        return $this->pdo->query($sql);
     }
 }

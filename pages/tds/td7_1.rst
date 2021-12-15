@@ -41,7 +41,7 @@ Importer la base de données
 
     .. code-block:: text
 
-        ./bin/console doctrine:mapping:import App\\Entity annotation --path=src/Entity 
+        symfony console doctrine:mapping:import App\\Entity annotation --path=src/Entity 
 
     Observez le code des entités ainsi créées dans ``src/Entity``.
 
@@ -55,7 +55,7 @@ Génération des accesseurs
 
     .. code-block:: text
 
-        ./bin/console make:entity --regenerate
+        symfony console make:entity --regenerate
 
     Observez la modification sur le code.
 
@@ -69,7 +69,7 @@ Création d'un contrôleur automatique (CRUD)
 
     .. code-block:: text
 
-        ./bin/console make:crud
+        symfony console make:crud
 
     Accédez ensuite à ``/series`` et observez le résultat.
 
@@ -118,3 +118,72 @@ Optimisation
 ..            ->join('s.genre', 'g')
 ..            ->getQuery()
 ..            ->getResult();
+
+
+
+
+
+
+
+
+
+
+.. slide:: middleSlide
+
+Premiers pas avec Laravel
+=========================
+
+.. slide::
+
+Création de notre projet Laravel
+--------------------------------
+
+Pour découvrir toutes les étapes à réaliser lorsque l'on débute un nouveau projet en Laravel, nous n'allons pas partir d'une archive de base,
+et créer tout nous-même. Rassurez-vous, Laravel va nous aider à *scaffolder* notre projet rapidement.
+
+.. warning::
+    
+    Évitez le plus possible d'utiliser des logiciels comme **WAMP Server**,
+    ou tout autre logiciel similaire qui sert l'application sous l'hôte ``http://localhost``.
+
+    On essaie le plus possible de développer en "conditions réelles", et en production, l'application a son propre nom d'hôte.
+    Il est donc souhaité d'avoir un nom d'hôte également en local.
+
+    * **macOS** :
+        * Utilisez `Laravel Valet <https://laravel.com/docs/5.7/valet>`_.
+
+    * **Linux** :
+        * Le mieux est certainement d'utiliser un `portage de Laravel Valet sous Linux <https://github.com/cpriego/valet-linux>`_.
+        C'est un portage de la communauté, non reconnu officiellement mais qui semble stable.
+
+        * Vous pouvez utiliser sinon Docker, Vagrant, ou une stack LAMP
+
+    * **Windows** :
+        * Ici aussi vaut mieux utiliser un `portage de Laravel Valet sous Windows <https://github.com/cretueusebiu/valet-windows>`_.
+
+        * Les solutions Docker, Vagrant sont également à imaginer si nécessaire.
+
+.. step::
+
+    Création du projet via Composer
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    La création d'un projet Laravel se fait simplement via **Composer**. Il va se charger de récupérer la structure de base de Laravel,
+    et va également installer les dépendences, et faire quelques initialisations comme créer un fichier ``.env`` par défaut,
+    générer la clé secrète de l'application *(nous verrons plus tard à quoi elle sert)*, etc...
+
+    Pour créer un nouvau projet Laravel, ouvrez un terminal et lancez la commande :
+
+    .. code-block:: no-highlight
+        composer create-project laravel/laravel td7
+
+    Cela va créer un nouveau dossier ``td7`` avec notre projet vierge créé !
+    
+.. slide::
+.. step::
+
+    Accéder à notre projet
+    ~~~~~~~~~~~~~~~~~~~~~~
+
+    Si vous utilisez Laravel Valet, vous pouvez aller dans le dossier ``td7`` depuis un terminal et lancer la commande ``valet link td7``
+    et votre projet sera accessible sur votre navigateur via ``http://td7.test``.

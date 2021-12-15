@@ -69,7 +69,7 @@ Créer un formulaire d'identification
 
     .. code-block:: bash
 
-        ./bin/console make:auth
+        symfony console make:auth
 
     Il faudra compléter deux méthodes dans votre authentificateur pour que cela fonctionne, rendez vous ensuite
     sur ``/login`` et ``/logout``, et l'identification devrait fonctionner!

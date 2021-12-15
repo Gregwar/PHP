@@ -6,15 +6,6 @@ application web.
 
 Lecture recommandée: la `documentation officielle de Symfony.com sur Doctrine <http://symfony.com/doc/current/book/doctrine.html>`_
 
-Installation
-------------
-
-.. step::
-
-    Installez Doctrine::
-
-        composer req doctrine
-
 Configuration
 -------------
 
@@ -37,7 +28,7 @@ Configuration
 
     .. code-block:: no-highlight
 
-        ./bin/console doctrine:schema:validate
+        symfony console doctrine:schema:validate
 
     Cette commande sert à vérifier que votre base de données est en accord avec votre
     application, dans votre cas vous n'avez pas encore décrit de classes mappées avec
@@ -54,7 +45,7 @@ Entités
 
     Nous allons maintenant créer nos entités. Pour cela, nous allons utiliser le maker bundle::
         
-        ./bin/console make:entity
+        symfony console make:entity
 
     Il vous sera alors demandé de nommer votre entité, appellez là ``Pizza``,
     nous utiliserons ici aussi la configuration par annotations.
@@ -77,7 +68,7 @@ Entités
 
     .. code-block:: no-highlight
 
-        $ ./bin/console doctrine:schema:create 
+        $ symfony console doctrine:schema:create 
         ATTENTION: This operation should not be executed in a production environment.
 
         Creating database schema...
@@ -123,7 +114,7 @@ Entités
 
     Pour cela, modifiez l'entité pizza à l'aide du maker bundle::
 
-        ./bin/console make:entity
+        symfony console make:entity
 
     Entrez ``Pizza``, pour y ajouter l'entrée ``ingredients``, et saisissez le type ``ManyToMany``. Ensuite, indiquez que la classe est en relation avec ``Ingredient``.
 
@@ -221,7 +212,7 @@ Génération CRUD
 
     Lancez la commande::
 
-        ./bin/console make:crud
+        symfony console make:crud
 
     Et demandez à Symfony de générer le CRUD pour l'entité Pizza. Consultez les pages
     générés (``/pizzas``).

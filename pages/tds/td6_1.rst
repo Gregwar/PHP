@@ -37,20 +37,7 @@ Installation de Symfony
 
 .. step::
 
-    Etape 3: installation du *maker bundle*
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-    Installez le maker bundle, les annotations ainsi que twig::
-
-        composer req maker annotations
-
-    Qui vous permettra par la suite de créer facilement des contrôleurs, des entités etc.
-
-.. slide::
-
-.. step::
-
-    Etape 4: créer votre Contrôleur
+    Etape 3: créer votre Contrôleur
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     Votre application réside dans le dossier ``src/``. Par défaut, Symfony ne contient

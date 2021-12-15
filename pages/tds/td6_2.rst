@@ -10,16 +10,6 @@ Nous allons maintenant créer une structure de site web. Afin de ne pas perdre d
 graphismes ou des feuilles de styles, une page d'exemple est fournie dans `td6 </files/td6.zip>`_, dans
 le dossier ``design/``.
 
-Installation de Twig
---------------------
-
-.. step::
-
-
-    Tout d'abord, nous allons ajouter Twig à notre projet Symfony::
-
-        composer req twig
-
 Création du layout
 ------------------
 
@@ -30,10 +20,7 @@ Création du layout
 
     Pour commencer, créez un layout principal ``layout.html.twig`` contenant la structure générale du
     site. Placez la feuille de style et les images dans le dossier ``public/`` de Symfony et utilisez la
-    fonction ``asset()`` de Twig pour inclure ``style.css``. Pour ce faire, vous aurez besoin d'installer
-    le composant ``asset``::
-
-        composer req asset
+    fonction ``asset()`` de Twig pour inclure ``style.css``.
 
     Toutes vos templates hériteront plus tard ce ce ``layout.html.twig`` et surchargeront certain
     de ses blocs.

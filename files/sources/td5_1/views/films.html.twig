@@ -8,7 +8,7 @@
         <div class="film">
             <img width="64" src="{{ film.image }}" />
             <h3>{{ film.nom }}</h3>
-            <em>Genre: {{ film.genre_nom }}</em><br />
+            <em>Genre: {{ film.genre.nom }}</em><br />
             <a href="{{ path_for('film', {id: film.id}) }}">Fiche film &raquo;</a>
         </div>
         {% endfor %}
