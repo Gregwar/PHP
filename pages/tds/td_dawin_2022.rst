@@ -50,7 +50,8 @@ La base de code est une application **Symfony** qui permet aux utilisateurs de c
     .. note::
 
         À tout moment, vous pouvez re-lancer cette commande pour re-générer les données dans la base. En particulier,
-        cela permet de disposer de sondages qui sont terminé ou non.
+        cela permet de disposer de sondages qui sont terminé ou non (car les dates de fin sont choisies aléatoirement
+        autout de l'heure actuelle).
 
     Lancez alors le serveur web et testez::
 
