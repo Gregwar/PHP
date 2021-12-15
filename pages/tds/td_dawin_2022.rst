@@ -78,15 +78,18 @@ Travail à faire
     (Dans le code de base, c'est toujours le lien "Accueil" qui est souligné à l'aide de la
     classe Bootstrap ``text-decoration-underline``)
 
+
+Dates
+~~~~~
+
 .. step::
+    Modifiez le formulaire de création afin que la date de création ne soit plus un champ, mais qu'elle soit
+    renseignée par la date courante automatiquement lors de la soumission (d'ailleurs, elle ne doit plus etre
+    éditable dans le formulaire d'édition)
 
-    Dates
-    ~~~~~
-
-    Modifiez le formulaire de création et d'édition d'un sondage de manière à ce que:
-
-    * La date de création soit renseignée automatiquement (elle n'est pas visible par l'utilisateur)
-    * La date de fin soit pré-remplie avec la date courante + 1 semaine lorsque la page se charge
+.. step::
+    Modifiez le formulaire de création afin que la date de fin soit pré-remplie avec la date courante + 1
+    semaine lorsque la page se charge
 
 .. step::
 
