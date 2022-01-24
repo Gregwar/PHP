@@ -20,7 +20,7 @@ Consignes et rendu
 
     Vous devez impérativement renseigner votre dépôt à l'aide d'une remise sur `le Moodle du cours <https://moodle1.u-bordeaux.fr/course/view.php?id=3634>`_ dans l'espace de remise
 
-    La date limite de remise est le **23 Janvier 20222** inclu (23:59), ce qui signifie que vos dépôts seront clonés et ne seront plus mis à jour
+    La date limite de remise est le **23 Janvier 2022** inclu (23:59), ce qui signifie que vos dépôts seront clonés et ne seront plus mis à jour
 
 .. div:: alert alert-danger
 
