@@ -137,7 +137,7 @@ Principes du TrollQuiz
     * ``21``
     * ``210``
     * ``120``
-    * ``0``
+    * ``111``
     * Je ne sais pas
 
 .. slide::
