@@ -903,6 +903,18 @@ Quelle solution vaut ``42``?
 * ``$tab[1][1][0]``
 * ``$tab[1][2][1][0]``
 
+.. slide:: slideOnly
+
+::
+
+Sachant que PHP est interprété, est-ce qu'utiliser des noms de variables plus courts,
+ou éviter de mettre des commentaire accélère légèrement la durée d'execution du code?
+
+.. poll::
+
+* Oui
+* Non
+
 .. TD
 
 .. slide::
