@@ -35,7 +35,7 @@ Ajout d'une authentification par jeton
 
     .. code-block:: text
 
-        http://127.0.0.1:8000/hello?api_token=[token]
+        http://localhost:8000/hello?api_token=[token]
 
     Ici, ``[token]`` serait la valeur stockée dans le ``user_id`` et permettrait alors de l'identifier. La page
     hello pourrait simplement afficher ``"Hello [name]"`` où ``[name]`` serait le nom de l'utilisateur
