@@ -113,9 +113,14 @@ Spectacles
 
     Modifiez la page affichant la liste des spectacles de manière à ce que~:
 
-    * Les spectacles passés ne soient plus affichés,
+    * Les spectacles terminés ne soient plus affichés,
     * Les spectacles apparaissent du plus proche dans le temps au plus lointain,
-    * Les spectacles soient paginés par page de 4 si ils sont trop nombreux.
+    * Les spectacles soient **paginés** par page de 4 si ils sont trop nombreux. Dans ce cas, on devrait voir
+    une barre de ce type apparaître~:
+
+    .. center::
+        .. image:: /img/booking_2023_pagination.png
+            :width: 400
 
 .. step::
     **Contraintes sur les dates**
@@ -123,8 +128,11 @@ Spectacles
     Modifiez l'édition des spectacles pour respecter les contraintes suivantes:
 
     * La date de début doit être avant la date de fin,
-    * Il ne peut pas y avoir un spectacle en même temps (attention: il peut malgré tout quand même y avoir
-    plusieurs spectacles le même jour, si ils ne sont pas à la même heure).
+    * Il ne peut pas y avoir deux spectacles en même temps.
+    
+    .. note::
+        **Remarque:** Plusieurs spectacles pourraient quand même être le même jour, si ils ne sont
+        pas à la même heure.
 
 .. image:: /img/seat.png
     :style: float:right
@@ -139,8 +147,8 @@ Places
     Il existe une interface permettant de générer des places, mais elle n'est pas fonctionnelle!
     Écrivez le code de manière à générer dans la base de données les places existantes.
 
-    .. warning::
-        **Attention**: si jamais la salle s'agrandit, on pourrait vouloir re-générer les places. Dans ce cas, il
+    .. note::
+        **Remarque**: si jamais la salle s'agrandit, on pourrait vouloir re-générer les places. Dans ce cas, il
         est important de ne pas écraser les entrées existantes dans la base de données, car elles pourraient être
         utilisées plus tard dans des relations (par exemple avec des réservations).
 
@@ -155,12 +163,15 @@ Sécurité
 .. step::
     **Sécurisation administrateur**
 
-    Le premier utilisateur qui créera son compte sur le site sera marqué comme administrateur (et pas les suivants).
-    Seul lui aura accès à:
+    Le premier utilisateur qui créera son compte sur le site sera marqué comme *administrateur* (et pas les suivants).
+    Seul l'administrateur aura accès à:
 
-    * La configuration du site (cf parties précédentes),
-    * La génération des sièges,
-    * La création/édition/suppression des spectacles.
+    * La **configuration** du site (cf parties précédentes),
+    * La **génération des sièges**,
+    * La **création/édition/suppression des spectacles**.
+
+    Les boutons n'apparaîtront pas dans l'interface aux utilisateurs non connectés, et ils ne pourront pas accéder
+    aux pages correspondantes.
 
 .. image:: /img/green_book.png
     :style: float:right
@@ -174,8 +185,10 @@ Réservations
 
     Dans l'encart d'un spectacle, ajoutez un lien "réserver" qui n'apparaîtra que pour les utilisateurs connectés.
     Il permettra de créer une réservation pour le spectacle. Il faudra alors fournir un nom de réservation, et
-    une ou plusieurs places que l'on souhaite "bloquer". On stockera la date de la réservation, ainsi que
+    une ou plusieurs places que l'on souhaite réserver. On stockera la date de la réservation, ainsi que
     l'utilisateur qui l'a réalisé.
+
+    Si un utilisateur ayant déjà une réservation clique à nouveau sur "réserver", il pourra alors éditer sa réservation.
 
     .. warning::
         **Attention**: on ne devrait pas pouvoir choisir des places qui ont déjà été réservées par quelqu'un
@@ -191,11 +204,17 @@ Réservations
     **Plan**
 
     Modifiez le "Plan" de manière à ce qu'il affiche les places qui proviennent réellement de la base de données.
-    Vous indiquerez en opacité réduite les places qui sont occupées.
+    Vous indiquerez en opacité réduite les places qui sont occupées. Pour les graphismes, inspirez vous du code
+    de base qui fournit déjà un exemple codé "en dur":
+
+    .. center::
+        .. image:: /img/booking_2023_map.png
 
 .. note::
-    Une partie de l'évaluation portera sur votre capacité à éviter de faire exploser le nombre de requêtes engendrées
-    par votre code. Pour optimiser, gardez un oeil sur le compteur qui apparaît dans le *profiler* en bas:
+    **Remarque:**
+    Utilisez le plus possible des requêtes complexes, de manière à faire travailler la base de données, et éviter
+    d'envoyer un grand nombre de requêtes à la base.
+    Gardez un oeil sur le compteur qui apparaît dans le *profiler* en bas:
 
     .. center::
         .. image:: /img/profiler_requests.png
