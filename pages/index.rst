@@ -100,6 +100,7 @@ Sommaire
 TD Noté
 -------
 
+* :doc:`Le TD noté DAWIN 2023 <tds/td_dawin_2023>`
 * :doc:`Le TD noté DAWIN 2022 <tds/td_dawin_2022>`
 * :doc:`Le TD noté DAWIN 2021 <tds/td_dawin_2021>`
 
