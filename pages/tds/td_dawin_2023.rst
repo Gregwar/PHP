@@ -10,7 +10,6 @@ Consignes et rendu
 .. warning::
     Ce travail est à produire **individuellement**, vous devrez pour cela créer un dépôt git
     **privé**.
-
     Le code de base est présent sur ce `dépôt GitLab <https://gitlab-ce.iut.u-bordeaux.fr/gpassault/booking-2023>`_.
 
     Commencez par faire un Fork du dépôt, et partagez le avec moi (en tant que "Reporter")
@@ -35,7 +34,7 @@ La base de code est une application **Symfony** de gestion des réservations dan
 
         symfony composer install
 
-    Modifiez alors le fichier ``.env`` pour qu'il contienne les paramètres de connexion valide à un serveur MySQL
+    Modifiez alors le fichier ``.env.local`` pour qu'il contienne les paramètres de connexion valide à un serveur MySQL
     et créez les tables::
 
         symfony console doctrine:schema:update --force
@@ -48,10 +47,11 @@ La base de code est une application **Symfony** de gestion des réservations dan
         Cette commande charge des données dans la base de données à partir du code contenu dans
         ``src/DataFixtures/AppFixtures.php``. Dans le code de base, elle permet de créer des catégories.
 
-    Lancez alors le serveur web et testez::
+    Lancez alors le serveur::
 
         symfony serve
 
+    Et connectez vous à `http://localhost:8000 <http://localhost:8000>`_.
     Vous devriez voir quelque chose qui ressemble à ceci:
 
     .. center::
@@ -59,7 +59,7 @@ La base de code est une application **Symfony** de gestion des réservations dan
 
 .. note::
     **Note:** Le code est fourni avec des entités qui décrivent une base de données. Mais libre à vous de les modifier
-    si vous le souhaitez.
+    si vous le souhaitez~!
 
 Travail à faire
 ---------------
@@ -72,7 +72,7 @@ Ajout de la configuration
 
 Comme vous le remarquez, certaines valeurs sont indiquées "en dur" dans le code, notamment:
 
-* Le nom de la salle,
+* Le nom de la salle (*DAWIN-Arena*),
 * Son adresse,
 * L'emplacement sur la carte.
 
