@@ -86,7 +86,7 @@ On souhaiterait que ces informations soient modifiables par l'administrateur du 
     de la base de données.
 
 .. step::
-    **Utilisation de la configuration en base**
+    **Utilisation de la configuration**
 
     Modifiez le site de manière à utiliser ces informations au lieu de celles codées en dur.
 
@@ -107,6 +107,12 @@ Spectacles
     .. center::
         .. image:: /img/booking_2023_categories.png    
             :width: 450
+
+.. step::
+    **Affiches**
+
+    Ajoutez des affiches aux spectacles, que l'on pourra envoyer dans l'édition du spectacle. Elles apparaîtront
+    dans l'encart du spectacle dans la liste.
 
 .. step::
     **Changement de l'affichage des spectacles**
@@ -152,6 +158,7 @@ Places
         est important de ne pas écraser les entrées existantes dans la base de données, car elles pourraient être
         utilisées plus tard dans des relations (par exemple avec des réservations).
 
+.. step::
     **Nombre de places**
 
     Modifiez la page d'accueil de manière à ce qu'elle affiche le nombre de places dans la base de données au lieu
@@ -161,9 +168,13 @@ Sécurité
 ~~~~~~~~
 
 .. step::
-    **Sécurisation administrateur**
+    **Compte admin.**
 
     Le premier utilisateur qui créera son compte sur le site sera marqué comme *administrateur* (et pas les suivants).
+
+.. step::
+    **Règles de sécurité**
+
     Seul l'administrateur aura accès à:
 
     * La **configuration** du site (cf parties précédentes),
@@ -184,7 +195,7 @@ Réservations
     **Formulaire de réservation**
 
     Dans l'encart d'un spectacle, ajoutez un lien "réserver" qui n'apparaîtra que pour les utilisateurs connectés.
-    Il permettra de créer une réservation pour le spectacle. Il faudra alors fournir un nom de réservation, et
+    Il permettra de créer une réservation pour le spectacle. Il faudra alors fournir un nom, et
     une ou plusieurs places que l'on souhaite réserver. On stockera la date de la réservation, ainsi que
     l'utilisateur qui l'a réalisé.
 
@@ -210,10 +221,19 @@ Réservations
     .. center::
         .. image:: /img/booking_2023_map.png
 
+.. step::
+    **Visualisation d'une réservation**
+
+    Ajoutez une page telle qu'un administrateur puisse, en cliquant sur une place occupée, visualiser la réservation
+    correspondante.
+
+    On affichera le nom entré dans la réservation, les places qui y sont associées, et l'e-mail du compte de
+    l'utilisateur qui a fait la réservation.
+
 .. note::
     **Remarque:**
-    Utilisez le plus possible des requêtes complexes, de manière à faire travailler la base de données, et éviter
-    d'envoyer un grand nombre de requêtes à la base.
+    Utilisez le plus possible des requêtes qui récupèrent directement les informations nécessaires,
+    de manière à faire travailler la base de données, et éviter d'envoyer un grand nombre de requêtes à la base.
     Gardez un oeil sur le compteur qui apparaît dans le *profiler* en bas:
 
     .. center::
